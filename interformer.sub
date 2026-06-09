@@ -1,0 +1,27 @@
+# HTCondor_Submit_File
+universe                = docker
+docker_image            = docker.io/adla00004/nnti_project:baseline
+executable              = interformer.sh
+arguments               = $(Process)
+
+# Policy: Opt-in to modern nodes with 1-hour retirement for checkpointing
+max_job_retirement_time = 7200
+
+# Resources: Scaled to match Interformer paper (8 GPUs, 128G RAM)
+request_gpus            = 8
+request_cpus            = 4
+#originally 16G
+request_memory          = 128G
+
+# Requirements: Matches your baseline setup
+requirements = (Target.HasDocker == True) && (Target.GPUs == 8) && (Target.Capability > 7.5)
+
+# Mounting (Crucial to see your project files)
++WantScratchMounted     = true
++WantGPUHomeMounted     = true
+
+error = interformer.err
+output = interformer.out
+log = interformer.log
+
+queue 1
