@@ -1,0 +1,23 @@
+# HTCondor_Submit_File
+universe                = docker
+docker_image            = docker.io/blakshana/interformer:latest
+executable              = interformer.sh
+//arguments               = $(Process)
+
+# Resources
+request_gpus            = 1
+request_cpus            = 4
+request_memory          = 32G
+
+# Requirements: Matches your baseline setup
+requirements            = (Target.HasDocker == True) && (Target.GPUs > 0)
+
+# Mounting (Crucial to see your project files)
++WantScratchMounted     = true
++WantGPUHomeMounted     = true
+
+error = interformer.err
+output = interformer.out
+log = interformer.log
+
+queue 1
