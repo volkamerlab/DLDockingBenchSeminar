@@ -1,0 +1,10 @@
+condor_submit
+condor_q - check state of jobs
+
+For debugging, it can be helpful to first run the job interactively (this does not use executable = ...)
+
+cd cluster-tutorial/condor
+condor_submit -i condor/train.sub
+
+and then start the experiments manually. Note that interactive jobs are assigned very restricted resources and are terminated after one hour.
+

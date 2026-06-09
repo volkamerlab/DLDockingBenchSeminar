@@ -1,0 +1,48 @@
+
+GPU_NUM:
+Tue Jun  9 14:38:37 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.163.01             Driver Version: 550.163.01     CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla P100-SXM2-16GB           Off |   00000000:04:00.0 Off |                    0 |
+| N/A   32C    P0             33W /  300W |       3MiB /  16384MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Freeing Memory
+Current Path:/raid/condor/lib/condor/execute/dir_3158092
+TJ_INSTANCE_ID->
+SHARE_DIR->
+MODEL_DIR->/inter
+TAIJI_JIZHI_WORKSPACE_PATH->}
+total 68
+drwx------ 4 1620002202 22101 4096 Jun  9 14:38 .
+drwxr-xr-x 3 root       root  4096 Jun  9 14:38 ..
+-rwx------ 1 1620002202 22101   49 Jun  9 14:38 .chirp.config
+srwxr-xr-x 1 1620002202 22101    0 Jun  9 14:38 .docker_sock
+-rw-r--r-- 1 1620002202 22101    0 Jun  9 14:38 .docker_stderror
+-rw-r--r-- 1 1620002202 22101 4530 Jun  9 14:38 .job.ad
+-rw-r--r-- 1 1620002202 22101 8568 Jun  9 14:38 .machine.ad
+-rw-r--r-- 1 1620002202 22101 8290 Jun  9 14:38 .update.ad
+-rw-r--r-- 1 1620002202 22101  138 Jun  9 14:38 _condor_stderr
+-rw-r--r-- 1 1620002202 22101 1937 Jun  9 14:38 _condor_stdout
+-rw-r--r-- 1 1620002202 22101   82 Jun  9 14:38 ld_library_paty.log
+-rwxr-xr-x 1 1620002202 22101 1576 Jun  9 14:38 start.sh
+drwxrwxrwt 2 1620002202 22101 4096 Jun  9 14:38 tmp
+drwxrwxrwt 3 1620002202 22101 4096 Jun  9 14:38 var
+*************Split********************
++++++++++++++Train++++++++++++++++++++
+# Checking Parameters, HOST_NUM=, MASTER_ADD=, my_port=2345, HOST_GPU_NUM=, INDEX:
+./start.sh: line 46: /inter/logs/.log: No such file or directory
+Finished training

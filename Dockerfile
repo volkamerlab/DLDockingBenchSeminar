@@ -1,19 +1,37 @@
-FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
+FROM nvidia/cuda:12.6.0-base-ubuntu22.04
+ARG username
 
-LABEL maintainer="Hugging Face"
+RUN rm -f /etc/apt/sources.list.d/*.list
 
-ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y \
+    curl \
+    ca-certificates \
+    sudo \
+    git \
+    bzip2 \
+    libx11-6 \
+    vim \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apt update && apt install -y \
-    git libsndfile1-dev tesseract-ocr espeak-ng python3 python3-pip ffmpeg \
-    sox libsox-dev libsox-fmt-all curl build-essential
+RUN mkdir /main
+RUN mkdir /main/home
+WORKDIR /main
 
-# install rust and cargo (required for tokenizers)
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-ENV PATH="/root/.cargo/bin:${PATH}"
+RUN adduser --disabled-password --gecos '' --shell /bin/bash $username \
+    && chown -R $username:$username /main
+RUN echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-user
+USER $username
 
-RUN python3 -m pip install --no-cache-dir --upgrade pip
+ENV HOME=/main/home
+RUN mkdir $HOME/.cache $HOME/.config \
+    && chmod -R 777 $HOME
 
-# 4. Copy and Install Requirements (With Force-Reinstall)
-COPY requirements.txt .
-RUN python3 -m pip install --no-cache-dir --upgrade --force-reinstall -r requirements.txt
+ENV PATH=$HOME/mambaforge/bin:$PATH
+COPY environment.yml /main/environment.yml
+RUN curl -sLo ~/mambaforge.sh https://github.com/conda-forge/miniforge/releases/download/4.12.0-2/Mambaforge-4.12.0-2-Linux-x86_64.sh \
+    && chmod +x ~/mambaforge.sh \
+    && ~/mambaforge.sh -b -p ~/mambaforge \
+    && rm ~/mambaforge.sh \
+    && mamba env update -n base -f /main/environment.yml \
+    && mamba clean -ya
+    
