@@ -1,0 +1,7 @@
+Missing or unknown output file or format spec or possibly a misplaced option.
+Options, other than -i -o -O -m, must come after the input files.
+
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+./interformer.sh: line 20: data/proto_train/pocket: Is a directory
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+mv: cannot move 'data/proto_train/pocket/output/' to 'proto_train/pocket': No such file or directory
