@@ -61,7 +61,25 @@ def grep_ref_CCD(ligand, pdb_f):
 
 def run_fn(pdb_f, rm_ccd=False):
     pdbid = os.path.basename(pdb_f)[:4]
-    ligand = Chem.SDMolSupplier(f'{ligand_path}/{pdbid}_docked.sdf', sanitize=False)[0]
+    #original code:
+    # ligand = Chem.SDMolSupplier(f'{ligand_path}/{pdbid}_docked.sdf', sanitize=False)[0]
+    matches = glob.glob(
+        f"{ligand_path}/{pdbid}_*_ligand_refined.sdf"
+    )
+
+    if len(matches) == 0:
+        print(f"No ligand found for {pdbid}")
+        return
+
+    if len(matches) > 1:
+        print(f"Multiple ligands found for {pdbid}: {matches}")
+        return
+
+    ligand = Chem.SDMolSupplier(
+        matches[0],
+        sanitize=False
+    )[0]
+
     create_ligand_residue(ligand)
     # find out the reference CCD
 
