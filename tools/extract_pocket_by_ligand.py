@@ -60,12 +60,37 @@ def grep_ref_CCD(ligand, pdb_f):
 
 
 def run_fn(pdb_f, rm_ccd=False):
-    pdbid = os.path.basename(pdb_f)[:4]
+    # New modification (to get pockets for multiple ccd)
+    base = os.path.basename(pdb_f)
+
+    ligand_file = os.path.join(
+        ligand_path,
+        base.replace(
+            "_protein_refined.pdb",
+            "_ligand_refined.sdf"
+         )
+    )
+
+    if not os.path.exists(ligand_file):
+        print(f"Missing ligand: {ligand_file}")
+        return
+
+    ligand = Chem.SDMolSupplier(
+        ligand_file,
+        sanitize=False
+    )[0]
+    
+    
+    out_name = base.replace(
+    "_protein_refined.pdb",
+    "_pocket.pdb"
+    )
     #original code:
-    ligand = Chem.SDMolSupplier(f'{ligand_path}/{pdbid}_docked.sdf', sanitize=False)[0]
+    # pdbid = os.path.basename(pdb_f)[:4]
+    #ligand = Chem.SDMolSupplier(f'{ligand_path}/{pdbid}_docked.sdf', sanitize=False)[0]
     #modified code:
     # matches = glob.glob(
-    #     f"{ligand_path}/{pdbid}_*_ligand_refined.sdf"
+    #      f"{ligand_path}/{pdbid}_*_ligand_refined.sdf"
     # )
 
     # if len(matches) == 0:
@@ -108,7 +133,10 @@ def run_fn(pdb_f, rm_ccd=False):
     except Exception as e:
         print(f"Error<-{pdbid}, {e}")
 
-    w = Chem.PDBWriter(f'{protein_path}/output/{pdbid}_pocket.pdb')
+    # w = Chem.PDBWriter(f'{protein_path}/output/{pdbid}_pocket.pdb')
+    w = Chem.PDBWriter(
+        f"{protein_path}/output/{out_name}"
+    )
     w.write(pocket)
     w.close()
 

@@ -1,6 +1,6 @@
 universe = docker
 docker_image = blakshana/interformer:latest
-executable = interformer.sh
+executable = interformer_preprocessing.sh
 output = logs/josh-interformer.$(ClusterId).$(ProcId).out
 error = logs/josh-interformer.$(ClusterId).$(ProcId).err
 log = logs/josh-interformer.$(ClusterId).log

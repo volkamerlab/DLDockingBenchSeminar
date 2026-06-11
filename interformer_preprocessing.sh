@@ -9,6 +9,9 @@ conda activate base
 
 cd /home/bdldt_team001/DLDockingBenchSeminar
 
+rm -r data/proto_train/ligand
+rm -r data/proto_train/uff
+rm -r data/proto_train/pocket
 
 mkdir -p data/proto_train/ligand
 mkdir -p data/proto_train/uff
@@ -17,9 +20,8 @@ mkdir -p data/proto_train/pocket
 # Preprocess
 #original code:
 # obabel data/proto_train/train_sdf -p 7.4 -O data/ligand/
-for f in data/proto_train/train_sdf/*.sdf; do
-    pdbid=$(basename "$f" | cut -c1-4)
-    obabel "$f" -p 7.4 -O "data/proto_train/ligand/${pdbid}_docked.sdf"
+for f in data/proto_train/train_sdf/*.sdf; do 
+    obabel "$f" -p 7.4 -O "data/proto_train/ligand/$(basename "$f")" 
 done
 
 # Generate inital ligand conformation using UFF (or any other ligand prepare program of your choice).  
@@ -29,13 +31,12 @@ python tools/rdkit_ETKDG_3d_gen.py data/proto_train/ligand/ data/proto_train/uff
 # Use the Reduce program to preprocess the entire protein.
 #original code:
 # mkdir -p data/proto_train/pocket && reduce -r data/proto_train/train_pdb/ > data/proto_train/pocket
-for pdb in data/proto_train/train_pdb/*.pdb; do
-    pdbid=$(basename "$pdb" .pdb)
-    reduce -r "$pdb" > "data/proto_train/pocket/${pdbid}_reduce.pdb"
+for pdb in data/proto_train/train_pdb/*.pdb; do 
+    reduce -r "$pdb" > "data/proto_train/pocket/$(basename "$pdb")" 
 done
 
 # Extract the pocket within 10 Å around the reference ligand. The third argument 1 indicates removal of the CCD ligand from the PDB, use 0 if you do not wish to remove it.
-python tools/extract_pocket_by_ligand.py data/proto_train/pocket/ data/proto_train/ligand/ 1 && mv data/proto_train/pocket/output/*.pdb data/proto_train/pocket
+python tools/extract_pocket_by_ligand.py data/proto_train/pocket/ data/proto_train/ligand/ 0 && mv data/proto_train/pocket/output/* data/proto_train/pocket
 
 # for later (energy model)
 # python3 -u train.py 

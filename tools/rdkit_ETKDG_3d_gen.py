@@ -69,8 +69,19 @@ def new_conformation(mol: Mol, n_confs: int = 30, num_threads: int = 0, energy_m
 
 
 def run_fn(sdf_f):
-    pdb = os.path.basename(sdf_f)[:4]
-    output_f = f'{sys.argv[2]}/{pdb}_uff.sdf'
+    # original code
+    # pdb = os.path.basename(sdf_f)[:4]
+    # output_f = f'{sys.argv[2]}/{pdb}_uff.sdf'
+    base = os.path.basename(sdf_f)
+
+    output_f = os.path.join(
+        sys.argv[2],
+        base.replace(
+            "_ligand_refined.sdf",
+            "_uff.sdf"
+        )
+    )
+
     if os.path.exists(output_f):
         return 0
     #
@@ -81,7 +92,7 @@ def run_fn(sdf_f):
         print(sdf_f)
         os.system(f'cp {sdf_f} {output_f}')
         return 1
-    print(f"{pdb}, RMSD:{result['rmsd']}, E:{result['energy']}")
+    print(f"{base}, RMSD:{result['rmsd']}, E:{result['energy']}")
     # output
     writer = Chem.SDWriter(output_f)
     writer.write(result['mol'])
