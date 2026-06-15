@@ -1,4 +1,0 @@
-./start.sh: line 23: /proc/sys/vm/drop_caches: Read-only file system
-realpath: '/apdcephfs_qy3/share_*/revoli': No such file or directory
-cp: cannot stat '/extra': No such file or directory
-mkdir: cannot create directory '/inter': Permission denied

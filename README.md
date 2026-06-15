@@ -1,5 +1,10 @@
 Interformer
 --------------------
+Lakshana and Ben's Reproducibility Notes:
+1. Run interformer_preprocessing.sh via condor_submit interformer_preprocessing.sub
+2. Run interformer_models.sh via condor_submit interformer_models.sub
+
+--------------------
 Interformer is a protein-ligand complex structure prediction neural network that can predict interaction-aware energy functions for each pair of protein-ligand atoms. Such energy functions can be used in traditional protein-ligand docking sampling methods (Monte Carlo) to generate high-quality and reasonable binding poses.
 
 The second application of the model involves using a module for pose-sensitive affinity and pose score based on contrastive learning. 

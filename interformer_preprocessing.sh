@@ -1,4 +1,5 @@
 #!/bin/bash
+### Start Interformer preprocessing code
 source /main/home/mambaforge/etc/profile.d/conda.sh
 conda activate base
 # Install missing dependencies to the container's user space
@@ -9,59 +10,83 @@ conda activate base
 
 cd /home/bdldt_team001/DLDockingBenchSeminar
 
-rm -r data/proto_train/ligand
-rm -r data/proto_train/uff
-rm -r data/proto_train/pocket
+# rm -r data/proto_train/ligand
+# rm -r data/proto_train/ligand/rcsb
+# rm -r data/proto_train/uff
+# rm -r data/proto_train/pocket
 
-mkdir -p data/proto_train/ligand
-mkdir -p data/proto_train/uff
-mkdir -p data/proto_train/pocket
+# mkdir -p data/proto_train/ligand
+# mkdir -p data/proto_train/ligand/rcsb
+# mkdir -p data/proto_train/uff
+# mkdir -p data/proto_train/pocket
 
 # Preprocess
-#original code:
-# obabel data/proto_train/train_sdf -p 7.4 -O data/ligand/
-for f in data/proto_train/train_sdf/*.sdf; do 
-    obabel "$f" -p 7.4 -O "data/proto_train/ligand/$(basename "$f")" 
-done
+# Add H atoms to ligand molecules.
+# for f in data/proto_train/train_sdf/*.sdf; do 
+#     obabel "$f" -p 7.4 -O "data/proto_train/ligand/rcsb/$(basename "$f")" 
+# done
 
 # Generate inital ligand conformation using UFF (or any other ligand prepare program of your choice).  
-python tools/rdkit_ETKDG_3d_gen.py data/proto_train/ligand/ data/proto_train/uff/ 
+# python tools/rdkit_ETKDG_3d_gen.py data/proto_train/ligand/rcsb/ data/proto_train/uff/ 
 ####
 # Protein
 # Use the Reduce program to preprocess the entire protein.
-#original code:
-# mkdir -p data/proto_train/pocket && reduce -r data/proto_train/train_pdb/ > data/proto_train/pocket
-for pdb in data/proto_train/train_pdb/*.pdb; do 
-    reduce -r "$pdb" > "data/proto_train/pocket/$(basename "$pdb")" 
+# Adjust the protein structure to prevent steric clashes.
+# for pdb in data/proto_train/train_pdb/*.pdb; do 
+#     reduce -r "$pdb" > "data/proto_train/pocket/$(basename "$pdb")" 
+# done
+
+# Extract the pocket within 10 Å around the reference ligand. The third argument 1 indicates removal of the CCD ligand from the PDB, use 0 if you do not wish to remove it.
+# python tools/extract_pocket_by_ligand.py data/proto_train/pocket/ data/proto_train/ligand/rcsb/ 0 && mv data/proto_train/pocket/output/*.pdb data/proto_train/pocket
+### End of Interformer preprocessing code
+
+### Lak&Ben Trainset Preprocessing ###
+# first manipulation to get uniprot and pIC50 values
+# python3 -u scripts/get_IC50_uniprot_train.py
+# split the ligand_file_name into target separately
+# python3 -u scripts/create_target_train.py 
+# Naming convention to match the OG data
+# python3 -u scripts/rename_docked_sdf_train.py 
+
+### End of Interformer preprocessing trainset code
+###########################################################################
+
+### Lak&Ben Testset Preprocessing ###
+
+rm -r data/proto_test/ligand
+rm -r data/proto_test/ligand/rcsb
+rm -r data/proto_test/uff
+rm -r data/proto_test/pocket
+
+mkdir -p data/proto_test/ligand
+mkdir -p data/proto_test/ligand/rcsb
+mkdir -p data/proto_test/uff
+mkdir -p data/proto_test/pocket
+
+# Preprocess
+# Add H atoms to ligand molecules and protonation states are determined via obabel
+for f in data/proto_test/test_sdf/*.sdf; do 
+    obabel "$f" -p 7.4 -O "data/proto_test/ligand/rcsb/$(basename "$f")" 
+done
+
+# Generate initial ligand conformation using UFF (or any other ligand prepare program of your choice).  
+python tools/rdkit_ETKDG_3d_gen.py data/proto_test/ligand/rcsb/ data/proto_test/uff/ 
+####
+# Protein
+# Use the Reduce program to preprocess the entire protein.
+# Adjust the protein structure to prevent steric clashes.
+for pdb in data/proto_test/test_pdb/*.pdb; do 
+    reduce -r "$pdb" > "data/proto_test/pocket/$(basename "$pdb")" 
 done
 
 # Extract the pocket within 10 Å around the reference ligand. The third argument 1 indicates removal of the CCD ligand from the PDB, use 0 if you do not wish to remove it.
-python tools/extract_pocket_by_ligand.py data/proto_train/pocket/ data/proto_train/ligand/ 0 && mv data/proto_train/pocket/output/* data/proto_train/pocket
+python tools/extract_pocket_by_ligand.py data/proto_test/pocket/ data/proto_test/ligand/rcsb/ 0 && mv data/proto_test/pocket/output/*.pdb data/proto_test/pocket/
 
-# for later (energy model)
-# python3 -u train.py 
-# cd /data
-# unzip prototype_model_data.zip
-# -data_path /proto_train.csv \
-# -work_path /proto_train \
-# -ligand ligand/rcsb \
-# -seed 1111 \
-# -filter_type normal \
-# -native_sampler 0 \
-# -Code Energy \
-# -batch_size 24 \
-# -gpus 4 \
-# -method Gnina2 \
-# -patience 30 \
-# -early_stop_metric val_loss \
-# -early_stop_mode min \
-# -affinity_pre \
-# --warmup_updates 11000 \
-# --peak_lr 0.0012 \
-# --n_layers 6 \
-# --hidden_dim 128 \
-# --num_heads 8 \
-# --dropout_rate 0.1 \
-# --attention_dropout_rate 0.1 \
-# --weight_decay 1e-5 \
-# --energy_mode True
+
+# first manipulation to get uniprot and pIC50 values
+python3 -u scripts/get_IC50_uniprot_test.py
+# Naming convention to match the OG data
+python3 -u scripts/rename_docked_sdf_test.py 
+# split the ligand_file_name into target separately
+python3 -u scripts/create_target_test.py 
+

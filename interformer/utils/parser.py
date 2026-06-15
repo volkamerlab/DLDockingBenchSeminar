@@ -58,7 +58,9 @@ def get_args():
     parser.add_argument('-patience', type=int, default=10, required=False)
     parser.add_argument('-early_stop_metric', type=str, default='val_loss', required=False)
     parser.add_argument('-early_stop_mode', type=str, default='min', required=False)
-    parser.add_argument('-num_epochs', type=int, default=2000, required=False)
+    # parser.add_argument('-num_epochs', type=int, default=2000, required=False)
+    #changing epochs to 2 to make sure prototype file handling is working correctly
+    parser.add_argument('-num_epochs', type=int, default=2, required=False)
     parser.add_argument('-main_loop', type=int, default=1, required=False)
     parser.add_argument('-precision', type=int, default=16, required=False)
     # sampler

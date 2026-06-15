@@ -52,21 +52,26 @@ class BindingData(Dataset):
             return train_pdbs
 
         # read splits files
-        data_dir = os.path.dirname(self.args['data_path']) + f'/{self.args["split_folder"]}'
-        train_pdbs = read_strip(f'{data_dir}/timesplit_no_lig_overlap_train')
-        train_pdbs = exclude_coreset(train_pdbs, f'{data_dir}/coresetlist')
-        valid_pdbs = read_strip(f'{data_dir}/timesplit_no_lig_overlap_val')
-        test_pdbs = read_strip(f'{data_dir}/timesplit_test')
-        train_indices = df[df['Target'].isin(train_pdbs)].index.tolist()
-        valid_indices = df[df['Target'].isin(valid_pdbs)].index.tolist()
-        test_indices = df[df['Target'].isin(test_pdbs)].index.tolist()
-        if self.args['inference']:
-            print("[BindingData]-Split: Inference Mode, set all data to testset.")
-            train_indices, valid_indices = [], []
-            test_indices = df.index.tolist()
-        train, valid, test = Subset(data, train_indices), Subset(data, valid_indices), Subset(data, test_indices)
-        print(f"train:{len(train)}/valid:{len(valid)}/test:{len(test)}")
-        return train, valid, test
+        # data_dir = os.path.dirname(self.args['data_path']) + f'/{self.args["split_folder"]}'
+        # train_pdbs = read_strip(f'{data_dir}/timesplit_no_lig_overlap_train')
+        # train_pdbs = read_strip(f'{data_dir}/new_timesplit_no_lig_overlap_train.txt')
+        # Dataset that is not to be addressed
+        # train_pdbs = exclude_coreset(train_pdbs, f'{data_dir}/coresetlist')
+        # valid_pdbs = read_strip(f'{data_dir}/timesplit_no_lig_overlap_val')
+        # Not to be considered for training
+        # test_pdbs = read_strip(f'{data_dir}/timesplit_test')
+        # train_indices = df[df['Target'].isin(train_pdbs)].index.tolist()
+        # valid_indices = df[df['Target'].isin(valid_pdbs)].index.tolist()
+        # test_indices = df[df['Target'].isin(test_pdbs)].index.tolist()
+        # if self.args['inference']:
+        #     print("[BindingData]-Split: Inference Mode, set all data to testset.")
+        #     train_indices = []
+        #     # valid_indices = []
+        #     # test_indices = df.index.tolist()
+        # train = Subset(data, train_indices)
+        # valid, test = Subset(data, train_indices), Subset(data, valid_indices), Subset(data, test_indices)
+        # print(f"train:{len(train)}/valid:{len(valid)}/test:{len(test)}")
+        # return train, valid, test
 
     def load_data(self, cache_path):
         # load cached file
@@ -100,8 +105,28 @@ class BindingData(Dataset):
             # Create Complex Data
             data = self._pre_complex(df, cache_path, n_jobs)
         #
+        # if istrain:
+            # we already have splitted data, so we are now going to feed it via Hamza's data
+            # self.datasets = self.split(data, self.df)
+            # Force the dataset to just use the data it parsed without doing standard splits
+        # We wrap it in a Subset-like structure if the training loop expects a tuple,
+        # otherwise we just assign it.
+        
+        # If the code downstream expects a tuple of (train, val, test) when istrain=True,
+        # we will just assign the whole dataset to train, and leave val/test empty.
         if istrain:
-            self.datasets = self.split(data, self.df)
+             from data.data_stucture.lmdb_dataset import Subset
+             all_indices = list(range(len(data)))
+             
+             # Option A: If you want 10% of your train.csv to be used as Validation
+             val_split_idx = int(len(data) * 0.85)
+             train_subset = Subset(data, all_indices[:val_split_idx])
+             val_subset = Subset(data, all_indices[val_split_idx:])
+             test_subset = Subset(data, []) # We will test separately
+             
+             self.datasets = (train_subset, val_subset, test_subset)
+             print(f"[BindingData] Custom Split: train:{len(train_subset)}/valid:{len(val_subset)}/test:{len(test_subset)}")
+             
         else:
             self.datasets = data
         print(f"[Bindingdata] Total Samples:{len(self.df)}")

@@ -1,15 +1,26 @@
 import os
-
+import copy
 import pytorch_lightning as pl
 import torch
 import torch.distributed as dist
 from pytorch_lightning import loggers as pl_loggers
 from pytorch_lightning.strategies import DDPStrategy
 
-from interformer.data.data_process import GraphDataModule
-from interformer.utils.cluster import auto_configure_nccl
-from interformer.utils.parser import get_args
-from interformer.utils.train_utils import load_model, param_count, get_callbacks
+from data.data_process import GraphDataModule
+from utils.cluster import auto_configure_nccl
+from utils.parser import get_args
+from utils.train_utils import load_model, param_count, get_callbacks
+
+# adjusted file paths
+from data.sampler import per_target_balance_sampler, LISA_sampler, Fullsampler
+from data.dataset.bindingdata import BindingData
+from data.dataset.ppi_dataset import PPIData
+import torch
+from functools import partial
+from torch.utils.data import distributed
+from pytorch_lightning import LightningDataModule
+from data.collator.inter_collate_fn import interformer_collate_fn
+from data.collator.ppi_collate_fn import ppi_collate_fn, ppi_residue_collate_fn
 
 print(f"# Torch Version:{torch.__version__}")
 
@@ -49,12 +60,21 @@ def main(args):
         num_nodes=args['num_nodes'],
     )
     trainer.fit(model, datamodule=dm)
-    # Final Test
-    print(f"# Testing by:{trainer.checkpoint_callback.best_model_path}")
-    test_result = trainer.test(model, ckpt_path='best', datamodule=dm)
-    print(test_result)
-    print("+" * 100)
-    print("*********END of One Model*******")
+    Final Test
+    # print(f"# Testing by:{trainer.checkpoint_callback.best_model_path}")
+    # test_result = trainer.test(model, ckpt_path='best', datamodule=dm)
+    # print(test_result)
+    # print("+" * 100)
+    # print("*********END of One Model*******")
+    ## suggested modification on the training procedure for having already completed train/test split(Hamza)
+    test_args = copy.deepcopy(args)
+    test_args['data_path'] = 'data/proto_test_final.csv' 
+    Create a new GraphDataModule for the test set
+    test_dm = GraphDataModule(test_args)
+    ------------------
+    
+    # Evaluate using the new test datamodule
+    test_result = trainer.test(model, ckpt_path='best', datamodule=test_dm)
     return test_result
 
 
