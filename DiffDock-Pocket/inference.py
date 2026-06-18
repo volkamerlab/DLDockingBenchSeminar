@@ -499,7 +499,7 @@ if __name__ == "__main__":
     mp_method = "spawn"
     sharing_strategy = "file_system"
     logging.debug(f"Torch multiprocessing method: {mp_method}. Sharing strategy: {sharing_strategy}")
-    torch.multiprocessing.set_start_method(mp_method)
+    torch.multiprocessing.set_start_method(mp_method, force=True)
     torch.multiprocessing.set_sharing_strategy(sharing_strategy)
 
     parser = _get_parser()
