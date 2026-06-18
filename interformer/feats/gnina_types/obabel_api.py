@@ -180,7 +180,8 @@ if __name__ == '__main__':
 
     # root = '/opt/home/revoli/data_worker/raw_data/redock'
     # uff_file = 'redock_uff_all'
-    root = '/opt/home/revoli/data_worker/v2019-docking'
+    #lakben
+    root = '/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train'
     uff_file = 'all_uff_ligands'
     ######
     # training, 2qbr=910, 7rfs=4WI
@@ -215,10 +216,11 @@ if __name__ == '__main__':
         input = [pdb_id, pdb_id, l_first, pdb_mol]
         merge_data = merge_sdf_pdb_by_rdkit(input)
         merge1_data = merge_sdf_pdb_by_rdkit(input)
-        # load uff_ligand
 
+        # load uff_ligand
+        #config for train lakben
         merge_data['uff_ligand'] = \
-            load_by_rdkit(f'/opt/home/revoli/data_worker/v2019-docking/uff/{uff_file}.sdf')[uff_name][0]
+            load_by_rdkit(f'/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/uff/{uff_file}.sdf')[uff_name][0]
         merge1_data['uff_ligand'] = merge_data['uff_ligand']
         # generate feature
         feats = obabel_mol_parser(merge_data, PLIPAtomFeaturizer(), PLIPEdgeFeaturizer(interaction_angle=True),

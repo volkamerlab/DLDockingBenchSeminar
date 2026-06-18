@@ -32,6 +32,7 @@ def print_res_info(atoms):
 
 if __name__ == '__main__':
     append_residues = ['ZN', 'CL', 'MG']
+    #lakben
     root = '/opt/home/revoli/data_worker/interformer/test/posebuster/inter_posebuster'
     pdb = '8H0M'
     pdb_mol = Chem.MolFromPDBFile(f'{root}/pocket/{pdb}_pocket.pdb', sanitize=False, removeHs=True)

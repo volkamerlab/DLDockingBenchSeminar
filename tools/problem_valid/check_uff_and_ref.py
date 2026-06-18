@@ -65,7 +65,7 @@ def align(ref_f, query_f):
 
 # check their consistency
 if __name__ == '__main__':
-    root = '/opt/home/revoli/eva/Interformer/energy_output'
+    root = 'Interformer/energy_output'
     os.makedirs(f"{root}/align", exist_ok=True)
     uff_files = glob.glob(f"{root}/uff/*")
     all = []
@@ -84,7 +84,7 @@ if __name__ == '__main__':
         res = [pdb] + list(res[1:])
         all.append(res)
     all.sort(key=lambda x: x[1], reverse=True)
-    # merge with docking results
+    # merge with docking results lakben
     df = pd.read_csv('/opt/home/revoli/eva/Interformer/energy_output/stat_ligand_reconstructing.csv')
     df = df.groupby('pdb_id').min()
     for item in all:

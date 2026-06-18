@@ -1,3 +1,6 @@
+'''Comments were made with assistance from Gemini, verified by Lakshana & Ben
+
+'''
 import os
 import pickle
 from rdkit import Chem
@@ -15,7 +18,21 @@ import shelve
 
 
 class AtomHead(nn.Module):
+    """Auxiliary task head for predicting node-level atom types.
+
+    This module applies a Multi-Layer Perceptron (FeedForward) over 
+    the learned node representations to predict the specific atom type (e.g., Carbon, 
+    Oxygen, Nitrogen) for each node in the complex. This acts as a regularization task 
+    to force the Transformer to learn chemically aware embeddings.
+    """
     def __init__(self, hidden_dim, node_feat_size, dropout_rate=0.2):
+        """Initializes the AtomHead.
+
+        Args:
+            hidden_dim (int): Dimensionality of the input node representations.
+            node_feat_size (int): Output dimension representing the number of unique atom types to classify.
+            dropout_rate (float, optional): Dropout probability for regularization. Defaults to 0.2.
+        """
         super(AtomHead, self).__init__()
         self.node_ln = nn.LayerNorm(hidden_dim)
         self.atom_type_proj = PositionwiseFeedForward(hidden_dim, hidden_dim * 4, d_out=node_feat_size,
@@ -24,9 +41,21 @@ class AtomHead(nn.Module):
         self.init_param()
 
     def init_param(self):
+        """Applies orthogonal or standard initialization to the module weights."""
         self.apply(lambda module: init_embedding(module))
 
     def forward(self, node_feats, node_x):
+         """Computes the cross-entropy loss for atom type prediction.
+
+        Args:
+            node_feats (torch.Tensor): The learned contextual node features from the Transformer. 
+                                       Shape: [batch_size, num_nodes + 1, hidden_dim].
+            node_x (torch.Tensor): The ground truth atom type indices. 
+                                   Shape: [batch_size, num_nodes, 1].
+
+        Returns:
+            torch.Tensor: The computed, scaled cross-entropy loss (scalar).
+        """
         node_x = node_x.squeeze(-1).long()
         node_feats = node_feats[:, 1:, :]  # exclude vn node
         atom_type_hat = self.atom_type_proj(node_feats)
@@ -36,7 +65,23 @@ class AtomHead(nn.Module):
 
 
 class VinaScoreHead(nn.Module):
+    """Calculates binding energy estimates using a Gaussian Mixture Density Network.
+
+    This module is designed to replicate/approximate empirical scoring functions 
+    (like AutoDock Vina) by predicting Gaussian probability distributions for 
+    van der Waals (vdW), hydrophobic, and hydrogen bond interactions between 
+    protein and ligand atom pairs.
+    """
     def __init__(self, hidden_dim, node_featurizer, dropout=0.2, energy_output_folder='', edge_output_layer=True):
+        """Initializes the VinaScoreHead architecture and interaction tables.
+
+        Args:
+            hidden_dim (int): The dimensionality of the node and pair features.
+            node_featurizer (object): Featurization object containing atomic radius definitions.
+            dropout (float, optional): Dropout probability for the MLPs. Defaults to 0.2.
+            energy_output_folder (str, optional): Target directory to save serialized Gaussian predictions.
+            edge_output_layer (bool, optional): Toggles the integration of a custom edge output projection. Defaults to True.
+        """
         super(VinaScoreHead, self).__init__()
         self.num_atom_types = 29
         self.train_dist_cut_off = 4.0  # cut_off + 1.9 * 2 = real_distance, approximately 8.0 A
@@ -56,14 +101,27 @@ class VinaScoreHead(nn.Module):
         self.make_hydro_hbond_table()
         # Output Energy
         self.energy_output_folder = energy_output_folder
-        print(f"# [Interformer] energy_output_fodler:{energy_output_folder}")
+        print(f"# [Interformer] energy_output_folder:{energy_output_folder}")
         # Ablation Study
         self.use_edge_output_layer = edge_output_layer
 
     def init_param(self):
+        """Applies orthogonal or standard initialization to the module weights."""
         self.apply(lambda module: init_embedding(module))
 
     def make_vdw_table(self, node_featurizer):
+        """Constructs a non-trainable lookup table for summed Van der Waals radii.
+
+        Calculates the theoretical ideal interaction distance between every possible 
+        pair of atom types based on their predefined van der Waals radii.
+
+        Args:
+            node_featurizer (object): Data object holding `xs_radius` for 28 atom types.
+
+        Returns:
+            nn.Embedding: A frozen PyTorch embedding layer mapping pair-type indices 
+                          to their summed vdW radius distances.
+        """
         edge_space = 29 ** 2
         table = torch.zeros([edge_space, 1])
         for i in range(28):
@@ -78,6 +136,12 @@ class VinaScoreHead(nn.Module):
         return vdw_embedding
 
     def make_hydro_hbond_table(self):
+        """Constructs non-trainable boolean lookup tables for Hydrophobic and H-Bond pairs.
+
+        Defines logical masks for interaction pairs capable of forming hydrophobic contacts 
+        (e.g., C-C, C-F) and hydrogen bonds (Acceptor-Donor pairs). These frozen tables 
+        are registered as model embeddings.
+        """
         edge_space = 29 ** 2
         hydro_list = [3, 5, 18, 19, 20, 21]  # CH, ACH, F, CL, B, I
         acceptor_list = [9, 10, 13, 14]  # NDA, NA, ODA, OA
@@ -106,6 +170,17 @@ class VinaScoreHead(nn.Module):
         self.hbond_table = hbond_embedding
 
     def atom_type2pair_type(self, x: torch.Tensor) -> torch.Tensor:
+        """Converts individual node atom-type IDs into a 2D matrix of Pair-Type IDs.
+
+        Transforms 1D node arrays into a 2D N-by-N interaction grid where the integer 
+        value represents a specific combination of two interacting atom types.
+
+        Args:
+            x (torch.Tensor): Node atom type tensor. Shape: [batch_size, num_nodes, 1].
+
+        Returns:
+            torch.Tensor: Pair-type index matrix. Shape: [batch_size, num_nodes, num_nodes].
+        """
         # [b, n, 1]
         atoms_type_x = torch.where(x >= self.num_atom_types, x - self.num_atom_types,
                                    x)  # 29-th is the 0-idx in pocket-atoms-type
@@ -113,6 +188,15 @@ class VinaScoreHead(nn.Module):
         return pair_type
 
     def edge_output_layer(self, node_feats, pair_feats):
+        """Fuses updated node representations with topological pair embeddings.
+
+        Args:
+            node_feats (torch.Tensor): Refined node embeddings from the Transformer.
+            pair_feats (torch.Tensor): Refined edge/pair embeddings from the Transformer.
+
+        Returns:
+            torch.Tensor: The unified interaction pair tensor.
+        """
         pair_feats = pair_feats[:, 1:, 1:, :]  # [b, n, n, h]
         pair_feats = self.pair_ln(pair_feats)
         pair_feats = (pair_feats + pair_feats.transpose(1, 2)) * 0.5  # merge from L->P, and P->L
@@ -126,11 +210,36 @@ class VinaScoreHead(nn.Module):
         return final_pair_feats
 
     def gaussian(self, d, mean, width):
+        """Computes the log probability density of atomic distances under a predicted normal distribution.
+
+        Args:
+            d (torch.Tensor): Radius-adjusted distance matrix tracking the spatial separation 
+                between atom pairs. Shape: [batch_size, num_nodes, num_nodes, 1].
+            mean (torch.Tensor): The learnable, predicted ideal interaction distance peak (mu) 
+                generated by the mean head network. Shape matches or broadcasts to `d`.
+            width (torch.Tensor): The learnable standard deviation (sigma) managing the scoring variance 
+                generated by the sigma head network. Shape matches or broadcasts to `d`.
+
+        Returns:
+            torch.Tensor: The calculated log probability density matrix (log-likelihood) 
+                for the given conformation.
+        """
         normal = torch.distributions.Normal(mean, width)
         logik = normal.log_prob(d.expand_as(normal.loc))
         return logik
 
     def mdn_loss(self, logPro, pi_soft, close_pairs_mask, y):
+        """Computes the Negative Log-Likelihood loss for the Mixture Density Network.
+
+        Args:
+            logPro (torch.Tensor): The log probabilities of the spatial distances across mixture components.
+            pi_soft (torch.Tensor): Softmax-normalized mixing coefficients (weights) for the Gaussians.
+            close_pairs_mask (torch.Tensor): Boolean mask ensuring loss is only calculated on atoms within interaction range.
+            y (torch.Tensor): Ground truth binding affinities (used here as an activity mask).
+
+        Returns:
+            tuple: A pair of mean MDN loss (scalar) and the positive-only component of the loss (scalar).
+        """
         close_pairs_mask = close_pairs_mask.squeeze(-1)  # [b, n, n]
         y_mask = (y >= 0.).view(-1)  # [b, 1, 1]
         b, n, _ = close_pairs_mask.shape
@@ -153,6 +262,25 @@ class VinaScoreHead(nn.Module):
         return ce_mean_loss, ce_pos_loss
 
     def GaussianScore(self, d, vdw_pair, pair_type, pair_mask, ligand_mask, pair_emb, batched_data):
+        """Orchestrates the Mixture Density Network to calculate total interaction energy.
+
+        Predicts Gaussian parameters (Mean, Sigma, Weight) for VDW, Hydrophobic, and 
+        Hydrogen Bond interaction types. Masks out chemically impossible interactions, 
+        computes the overall likelihood of the 3D conformation, and saves predictions 
+        to an external database if required.
+
+        Args:
+            d (torch.Tensor): Distance matrix adjusted by optimal vdW radii.
+            vdw_pair (torch.Tensor): Matrix of summed ideal vdW radii for atom pairs.
+            pair_type (torch.Tensor): Matrix tracking integer pair-type indices.
+            pair_mask (torch.Tensor): Intermolecular mask (1 if protein-ligand pair, else 0).
+            ligand_mask (torch.Tensor): Mask delineating ligand nodes.
+            pair_emb (torch.Tensor): Learned Transformer pair representations.
+            batched_data (dict): The active data payload holding identifiers and ground truths.
+
+        Returns:
+            tuple: The calculated total MDN loss and the positive MDN loss component.
+        """
         #
         close_pairs_mask = (d < self.train_dist_cut_off) & pair_mask
         hydro_pair = self.hydro_table(pair_type).bool()  # & (d < 1.5)
@@ -186,6 +314,8 @@ class VinaScoreHead(nn.Module):
         if self.energy_output_folder:
             target = batched_data['pdb'][0]
             output_f = f'{self.energy_output_folder}/gaussian_predict/{target}_G.db'
+            #added this because authors decided to delete the energy directories beforehand - lakben
+            os.makedirs(os.path.dirname(output_f), exist_ok=True)
             with shelve.open(output_f) as db:
                 last_id = len(db) if len(db) else 0
                 print(f"[Interformer] Gussian Score ->{target}-{last_id}")
@@ -204,6 +334,11 @@ class VinaScoreHead(nn.Module):
         return mean_mdn_loss, mdn_pos_loss
 
     def forward(self, node_feats, pair_feats, batched_data):
+        """Defines the execution flow for the Vina Score calculation.
+
+        Computes the relative physical distance ('d') shifted by standard vdW constraints,
+        and delegates computation to the Gaussian MDN scoring method.
+        """
         D, x, pair_mask, ligand_mask = batched_data['D'], batched_data['x'], batched_data['pair_mask'], batched_data[
             'ligand_mask']
         # Edge output Layer
@@ -222,6 +357,16 @@ class VinaScoreHead(nn.Module):
 
 
 class Interformer(SBDD):
+    """The Interformer core network architecture.
+
+    A structure-based drug design (SBDD) deep learning model based on the Graphormer 
+    architecture. It models molecular complexes via a two-stage transformer protocol:
+    1. Intra-Transformer: Evaluates localized physics (internal atom-to-atom relationships).
+    2. Inter-Transformer: Evaluates broad interaction profiles (ligand-to-pocket relationships).
+
+    It supports multiple execution modes, predicting global binding affinities (pIC50), 
+    ranking generated ligand poses, and computing pseudo-empirical interaction energies.
+    """
     def __init__(
         self,
         args
@@ -297,6 +442,17 @@ class Interformer(SBDD):
         self.decoder_step = 1
 
     def forward(self, batched_data, perturb=None, istrain=True):
+        """Passes formatted complex data through the two-stage Transformer layout.
+
+        Args:
+            batched_data (dict): Payload containing node/edge spatial data and attention masks.
+            perturb (None, optional): Perturbation parameters (unused here).
+            istrain (bool, optional): Training phase toggle.
+
+        Returns:
+            list: List of calculated loss/prediction tensors varying by active mode 
+                  (Affinity, Pose Selection, Energy).
+        """
         # Step1. Preprocessing Embedding
         node_feats = self.complex_feat_layer(batched_data)  # [b, n, d]
         intra_edge_feats = self.complex_feat_layer.edge_feat(batched_data['intra_D'], batched_data)  # [b, h, n, n]
@@ -338,6 +494,16 @@ class Interformer(SBDD):
         return final
 
     def task_layer(self, output_node, output_edge, batched_data):
+        """Funneled readout function that routes Transformer outputs to final task prediction heads.
+
+        Args:
+            output_node (torch.Tensor): Final refined node representations from encoders.
+            output_edge (torch.Tensor): Final refined edge representations from encoders.
+            batched_data (dict): Core batch metadata.
+
+        Returns:
+            list: Aggregated collection of loss metrics (e.g., [affinity, gscore_loss, atom_loss]).
+        """
         # Step4. Pooling Graph-level output
         vn_node = self.final_ln(output_node[:, 0, :])
         affinity = self.affinity_proj(vn_node)  # affinity must be > 0.
@@ -363,6 +529,17 @@ class Interformer(SBDD):
 
     @staticmethod
     def add_model_specific_args(args):
+        """Attaches model-specific command-line hyperparameters to the global parser.
+
+        Defines network dimensions, dropout rates, Radial Basis Function (RBF) limits, 
+        and structural ablation switches specifically allocated for the Interformer setup.
+
+        Args:
+            args (argparse.ArgumentParser): The global argument parser instance.
+
+        Returns:
+            argparse.ArgumentParser: The updated parser group containing Interformer configurations.
+        """
         parser = args.add_argument_group("Interformer")
         # dim
         parser.add_argument('--n_layers', type=int, default=6)
@@ -392,13 +569,24 @@ class Interformer(SBDD):
 if __name__ == '__main__':
     from utils.parser import get_args
     from data.data_process import GraphDataModule
+    """Execution block for localized model integration testing and pipeline validation.
+
+    Initializes runtime arguments in debug/inference configuration, invokes the
+    underlying `GraphDataModule` to stream processed complex batches, builds an Interformer
+    instance, and runs a single forward pass over a mock structural sample to verify 
+    tensor dimensionalities. 
+    
+    Note:
+        Contains commented blueprint matrices for validating SE(3) equivariance 
+        (checking if the network handles physical 3D rotations/translations uniformly).
+    """
 
     args = get_args()
     args['debug'] = True
     args['inference'] = True
     # dataset
-    args['work_path'] = '/opt/home/revoli/data_worker/interformer/poses'
-    args['data_path'] = '/opt/home/revoli/data_worker/interformer/train/100.csv'
+    args['work_path'] = 'data/proto_train/'
+    args['data_path'] = 'data/proto_train_final.csv'
     args['energy_mode'] = True
 
     dm = GraphDataModule(args, istrain=False)

@@ -258,7 +258,7 @@ if __name__ == '__main__':
     pdb = '2qbr'
     lig_rdkit = Chem.SDMolSupplier('/opt/home/revoli/data_worker/v2019-docking/uff/infer_uff.sdf')[
         14]  # 7rfs=8, 2qbr=14
-    inter_docked_ligand = Chem.SDMolSupplier(f'/opt/home/revoli/data_worker/v2019-docking/ligands/{pdb}_docked.sdf')[0]
+    inter_docked_ligand = Chem.SDMolSupplier(f'/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/ligand/{pdb}_docked.sdf')[0]
     # Torsion-Angle-Alignment
     coords_pred = inter_docked_ligand.GetConformer().GetPositions()
     Z_pt_cloud = coords_pred

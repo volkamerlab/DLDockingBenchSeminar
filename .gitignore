@@ -1,3 +1,7 @@
+*.pdb
+*.sdf
+*wandb
+*.ckpt
 evaluation/*
 data/*
 *.DS_Store
@@ -6,7 +10,15 @@ poses/*
 *.err
 *.log
 *.out
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
+*.db.dat
+*.db.dir
+*.db.bak
+energy_train/*
+energy_train_copy/*
+#ignore all .pdb's in root dir until we get it fixed.
+/*.pdb
+
+# Below was created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,python
 
 ### Python ###
@@ -200,4 +212,4 @@ pyrightconfig.json
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,pythoninterformer_train.tar.gz

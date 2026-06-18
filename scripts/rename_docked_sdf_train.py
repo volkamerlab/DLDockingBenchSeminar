@@ -1,3 +1,13 @@
+'''
+obabel produced suffixes with '_ligand_refined.sdf', but our scripts required that the suffix 
+should have '_docked.sdf'.
+
+Example scripts that use the '_docked.sdf' format:
+test_pipline.py
+obabel_api.py
+bindingdata.py
++ more...
+'''
 import os
 
 # Define the directory containing your SDF files

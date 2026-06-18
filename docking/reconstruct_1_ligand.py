@@ -2,8 +2,14 @@
 #
 # Copyright @ 2022 Tencent.com
 
+"""Ligand Structure Reconstruction CLI Pipeline.
 
-"""
+This script provides a command-line interface (CLI) to orchestrate the 
+geometric reconstruction of a single docked ligand. It takes 3D structural 
+files, reference models, and model-predicted atomic interaction scores, 
+then balances intramolecular strain and intermolecular collision penalties 
+to output a physically optimized molecular conformation.
+Comments were made with assistance from Gemini, verified by Lakshana & Ben
 """
 
 import argparse
@@ -15,8 +21,18 @@ LOGGER = logging.getLogger(__name__)
 
 
 def get_args_and_mainparser():
+    """Initializes and configures the command-line argument parser.
+
+    Defines the required structural paths (SDF, PDB, PKL matrices) and 
+    trainable energetic weighting constraints necessary to evaluate and 
+    optimize the target protein-ligand spatial network.
+
+    Returns:
+        tuple: A pair containing:
+            - args (argparse.Namespace): Extracted command-line argument properties.
+            - mainparser (argparse.ArgumentParser): The configured parser instance.
     """
-    """
+
     mainparser = argparse.ArgumentParser()
 
     mainparser.add_argument(
@@ -56,7 +72,11 @@ def get_args_and_mainparser():
 
 
 def main() -> None:
-    """
+    """Configures the execution environment and invokes the reconstruction pipeline.
+
+    Sets up the logging level to tracking specifications, parses the incoming 
+    terminal flags, and handles execution handoff straight to the core backend 
+    reconstruction routine.
     """
     logging.basicConfig()
     logging.getLogger(__name__).setLevel(logging.INFO)

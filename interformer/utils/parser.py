@@ -9,16 +9,23 @@ from utils.train_utils import get_model_arg
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-
-def set_random_seed(seed=0):
-    import random
-    import numpy as np
-    """Set random seed.
+"""
+Set random seed.
     Parameters
     ----------
     seed : int
         Random seed to use. Default to 0.
-    """
+
+    - random is part of the Python core.
+    - numpy is a C-extension library.
+    - torch is a DL framework with its own hardware-accelerated kernels.
+
+    Need to ensure that they start at the same point (0), and generate the same behaviour of randomness (for reproducibility purposes)
+"""
+def set_random_seed(seed=0):
+    import random
+    import numpy as np
+    
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -27,6 +34,64 @@ def set_random_seed(seed=0):
 
 
 def get_args():
+    """
+    Parses command-line arguments for the SBDD (Structure-Based Drug Design) 
+    prediction pipeline.
+
+    Initializes an ArgumentParser to handle configuration for model selection, 
+    data paths, training hyperparameters, DDP (Distributed Data Parallel) settings, 
+    and inference parameters.
+
+    Returns:
+        argparse.Namespace: A namespace object containing all parsed arguments 
+        and their assigned values.
+
+    Args (CLI Options):
+        -model (str): The model architecture to use (default: 'Interformer').
+        -debug (bool): Flag to enable debug mode.
+        -data_path (str): Path to the training CSV file.
+        -work_path (str): Working directory for training data (default: 'data/proto_train').
+        -split_folder (str): Directory containing dataset split files.
+        -ligand_folder (str): Directory containing ligand data.
+        -pocket_path (str): Directory for pocket and ligand files.
+        -use_mid (bool): Flag to use middle-point data.
+        -affinity_pre (bool): Use affinity-specific parameters for amino acid collection.
+        -batch_size (int): Number of samples per batch.
+        -worker (int): Number of workers for the data loader.
+        -n_jobs (int): Number of parallel jobs for processing.
+        -method (str): Methodology identifier (default: 'Gnina2').
+        -Code (str): Name of the training code version.
+        -dataset (str): Type of dataset (default: 'sbdd').
+        -seed (int): Random seed for reproducibility.
+        -clip (float): Gradient clipping threshold.
+        -checkpoint (str): Directory to save model checkpoints.
+        -gpus (int): Number of GPUs to use on the current machine.
+        -patience (int): Epochs to wait for improvement before early stopping.
+        -early_stop_metric (str): Metric used for early stopping.
+        -early_stop_mode (str): Direction of optimization ('min' or 'max').
+        -num_epochs (int): Number of training epochs.
+        -main_loop (int): Loop index or iteration count.
+        -precision (int): Floating point precision (e.g., 16 or 32).
+        -per_target_sampler (int): Config for per-target sampling.
+        -target_wise_sampler (int): Config for target-wise sampling.
+        -native_sampler (int): Config for native data sampling.
+        -filter_type (str): Type of data filtering applied.
+        -use_ff_ligands (str): Force field type for ligands (default: 'uff').
+        -neg_weight (float): Weight applied to negative samples.
+        -num_nodes (int): Number of nodes for DDP training.
+        -num_gpus (int): Total number of GPUs in the cluster.
+        -per_target (bool): Enable per-target Pearson metric calculation.
+        -metric_name (list): List of metrics to evaluate.
+        -test_csv (list): List of file paths to test CSVs.
+        -reload (bool): Flag to turn off checkpoint reloading.
+        -ensemble (list): List of checkpoints to use for ensemble predictions.
+        -inference (bool): Flag to set mode to inference.
+        -posfix (str): Filename suffix for records.
+        -energy_output_folder (str): Directory to save energy outputs.
+        -uff_as_ligand (bool): Use UFF as reference ligand for predictions.
+        -vs (bool): Virtual screening mode (loads ligand at once for large files).
+    """
+
     parser = argparse.ArgumentParser(description='SBDD Prediction')
     parser.add_argument('-model', type=str,
                         choices=model_list,
@@ -34,7 +99,7 @@ def get_args():
     parser.add_argument('-debug', default=False, action='store_true')
     # Common Data
     parser.add_argument('-data_path', type=str, required=False, default="", help='train csv file.')
-    parser.add_argument('-work_path', default='/opt/home/revoli/data_worker', type=str, required=False)
+    parser.add_argument('-work_path', default='data/proto_train', type=str, required=False)
     parser.add_argument('-split_folder', default='diffdock_splits', type=str, required=False)
     parser.add_argument('-ligand_folder', default='ligand', type=str, required=False)
     parser.add_argument('-pocket_path', type=str, required=False, default="pocket", help='pocket and ligand folder.')

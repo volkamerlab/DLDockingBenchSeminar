@@ -49,6 +49,7 @@ class PPIData:
         df.loc[train_indices, 'Group'] = 'Training'
         df.loc[valid_indices, 'Group'] = 'Validation'
         df.loc[test_indices, 'Group'] = 'Testing'
+        #lakben what is this lol
         df.to_csv('/mnt/superCeph2/private/user/revoli/pp_docking/ppi-data/tmp_ppi/debug.csv', index=False)
         return train, valid, test
 

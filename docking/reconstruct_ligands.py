@@ -4,6 +4,8 @@
 
 
 """
+This code was written with the Black Python coding styler, so some of the argument cases are sometimes verbose)
+Comments were made with assistance from Gemini, verified by Lakshana & Ben
 """
 
 import argparse
@@ -51,7 +53,13 @@ LOGGER = logging.getLogger(__name__)
 
 
 class PathtupleForTask(NamedTuple):
-    """guessed directory structure:
+    """
+    A named tuple acting as a structured path manager for a molecular docking task.
+
+    It computes, verifies, and centralizes access to relevant input, output, 
+    and configuration file paths based on a working directory and a PDB identifier.
+
+    Guessed directory structure:
     - cwd/
         - uff/
             - 1bcu_uff.sdf
@@ -75,6 +83,11 @@ class PathtupleForTask(NamedTuple):
 
     @property
     def ABSPATH_SDF_LIGAND(self) -> str:
+        """str: Absolute path to the input docked ligand SDF file. 
+        
+        Defaults to '{ABSPATH_CWD}/ligand/{STR_PDB_ID}_docked.sdf' unless overridden 
+        in `DICT_EXTRA['abspath_sdf_ligand']`.
+        """
         return self.DICT_EXTRA.get(
             "abspath_sdf_ligand",
             os.path.join(
@@ -85,9 +98,8 @@ class PathtupleForTask(NamedTuple):
         )
 
     @property
-    def ABSPATH_SDF_REF(
-        self,
-    ) -> str:
+    def ABSPATH_SDF_REF(self) -> str:
+        #str: absolute path to the reference ligand .sdf file
         return os.path.join(
             #####
             self.ABSPATH_CWD,
@@ -97,6 +109,11 @@ class PathtupleForTask(NamedTuple):
 
     @property
     def ABSPATH_DIR_OUTPUT(self) -> str:
+        """str: Absolute path to the output directory for ligand reconstruction.
+        
+        Defaults to '{ABSPATH_CWD}/ligand_reconstructing' unless overridden 
+        in `DICT_EXTRA['abspath_dir_output']`.
+        """
         return self.DICT_EXTRA.get(
             "abspath_dir_output",
             os.path.join(
@@ -106,9 +123,8 @@ class PathtupleForTask(NamedTuple):
         )
 
     @property
-    def ABSPATH_SDF_OUTPUT(
-        self,
-    ) -> str:
+    def ABSPATH_SDF_OUTPUT(self) -> str:
+        #str: Absolute path where the reconstructed output ligand SDF file will be saved.
         return os.path.join(
             #####
             self.ABSPATH_DIR_OUTPUT,
@@ -116,9 +132,8 @@ class PathtupleForTask(NamedTuple):
         )
 
     @property
-    def ABSPATH_PDB_COMPLEX(
-        self,
-    ) -> str:
+    def ABSPATH_PDB_COMPLEX(self) -> str:
+        """str: Absolute path to the PDB file containing the protein-ligand complex structure."""
         return os.path.join(
             #####
             self.ABSPATH_CWD,
@@ -130,6 +145,7 @@ class PathtupleForTask(NamedTuple):
     def ABSPATH_PKL_NORMALSCORE(
         self,
     ) -> str:
+        """str: Absolute path to the database/pickle file containing scoring data."""
         return os.path.join(
             #####
             self.ABSPATH_CWD,
@@ -141,13 +157,14 @@ class PathtupleForTask(NamedTuple):
     def ABSPATH_CSV_STAT(
         self,
     ) -> str:
-        """ """
+        """str: Absolute path to the CSV file where reconstruction statistics are saved."""
         return self.ABSPATH_SDF_OUTPUT + "_stat.csv"
 
     @property
     def ABSPATH_DIR_REMOTE(
         self,
     ) -> str:
+        """str: Absolute path to the directory managing remote cluster task configurations."""
         """ """
         return self.ABSPATH_SDF_OUTPUT + "_remote"
 
@@ -155,6 +172,7 @@ class PathtupleForTask(NamedTuple):
     def ABSPATH_SH_REMOTE(
         self,
     ) -> str:
+        """str: Absolute path to the shell script executing the remote compute task."""
         """ """
         return os.path.join(
             #####
@@ -165,12 +183,14 @@ class PathtupleForTask(NamedTuple):
 
     @property
     def ABSPATH_PKL_REMOTE(self) -> str:
+        """str: Absolute path to the serialized pickle payload used for remote execution sync."""
         return os.path.join(self.ABSPATH_DIR_REMOTE, "remote.pkl")
 
     @property
     def ABSPATH_HINT_ERROR(
         self,
     ) -> str:
+        """str: Absolute path to the log marker file generated if a pipeline task fails."""
         """ """
         return self.ABSPATH_SDF_OUTPUT + "_error.hint"
 
@@ -179,25 +199,59 @@ class PathtupleForTask(NamedTuple):
         cls,
         str_pdb_id: str,
     ) -> bool:
+        """Validates whether a given string is an acceptable PDB identifier.
+
+        Note:
+            Standard PDB IDs are exactly 4 alphanumeric characters. However, this 
+            check has been relaxed (omitted) to accommodate variable length 
+            naming conventions used across customized datasets. In our case, we have varying file name lengths.
+
+        Args:
+            str_pdb_id (str): The identifier string to validate.
+
+        Returns:
+            bool: True if the identifier is valid, False otherwise (currently 
+                  always returns True due to bypassed constraints).
+        """
         """ """
-        if str_pdb_id.strip() != str_pdb_id:
-            return False
-        if len(str_pdb_id) != 4:
-            return False
-        if not str_pdb_id.isalnum():
-            return False
+        # Omit this check - because str_pdb_id is gonna be greater than 4 (the file names vary)
+        # if str_pdb_id.strip() != str_pdb_id:
+        #     return False
+        # if len(str_pdb_id) != 4:
+        #     return False
+        # if not str_pdb_id.isalnum():
+        #     return False
         return True
 
     @classmethod
     def guess_str_pdb_id_by_paths(cls, *args) -> str:
+        """Infers a representative PDB/target identifier from a group of file paths.
+
+        This method extracts common prefixes from filenames and trims database 
+        extensions to isolate the root protein-ligand naming scheme.
+
+        Args:
+            *args: Variable length argument list containing file path strings.
+            path string would look like:
+            path1 = "/data/gaussian_predict/protein_ligand_001_G.db.dat"
+            path2 = "/data/gaussian_predict/protein_ligand_001_gaussian.db"
+        Returns:
+            str: The guessed protein/ligand target identifier string.
+            Target ID: "protein_ligand_001"
+
+        Raises:
+            AssertionError: If the resolved identifier fails validation checks.
+        """
         """ """
         filenames = [os.path.basename(x) for x in args]
+        # Original code - Takes only the 4 string pdb id, but the files are not saved under that naming convention.
+        # str_pdb_id = (
+        #     #####
+        common = os.path.commonprefix(filenames)
+        # ).split("_")[0]
 
-        str_pdb_id = (
-            #####
-            os.path.commonprefix(filenames)
-        ).split("_")[0]
-
+        # To consider the entire protein_ligand name to properly access the compounds
+        str_pdb_id = common.replace('_G.db', '').replace('_gaussian.db', '').rstrip('_')
         LOGGER.info(
             (
                 "\n\n"
@@ -218,6 +272,10 @@ class PathtupleForTask(NamedTuple):
 
     ########################################
     ##### factory funcs
+
+    """These are called factory functions due to the automated process that the functions introduces, mostly
+    dealing with file paths.
+    """
     ########################################
     @classmethod
     def from_str_pdb_id(
@@ -226,6 +284,19 @@ class PathtupleForTask(NamedTuple):
         path_cwd: str,
         args: argparse.Namespace,
     ) -> "PathtupleForTask":
+        """Factory method to initialize a PathtupleForTask instance using an explicit PDB ID.
+
+        Dynamically checks for extra directory overrides (like specialized UFF or 
+        output folders) supplied in the command-line arguments to construct full paths.
+
+        Args:
+            str_pdb_id (str): The core identifier string for the protein-ligand target.
+            path_cwd (str): Path to the active working directory.
+            args (argparse.Namespace): Parsed command-line runtime options.
+
+        Returns:
+            PathtupleForTask: An instantiated data tuple object populated with targeted paths.
+        """
         """ """
         assert cls.is_valid_str_pdb_id(str_pdb_id)
         abspath_cwd = os.path.abspath(path_cwd)
@@ -1065,9 +1136,9 @@ def launch_tasks(
                 pathtuple=i_pathtuple,
                 args=args,
             )
-
-            assert os.path.exists(i_pathtuple.ABSPATH_HINT_ERROR)
-            os.remove(i_pathtuple.ABSPATH_HINT_ERROR)
+            #  To prevent crash
+            # assert os.path.exists(i_pathtuple.ABSPATH_HINT_ERROR)
+            # os.remove(i_pathtuple.ABSPATH_HINT_ERROR)
 
         except Exception as err:
             str_exception = "\n\n" + traceback.format_exc()

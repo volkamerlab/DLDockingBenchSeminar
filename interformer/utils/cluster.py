@@ -84,15 +84,31 @@ def debug_nccl():
     # os.environ["NCCL_DEBUG_SUBSYS"] = "COLL"
     os.environ["NCCL_DEBUG_SUBSYS"] = "ALL"
 
-
 def auto_configure_nccl():
+    """
+    Automatically configures NCCL environment variables for distributed training.
+
+    Disables InfiniBand (NCCL_IB_DISABLE) and dynamically detects the primary 
+    network interface to set the NCCL_SOCKET_IFNAME if it is not already defined.
+
+    Side Effects:
+        - Modifies os.environ["NCCL_IB_DISABLE"] to "1".
+        - Modifies os.environ["NCCL_SOCKET_IFNAME"] based on system route detection.
+        - Prints the detected interface name to standard output.
+
+    Returns:
+        None
+    """
     os.environ["NCCL_IB_DISABLE"] = "1"
+    
     if "NCCL_SOCKET_IFNAME" not in os.environ:
+        # Extract the default interface from the routing table
+        # mainif = main interface to communicate with the NCCL (NVIDIA Collective Communications Library)
         mainif = os.popen("""/sbin/route -n | awk '$1=="0.0.0.0"{print $8; exit}'""").read().strip()
-        # mainif = 'lo'
         os.environ["NCCL_SOCKET_IFNAME"] = mainif
     else:
         mainif = os.environ["NCCL_SOCKET_IFNAME"]
+        
     print(f"setting NCCL_SOCKET_IFNAME to {mainif}")
 
 

@@ -6,7 +6,7 @@ from utils.configure import get_exp_configure
 if __name__ == '__main__':
     # training
     pdb_id = '2rjp'
-    root = '/opt/home/revoli/data_worker/raw_data/redock'
+    root = '/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train'
     test_sdf = f'{root}/ligands/{pdb_id}_docked.sdf'
     pdb_file = f'{root}/pocket/{pdb_id}_pocket.pdb'
     # inference

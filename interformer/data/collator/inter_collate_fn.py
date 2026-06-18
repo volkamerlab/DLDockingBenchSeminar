@@ -19,7 +19,7 @@ def debug_collate(uff_xyz, targets):
     # Checked, the uff_ligand will be placed in the center of pocket
     xyz = uff_xyz[0]
     t = targets[0]
-    sdf = Chem.SDMolSupplier(f'/opt/home/revoli/data_worker/v2019-docking/ligands/{t}_docked.sdf')[0]
+    sdf = Chem.SDMolSupplier(f'/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/ligand/rcsb/{t}_docked.sdf')[0]
     rdkit_write_with_new_coords(sdf, xyz, f'out/reset_mass_{t}.sdf')
 
 

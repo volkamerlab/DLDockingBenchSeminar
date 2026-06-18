@@ -1,4 +1,7 @@
-###
+# below are three .sh scripts that are optionally commented out, depending on what stage of the pipeline 
+# you are in, but we will break this up so it's easier to reproduce when we get the larger dataset
+
+
 # Energy
 PYTHONPATH=interformer/ CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py -data_path /home/bdldt_team001/DLDockingBenchSeminar/data/proto_train_final.csv \
 -work_path /home/bdldt_team001/DLDockingBenchSeminar/poses \

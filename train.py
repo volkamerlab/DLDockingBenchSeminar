@@ -1,3 +1,12 @@
+'''
+Please note that in order to run this, you need:
+1. A wandb account. We will send you an email to our team for you to view the plots
+2. A .env file with the API key (in same dir as train.py) - we can upload the API key into the wandb secrets (on the wandb website) that you can 
+    paste into your .env file.
+'''
+from dotenv import load_dotenv
+import wandb
+
 import os
 import copy
 import pytorch_lightning as pl
@@ -23,6 +32,7 @@ from data.collator.inter_collate_fn import interformer_collate_fn
 from data.collator.ppi_collate_fn import ppi_collate_fn, ppi_residue_collate_fn
 
 print(f"# Torch Version:{torch.__version__}")
+load_dotenv() # load the API keys
 
 
 def main(args):
@@ -40,7 +50,30 @@ def main(args):
     # dataset_model
     folder_name = f"{os.path.basename(args['data_path'])[:-4]}_{args['model']}_{args['Code']}"
     print(f"#Folder_Name:{folder_name}")
-    tb_logger = pl_loggers.TensorBoardLogger(f"{args['checkpoint']}/lightning_logs/", folder_name)
+    # tb_logger = pl_loggers.TensorBoardLogger(f"{args['checkpoint']}/lightning_logs/", folder_name)
+    
+    # Replacing tensorboard with wandb
+    # wandb is preferred for us; so we don't have to run another script to extract the loss all the time
+    # from the .out files - wandb will automate this process.
+    # WandB Logger Configuration
+    wandb_logger = pl_loggers.WandbLogger(
+        entity="dl-docking",  # Set to your username/organization if needed
+        project="Interformer",  # Your project name
+        name="Docking",
+        log_model=True,  # Log model checkpoints - to obtain hparams.yaml file use "all" instead of "True"
+        tags=["interformer", "docking"],
+    )
+    
+    # Log hyperparameters on wandb (https://wandb.ai/cispa-phoenix/DL-Docking)
+    wandb_logger.experiment.config.update({
+        'model': args['model'],
+        'precision': args['precision'],
+        'num_epochs': args['num_epochs'],
+        'data_path': args['data_path'],
+        'learning_rate': args.get('lr', 'N/A'),
+        'batch_size': args.get('batch_size', 'N/A'),
+    })
+
     trainer = pl.Trainer(
         devices='auto',
         precision=args['precision'],
@@ -53,28 +86,34 @@ def main(args):
         num_sanity_val_steps=0,  # num of batches in val, to check, -1 means the whole val
         accelerator='cuda',
         default_root_dir=args['checkpoint'],
-        logger=tb_logger,
+        # logger=tb_logger, #moving to wandb and moving away from Tensorboard
+        logger=wandb_logger,
         strategy=DDPStrategy(find_unused_parameters=True),
         use_distributed_sampler=False,  # it is important, make sure trainner not using their own sampler
         # reload_dataloaders_every_n_epochs=1,
         num_nodes=args['num_nodes'],
     )
     trainer.fit(model, datamodule=dm)
-    Final Test
+
+    # Skipped for prototype training
+    # Final Test
     # print(f"# Testing by:{trainer.checkpoint_callback.best_model_path}")
     # test_result = trainer.test(model, ckpt_path='best', datamodule=dm)
     # print(test_result)
     # print("+" * 100)
     # print("*********END of One Model*******")
-    ## suggested modification on the training procedure for having already completed train/test split(Hamza)
+    # suggested modification on the training procedure for having already completed train/test split(Hamza)
+    # datapath and work path updated according to test data.
     test_args = copy.deepcopy(args)
-    test_args['data_path'] = 'data/proto_test_final.csv' 
-    Create a new GraphDataModule for the test set
-    test_dm = GraphDataModule(test_args)
-    ------------------
+    test_args['data_path'] = 'data/proto_test_final.csv'
+    test_args['work_path'] = 'data/proto_test' 
+    test_args['inference'] = True
+    # Create a new GraphDataModule for the test set
+    test_dm = GraphDataModule(test_args, istrain=False)
     
-    # Evaluate using the new test datamodule
+    # # Evaluate using the new test datamodule
     test_result = trainer.test(model, ckpt_path='best', datamodule=test_dm)
+    wandb_logger.finalize("success")
     return test_result
 
 

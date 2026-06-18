@@ -1,3 +1,15 @@
+"""
+Adding Uniprot info to the csv file (train set)
+Data Processing Pipeline for PDB-to-UniProt Cross-Referencing
+
+This script reads a dataset of protein-ligand binding affinities, calculates the 
+negative log binding affinity (pIC50), queries the RCSB GraphQL API in batches 
+to fetch mapped UniProt IDs for each PDB entry, and saves the integrated 
+dataset to a CSV file.
+
+We wanted to get the Uniprot ID bc the original dataset had it; but the prototype 
+dataset didn't have these features, so we implemented it.
+"""
 import pandas as pd
 import requests
 
@@ -37,11 +49,21 @@ query($ids: [String!]!) {
 
 
 def fetch_batch(pdb_ids):
+    """Fetches polymer data from the RCSB GraphQL API for a specific batch of PDB IDs.
+
+    Args:
+        pdb_ids (List[str]): A list of uppercase PDB IDs to query.
+
+    Returns:
+        List[Dict[str, Any]]: A list of entry dictionaries retrieved from the API response.
+                              Returns an empty list if the request fails.
+    """
     try:
         response = requests.post(
             url, json={"query": query, "variables": {"ids": pdb_ids}}
         )
         if response.status_code == 200:
+            # If the connection is successful(200), then retrieve the data
             return response.json().get("data", {}).get("entries", [])
     except Exception as e:
         print(f"Error fetching batch: {e}")
@@ -57,6 +79,7 @@ print(
     f"Starting UniProt cross-referencing for {len(unique_pdb_ids)} unique PDB IDs across {total_batches} batches..."
 )
 
+# Loop through all of the pdbs
 for i in range(0, len(unique_pdb_ids), batch_size):
     batch = unique_pdb_ids[i : i + batch_size]
     print(f"Processing batch {i//batch_size + 1}/{total_batches}...")

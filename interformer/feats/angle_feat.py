@@ -158,7 +158,7 @@ def partial_charge(complex, v):
 if __name__ == "__main__":
     from rdkit import Chem
     from rdkit.Chem import rdmolops
-
+    #lakben
     pdb = Chem.MolFromPDBFile('/opt/home/revoli/data_worker/v2019-docking/pocket/1h00_pocket.pdb')
     sdf = Chem.SDMolSupplier('/opt/home/revoli/data_worker/v2019-docking/ligands/1h00_docked.sdf')[0]
     complex = rdmolops.CombineMols(sdf, pdb)

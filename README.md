@@ -1,8 +1,69 @@
 Interformer
 --------------------
 Lakshana and Ben's Reproducibility Notes:
-1. Run interformer_preprocessing.sh via condor_submit interformer_preprocessing.sub
-2. Run interformer_models.sh via condor_submit interformer_models.sub
+
+1. ```PRE-PROCESSSING TRAINING DATASET```
+
+- Run interformer_preprocessing_train.sh via condor_submit interformer_preprocessing.sub.
+
+- Input: 
+   - Hamza's folder of proto_train with .pdb and .sdf files
+- Output: proto_train folder with:
+   - separated .pdb and .sdf files
+   - preprocessed pocket (with hydrogens via reduce and extract_pocket_by_ligand.py)
+   - preprocessed ligand (with added hydrogens via obabel)
+   - energy minimized ligand (uff)
+
+2. ```PRE-PROCESSSING TEST DATASET```
+
+- Run interformer_preprocessing_test.sh via condor_submit interformer_preprocessing.sub.
+- Input: 
+   - Hamza's folder of proto_test with .pdb and .sdf files
+- Output: proto_test folder with:
+   - separated .pdb and .sdf files (in data/)
+   - preprocessed pocket (with hydrogens via reduce and extract_pocket_by_ligand.py)
+   - preprocessed ligand (with added hydrogens via obabel)
+   - energy minimized ligand (uff)
+
+3. ```ENERGY MODEL TRAINING```
+
+- Run interformer_energy_model.sh via condor_submit interformer_models.sub
+- Input:
+   - train.py via `data/proto_train_final.csv` dataset with hyperparameters(see interformer_energy_model.sh)
+- Output: 
+   - checkpoints(see Interformer/ and lightning_logs/(for wandb and Tensorboard respectively))
+
+4. ```AFFINITY NORMAL MODEL TRAINING```
+
+- Run interformer_affinity_normal_model.sh via condor_submit interformer_models.sub.
+- Input:
+   - train.py via `data/proto_train_final.csv` dataset with hyperparameters(see interformer_affinity_normal_model.sh)
+- Output: 
+   - checkpoints(see Interformer/ and lightning_logs/(for wandb and Tensorboard respectively))
+
+5. ```DOCKING SAMPLES AND UPDATED CSV FILE FOR AFFINITY AND POSE MODEL TRAINING ```
+- Run interformer_affinity_pose_train_data.sh via condor_submit interformer_affinity_pose_train_data.sub for gaussian score prediction and complex generation.
+- Input: 
+   - inference.py via `data/proto_train_final.csv` and checkpoints of the energy model
+- Output: 
+   - Gaussian predictions of interactions and complex of protein structures.
+
+- Run interformer_affinity_pose_docking.sh via interformer_affinity_pose_docking.sub
+- Input: 
+   - Gaussian predictions of interactions and complex of protein structures with ligand and uff from `data/proto_train/`
+- Output: 
+   - Statistics on reconstructed ligand poses and generation of updated csv file (Informations included: rmsd, pose_rank, vdw_distance, energy).
+
+6. ```AFFINITY AND POSE MODEL TRAINING```
+- Run interformer_affinity_pose_model.sh via condor_submit interformer_models.sub.
+- Input:
+   - Updated `data/tbd.csv`
+- Output:
+   - Expecting csv file
+
+7. ```TESTING THE MODEL WITH TEST DATA```
+
+   Run xxxx.sh via 
 
 --------------------
 Interformer is a protein-ligand complex structure prediction neural network that can predict interaction-aware energy functions for each pair of protein-ligand atoms. Such energy functions can be used in traditional protein-ligand docking sampling methods (Monte Carlo) to generate high-quality and reasonable binding poses.
