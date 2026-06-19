@@ -1,1 +1,2 @@
-data/prototype*
+data/prototype*__pycache__/
+*.pyc
