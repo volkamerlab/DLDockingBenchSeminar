@@ -19,7 +19,7 @@ echo "Running from: $CURRENT_DIR" \
 export PYTHONPATH="/home/bdldt_team001/DLDockingBenchSeminar/interformer:$PYTHONPATH"
 # Affinity and pose model
 # Proper path to be mentioned
-python train.py -data_path .csv \
+python train.py -data_path data/proto_train_final.round0.csv \
 -work_path data/proto_train \
 -seed 1111 \
 -filter_type full \

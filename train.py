@@ -60,7 +60,7 @@ def main(args):
         entity="dl-docking",  # Set to your username/organization if needed
         project="Interformer",  # Your project name
         name="Docking",
-        log_model=True,  # Log model checkpoints - to obtain hparams.yaml file use "all" instead of "True"
+        log_model=all,  # Log model checkpoints - to obtain hparams.yaml file use "all" instead of "True"
         tags=["interformer", "docking"],
     )
     
@@ -104,17 +104,17 @@ def main(args):
     # print("*********END of One Model*******")
     # suggested modification on the training procedure for having already completed train/test split(Hamza)
     # datapath and work path updated according to test data.
-    test_args = copy.deepcopy(args)
-    test_args['data_path'] = 'data/proto_test_final.csv'
-    test_args['work_path'] = 'data/proto_test' 
-    test_args['inference'] = True
-    # Create a new GraphDataModule for the test set
-    test_dm = GraphDataModule(test_args, istrain=False)
+    # test_args = copy.deepcopy(args)
+    # test_args['data_path'] = 'data/proto_test_final.csv'
+    # test_args['work_path'] = 'data/proto_test' 
+    # test_args['inference'] = True
+    # # Create a new GraphDataModule for the test set
+    # test_dm = GraphDataModule(test_args, istrain=False)
     
-    # # Evaluate using the new test datamodule
-    test_result = trainer.test(model, ckpt_path='best', datamodule=test_dm)
-    wandb_logger.finalize("success")
-    return test_result
+    # # # Evaluate using the new test datamodule
+    # test_result = trainer.test(model, ckpt_path='best', datamodule=test_dm)
+    # wandb_logger.finalize("success")
+    # return test_result
 
 
 if __name__ == "__main__":

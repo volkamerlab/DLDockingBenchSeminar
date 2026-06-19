@@ -57,11 +57,13 @@ Lakshana and Ben's Reproducibility Notes:
 6. ```AFFINITY AND POSE MODEL TRAINING```
 - Run interformer_affinity_pose_model.sh via condor_submit interformer_models.sub.
 - Input:
-   - Updated `data/tbd.csv`
+   - Updated `data/proto_train_final.round0.csv` through which an tmp_csv file is created `data/proto_train/tmp_beta/proto_train_final.round0.csv-Gnina2-full-uff--affinity-.csv`
 - Output:
-   - Expecting csv file
+   - checkpoints(see Interformer/ and lightning_logs/(for wandb and Tensorboard respectively))
 
 7. ```TESTING THE MODEL WITH TEST DATA```
+- Repeat step 5 for test dataset.
+
 
    Run xxxx.sh via 
 
