@@ -45,7 +45,7 @@ class AtomHead(nn.Module):
         self.apply(lambda module: init_embedding(module))
 
     def forward(self, node_feats, node_x):
-         """Computes the cross-entropy loss for atom type prediction.
+        """Computes the cross-entropy loss for atom type prediction.
 
         Args:
             node_feats (torch.Tensor): The learned contextual node features from the Transformer. 
@@ -371,6 +371,9 @@ class Interformer(SBDD):
         self,
         args
     ):
+        #this line is to generate hparams.yaml
+        self.save_hyperparameters(ignore=['args'])
+
         super().__init__(args)
         hidden_dim = args['hidden_dim']
         num_heads = args['num_heads']
