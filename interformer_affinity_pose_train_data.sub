@@ -2,7 +2,7 @@ universe = docker
 docker_image = blakshana/interformer:v6
 # input the checkpoints and relevant files
 # for complex and gaussian prediction result
-transfer_input_files = interformer, data, lightning_logs, interformer_affinity_pose_model.sh 
+transfer_input_files = interformer, data, lightning_logs, interformer_affinity_pose_train_data.sh
 executable = interformer_affinity_pose_train_data.sh
 
 output = logs/josh-interformer.$(ClusterId).$(ProcId).out

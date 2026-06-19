@@ -16,7 +16,6 @@ PYTHONPATH=interformer/
 # Run each command seperately
 # Start docking
 
-# Failed - code did not work (50558.err) - Trying to run with updated docker image (50586)
 echo "=== Installing PyVina Dependencies ==="
 pip install --user --no-cache-dir ./docking
 # # If you planning to use uff ligand conformation to dock, you can use argument `--uff_folder uff`

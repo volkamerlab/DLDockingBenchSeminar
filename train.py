@@ -50,29 +50,30 @@ def main(args):
     # dataset_model
     folder_name = f"{os.path.basename(args['data_path'])[:-4]}_{args['model']}_{args['Code']}"
     print(f"#Folder_Name:{folder_name}")
-    # tb_logger = pl_loggers.TensorBoardLogger(f"{args['checkpoint']}/lightning_logs/", folder_name)
+    tb_logger = pl_loggers.TensorBoardLogger(f"{args['checkpoint']}/lightning_logs/", folder_name)
     
     # Replacing tensorboard with wandb
     # wandb is preferred for us; so we don't have to run another script to extract the loss all the time
     # from the .out files - wandb will automate this process.
     # WandB Logger Configuration
-    wandb_logger = pl_loggers.WandbLogger(
-        entity="dl-docking",  # Set to your username/organization if needed
-        project="Interformer",  # Your project name
-        name="Docking",
-        log_model=all,  # Log model checkpoints - to obtain hparams.yaml file use "all" instead of "True"
-        tags=["interformer", "docking"],
-    )
+
+    # wandb_logger = pl_loggers.WandbLogger(
+    #     entity="dl-docking",  # Set to your username/organization if needed
+    #     project="Interformer",  # Your project name
+    #     name="Docking",
+    #     log_model=all,  # Log model checkpoints - to obtain hparams.yaml file use "all" instead of "True"
+    #     tags=["interformer", "docking"],
+    # )
     
-    # Log hyperparameters on wandb (https://wandb.ai/cispa-phoenix/DL-Docking)
-    wandb_logger.experiment.config.update({
-        'model': args['model'],
-        'precision': args['precision'],
-        'num_epochs': args['num_epochs'],
-        'data_path': args['data_path'],
-        'learning_rate': args.get('lr', 'N/A'),
-        'batch_size': args.get('batch_size', 'N/A'),
-    })
+    # # Log hyperparameters on wandb (https://wandb.ai/cispa-phoenix/DL-Docking)
+    # wandb_logger.experiment.config.update({
+    #     'model': args['model'],
+    #     'precision': args['precision'],
+    #     'num_epochs': args['num_epochs'],
+    #     'data_path': args['data_path'],
+    #     'learning_rate': args.get('lr', 'N/A'),
+    #     'batch_size': args.get('batch_size', 'N/A'),
+    # })
 
     trainer = pl.Trainer(
         devices='auto',
@@ -86,8 +87,8 @@ def main(args):
         num_sanity_val_steps=0,  # num of batches in val, to check, -1 means the whole val
         accelerator='cuda',
         default_root_dir=args['checkpoint'],
-        # logger=tb_logger, #moving to wandb and moving away from Tensorboard
-        logger=wandb_logger,
+        logger=tb_logger, #moving to wandb and moving away from Tensorboard
+        # logger=wandb_logger,
         strategy=DDPStrategy(find_unused_parameters=True),
         use_distributed_sampler=False,  # it is important, make sure trainner not using their own sampler
         # reload_dataloaders_every_n_epochs=1,

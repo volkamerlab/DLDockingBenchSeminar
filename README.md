@@ -54,18 +54,34 @@ Lakshana and Ben's Reproducibility Notes:
 - Output: 
    - Statistics on reconstructed ligand poses and generation of updated csv file (Informations included: rmsd, pose_rank, vdw_distance, energy).
 
+
+   The files were manually moved to their respective folders. 
+   - Redocked sdf - `dock_results/energy_train/ligand_reconstructing`
+   - proto_train_final.round0.csv - `data/proto_train_final.round0.csv`
+   - stat_concated.csv - `dock_results/energy_train/stat_concated.csv`
+
 6. ```AFFINITY AND POSE MODEL TRAINING```
 - Run interformer_affinity_pose_model.sh via condor_submit interformer_models.sub.
 - Input:
-   - Updated `data/proto_train_final.round0.csv` through which an tmp_csv file is created `data/proto_train/tmp_beta/proto_train_final.round0.csv-Gnina2-full-uff--affinity-.csv`
+   - train.py via updated `data/proto_train_final.round0.csv` through which an tmp_csv file is created `data/proto_train/tmp_beta/proto_train_final.round0.csv-Gnina2-full-uff--affinity-.csv`. Prior to that copy the .sdf files from `dock_results/energy_train/ligand_reconstructing` to `data/proto_train/ligand`(instructed by authors).
 - Output:
    - checkpoints(see Interformer/ and lightning_logs/(for wandb and Tensorboard respectively))
 
+* we were thinking of having the top 20 poses reflected in .sdf files, but for the sake of time (for the prototype), we implemented a batch size of 4. Also, no negative poses were found.
+
 7. ```TESTING THE MODEL WITH TEST DATA```
-- Repeat step 5 for test dataset.
+- Repeat step 5 for test dataset using the .sh and .sub files for test.
 
+   The files were manually moved to their respective folders. 
+   - Redocked sdf and stat_concated.csv- `dock_results/energy_test/ligand_reconstructing`
+   - proto_train_final.round0.csv - `data/proto_test_final.round0.csv`
 
-   Run xxxx.sh via 
+- Run interformer_affinity_pose_final_test.sh via condor_submit interformer_affinity_pose_final_test.sub
+- Input: 
+   - inference.py via `data/proto_test_final.round0.csv` and checkpoints of the affinity and pose model. Prior to that copy the .sdf files from `dock_results/energy_test/ligand_reconstructing` to `data/proto_test/ligand`(instructed by authors).
+- Output:
+   - Final csv with predIC50 and pred_pose_score `proto_test_final.round0_ensemble.csv`
+ 
 
 --------------------
 Interformer is a protein-ligand complex structure prediction neural network that can predict interaction-aware energy functions for each pair of protein-ligand atoms. Such energy functions can be used in traditional protein-ligand docking sampling methods (Monte Carlo) to generate high-quality and reasonable binding poses.

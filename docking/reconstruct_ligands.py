@@ -532,7 +532,7 @@ def launch_1_task_local(
     """ """
     ##### 0. Check if output folder exists
     ## Check if there exists any precompute file? in the output_folder
-    if args.continue_dock_index is None and os.path.exists(pathtuple.ABSPATH_DIR_OUTPUT):
+    if args.continue_dock_index is None and os.path.exists(pathtuple.ABSPATH_DIR_OUTPUT) and args.delete:
         print(f"Previously ABSPATH_DIR_OUTPUT:{pathtuple.ABSPATH_DIR_OUTPUT} path exists, remove it")
         shutil.rmtree(pathtuple.ABSPATH_DIR_OUTPUT)
 
