@@ -729,7 +729,14 @@ def write_mol_with_coords(mol, new_coords, path):
     for i in range(mol.GetNumAtoms()):
         x,y,z = new_coords.astype(np.double)[i]
         conf.SetAtomPosition(i,Point3D(x,y,z))
-    w.write(mol)
+    Chem.AssignStereochemistry(mol, cleanIt=True, force=True)
+    try:
+        w.write(mol)
+    except Exception:
+        from rdkit.Chem import AllChem
+        AllChem.AssignAtomChiralTagsFromStructure(mol, -1, True)
+        Chem.RemoveStereochemistry(mol)
+        w.write(mol)
     w.close()
 
 def read_molecule(molecule_file, sanitize=False, calc_charges=False, remove_hs=False):
