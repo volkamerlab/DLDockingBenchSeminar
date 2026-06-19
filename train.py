@@ -30,6 +30,27 @@ from torch.utils.data import distributed
 from pytorch_lightning import LightningDataModule
 from data.collator.inter_collate_fn import interformer_collate_fn
 from data.collator.ppi_collate_fn import ppi_collate_fn, ppi_residue_collate_fn
+# TODO: Lakshana will implement this into the Docker container for more detailed runs 
+'''
+import datetime 
+# 2. Extract key identifiers from your args to make it highly scannable
+    model_name = args.get('model', 'model')
+    batch_size = args.get('batch_size', 'unknown_bs')
+    
+    # 3. Combine them into a descriptive run name
+    # Example output: "Interformer_bs20_20260619_233005"
+    run_name = f"{model_name}_bs{batch_size}_{current_time}"
+
+    # WandB Logger Configuration
+    wandb_logger = pl_loggers.WandbLogger(
+        entity="dl-docking",
+        project="Interformer",
+        name=run_name,          # <-- Your dynamic name goes here
+        log_model="all",
+        tags=["interformer", "docking"],
+    )
+'''
+
 
 print(f"# Torch Version:{torch.__version__}")
 load_dotenv() # load the API keys
@@ -50,30 +71,30 @@ def main(args):
     # dataset_model
     folder_name = f"{os.path.basename(args['data_path'])[:-4]}_{args['model']}_{args['Code']}"
     print(f"#Folder_Name:{folder_name}")
-    tb_logger = pl_loggers.TensorBoardLogger(f"{args['checkpoint']}/lightning_logs/", folder_name)
+    # tb_logger = pl_loggers.TensorBoardLogger(f"{args['checkpoint']}/lightning_logs/", folder_name)
     
     # Replacing tensorboard with wandb
     # wandb is preferred for us; so we don't have to run another script to extract the loss all the time
     # from the .out files - wandb will automate this process.
     # WandB Logger Configuration
 
-    # wandb_logger = pl_loggers.WandbLogger(
-    #     entity="dl-docking",  # Set to your username/organization if needed
-    #     project="Interformer",  # Your project name
-    #     name="Docking",
-    #     log_model=all,  # Log model checkpoints - to obtain hparams.yaml file use "all" instead of "True"
-    #     tags=["interformer", "docking"],
-    # )
+    wandb_logger = pl_loggers.WandbLogger(
+        entity="dl-docking",  # Set to your username/organization if needed
+        project="Interformer",  # Your project name
+        name="Docking",
+        log_model="all",  # Log model checkpoints - to obtain hparams.yaml file use "all" instead of "True"
+        tags=["interformer", "docking"],
+    )
     
-    # # Log hyperparameters on wandb (https://wandb.ai/cispa-phoenix/DL-Docking)
-    # wandb_logger.experiment.config.update({
-    #     'model': args['model'],
-    #     'precision': args['precision'],
-    #     'num_epochs': args['num_epochs'],
-    #     'data_path': args['data_path'],
-    #     'learning_rate': args.get('lr', 'N/A'),
-    #     'batch_size': args.get('batch_size', 'N/A'),
-    # })
+    # Log hyperparameters on wandb (https://wandb.ai/cispa-phoenix/DL-Docking)
+    wandb_logger.experiment.config.update({
+        'model': args['model'],
+        'precision': args['precision'],
+        'num_epochs': args['num_epochs'],
+        'data_path': args['data_path'],
+        'learning_rate': args.get('lr', 'N/A'),
+        'batch_size': args.get('batch_size', 'N/A'),
+    })
 
     trainer = pl.Trainer(
         devices='auto',
@@ -87,8 +108,8 @@ def main(args):
         num_sanity_val_steps=0,  # num of batches in val, to check, -1 means the whole val
         accelerator='cuda',
         default_root_dir=args['checkpoint'],
-        logger=tb_logger, #moving to wandb and moving away from Tensorboard
-        # logger=wandb_logger,
+        # logger=tb_logger, #moving to wandb and moving away from Tensorboard
+        logger=wandb_logger,
         strategy=DDPStrategy(find_unused_parameters=True),
         use_distributed_sampler=False,  # it is important, make sure trainner not using their own sampler
         # reload_dataloaders_every_n_epochs=1,
@@ -96,7 +117,7 @@ def main(args):
     )
     trainer.fit(model, datamodule=dm)
 
-    # Skipped for prototype training
+    # Skipped for prototype training -- this was for the authors
     # Final Test
     # print(f"# Testing by:{trainer.checkpoint_callback.best_model_path}")
     # test_result = trainer.test(model, ckpt_path='best', datamodule=dm)
@@ -114,7 +135,7 @@ def main(args):
     
     # # # Evaluate using the new test datamodule
     # test_result = trainer.test(model, ckpt_path='best', datamodule=test_dm)
-    # wandb_logger.finalize("success")
+    wandb_logger.finalize("success")
     # return test_result
 
 

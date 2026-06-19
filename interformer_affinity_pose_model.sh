@@ -25,7 +25,7 @@ python train.py -data_path data/proto_train_final.round0.csv \
 -filter_type full \
 -native_sampler 0 \
 -Code affinity \
--batch_size 4 \
+-batch_size 10 \
 -gpus 1 \
 -method Gnina2 \
 -patience 30 \

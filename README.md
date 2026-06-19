@@ -1,6 +1,26 @@
 Interformer
 --------------------
 Lakshana and Ben's Reproducibility Notes:
+Note: Plots can be found at: https://wandb.ai/dl-docking/Interformer?nw=nwuserbeho00003 (shared with Hamza)
+
+Final Verdict(for the first soft deadline):
+- Preprocessing and training was completed for a full workflow. However:
+   - Train/Loss curve was established (but much room for improvement)
+      - Only color relevant is the dark green which took 6k steps.
+   ![](images/prototype-soft-deadline.png)
+   - 0 negative poses were observed.
+   - All pIC50 values in the final csv were roughly the same(makes sense per pose), but there was some variation(see example below):
+
+```Target,ligand_file_name,protein_file_name,Year,Log Binding Affinity,Binding Affinity Measurement,PDBID,pIC50,UniProtID,pose_rank,num_torsions,energy,rmsd        185l_IND_A_400,185l_IND_A_400_ligand_refined.sdf,185l_IND_A_400_protein_refined.pdb,1995,-3.539102157243452,kd,185l,3.539102157243452,P00720 186l_N4B_A_400,186l_N4B_A_400_ligand_refined.sdf,186l_N4B_A_400_protein_refined.pdb,1995,-4.853871964321762,kd,186l,4.853871964321762,P00720```
+
+Follow up questions for Hamza/Prof. Volkamer (but also food for thought for next week):
+- We noticed in the last proto_train_final.round0.csv/proto_train_final.round0.csv that the pIC50 values
+   - Also in both train and test final csvs, we had a mixture of kd, ic50, ki -- would want to have this all adjusted to be the same values going forward (need more preprocessing)
+- Is there a RMSD value that is too good to be true? We know that the golden rule is <= 2.0 Å, but is there a range for something being too close
+
+Things to consider for the next steps:
+- For final testing, should we allow for batch size to be a multiple of 20, since we are getting approx. 20 poses per ligand/pose? Would need more memory/gpus
+
 
 1. ```PRE-PROCESSSING TRAINING DATASET```
 
@@ -31,7 +51,7 @@ Lakshana and Ben's Reproducibility Notes:
 - Input:
    - train.py via `data/proto_train_final.csv` dataset with hyperparameters(see interformer_energy_model.sh)
 - Output: 
-   - checkpoints(see Interformer/ and lightning_logs/(for wandb and Tensorboard respectively))
+   - checkpoints(see Interformer/ and lightning_logs/(for wandb(17mn4his) and Tensorboard respectively))
 
 4. ```AFFINITY NORMAL MODEL TRAINING```
 
@@ -39,7 +59,7 @@ Lakshana and Ben's Reproducibility Notes:
 - Input:
    - train.py via `data/proto_train_final.csv` dataset with hyperparameters(see interformer_affinity_normal_model.sh)
 - Output: 
-   - checkpoints(see Interformer/ and lightning_logs/(for wandb and Tensorboard respectively))
+   - checkpoints(see Interformer/ and lightning_logs/(for wandb(7xs2lk3w) and Tensorboard respectively))
 
 5. ```DOCKING SAMPLES AND UPDATED CSV FILE FOR AFFINITY AND POSE MODEL TRAINING ```
 - Run interformer_affinity_pose_train_data.sh via condor_submit interformer_affinity_pose_train_data.sub for gaussian score prediction and complex generation.
@@ -65,7 +85,7 @@ Lakshana and Ben's Reproducibility Notes:
 - Input:
    - train.py via updated `data/proto_train_final.round0.csv` through which an tmp_csv file is created `data/proto_train/tmp_beta/proto_train_final.round0.csv-Gnina2-full-uff--affinity-.csv`. Prior to that copy the .sdf files from `dock_results/energy_train/ligand_reconstructing` to `data/proto_train/ligand`(instructed by authors).
 - Output:
-   - checkpoints(see Interformer/ and lightning_logs/(for wandb and Tensorboard respectively))
+   - checkpoints(see Interformer/ and lightning_logs/(for wandb(xxxxxx) and Tensorboard respectively))
 
 * we were thinking of having the top 20 poses reflected in .sdf files, but for the sake of time (for the prototype), we implemented a batch size of 4. Also, no negative poses were found.
 

@@ -26,7 +26,7 @@ python3 -u train.py \
 -filter_type normal \
 -native_sampler 0 \
 -Code Energy \
--batch_size 4 \
+-batch_size 20 \
 -gpus 1 \
 -method Gnina2 \
 -patience 30 \

@@ -13,7 +13,7 @@ should_transfer_files   = YES
 when_to_transfer_output = ON_EXIT
 transfer_output_files   = result/
 request_GPUs = 1
-request_CPUs = 4
+request_CPUs = 8
 request_memory = 16G
 requirements = UidDomain == "cs.uni-saarland.de"
 +WantGPUHomeMounted = true

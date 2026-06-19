@@ -1,12 +1,16 @@
 ######
-# Energy
+# Energy Model Preprocessing- needs to be part of phase 1
+# Ensure that the crystal structures are inside interformer/poses/ligand/rcsb
 # PYTHONPATH=interformer python interformer/pre.py -data_path /opt/home/revoli/data_worker/interformer/train/general_PL_2020.csv \
 # -work_path /opt/home/revoli/data_worker/interformer/poses \
 # -filter_type normal \
 # -dataset sbdd \
 # -ligand_folder ligand/rcsb \
 # -reload
+
+
 ######
+#Prerequisites before 
 # Affinity
 export TMPDIR=~/tmp
 export TEMP=~/tmp
