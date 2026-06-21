@@ -144,6 +144,11 @@ Hyper-parameters are in [§5](#5-training-information--parameters-from-the-paper
 **P3 — fine-tune (bonus, single stage, init = released weights):**
 `pos_r 1`, Adam, `lr 1e-4`, `weight_decay 0`, `patience 30`, eff. batch 64, `val_frac 0.1`, `seed 42`.
 
+**pos_r** is the scalar weight on the RMSD (coordinate/docking) loss in KarmaDock's `training
+  objective loss = pos_r * rmsd_loss + mdn_loss` — it acts as a positional-refinement switch
+  that is set to 0 in Stage 1 (train only the MDN interaction-distance loss) and 1 in
+  Stage 2 (turn on the RMSD term to refine predicted ligand coordinates toward the crystal
+  pose).
 
 Per-epoch training curves are in [`docs/p2_stage1_train_log.csv`](docs/p2_stage1_train_log.csv),
 [`docs/p2_stage2_train_log.csv`](docs/p2_stage2_train_log.csv) and [`docs/p3_finetune_train_log.csv`](docs/p3_finetune_train_log.csv).
