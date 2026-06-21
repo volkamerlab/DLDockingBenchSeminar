@@ -1,0 +1,30 @@
+# p2_train_scratch.sub  —  PIPELINE 2 training FROM SCRATCH (BONUS / long path).
+# Preprocesses proto_train (712) then runs the paper's 2-stage protocol on one GPU.
+# This is the long path (several hours); the graded reproduction is the inference subs.
+# The resulting checkpoint == model/p2_scratch_karmadock_team002.pkl.
+#
+# PREREQUISITE (once): unzip the shipped data:
+#   unzip -o data/prototype_model_data.zip -d data/prototype_model_data
+# Then:   condor_submit condor/p2_train_scratch.sub
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = scripts/run_train.sh
+arguments     = scratch
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = scripts, data/prototype_model_data/proto_train.csv, data/prototype_model_data/proto_train
+transfer_output_files   = ckpt
+
+output = logs/p2_train.$(ClusterId).$(ProcId).out
+error  = logs/p2_train.$(ClusterId).$(ProcId).err
+log    = logs/p2_train.$(ClusterId).log
+
+request_gpus   = 1
+request_cpus   = 8
+request_memory = 48GB
+
+queue 1

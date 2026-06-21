@@ -1,0 +1,30 @@
+# p1_baseline.sub  —  PIPELINE 1 (released weights) docking on proto_test.
+# Produces the 3 pose variants (uncorrected / FF / align) in results/p1_baseline/.
+# Scoring is the separate step: `python evaluation/evaluation.py --dataset proto_test`
+# (or condor/evaluate.sub).
+#
+# PREREQUISITE (once): unzip the reference structures:
+#   unzip -o data/prototype_model_data.zip -d data/prototype_model_data
+# Then:   condor_submit condor/p1_baseline.sub
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = scripts/run_infer.sh
+arguments     = proto_test /app/KarmaDock/trained_models/karmadock_screening.pkl p1_baseline
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = scripts, data/proto_test.csv, data/prototype_model_data/proto_test
+transfer_output_files   = results
+
+output = logs/p1_baseline.$(ClusterId).$(ProcId).out
+error  = logs/p1_baseline.$(ClusterId).$(ProcId).err
+log    = logs/p1_baseline.$(ClusterId).log
+
+request_gpus   = 1
+request_cpus   = 8
+request_memory = 32GB
+
+queue 1

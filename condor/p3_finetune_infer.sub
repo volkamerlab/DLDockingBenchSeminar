@@ -1,0 +1,30 @@
+# p3_finetune_infer.sub  —  PIPELINE 3 (fine-tuned model) docking on proto_test.
+# Docks with our shipped fine-tuned checkpoint and produces the 3 pose variants
+# (uncorrected / FF / align) in results/p3_finetune/. Scoring is the separate step
+# (`python evaluation/evaluation.py --dataset proto_test`).
+#
+# PREREQUISITE (once): unzip the reference structures:
+#   unzip -o data/prototype_model_data.zip -d data/prototype_model_data
+# Then:   condor_submit condor/p3_finetune_infer.sub
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = scripts/run_infer.sh
+arguments     = proto_test p3_finetune_karmadock_team002.pkl p3_finetune
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = scripts, model/p3_finetune_karmadock_team002.pkl, data/proto_test.csv, data/prototype_model_data/proto_test
+transfer_output_files   = results
+
+output = logs/p3_finetune.$(ClusterId).$(ProcId).out
+error  = logs/p3_finetune.$(ClusterId).$(ProcId).err
+log    = logs/p3_finetune.$(ClusterId).log
+
+request_gpus   = 1
+request_cpus   = 8
+request_memory = 32GB
+
+queue 1

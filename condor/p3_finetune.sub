@@ -1,0 +1,30 @@
+# p3_finetune.sub  —  PIPELINE 3 fine-tune training (BONUS / long path).
+# Preprocesses proto_train (712) then fine-tunes the released weights on one GPU.
+# This is the long path (a few hours); the graded reproduction is the inference subs.
+# The resulting checkpoint == model/p3_finetune_karmadock_team002.pkl (already shipped).
+#
+# PREREQUISITE (once): unzip the shipped data:
+#   unzip -o data/prototype_model_data.zip -d data/prototype_model_data
+# Then:   condor_submit condor/p3_finetune.sub
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = scripts/run_train.sh
+arguments     = finetune
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = scripts, data/prototype_model_data/proto_train.csv, data/prototype_model_data/proto_train
+transfer_output_files   = ckpt
+
+output = logs/p3_train.$(ClusterId).$(ProcId).out
+error  = logs/p3_train.$(ClusterId).$(ProcId).err
+log    = logs/p3_train.$(ClusterId).log
+
+request_gpus   = 1
+request_cpus   = 8
+request_memory = 48GB
+
+queue 1

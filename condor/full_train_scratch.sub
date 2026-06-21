@@ -1,0 +1,38 @@
+# full_train_scratch.sub  —  FULL-dataset training FROM SCRATCH (next phase, long job).
+# Trains the paper's 2-stage protocol on full_train (23,483) / full_val (2,609) on one GPU.
+#
+# Unlike the prototype subs, the ~14 GB dataset is NOT transferred into the job: it is read
+# from the mounted home (+WantGPUHomeMounted), and graphs + checkpoints are written to a
+# persistent home work dir ($HOME/repro_test/work_full) so an evicted job can --resume
+# without redoing the long preprocess. Only scripts/ is transferred (the code).
+#
+# PREREQUISITE: full_data on the mounted home at $HOME/repro_test/full_data/
+#   full_train.csv + full_train/ , full_val.csv + full_val/
+#   (override the location by setting FULL_DATA_DIR in environment below)
+# Then:   condor_submit condor/full_train_scratch.sub
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = scripts/run_full_train.sh
+arguments     = scratch
+# Data/work default to $HOME/repro_test/{full_data,work_full}, resolved inside the container
+# via the mounted home (portable across accounts). To relocate, uncomment and edit -- do NOT
+# hardcode another user's home:
+#   environment = "FULL_DATA_DIR=/path/to/full_data FULL_WORK_DIR=/path/to/work_full"
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = scripts
+# data, graphs and checkpoints live on the mounted home -- nothing large is transferred
+
+output = logs/full_train.$(ClusterId).$(ProcId).out
+error  = logs/full_train.$(ClusterId).$(ProcId).err
+log    = logs/full_train.$(ClusterId).log
+
+request_gpus   = 1
+request_cpus   = 8
+request_memory = 64GB
+
+queue 1
