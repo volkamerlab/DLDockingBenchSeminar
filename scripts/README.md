@@ -1,4 +1,4 @@
-# PROVENANCE — what we wrote vs. the KarmaDock authors'
+# what we wrote vs. the KarmaDock authors'
 
 **The key point:** public KarmaDock (`schrojunzhang/KarmaDock`) ships **inference code +
 pretrained weights only — there is NO training script.** Our seminar contribution is the
@@ -7,7 +7,7 @@ built *around* KarmaDock. We **call KarmaDock's modules as-is** (model, preproce
 and did **not modify any file inside the upstream `KarmaDock/`** — it is cloned fresh in the
 `Dockerfile`; all of our code lives in `scripts/`.
 
-## 1. Files WE created (our original work)
+## 1. Files WE created 
 
 ### `scripts/`
 | file | what it does | KarmaDock pieces it calls |
@@ -27,6 +27,8 @@ and did **not modify any file inside the upstream `KarmaDock/`** — it is clone
 | `p3_finetune_infer.sub` | P3 inference (our fine-tuned checkpoint) + eval |
 | `p2_train_scratch.sub` | P2 training (2-stage from scratch) |
 | `p3_finetune.sub` | P3 fine-tune training |
+| `evaluate.sub` | run the evaluate.sh script |
+
 
 ### Other ours
 - `Dockerfile` — builds `ahlamloum/karmadock-seminar:v6` (clones KarmaDock, installs the authors' packed conda env, adds our `scripts/`).

@@ -1,7 +1,7 @@
 # p3_finetune.sub  —  PIPELINE 3 fine-tune training (BONUS / long path).
 # Preprocesses proto_train (712) then fine-tunes the released weights on one GPU.
 # This is the long path (a few hours); the graded reproduction is the inference subs.
-# The resulting checkpoint == model/p3_finetune_karmadock_team002.pkl (already shipped).
+# The resulting checkpoint == model/p3_finetune_karmadock_team002.pkl.
 #
 # PREREQUISITE (once): unzip the shipped data:
 #   unzip -o data/prototype_model_data.zip -d data/prototype_model_data

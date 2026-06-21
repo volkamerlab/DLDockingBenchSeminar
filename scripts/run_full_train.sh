@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run_full_train.sh <scratch|finetune>
 # -----------------------------------------------------------------------------
-# FULL-dataset training (full_train 23,483 / full_val 2,609) on one GPU.
+# FULL-dataset training (full_train 23,483 / full_val 2,609) on one GPU :( not practical idea.
 #
 # Unlike run_train.sh (prototype, 712 complexes transferred into the job), the full
 # data is ~14 GB, so it is NOT transferred: it is read from the mounted home
@@ -16,9 +16,9 @@
 #   scratch  -> $FULL_WORK_DIR/ckpt/p_stage2/karmadock_team002.pkl
 #   finetune -> $FULL_WORK_DIR/ckpt/p_finetune/karmadock_team002.pkl
 #
-# The full train/val split is curated (full_val is NOT a random carve-out), so we
+# The full train/val split is curated (full_val is NOT a random carve-out like in prototype version), so we
 # pass it via --val_csv / --val_graph_dir (train.py + seminar_csv.py handle the
-# full-metadata CSV schema directly -- no data edits needed).
+# full-metadata CSV schema directly).
 set -euo pipefail
 set -x
 
@@ -75,3 +75,4 @@ elif [ "$MODE" = "finetune" ]; then
 else
   echo "ERROR: mode must be 'scratch' or 'finetune'"; exit 2
 fi
+

@@ -1,33 +1,14 @@
-# KarmaDock image (BDLDT team002)
-# Reproducible build: clones upstream KarmaDock, creates its conda env, adds our
-# train/infer/convert scripts. Plain `python3` resolves to the karmadock env, so
-# HTCondor's docker universe can run our shell scripts with no activation step.
-#
-# YOU DO NOT NEED TO BUILD THIS. The prebuilt image is on Docker Hub as
-# `ahlamloum/karmadock-seminar:v6` and every condor/*.sub pulls it automatically.
-# This Dockerfile is for transparency; rebuilding also needs the authors' packed conda
-# env tarball (docker/karmadock_env.tar.gz, ~3 GB) which is not shipped in this repo.
-#
-# The cluster is x86_64 (amd64). On an Apple Silicon (arm64) Mac you MUST cross-build
-# for linux/amd64 or Condor can't run the image:
-#   docker buildx build --platform linux/amd64 \
-#     -t ahlamloum/karmadock-seminar:v2 -f docker/Dockerfile --push .
-# Verify:  docker buildx imagetools inspect ahlamloum/karmadock-seminar:v2 | grep -i platform
-#
-# NOTE: GPU userspace (pytorch + cudatoolkit) comes from the conda env; the host
-# driver is injected by Condor at run time.
-#
+# KarmaDock image 
 # We use the authors' PRE-PACKED conda env (conda-pack tarball on Zenodo) instead of
 # `conda env create -f karmadock_env.yaml`. The yaml route runs conda's dependency
-# solver, which is memory-hungry and gets OOM-killed under QEMU emulation on Apple
-# Silicon ("Collecting package metadata ... Killed"). The pack is a ready-built
-# linux-64 env: just download + extract + conda-unpack. No solving, lower risk.
+# solver, which produce a multiple dependencies problem. The pack is a ready-built
+# linux-64 env.
 
 FROM continuumio/miniconda3:23.10.0-1
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        git wget ca-certificates && \
+    git wget ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -60,7 +41,7 @@ ENV PYTHONPATH=/app/KarmaDock
 
 # sanity check at build time (fails the build early if deps are wrong)
 RUN python3 -c "import torch, torch_geometric, rdkit, MDAnalysis, prody; \
-print('torch', torch.__version__, '| rdkit', rdkit.__version__)"
+    print('torch', torch.__version__, '| rdkit', rdkit.__version__)"
 
 WORKDIR /app
 CMD ["/bin/bash"]
