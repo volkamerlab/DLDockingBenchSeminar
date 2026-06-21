@@ -141,10 +141,12 @@ def main():
     if args.wandb:
         try:
             import wandb
-            # auto-fall back to offline if the worker node has no internet;
-            # `wandb sync <dir>` later from a node that does.
-            if not os.environ.get("WANDB_API_KEY") and os.environ.get("WANDB_MODE") != "offline":
-                print("# WARNING: WANDB_API_KEY not set -> forcing WANDB_MODE=offline")
+            # Credentials come from WANDB_API_KEY or a one-time `wandb login` (~/.netrc, visible
+            # in the job via the mounted home). Only force offline if neither is present; then
+            # `wandb sync <dir>` later from a node that has internet.
+            has_creds = os.environ.get("WANDB_API_KEY") or os.path.exists(os.path.expanduser("~/.netrc"))
+            if not has_creds and os.environ.get("WANDB_MODE") != "offline":
+                print("# WARNING: no W&B credentials (WANDB_API_KEY / ~/.netrc) -> forcing offline")
                 os.environ["WANDB_MODE"] = "offline"
             eff_batch = args.batch_size * args.accum_steps
             stage = "scoring" if args.pos_r == 0 else "docking"
@@ -157,8 +159,11 @@ def main():
                 run_id = f"{base}_{int(time.time())}_{os.getpid()}"
                 with open(rid_file, "w") as _rf:
                     _rf.write(run_id)
+            # readable start-time stamp from the persisted run_id (stable across --resume),
+            # so every fresh run gets a unique, human-readable name instead of a reused PID.
+            stamp = time.strftime('%Y%m%d-%H%M%S', time.localtime(int(run_id.rsplit('_', 2)[1])))
             run_name = (f"{base}_lr{args.lr:g}_bs{eff_batch}_ep{args.epochs}"
-                        f"_pat{args.patience}_seed{args.random_seed}_{run_id.rsplit('_', 2)[-1]}")
+                        f"_pat{args.patience}_seed{args.random_seed}_{stamp}")
             cfg = dict(vars(args))
             cfg.update(effective_batch=eff_batch, stage=stage,
                        init_from=("scratch" if not args.init_model else os.path.basename(args.init_model)))

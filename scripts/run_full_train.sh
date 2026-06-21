@@ -49,10 +49,13 @@ preprocess() {                               # $1 = split name (full_train | ful
 preprocess full_train
 preprocess full_val
 
+# W&B is on by default for the full run (long job). Credentials: run `wandb login` once on
+# the cluster (its ~/.netrc is visible in the job via the mounted home), or export WANDB_API_KEY.
 COMMON=( --csv "$DATA/full_train.csv" --graph_dir "$WORK/full_train/graphs"
          --complex_dir "$WORK/full_train/complex"
          --val_csv "$DATA/full_val.csv" --val_graph_dir "$WORK/full_val/graphs"
-         --batch_size 4 --accum_steps 16 --random_seed 42 --resume )
+         --batch_size 4 --accum_steps 16 --random_seed 42 --resume
+         --wandb --wandb_project karmadock-seminar --wandb_run_name "full_${MODE}" )
 
 if [ "$MODE" = "scratch" ]; then
   # Stage 1 - scoring / MDN only (pos_r 0)
