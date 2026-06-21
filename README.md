@@ -51,14 +51,17 @@ this keeps the benchmark faithful to the published method.
 
 ### Workflow
 
-
 **① Training — produces the P2 / P3 checkpoints:**
 
-[![Training sub-flow](docs/workflow_training.png)](docs/workflow_training.png)
+<a href="docs/workflow_training.png"><img src="docs/workflow_training.png" alt="Training workflow" width="580"></a>
+
+*Preprocess `proto_train` (712) into graphs, then train: `--init_model` picks the route — **P2** from scratch (Stage 1 MDN scoring → Stage 2 + docking RMSD) or **P3** fine-tune from the released weights; `Early_stopper` keeps the best epoch as the checkpoint.*
 
 **② Inference & evaluation:**
 
-[![Inference and evaluation](docs/workflow_inference.png)](docs/workflow_inference.png)
+<a href="docs/workflow_inference.png"><img src="docs/workflow_inference.png" alt="Inference and evaluation workflow" width="700"></a>
+
+*Run once per pipeline (P1 / P2 / P3): preprocess `proto_test` (136), dock + score with the chosen weights, export the 3 pose variants (uncorrected / FF / align), then score with the official `evaluation.py` (symmetry-corrected RMSD, top-1).*
 
 
 
