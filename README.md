@@ -15,7 +15,7 @@ Paper: Zhang et al., *Nat. Comput. Sci.* **3**, 789–804 (2023),
 1. [What we did & why](#1-what-we-did-and-why-changes-vs-upstream-karmadock)
 2. [The three pipelines](#2-the-three-pipelines) — incl. [workflow diagrams](#workflow)
 3. [Results](#3-results)
-4. [How to evaluate / reproduce](#4-how-to-evaluate--reproduce)
+4. [How to evaluate / reproduce](#4-evaluate--reproduce)
 5. [Training parameters](#5-training-information--parameters-from-the-paper)
 6. [Repository layout](#6-repository-layout)
 7. [Issues & fixes](#7-issues--fixes)
