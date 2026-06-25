@@ -1,4 +1,4 @@
-# **Benchmarking DL-based Docking Tools: GNINA** — Summer Semester 2026
+# **Benchmarking DL-based Docking Tools: GNINA** 
   
 ## Background
  This prototype submission contains an implementation of a retrained GNINA convolutional neural network (CNN) models that score docking of ligands to receptors, using the provided standardized dataset. The pipeline abides by the training structure outlined in the literature by McNutt et. al (add sources later) by inputting the provided training data (proto_train) with default GNINA to generate docking poses, preprocessing the training poses into GNINA-compatible .types files, retraining each GNINA 1.3 CNN model type (default2018 or dense) with a seed input, then docking the provided unseen test data (proto_test) on each retrained model type to generate docking evaluation metrics. 
