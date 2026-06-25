@@ -68,6 +68,7 @@ The Docker container is based on the official GNINA Docker container (found at d
 12) MatPlotLib
 13) Scikit-learn
 
+Our Docker image can be found at docker.io/ansc00053/gnina-train:proto-v2. 
 Notably, in order to obtain fully functional retrained models, our Docker build patches the original GNINA-Torch training script to export a standalone TorchScript model (named gnina_retrained_full_model.pt) after training to be compatible with GNINA's --cnn_model argument.
 
 ## Next Steps
