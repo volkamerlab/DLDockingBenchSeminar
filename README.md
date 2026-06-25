@@ -72,7 +72,7 @@ Our Docker image can be found at docker.io/ansc00053/gnina-train:proto-v2.
 Notably, in order to obtain fully functional retrained models, our Docker build patches the original GNINA-Torch training script to export a standalone TorchScript model (named gnina_retrained_full_model.pt) after training to be compatible with GNINA's --cnn_model argument.
 
 ## Next Steps
-1) Create GNINA version 1.3 ensembles using varying seeds
+1) Create GNINA version 1.3 ensembles, using varying seeds
 2) Implement Kullback-Leibler (KL) divergence loss-based knowledge-distillation to create student models
 3) Implement the provided evaluation.py to determine RMSD and PoseBuster filtering
 4) Incorporate validation set into training, as well as full training set
