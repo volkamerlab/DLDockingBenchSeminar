@@ -52,7 +52,7 @@ GNINA-Torch is trained using .types files, as opposed to explicit protein and li
 - receptor structure
 - docked ligand pose
 
-## Docker Environment
+## Docker Image
 The Docker container is based on the official GNINA Docker container (found at docker.io/gnina/gnina:latest), appending various packages for training and plotting:
 1) Python 3.12
 2) Miniforge / Conda
