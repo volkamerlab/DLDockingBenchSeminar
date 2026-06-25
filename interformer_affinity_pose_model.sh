@@ -25,15 +25,15 @@ python train.py -data_path data/proto_train_final.round0.csv \
 -filter_type full \
 -native_sampler 0 \
 -Code affinity \
--batch_size 10 \
+-batch_size 4 \
 -gpus 1 \
 -method Gnina2 \
 -patience 30 \
 -early_stop_metric val_loss \
 -early_stop_mode min \
 -affinity_pre \
---warmup_updates 10000 \
---peak_lr 0.0008 \
+--warmup_updates 250 \
+--peak_lr 0.0001 \
 --n_layers 6 \
 --hidden_dim 128 \
 --num_heads 8 \
