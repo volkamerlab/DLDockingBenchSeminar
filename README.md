@@ -70,9 +70,10 @@ The Docker container is based on the official GNINA Docker container (found at d
 
 Our Docker image can be found at docker.io/ansc00053/gnina-train:proto-v2. 
 Notably, in order to obtain fully functional retrained models, our Docker build patches the original GNINA-Torch training script to export a standalone TorchScript model (named gnina_retrained_full_model.pt) after training to be compatible with GNINA's --cnn_model argument.
-
+## Limitations
+CNNs are highly accurate, while sacrificing speed. Even at 1 training epoch, our submissions to the cluster lasted up to five hours. With five epochs, training took up to seven hours. This hindered us from making further advancements to our script, such as adding in the knowledge distillation features necessary for training student models. This will be implemented in the final script. Several dependency-related issues stemmed in our Docker image build prevented us from progressing, as well, which proved costly to the time we had. In addition, GNINA-Torch does not accept partial weights-only checkpoint files--due to it only accepting full TorchScript models, we had to append the training.py script that GNINA-Torch uses in order to produce a retrained model that could properly dock the test data.
 ## Next Steps
-1) Create GNINA version 1.3 ensembles, using varying seeds
-2) Implement Kullback-Leibler (KL) divergence loss-based knowledge-distillation to create student models
-3) Implement the provided evaluation.py to determine RMSD and PoseBuster filtering
-4) Incorporate validation set into training, as well as full training set
+1) Implement Kullback-Leibler (KL) divergence loss-based knowledge-distillation to create student models
+2) Create GNINA version 1.3 ensembles, using varying seeds 
+3) Implement the provided evaluation.py to determine RMSD 
+4) Incorporate PoseBusters validation set into training, as well as full training set
