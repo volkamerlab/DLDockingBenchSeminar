@@ -1,0 +1,343 @@
+--- GNINA TRAINING ---
+trainfile = 'data/proto_train.types'
+testfile = None
+data_root = ''
+balanced = False
+shuffle = True
+label_pos = 0
+affinity_pos = 1
+flexlabel_pos = None
+stratify_receptor = False
+stratify_pos = 1
+stratify_max = 0
+stratify_min = 0
+stratify_step = 0
+ligmolcache = ''
+recmolcache = ''
+out_dir = 'results/gninatorch_training/dense_seed1'
+log_file = 'training.log'
+model = 'dense'
+dimension: 2.35000E+01
+resolution: 5.00000E-01
+base_lr: 1.00000E-02
+momentum: 9.00000E-01
+weight_decay: 1.00000E-03
+batch_size = 32
+random_rotation = True
+random_translation: 6.00000E+00
+iterations = 5
+iteration_scheme = 'small'
+lr_dynamic = False
+lr_patience = 5
+lr_reduce: 1.00000E-01
+lr_min: 1.00000E-05
+clip_gradients: 1.00000E+01
+pseudo_huber_affinity_loss = False
+delta_affinity_loss: 4.00000E+00
+scale_affinity_loss: 1.00000E+00
+penalty_affinity_loss: 1.00000E+00
+scale_pose_loss: 1.00000E+00
+scale_flexpose_loss: 1.00000E+00
+test_every = 1
+checkpoint_every = 5
+num_checkpoints = 1
+checkpoint_prefix = ''
+checkpoint_dir = ''
+progress_bar = False
+gpu = 'cuda:0'
+roc_auc = True
+cache_structures = True
+seed = 1
+silent = False
+pytorch = '2.5.1'
+ignite = '0.5.2'
+cuda = '12.1'
+>>> Train Results - Epoch[1] <<<
+    Accuracy: 0.31742
+    Balanced Accuracy: 0.49797
+    Pose Loss: 1.03000
+    ROC AUC: 0.52839
+    MAE: 2.11980
+    RMSE: 2.61220
+    Affinity Loss: 6.82358
+    Loss: 7.85358
+    Epoch Time: 62.87297
+    Elapsed Time: 62.87304
+>>> Train Results - Epoch[2] <<<
+    Accuracy: 0.71067
+    Balanced Accuracy: 0.54137
+    Pose Loss: 0.66275
+    ROC AUC: 0.56048
+    MAE: 2.66187
+    RMSE: 3.20867
+    Affinity Loss: 10.29558
+    Loss: 10.95833
+    Epoch Time: 3.94055
+    Elapsed Time: 66.81362
+>>> Train Results - Epoch[3] <<<
+    Accuracy: 0.71910
+    Balanced Accuracy: 0.50000
+    Pose Loss: 0.89832
+    ROC AUC: 0.49098
+    MAE: 3.20149
+    RMSE: 3.63342
+    Affinity Loss: 13.20176
+    Loss: 14.10009
+    Epoch Time: 3.61300
+    Elapsed Time: 70.42664
+>>> Train Results - Epoch[4] <<<
+    Accuracy: 0.28230
+    Balanced Accuracy: 0.50098
+    Pose Loss: 2.20722
+    ROC AUC: 0.60070
+    MAE: 5.41017
+    RMSE: 5.79364
+    Affinity Loss: 33.56630
+    Loss: 35.77353
+    Epoch Time: 3.60958
+    Elapsed Time: 74.03622
+>>> Train Results - Epoch[5] <<<
+    Accuracy: 0.46770
+    Balanced Accuracy: 0.47906
+    Pose Loss: 0.77495
+    ROC AUC: 0.47547
+    MAE: 2.16730
+    RMSE: 2.68648
+    Affinity Loss: 7.21720
+    Loss: 7.99214
+    Epoch Time: 3.61791
+    Elapsed Time: 77.65414
+4_0Q4_E_100_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a08_ACE-DIP_D_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1e3v_DXC_A_801_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1e_ACE-DIY_C_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1b42_M1A_A_600_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bn1_AL5_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1c_ACE-DIX_D_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1b_ACE-DIP_C_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bky_1MC_A_600_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ett_4QQ_H_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a94_0Q4_A_100_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bn3_AL6_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1f40_GPI_A_108_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1fax_DX9_A_265_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1e3v_DXC_B_801_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1cmp_DMI_A_295_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1e_ACE-DIY_D_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1aj7_NPE_H_217_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1b_ACE-DIP_D_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1drj_RIP_A_272_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bai_0Q4_A_125_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a08_ACE-DIP_C_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1drk_RIP_A_272_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ado_13P_B_1053_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ah0_SBI_A_320_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ets_MID_H_1_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1c_ACE-DIX_C_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ah3_TOL_A_320_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bnn_AL1_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1am6_HAE_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bnm_AL8_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5x_ESI_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5r_ESI_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1awi_PRO-PRO_P_1-10_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ado_13P_A_1104_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bnv_AL7_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5w_ESI_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bzj_PIC_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5y_ESP_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5u_ESP_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1fap_RAP_A_108_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bnw_TPD_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a7x_FKA_B_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bn4_AL9_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1cgl_0ED_B_1_protein_refined.pdb)
+
+>>> Train Results - Epoch[1] <<<
+    Accuracy: 0.31742
+    Balanced Accuracy: 0.49797
+    Pose Loss: 1.03000
+    ROC AUC: 0.52839
+    MAE: 2.11980
+    RMSE: 2.61220
+    Affinity Loss: 6.82358
+    Loss: 7.85358
+    Epoch Time: 62.87297
+    Elapsed Time: 62.87304
+>>> Train Results - Epoch[2] <<<
+    Accuracy: 0.71067
+    Balanced Accuracy: 0.54137
+    Pose Loss: 0.66275
+    ROC AUC: 0.56048
+    MAE: 2.66187
+    RMSE: 3.20867
+    Affinity Loss: 10.29558
+    Loss: 10.95833
+    Epoch Time: 3.94055
+    Elapsed Time: 66.81362
+>>> Train Results - Epoch[3] <<<
+    Accuracy: 0.71910
+    Balanced Accuracy: 0.50000
+    Pose Loss: 0.89832
+    ROC AUC: 0.49098
+    MAE: 3.20149
+    RMSE: 3.63342
+    Affinity Loss: 13.20176
+    Loss: 14.10009
+    Epoch Time: 3.61300
+    Elapsed Time: 70.42664
+>>> Train Results - Epoch[4] <<<
+    Accuracy: 0.28230
+    Balanced Accuracy: 0.50098
+    Pose Loss: 2.20722
+    ROC AUC: 0.60070
+    MAE: 5.41017
+    RMSE: 5.79364
+    Affinity Loss: 33.56630
+    Loss: 35.77353
+    Epoch Time: 3.60958
+    Elapsed Time: 74.03622
+>>> Train Results - Epoch[5] <<<
+    Accuracy: 0.46770
+    Balanced Accuracy: 0.47906
+    Pose Loss: 0.77495
+    ROC AUC: 0.47547
+    MAE: 2.16730
+    RMSE: 2.68648
+    Affinity Loss: 7.21720
+    Loss: 7.99214
+    Epoch Time: 3.61791
+    Elapsed Time: 77.65414
+Saved GNINA-readable TorchScript model to: results/gninatorch_training/dense_seed1/gnina_retrained_full_model.pt
