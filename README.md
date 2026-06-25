@@ -1,17 +1,17 @@
 # **Benchmarking DL-based Docking Tools: GNINA** 
   
 ## Background
- This prototype submission contains an implementation of a retrained GNINA convolutional neural network (CNN) models that score docking of ligands to receptors, using the provided standardized dataset. The pipeline abides by the training structure outlined in the literature by McNutt et. al (add sources later) by inputting the provided training data (proto_train) with default GNINA to generate docking poses, preprocessing the training poses into GNINA-compatible .types files, retraining each GNINA 1.3 CNN model type (default2018 or dense) with a seed input, then docking the provided unseen test data (proto_test) on each retrained model type to generate docking evaluation metrics. 
+ This prototype submission contains an implementation of retrained GNINA convolutional neural network (CNN) models that score docking of ligands to receptors, using the provided dataset for this seminar, in order to benchmark various DL Docking software tools across a standardized dataset, to more fairly benchmark tool performances. The pipeline abides by the GNINA version 1.3 training structure outlined in the literature by McNutt et. al 2025, by docking the provided training data (proto_train) with default GNINA to generate docking poses, preprocessing the training poses into GNINA-compatible .types files, retraining each GNINA 1.3 CNN model type (default2018 or dense) with a seed input, then docking the provided unseen test data (proto_test) on each retrained model type to generate docking evaluation metrics. 
 
- For future steps, for ensemble training, we will require 1 dense model and 2 student models (1 dense, 1 default2018) to form a GNINA version 1.3 ensemble. 
+ For future steps, for ensemble training, we will require 1 dense model and 2 knowledge-distilled student models (1 dense, 1 default2018) to form a GNINA version 1.3 ensemble. 
  
 ## About GNINA
- GNINA generates many ligand conformations with Monte Carlo sampling (MCMC), which are scored via the incorporated AutoDock VINA scoring within its Deep Learning (DL) CNN architecture for quick energy minimization. For each candidate docking pose, GNINA voxelizes the ligand-receptor complex via libmolgrid into a 3D atomic grid and scores two docking metrics: CNN pose score (the probability that the pose is correct) and CNN affinity (the binding affinity in pK units, such that pK = -log10(Kd)). With these two metrics, GNINA uses a CNN to carry out multi-task learning such that pose score is derived from the cross entropy loss, determining whether the docking pose is ≤ 2 Å RMSD from the native pose, and affinity is derived from the mean square error to determine the pK values. 
+ GNINA generates many ligand conformations with Monte Carlo sampling (MCMC), which are scored via the incorporated AutoDock VINA scoring function within its Deep Learning (DL) CNN architecture, for quick energy minimization. For each candidate docking pose, GNINA voxelizes the ligand-receptor complex via libmolgrid into a 3D atomic grid, carrying out two training tasks: scoring CNN pose score (the probability that the pose is correct) and CNN affinity (the binding affinity in pK units, such that pK = -log10(Kd)). With these two metrics, GNINA uses a CNN to carry out multi-task learning, such that pose score loss is derived from the cross entropy loss, determining whether the docking pose is ≤ 2 Å RMSD from the native pose, and affinity loss is derived from the mean square error. Then, the best poses are ranked according to score values. 
 
  ## Model Architecture: Dense and Default2018
 
-**Default 2018:** A linear CNN consisting of five convolutional layers
-**Dense:** A CNN consisting of twelve convolutional layers. Each layer is organized into three densely connected blocks, following Densenet design principles
+**Default2018:** A linear CNN consisting of five convolutional layers
+**Dense:** A CNN consisting of twelve convolutional layers. Each layer is organized into three densely connected blocks, following Densenet design principles. Much more accurate, but not as fast as the default2018 model. 
 
 ## Repository Structure
 | File / Directory | Description |
@@ -42,13 +42,12 @@
 - native ligand structures (*_ligand_refined.sdf)
 - binding affinity labels (proto_train.csv)
 
-The training data is docked using the original native GNINA model to generate docking poses, which are converted into GNINA-compatible .types training file. The test dataset, unseen by the retrained models, follows the same structure. 
+The training data is docked using the original native GNINA model to generate docking poses, which are converted into GNINA-compatible .types training files. The test dataset, unseen by the retrained models, follows the same structure. 
 
 **Preprocessed .types files for retraining:**
 
-GNINA-Torch is trained using .types files, as opposed to explicit protein and ligand structures. Each .types entry contains information including:
-
-- pose label (good/bad pose, formatted as 1/0. respectively)
+GNINA-Torch is trained using .types files, as opposed to explicit protein and ligand structures. Each .types entry contains the following information:
+- pose label (good/bad pose, formatted as 1/0, respectively)
 - binding affinity (pK)
 - receptor structure
 - docked ligand pose
