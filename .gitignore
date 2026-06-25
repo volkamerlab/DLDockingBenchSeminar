@@ -1,3 +1,4 @@
+full_data/*
 *.pdb
 *.sdf
 *wandb
