@@ -1,9 +1,21 @@
 Interformer
 --------------------
+
 Lakshana and Ben's Reproducibility Notes:
 Note: Plots can be found at: https://wandb.ai/dl-docking/Interformer?nw=nwuserbeho00003 (shared with Hamza)
 
-Final Verdict(for the first soft deadline):
+-----------
+### FULL-DATASET
+-----------
+1. Renamed full_data/ to data/ to reduce reproducibility steps. Also 
+2. Manually separated .pdb and .sdf files from  into:
+   - /home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/train_pdb
+   - /home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/train_sdf
+
+
+------------------------
+
+#### Final Verdict(for the first soft deadline):
 - Preprocessing and training was completed for a full workflow. However:
    - Train/Loss curve was established (but much room for improvement)
       - Only color relevant is the dark green which took 6k steps.
@@ -21,6 +33,9 @@ Follow up questions for Hamza/Prof. Volkamer (but also food for thought for next
 Things to consider for the next steps:
 - For final testing, should we allow for batch size to be a multiple of 20, since we are getting approx. 20 poses per ligand/pose? Would need more memory/gpus
 
+-----------
+### PROTO-TYPE
+-----------
 
 1. ```PRE-PROCESSSING TRAINING DATASET```
 

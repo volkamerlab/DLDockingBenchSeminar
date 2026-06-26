@@ -117,6 +117,17 @@ class BindingData(Dataset):
         # train_indices = df[df['Target'].isin(train_pdbs)].index.tolist()
         # valid_indices = df[df['Target'].isin(valid_pdbs)].index.tolist()
         # test_indices = df[df['Target'].isin(test_pdbs)].index.tolist()
+
+        #-----------For full data set-------------#
+        # Provided with individual training and validation dataset - leaving test empty as it comes under inference.
+        train_pdbs = pd.read_csv('data/proto_final_train.csv')['Target'].tolist()
+        valid_pdbs = pd.read_csv('data/proto_final_val.csv')['Target'].tolist()
+
+        train_indices = df[df['Target'].isin(train_pdbs)].index.tolist()
+        valid_indices = df[df['Target'].isin(valid_pdbs)].index.tolist()
+        test_indices = []
+        #-----------For full data set-------------#
+
         if self.args['inference']:
             print("[BindingData]-Split: Inference Mode, set all data to testset.")
             train_indices = []
@@ -185,28 +196,30 @@ class BindingData(Dataset):
             # Create Complex Data
             data = self._pre_complex(df, cache_path, n_jobs)
         #
-        # if istrain:
-            # we already have splitted data, so we are now going to feed it via Hamza's data
-            # self.datasets = self.split(data, self.df)
-            # Force the dataset to just use the data it parsed without doing standard splits
+        if istrain:
+            self.datasets = self.split(data, self.df)
+        
+        #---------For prototype training----------#
+        # Force the dataset to just use the data it parsed without doing standard splits
         # We wrap it in a Subset-like structure if the training loop expects a tuple,
         # otherwise we just assign it.
         
         # If the code downstream expects a tuple of (train, val, test) when istrain=True,
         # we will just assign the whole dataset to train, and leave val/test empty.
-        if istrain:
-             from data.data_stucture.lmdb_dataset import Subset
-             all_indices = list(range(len(data)))
+        # if istrain:
+        #      from data.data_stucture.lmdb_dataset import Subset
+        #      all_indices = list(range(len(data)))
              
-             # Option A: If you want 15% of your train.csv to be used as Validation
-             val_split_idx = int(len(data) * 0.85)
-             train_subset = Subset(data, all_indices[:val_split_idx])
-             val_subset = Subset(data, all_indices[val_split_idx:])
-             test_subset = Subset(data, []) # We will test separately
+        #      # Option A: If you want 15% of your train.csv to be used as Validation
+        #      val_split_idx = int(len(data) * 0.85)
+        #      train_subset = Subset(data, all_indices[:val_split_idx])
+        #      val_subset = Subset(data, all_indices[val_split_idx:])
+        #      test_subset = Subset(data, []) # We will test separately
              
-             self.datasets = (train_subset, val_subset, test_subset)
-             print(f"[BindingData] Custom Split: train:{len(train_subset)}/valid:{len(val_subset)}/test:{len(test_subset)}")
-             
+        #      self.datasets = (train_subset, val_subset, test_subset)
+        #      print(f"[BindingData] Custom Split: train:{len(train_subset)}/valid:{len(val_subset)}/test:{len(test_subset)}")
+        #---------For prototype training----------#  
+
         else:
             self.datasets = data
         print(f"[Bindingdata] Total Samples:{len(self.df)}")

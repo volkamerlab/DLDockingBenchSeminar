@@ -5,9 +5,24 @@ from tqdm import tqdm
 import joblib
 from rdkit import Chem
 from oddt.toolkits.extras.rdkit import fixer
+'''fixer: imported for using ExtractPocketAndLigand - extract ligand and protein pocket (w/ cutoff) '''
 
 
 def create_ligand_residue(ligand):
+    '''Modifies an RDKit molecule in-place to add or format PDB residue information.
+
+    For structural files lacking formal PDB residue naming (like raw SDFs), this function 
+    generates fallback residue metadata ('LIG') and labels the atoms as heteroatoms. 
+    If residue metadata already exists, it flags them as non-heteroatoms to preserve 
+    pocket-parsing compatibility.
+
+    Args:
+        ligand (rdkit.Chem.rdchem.Mol): The RDKit molecule object representing the ligand.
+
+    Returns:
+        nothing, the function already manipulates the ligand as desired.
+    '''
+
     for atom in ligand.GetAtoms():
         res = atom.GetPDBResidueInfo()
         # sdf
@@ -62,6 +77,7 @@ def grep_ref_CCD(ligand, pdb_f):
 def run_fn(pdb_f, rm_ccd=False):
     # New modification (to get pockets for multiple ccd)
     base = os.path.basename(pdb_f)
+    pdbid = base.replace("_protein_refined.pdb", "")
 
     ligand_file = os.path.join(
         ligand_path,
@@ -130,6 +146,34 @@ def run_fn(pdb_f, rm_ccd=False):
     try:
         pocket, ligand = fixer.ExtractPocketAndLigand(complex, cutoff=10, append_residues=ccd_list,
                                                       expandResidues=True, ligand_residue='LIG')  # PDB standard
+        '''Function extracting a ligand (the largest HETATM residue) and the protein
+        pocket within certain cutoff. The selection of pocket atoms can be expanded
+        to contain whole residues. The single atom HETATM residues are attributed
+        to pocket (metals and waters)
+
+        Parameters
+        ----------
+            mol: rdkit.Chem.rdchem.Mol
+                Molecule with a protein ligand complex
+            cutoff: float (default=12.)
+                Distance cutoff for the pocket atoms
+            expandResidues: bool (default=True)
+                Expand selection to whole residues within cutoff.
+            ligand_residue: string (default None)
+                Residue name which explicitly pint to a ligand(s).
+            ligand_residue_blacklist: array-like, optional (default None)
+                List of residues to ignore during ligand lookup.
+            append_residues: array-like, optional (default None)
+                List of residues to append to pocket, even if they are HETATM, such
+                as MSE, ATP, AMP, ADP, etc.
+
+        Returns
+        -------
+            pocket: rdkit.Chem.rdchem.RWMol
+                Pocket constructed of protein residues/atoms around ligand
+            ligand: rdkit.Chem.rdchem.RWMol
+                Largest HETATM residue contained in input molecule
+        '''
     except Exception as e:
         print(f"Error<-{pdbid}, {e}")
 

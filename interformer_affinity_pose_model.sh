@@ -32,6 +32,7 @@ python train.py -data_path data/proto_train_final.round0.csv \
 -early_stop_metric val_loss \
 -early_stop_mode min \
 -affinity_pre \
+-run_name Affinity_pose_model \
 --warmup_updates 10000 \
 --peak_lr 0.0008 \
 --n_layers 6 \

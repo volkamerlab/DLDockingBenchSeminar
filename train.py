@@ -4,32 +4,33 @@ Please note that in order to run this, you need:
 2. A .env file with the API key (in same dir as train.py) - we can upload the API key into the wandb secrets (on the wandb website) that you can 
     paste into your .env file.
 '''
+# imported libraries
 from dotenv import load_dotenv
 import wandb
 
 import os
 import copy
-import pytorch_lightning as pl
 import torch
+import pytorch_lightning as pl
+from functools import partial
+from torch.utils.data import distributed
+from pytorch_lightning import LightningDataModule
 import torch.distributed as dist
 from pytorch_lightning import loggers as pl_loggers
 from pytorch_lightning.strategies import DDPStrategy
 
+# imported files from interformer
 from data.data_process import GraphDataModule
 from utils.cluster import auto_configure_nccl
 from utils.parser import get_args
 from utils.train_utils import load_model, param_count, get_callbacks
-
-# adjusted file paths
+#sampling data and ppi
 from data.sampler import per_target_balance_sampler, LISA_sampler, Fullsampler
 from data.dataset.bindingdata import BindingData
 from data.dataset.ppi_dataset import PPIData
-import torch
-from functools import partial
-from torch.utils.data import distributed
-from pytorch_lightning import LightningDataModule
 from data.collator.inter_collate_fn import interformer_collate_fn
 from data.collator.ppi_collate_fn import ppi_collate_fn, ppi_residue_collate_fn
+
 # TODO: Lakshana will implement this into the Docker container for more detailed runs 
 '''
 import datetime 
@@ -81,7 +82,7 @@ def main(args):
     wandb_logger = pl_loggers.WandbLogger(
         entity="dl-docking",  # Set to your username/organization if needed
         project="Interformer",  # Your project name
-        name="Docking",
+        name=args['run_name'],
         log_model="all",  # Log model checkpoints - to obtain hparams.yaml file use "all" instead of "True"
         tags=["interformer", "docking"],
     )
@@ -135,7 +136,7 @@ def main(args):
     
     # # # Evaluate using the new test datamodule
     # test_result = trainer.test(model, ckpt_path='best', datamodule=test_dm)
-    wandb_logger.finalize("success")
+    # wandb_logger.finalize("success")
     # return test_result
 
 

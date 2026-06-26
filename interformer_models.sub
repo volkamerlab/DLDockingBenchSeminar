@@ -1,7 +1,8 @@
 universe = docker
 docker_image = blakshana/interformer:v4
-# Change according to model
-executable = interformer_affinity_pose_model.sh
+# Change according to model:
+# interformer_affinity_pose_model, interformer_energy_model, interformer_affinity_normal
+executable = interformer_energy_model.sh
 output = logs/josh-interformer.$(ClusterId).$(ProcId).out
 error = logs/josh-interformer.$(ClusterId).$(ProcId).err
 log = logs/josh-interformer.$(ClusterId).log

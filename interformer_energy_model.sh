@@ -33,6 +33,7 @@ python3 -u train.py \
 -early_stop_metric val_loss \
 -early_stop_mode min \
 -affinity_pre \
+-run_name Energy_model \
 --warmup_updates 11000 \
 --peak_lr 0.0012 \
 --n_layers 6 \
