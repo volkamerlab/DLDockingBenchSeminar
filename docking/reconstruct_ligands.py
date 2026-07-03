@@ -436,7 +436,8 @@ def get_args_and_mainparser():
     mainparser.add_argument(
         "--num_output_poses",
         type=int,
-        default=20,
+        # Default-20; Hamza suggested-50 (to increase chances for negative poses)
+        default=50,
         help="num of output poses",
     )
     # calculate

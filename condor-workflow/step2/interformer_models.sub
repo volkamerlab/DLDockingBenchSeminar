@@ -1,0 +1,19 @@
+universe = docker
+docker_image = blakshana/interformer:v4
+# Change according to model:
+# interformer_affinity_pose_model.sh, interformer_energy_model.sh, interformer_affinity_normal.sh
+executable = condor/step2/interformer_affinity_normal_model.sh
+output = logs/josh-interformer.$(ClusterId).$(ProcId).out
+error = logs/josh-interformer.$(ClusterId).$(ProcId).err
+log = logs/josh-interformer.$(ClusterId).log
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+
+requirements = (Target.CUDADeviceName == "NVIDIA A100-SXM4-40GB") || (Target.CUDADeviceName == "NVIDIA A100-PCIE-40GB") || (Target.CUDADeviceName == "NVIDIA A100-SXM4-80GB") || (Target.CUDADeviceName == "NVIDIA A100-PCIE-80GB")
+requirements = UidDomain == "cs.uni-saarland.de"
+
+request_GPUs = 2
+request_CPUs =  4
+request_memory = 64G
++WantGPUHomeMounted = true
+queue

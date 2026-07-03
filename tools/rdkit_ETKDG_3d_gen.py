@@ -5,23 +5,18 @@ import sys
 from rdkit.Chem import AllChem
 from rdkit import Chem
 from rdkit.Chem.rdDistGeom import EmbedMultipleConfs, ETKDGv3
-'''ETKDGv3 --  parameter set for the ETKDG (Experimental Torsion Knowledge Distance Geometry) conformer generation algorithm in RDKit, designed to produce chemically reasonable 3D structures by incorporating knowledge-based distance constraints and torsion angle preferences. Returns an EmbedParameters object for the ETKDG method - version 3 (macrocycles).'''
-'''EmbedMultipleConfs -- Use distance geometry to obtain multiple sets of coordinates for a molecule. Returns Iterator which yields new conformation IDs'''
+# ETKDGv3 -- parameter set for the ETKDG (Experimental Torsion Knowledge Distance Geometry) conformer generation algorithm in RDKit
+# EmbedMultipleConfs -- Use distance geometry to obtain multiple sets of coordinates for a molecule
 from copy import deepcopy
 from rdkit.Chem.rdForceFieldHelpers import (
-    UFFGetMoleculeForceField, #not implemented in script, but maybe background process for UFFOptimizeMoleculeConfs
-    '''UFFGetMoleculeForceField -- ARGUMENTS: the molecule of interest, vdwThresh - used to exclude long-range vdWs interactions, confId : indicates which conformer to optimize. Returns: UFF force field for a molecule'''
-    UFFOptimizeMoleculeConfs,
-    '''UFFOptimizeMoleculeConfs -- uses UFF to optimize all of a molecule’s conformations. Returns: a list of (not_converged, energy) 2-tuples.
-    If not_converged is 0 the optimization converged for that conformer.'''
+    UFFGetMoleculeForceField,  # not implemented in script
+    UFFOptimizeMoleculeConfs   # uses UFF to optimize all conformations
 )
 from tqdm import tqdm
 import joblib
 from rdkit.Chem.rdchem import Mol
-from rdkit.Chem.rdmolops import AddHs, 
-AssignStereochemistryFrom3D 
-'''AssignStereochemistryFrom3D -- Uses a conformer (should be 3D) to assign ChiralTypes to a molecule’s atoms
-and stereo flags to its bonds'''
+from rdkit.Chem.rdmolops import AddHs, AssignStereochemistryFrom3D
+# AssignStereochemistryFrom3D -- Uses a conformer to assign ChiralTypes to a molecule's atoms
 from rdkit.Chem import rdMolAlign
 
 

@@ -7,6 +7,8 @@ Please note that in order to run this, you need:
 # imported libraries
 from dotenv import load_dotenv
 import wandb
+# TODO: Lakshana will implement this into the Docker container for more detailed runs 
+from datetime import datetime # for timestamping runs on wandb
 
 import os
 import copy
@@ -31,34 +33,23 @@ from data.dataset.ppi_dataset import PPIData
 from data.collator.inter_collate_fn import interformer_collate_fn
 from data.collator.ppi_collate_fn import ppi_collate_fn, ppi_residue_collate_fn
 
-# TODO: Lakshana will implement this into the Docker container for more detailed runs 
-'''
-import datetime 
-# 2. Extract key identifiers from your args to make it highly scannable
-    model_name = args.get('model', 'model')
-    batch_size = args.get('batch_size', 'unknown_bs')
-    
-    # 3. Combine them into a descriptive run name
-    # Example output: "Interformer_bs20_20260619_233005"
-    run_name = f"{model_name}_bs{batch_size}_{current_time}"
-
-    # WandB Logger Configuration
-    wandb_logger = pl_loggers.WandbLogger(
-        entity="dl-docking",
-        project="Interformer",
-        name=run_name,          # <-- Your dynamic name goes here
-        log_model="all",
-        tags=["interformer", "docking"],
-    )
-'''
-
+# Switch sharing strategy from 'file_descriptor' to 'file_system'
+torch.multiprocessing.set_sharing_strategy("file_system")
 
 print(f"# Torch Version:{torch.__version__}")
 load_dotenv() # load the API keys
 
-
 def main(args):
-    # NCCL
+
+    #enable for a100 (Thanks Hamza)
+    if torch.cuda.is_available():
+        torch.set_float32_matmul_precision('high')
+
+    #timestamp for wandb runs
+    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamped_run_name = f"New-Dock_{args['run_name']}_{current_time}"
+
+    # NCCL - NVIDIA Collective Communications Library (NCCL)
     auto_configure_nccl()
     # Data Processing
     dm = GraphDataModule(args)
@@ -82,24 +73,32 @@ def main(args):
     wandb_logger = pl_loggers.WandbLogger(
         entity="dl-docking",  # Set to your username/organization if needed
         project="Interformer",  # Your project name
-        name=args['run_name'],
+        name=timestamped_run_name,
         log_model="all",  # Log model checkpoints - to obtain hparams.yaml file use "all" instead of "True"
         tags=["interformer", "docking"],
     )
     
     # Log hyperparameters on wandb (https://wandb.ai/cispa-phoenix/DL-Docking)
-    wandb_logger.experiment.config.update({
-        'model': args['model'],
-        'precision': args['precision'],
-        'num_epochs': args['num_epochs'],
-        'data_path': args['data_path'],
-        'learning_rate': args.get('lr', 'N/A'),
-        'batch_size': args.get('batch_size', 'N/A'),
-    })
+    wandb_logger = pl_loggers.WandbLogger(
+        entity="dl-docking",  
+        project="Interformer",  
+        name=timestamped_run_name,
+        log_model="all",  
+        tags=["interformer", "docking"],
+        config={                                
+            'model': args['model'],
+            'precision': args['precision'],
+            'num_epochs': args['num_epochs'],
+            'data_path': args['data_path'],
+            'learning_rate': args.get('lr', 'N/A'),
+            'batch_size': args.get('batch_size', 'N/A'),
+        }
+    )
 
     trainer = pl.Trainer(
         devices='auto',
-        precision=args['precision'],
+        #created more options for precision (for a100)
+        precision='16-mixed' if args['precision'] == 16 or args['precision'] == '16' else args['precision'],
         max_epochs=args['num_epochs'],
         log_every_n_steps=20,
         fast_dev_run=False,
@@ -115,6 +114,8 @@ def main(args):
         use_distributed_sampler=False,  # it is important, make sure trainner not using their own sampler
         # reload_dataloaders_every_n_epochs=1,
         num_nodes=args['num_nodes'],
+        # accumulate_grad_batches=5 # To make up for low batch size due to memory constrain (4*5=20) - energy model
+        accumulate_grad_batches=2 # To make up for low batch size due to memory constrain and since 2GPU (2*2*5=20) - affinity-normal model
     )
     trainer.fit(model, datamodule=dm)
 

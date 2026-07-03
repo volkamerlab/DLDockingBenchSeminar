@@ -1,0 +1,21 @@
+universe = docker
+docker_image = blakshana/interformer:v6
+# input the checkpoints and relevant files
+# for .csv file for affinity and pose model training
+transfer_input_files = docking, data, dock_results, interformer_affinity_pose_docking.sh
+executable = condor/sh/interformer_affinity_pose_docking.sh
+
+output = logs/josh-interformer.$(ClusterId).$(ProcId).out
+error = logs/josh-interformer.$(ClusterId).$(ProcId).err
+log = logs/josh-interformer.$(ClusterId).log
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+# transfer_output_files   = ""
+
+request_GPUs = 1
+request_CPUs = 8
+request_memory = 16G
+requirements = UidDomain == "cs.uni-saarland.de"
++WantGPUHomeMounted = true
+queue

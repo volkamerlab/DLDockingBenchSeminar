@@ -1,11 +1,19 @@
 import pandas as pd
 
 # 1. Define file paths
+# input_file = (
+#     "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train_processed.csv"
+# )
+# output_file = (
+#     "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train_final.csv"
+# )
+
+# for validation set
 input_file = (
-    "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train.csv"
+    "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_val_processed.csv"
 )
 output_file = (
-    "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train_final.csv"
+    "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_val_final.csv"
 )
 
 # 2. Load the dataset

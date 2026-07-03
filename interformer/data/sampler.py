@@ -135,7 +135,8 @@ class SamplerBase(torch.utils.data.Sampler):
         self.uni_targets = np.unique(target)
         self.labels = labels
         pos_neg_threshold = 0.
-        pos_threshold = 6.
+        pos_threshold = 6. #TODO - don't change the thres. but change the generated compounds to 50. as requested by hamza
+        #TODO: also check if the negative samples are being generated or not if we increase the num of poses
         # create target to index list
         self.t2idx = dict((t, [defaultdict(list), {'active': [], 'inactive': [], 'all': []}]) for t in self.uni_targets)
         # create pos, neg pools

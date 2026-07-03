@@ -1,3 +1,4 @@
+dock_results_prototype/*
 data-old/*
 full_data/*
 *.pdb
@@ -215,3 +216,4 @@ pyrightconfig.json
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,pythoninterformer_train.tar.gz
+dock_results_prototype/energy_test/ligand_reconstructing/5s7c_LU8_A_507_docked.sdf_stat.csv

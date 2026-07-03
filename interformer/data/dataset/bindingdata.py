@@ -120,8 +120,8 @@ class BindingData(Dataset):
 
         #-----------For full data set-------------#
         # Provided with individual training and validation dataset - leaving test empty as it comes under inference.
-        train_pdbs = pd.read_csv('data/proto_final_train.csv')['Target'].tolist()
-        valid_pdbs = pd.read_csv('data/proto_final_val.csv')['Target'].tolist()
+        train_pdbs = pd.read_csv('data/proto_train_final.csv')['Target'].tolist()
+        valid_pdbs = pd.read_csv('data/proto_val_final.csv')['Target'].tolist()
 
         train_indices = df[df['Target'].isin(train_pdbs)].index.tolist()
         valid_indices = df[df['Target'].isin(valid_pdbs)].index.tolist()
@@ -193,6 +193,7 @@ class BindingData(Dataset):
         if data is None:
             df = pd.read_csv(args['data_path'])
             df = self._filter_df(threshold, df, self.dataset_type) if istrain else df
+            self.df = df # To prevent attribute error - # Store dataframe to instance for later use in splitting
             # Create Complex Data
             data = self._pre_complex(df, cache_path, n_jobs)
         #

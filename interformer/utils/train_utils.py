@@ -32,12 +32,40 @@ def load_model(args):
         model = PPIScorer(args)
     return model
 
+# Original code
+# def load_from_checkpoint(args, checkpoint):
+#     print("# Using Model <-", checkpoint)
+#     # get model's name from hparam first
+#     hparam = yaml.load(open('/'.join(checkpoint.split('/')[:-2]) + '/hparams.yaml'), Loader=yaml.Loader)
+#     model_name = hparam['args']['model']
+
+# Changes to make workflow compatible for the wandb workflow(more specifically- config.yaml file)
+def _load_run_args(checkpoint):
+    # Load the run's args dict, whether they come from a Lightning hparams.yaml or (as a fallback) a wandb config.yaml export.
+    run_dir = '/'.join(checkpoint.split('/')[:-2])
+    hparams_path = run_dir + '/hparams.yaml'
+    config_path = run_dir + '/config.yaml'
+
+    if os.path.exists(hparams_path):
+        hparam = yaml.load(open(hparams_path), Loader=yaml.Loader)
+        return hparam['args']
+
+    if os.path.exists(config_path):
+        raw = yaml.safe_load(open(config_path))
+        args_entry = raw['args']
+        args = args_entry['value'] if isinstance(args_entry, dict) and 'value' in args_entry else args_entry
+        for key in ('edge_featurizer', 'node_featurizer'):
+            args.pop(key, None)
+        return args
+
+    raise FileNotFoundError(f"Neither hparams.yaml nor config.yaml found in {run_dir}")
+
 
 def load_from_checkpoint(args, checkpoint):
     print("# Using Model <-", checkpoint)
-    # get model's name from hparam first
-    hparam = yaml.load(open('/'.join(checkpoint.split('/')[:-2]) + '/hparams.yaml'), Loader=yaml.Loader)
-    model_name = hparam['args']['model']
+    # get model's name from hparam first (hparams.yaml, or config.yaml as fallback)
+    hparam_args = _load_run_args(checkpoint)
+    model_name = hparam_args['model']
     #
     if model_name == 'Interformer':
         model = Interformer.load_from_checkpoint(checkpoint)

@@ -14,9 +14,16 @@ import pandas as pd
 import requests
 
 # 1. Define file paths
-input_file = "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train.csv"
+# input_file = "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train.csv"
+
+# output_file = (
+#     "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train_processed.csv"
+# )
+
+# #for validation set
+input_file = "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_val.csv"
 output_file = (
-    "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train_processed.csv"
+    "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_val_processed.csv"
 )
 
 print(f"Reading file from: {input_file}")
