@@ -1,0 +1,33 @@
+# posebusters_infer.sub  —  dock the 308-complex PoseBusters set with the FULL-DATA
+# (multi-GPU Stage-2 trained) checkpoint. Produces the 3 pose variants
+# (uncorrected / FF / align) in results/full_scratch/posebusters_filtered{,_ff,_align}/.
+#
+# PREREQUISITE on the submit node:
+#   data/posebusters_filtered.csv   (built by scripts/make_posebusters_csv.py; the
+#                                    ligand_file column is read by seminar_csv here)
+#   data/posebusters_filtered/      (308 *_ligand.sdf + *_protein.pdb)
+#
+# Submit command:   condor_submit condor/posebusters_infer.sub
+
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = scripts/run_infer.sh
+arguments     = posebusters_filtered full_scratch_karmadock_team002.pkl full_scratch
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = scripts, model/full_scratch_karmadock_team002.pkl, data/posebusters_filtered.csv, data/posebusters_filtered
+transfer_output_files   = results
+
+output = logs/posebusters_infer.$(ClusterId).$(ProcId).out
+error  = logs/posebusters_infer.$(ClusterId).$(ProcId).err
+log    = logs/posebusters_infer.$(ClusterId).log
+
+request_gpus   = 1
+request_cpus   = 8
+request_memory = 32GB
+
+queue 1
