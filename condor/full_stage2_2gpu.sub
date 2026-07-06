@@ -1,0 +1,37 @@
+# full_stage2_2gpu.sub — COPY of full_stage2_mgpu.sub for the 2x A100 DDP Stage-2 run.
+# Changes vs the original (which is left untouched):
+#   request_gpus 4 -> 2 ; cpus 16 -> 8 ; memory 64GB -> 16GB
+#   + GPU selector (cap >=8.0 & >=32 GB) so 2 A100s/L40S/H200 are picked, never a 16 GB OOM card
+#   environment S2_BATCH=8 S2_ACCUM=4 -> effective batch 2*8*4 = 64 (paper)
+#   executable + transfer use run_full_stage2_ddp_v2.sh (wd 0, patience 70)
+#
+# PREREQUISITES: ~/stage2_mgpu_test/ deployed (train_ddp.py, seminar_csv.py, run_full_stage2_ddp_v2.sh)
+# + ~/.netrc for W&B. Stage 2 inits from the FINAL Stage-1 best weights via STAGE1_CKPT below
+# (read-only; the main run's p_stage1 is never modified). DDP is untested on real GPUs, so epoch 1
+# of this run is watched to confirm no NCCL hang.
+# Then:  cd ~/stage2_mgpu_test && condor_submit full_stage2_2gpu.sub
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = run_full_stage2_ddp_v2.sh
+# Init from the final Stage-1 best weights (read-only); effective batch 2*8*4 = 64.
+environment   = "S2_BATCH=8 S2_ACCUM=4 STAGE1_CKPT=/home/bdldt_team002/repro_test/work_full/ckpt/p_stage1/karmadock_team002.pkl"
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = train_ddp.py, seminar_csv.py, run_full_stage2_ddp_v2.sh
+
+output = logs/s2_2gpu.$(ClusterId).$(ProcId).out
+error  = logs/s2_2gpu.$(ClusterId).$(ProcId).err
+log    = logs/s2_2gpu.$(ClusterId).log
+
+request_gpus   = 2
+request_cpus   = 8
+request_memory = 16GB
+# A100 and newer (cap >= 8.0) with >= 32 GB device memory; excludes the 16 GB P100/V100 that OOM.
+gpus_minimum_capability = 8.0
+gpus_minimum_memory     = 32000
+
+queue 1
