@@ -1,3 +1,7 @@
 data/prototype*
 __pycache__/
 *.pyc
+.ipynb_checkpoints/
+# data/ symlinks into local ../full_data/ (not portable); the *.csv here stay tracked
+data/full_test
+data/posebusters_filtered
