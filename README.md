@@ -29,7 +29,7 @@ finalized: our from-scratch model retrained on the full seminar split
 
 This commit adds the trained model (`model/`), the evaluation input CSVs (`data/`), the HPC condor
 submit files (`condor/full_stage2_2gpu.sub` = the 2×A100 Stage-2 run;
-`condor/{full_test,posebusters}_infer.sub` = inference) and their job logs (`condor_logs/`). The
+`condor/{full_test,posebusters}_infer.sub` = inference) and their job logs (`condor/logs/`). The
 full report and results notebook are being finalized.
 
 ---
