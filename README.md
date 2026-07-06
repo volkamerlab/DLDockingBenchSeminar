@@ -11,6 +11,29 @@ the pose directly instead of searching, so it is ~100–1000× faster than class
 Paper: Zhang et al., *Nat. Comput. Sci.* **3**, 789–804 (2023),
 [doi:10.1038/s43588-023-00511-5](https://doi.org/10.1038/s43588-023-00511-5).
 
+---
+
+## 🚧 Final submission (full-data) — report in progress
+
+The tables below use the prototype `proto_test` (136). The **final full-data submission** is being
+finalized: our from-scratch model retrained on the full seminar split
+(`model/full_scratch_karmadock_team002.pkl`; 2-stage paper protocol, Stage-2 via 2×A100 (40GB each); evaluated head-to-head against the authors' released weights on the
+**same** `full_test` (6,183) and `posebusters_filtered` (308) sets.
+
+**Preliminary headline** (top-1 success@2 Å, using `evaluation.py`, uncorrected):
+
+| set | ours (full-data) | released weights |
+|---|---|---|
+| full_test (6,183) | 82.2 % | 88.3 % |
+| PoseBusters (308) | 76.9 % (PB-Valid 5.2 %) | 83.1 % (PB-Valid 2.6 %) |
+
+This commit adds the trained model (`model/`), the evaluation input CSVs (`data/`), the HPC condor
+submit files (`condor/full_stage2_2gpu.sub` = the 2×A100 Stage-2 run;
+`condor/{full_test,posebusters}_infer.sub` = inference) and their job logs (`condor_logs/`). The
+full report and results notebook are being finalized.
+
+---
+
 **Contents:**
 1. [What we did & why](#1-what-we-did-and-why-changes-vs-upstream-karmadock)
 2. [The three pipelines](#2-the-three-pipelines) — incl. [workflow diagrams](#workflow)
