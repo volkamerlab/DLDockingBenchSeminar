@@ -1,0 +1,30 @@
+# full_test_infer.sub  —  dock the 6,183-complex full_test set with the FULL-DATA
+# (multi-GPU Stage-2 trained) checkpoint. Produces the 3 pose variants
+# (uncorrected / FF / align) in results/full_scratch/full_test{,_ff,_align}/.
+# PREREQUISITE on the submit node:
+#   data/full_test.csv          (built by scripts/metadata_to_eval_csv.py)
+#   data/full_test/             (6,183 *_ligand_refined.sdf + *_protein_refined.pdb)
+
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = scripts/run_infer.sh
+arguments     = full_test full_scratch_karmadock_team002.pkl full_scratch
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = scripts, model/full_scratch_karmadock_team002.pkl, data/full_test.csv, data/full_test
+transfer_output_files   = results
+
+output = logs/full_test_infer.$(ClusterId).$(ProcId).out
+error  = logs/full_test_infer.$(ClusterId).$(ProcId).err
+log    = logs/full_test_infer.$(ClusterId).log
+
+request_gpus   = 1
+request_cpus   = 8
+request_memory = 32GB
+
+queue 1
