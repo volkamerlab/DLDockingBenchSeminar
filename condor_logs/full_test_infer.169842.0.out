@@ -1,0 +1,31 @@
+=== [full_scratch] dock full_test with /raid/condor/lib/condor/execute/dir_1257322/full_scratch_karmadock_team002.pkl ===
+converted 6183/6183 complexes (0 missing source files)
+### get graph on the fly
+=== [full_scratch] graphs built: 6183 ===
+# load model
+
+Total Time: 4.0547796711325645 min
+Sample Num: 6183
+# uncorrected
+Time Spend: 0.9557844504817492 ± 0.011730255901099761 min
+Mean RMSD: 2.5189479192097983 ± 0.001482510887319993
+Medium RMSD: 1.5035827954610188 ± 0.0017940426550175814
+Success RATE(2A): 0.6034287412961324 ± 0.000583135249388291
+# ff_corrected
+Time Spend: 0.0026685820788972907 ± 4.390247234330711e-05 min
+Mean RMSD: 2.6900715545861664 ± 0.004260456854772557
+Medium RMSD: 1.7507294325718785 ± 0.01101639372855392
+Success RATE(2A): 0.5567955145829964 ± 0.0014940327198825374 
+# align corrected
+Time Spend: 0.0007907884712848399 ± 3.6847491602615916e-05 min
+Mean RMSD: 2.8878868491319434 ± 0.0028943768646965172
+Medium RMSD: 2.060387588013032 ± 0.003841154476098672
+Success RATE(2A): 0.48315273060542346 ± 0.0004941048784253448 
+      
+wrote 6183/6183 predicted-pose files to /raid/condor/lib/condor/execute/dir_1257322/results/full_scratch/full_test
+=== [full_scratch] uncorrected: 6183 poses -> results/full_scratch/full_test ===
+wrote 6183/6183 predicted-pose files to /raid/condor/lib/condor/execute/dir_1257322/results/full_scratch/full_test_ff
+=== [full_scratch] ff_corrected: 6183 poses -> results/full_scratch/full_test_ff ===
+wrote 6183/6183 predicted-pose files to /raid/condor/lib/condor/execute/dir_1257322/results/full_scratch/full_test_align
+=== [full_scratch] align_corrected: 6183 poses -> results/full_scratch/full_test_align ===
+=== [full_scratch] inference done (3 pose variants in results/full_scratch/) ===

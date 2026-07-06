@@ -1,0 +1,31 @@
+=== [released_baseline] dock full_test with /app/KarmaDock/trained_models/karmadock_screening.pkl ===
+converted 6183/6183 complexes (0 missing source files)
+### get graph on the fly
+=== [released_baseline] graphs built: 6183 ===
+# load model
+
+Total Time: 4.092884116681914 min
+Sample Num: 6183
+# uncorrected
+Time Spend: 0.9626484309323132 ± 0.018014168698511482 min
+Mean RMSD: 2.0447538693745932 ± 0.0022704135778910473
+Medium RMSD: 1.230332851409912 ± 0.001580340142624285
+Success RATE(2A): 0.7259151339530945 ± 0.0013755307984861201
+# ff_corrected
+Time Spend: 0.0027040189649495815 ± 0.00010707347012763801 min
+Mean RMSD: 2.259409975007416 ± 0.0032271606952031105
+Medium RMSD: 1.4799386039060147 ± 0.004500210702922351
+Success RATE(2A): 0.6680683594802955 ± 0.0015027613202615907 
+# align corrected
+Time Spend: 0.0007983416836294862 ± 1.241437857297412e-05 min
+Mean RMSD: 2.6460618132605145 ± 0.0018845728739898529
+Medium RMSD: 2.0049743644707925 ± 0.003059405840106215
+Success RATE(2A): 0.49824788398296405 ± 0.0007643240540599589 
+      
+wrote 6183/6183 predicted-pose files to /raid/condor/lib/condor/execute/dir_467832/results/released_baseline/full_test
+=== [released_baseline] uncorrected: 6183 poses -> results/released_baseline/full_test ===
+wrote 6183/6183 predicted-pose files to /raid/condor/lib/condor/execute/dir_467832/results/released_baseline/full_test_ff
+=== [released_baseline] ff_corrected: 6183 poses -> results/released_baseline/full_test_ff ===
+wrote 6183/6183 predicted-pose files to /raid/condor/lib/condor/execute/dir_467832/results/released_baseline/full_test_align
+=== [released_baseline] align_corrected: 6183 poses -> results/released_baseline/full_test_align ===
+=== [released_baseline] inference done (3 pose variants in results/released_baseline/) ===

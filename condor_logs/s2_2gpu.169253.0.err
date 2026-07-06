@@ -1,0 +1,61 @@
++ KD=/app/KarmaDock
++ export PYTHONPATH=/app/KarmaDock:/app/KarmaDock
++ PYTHONPATH=/app/KarmaDock:/app/KarmaDock
++ SUBMIT=/raid/condor/lib/condor/execute/dir_153859
++ DATA=/home/bdldt_team002/repro_test/full_data
++ GRAPHS=/home/bdldt_team002/repro_test/work_full
++ S2WORK=/home/bdldt_team002/stage2_mgpu_test/work
++ STAGE1_CKPT=/home/bdldt_team002/repro_test/work_full/ckpt/p_stage1/karmadock_team002.pkl
++ BS=8
++ ACC=4
++ EP=1000
++ mkdir -p /home/bdldt_team002/stage2_mgpu_test/work
++ '[' -f /home/bdldt_team002/repro_test/work_full/ckpt/p_stage1/karmadock_team002.pkl ']'
+++ nvidia-smi -L
+++ wc -l
++ NGPU=2
++ '[' 2 -lt 1 ']'
+++ date +%Y%m%d-%H%M%S
++ RUN=full_stage2_ddp_20260630-164138
++ echo '=== Stage-2 DDP on 2 GPU(s); effective batch = 64; run=full_stage2_ddp_20260630-164138 ==='
++ ARGS=("$SUBMIT/train_ddp.py" --csv "$DATA/full_train.csv" --graph_dir "$GRAPHS/full_train/graphs" --complex_dir "$GRAPHS/full_train/complex" --val_csv "$DATA/full_val.csv" --val_graph_dir "$GRAPHS/full_val/graphs" --out_dir "$S2WORK/ckpt_s2_ddp" --init_model "$STAGE1_CKPT" --pos_r 1 --lr 1e-4 --weight_decay 0 --patience 70 --epochs "$EP" --batch_size "$BS" --accum_steps "$ACC" --num_workers 3 --random_seed 42 --resume --wandb --wandb_project karmadock-seminar --wandb_run_name "$RUN")
++ '[' 2 -gt 1 ']'
++ torchrun --standalone --nnodes=1 --nproc_per_node=2 /raid/condor/lib/condor/execute/dir_153859/train_ddp.py --csv /home/bdldt_team002/repro_test/full_data/full_train.csv --graph_dir /home/bdldt_team002/repro_test/work_full/full_train/graphs --complex_dir /home/bdldt_team002/repro_test/work_full/full_train/complex --val_csv /home/bdldt_team002/repro_test/full_data/full_val.csv --val_graph_dir /home/bdldt_team002/repro_test/work_full/full_val/graphs --out_dir /home/bdldt_team002/stage2_mgpu_test/work/ckpt_s2_ddp --init_model /home/bdldt_team002/repro_test/work_full/ckpt/p_stage1/karmadock_team002.pkl --pos_r 1 --lr 1e-4 --weight_decay 0 --patience 70 --epochs 1000 --batch_size 8 --accum_steps 4 --num_workers 3 --random_seed 42 --resume --wandb --wandb_project karmadock-seminar --wandb_run_name full_stage2_ddp_20260630-164138
+wandb: Currently logged in as: ahmadomar-sci (ahmadomar-sci-saarland-informatics-campus). Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.28.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.4
+wandb: Run data is saved locally in /home/bdldt_team002/stage2_mgpu_test/work/ckpt_s2_ddp/wandb/run-20260630_164148-full_stage2_ddp_20260630-164138_1782837706_505
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run full_stage2_ddp_20260630-164138_lr0.0001_bs64_ep1000_pat70_seed42_505
+wandb: ⭐️ View project at https://wandb.ai/ahmadomar-sci-saarland-informatics-campus/karmadock-seminar
+wandb: 🚀 View run at https://wandb.ai/ahmadomar-sci-saarland-informatics-campus/karmadock-seminar/runs/full_stage2_ddp_20260630-164138_1782837706_505
+wandb: Waiting for W&B process to finish... (success).
+wandb: 
+wandb: Run history:
+wandb:         epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb: epoch_seconds ▃▂▂▂▁▂▁▂▂▂▂▂▂▁▄▂▂█▂▆▂▂▂▂▂▂▂▂▂▂▂▁▂▁▂▂▁▁▂▂
+wandb:            lr ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    train/loss █▆▄▄▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     train/mdn █▆▄▅▅▅▅▅▅▅▅▅▅▄▄▄▄▄▄▃▃▄▃▃▃▃▃▃▂▃▂▂▂▂▂▁▁▁▁▁
+wandb:    train/rmsd █▆▄▄▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      val/loss █▅▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       val/mdn ▅▄▁▄▃▃▄▅▃▆▅▇▅▃▅▅▆▅▆▄█▅▄▂▅▅█▅▄▄▄▅▆▆▄▄▅▄▄▃
+wandb:      val/rmsd █▅▄▃▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb: best_val_loss 3.55414
+wandb:         epoch 469
+wandb: epoch_seconds 607.97428
+wandb:            lr 0.0001
+wandb:    train/loss 2.39537
+wandb:     train/mdn 0.73404
+wandb:    train/rmsd 1.66132
+wandb:      val/loss 3.6299
+wandb:       val/mdn 0.743
+wandb:      val/rmsd 2.88689
+wandb: 
+wandb: Synced full_stage2_ddp_20260630-164138_lr0.0001_bs64_ep1000_pat70_seed42_505: https://wandb.ai/ahmadomar-sci-saarland-informatics-campus/karmadock-seminar/runs/full_stage2_ddp_20260630-164138_1782837706_505
+wandb: Synced 6 W&B file(s), 0 media file(s), 1 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /home/bdldt_team002/stage2_mgpu_test/work/ckpt_s2_ddp/wandb/run-20260630_164148-full_stage2_ddp_20260630-164138_1782837706_505/logs
++ echo '=== Stage-2 DDP done: /home/bdldt_team002/stage2_mgpu_test/work/ckpt_s2_ddp/karmadock_team002.pkl ==='

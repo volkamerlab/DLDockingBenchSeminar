@@ -1,0 +1,31 @@
+=== [released_baseline] dock posebusters_filtered with /app/KarmaDock/trained_models/karmadock_screening.pkl ===
+converted 308/308 complexes (0 missing source files)
+### get graph on the fly
+=== [released_baseline] graphs built: 308 ===
+# load model
+
+Total Time: 0.23685221675162513 min
+Sample Num: 308
+# uncorrected
+Time Spend: 0.05498190347312224 ± 0.016899309437551788 min
+Mean RMSD: 2.72576109568278 ± 0.015059424627906132
+Medium RMSD: 1.9183870951334636 ± 0.004914721754671244
+Success RATE(2A): 0.5259740153948466 ± 0.005623526387772157
+# ff_corrected
+Time Spend: 0.0001351941997806231 ± 5.5577486079899326e-05 min
+Mean RMSD: 3.007910739520734 ± 0.014975844769699388
+Medium RMSD: 2.1703082688769837 ± 0.03759278662411026
+Success RATE(2A): 0.44155844155844154 ± 0.0 
+# align corrected
+Time Spend: 4.149059661560589e-05 ± 1.406789041384656e-05 min
+Mean RMSD: 3.2185168645465425 ± 0.02076189730537168
+Medium RMSD: 2.660702847631949 ± 0.025484775088387184
+Success RATE(2A): 0.3452380952380952 ± 0.001874513861005271 
+      
+wrote 308/308 predicted-pose files to /raid/condor/lib/condor/execute/dir_467833/results/released_baseline/posebusters_filtered
+=== [released_baseline] uncorrected: 308 poses -> results/released_baseline/posebusters_filtered ===
+wrote 308/308 predicted-pose files to /raid/condor/lib/condor/execute/dir_467833/results/released_baseline/posebusters_filtered_ff
+=== [released_baseline] ff_corrected: 308 poses -> results/released_baseline/posebusters_filtered_ff ===
+wrote 308/308 predicted-pose files to /raid/condor/lib/condor/execute/dir_467833/results/released_baseline/posebusters_filtered_align
+=== [released_baseline] align_corrected: 308 poses -> results/released_baseline/posebusters_filtered_align ===
+=== [released_baseline] inference done (3 pose variants in results/released_baseline/) ===

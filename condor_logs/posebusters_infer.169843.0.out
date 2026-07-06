@@ -1,0 +1,31 @@
+=== [full_scratch] dock posebusters_filtered with /raid/condor/lib/condor/execute/dir_1259028/full_scratch_karmadock_team002.pkl ===
+converted 308/308 complexes (0 missing source files)
+### get graph on the fly
+=== [full_scratch] graphs built: 308 ===
+# load model
+
+Total Time: 0.22249988528589407 min
+Sample Num: 308
+# uncorrected
+Time Spend: 0.05072563534809483 ± 0.01030871629437839 min
+Mean RMSD: 3.173043409983317 ± 0.018166052801880914
+Medium RMSD: 2.259819746017456 ± 0.033528117632136464
+Success RATE(2A): 0.4458874563376109 ± 0.006758658259506187
+# ff_corrected
+Time Spend: 0.00012809978798031807 ± 4.2666626841916184e-05 min
+Mean RMSD: 3.3811162316814696 ± 0.02271815258307572
+Medium RMSD: 2.5402309338261193 ± 0.03281626556413853
+Success RATE(2A): 0.39935064935064934 ± 0.008590101659300629 
+# align corrected
+Time Spend: 3.8236938416957854e-05 ± 9.968324719573958e-06 min
+Mean RMSD: 3.49774298181609 ± 0.0291334857065975
+Medium RMSD: 2.757481636683002 ± 0.05572610797165968
+Success RATE(2A): 0.329004329004329 ± 0.004959497505363453 
+      
+wrote 308/308 predicted-pose files to /raid/condor/lib/condor/execute/dir_1259028/results/full_scratch/posebusters_filtered
+=== [full_scratch] uncorrected: 308 poses -> results/full_scratch/posebusters_filtered ===
+wrote 308/308 predicted-pose files to /raid/condor/lib/condor/execute/dir_1259028/results/full_scratch/posebusters_filtered_ff
+=== [full_scratch] ff_corrected: 308 poses -> results/full_scratch/posebusters_filtered_ff ===
+wrote 308/308 predicted-pose files to /raid/condor/lib/condor/execute/dir_1259028/results/full_scratch/posebusters_filtered_align
+=== [full_scratch] align_corrected: 308 poses -> results/full_scratch/posebusters_filtered_align ===
+=== [full_scratch] inference done (3 pose variants in results/full_scratch/) ===
