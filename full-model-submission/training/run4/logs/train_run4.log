@@ -1,0 +1,89 @@
+000 (169050.000.000) 2026-06-28 19:10:39 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_3439953_36a5>
+...
+001 (169050.000.000) 2026-06-28 20:09:18 Job executing on host: <10.143.248.13:9618?PrivAddr=%3c10.143.250.13:9618%3fsock%3dstartd_5111_4ca2%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.13-9618&alias=surt.hpc.uni-saarland.de&noUDP&sock=startd_5111_4ca2>
+	SlotName: slot1_5@surt.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_3f029d3d }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_815228"
+	Cpus = 4
+	Disk = 12069
+	GPUs = 1
+	GPUs_GPU_3f029d3d = [ Id = "GPU-3f029d3d"; Capability = 8.0; DeviceName = "NVIDIA A100-PCIE-40GB"; DeviceUuid = "3f029d3d-a13f-cb4c-c2ed-3ca2cb7407c8"; ECCEnabled = true; NvidiaDriver = "570.211.01"; DriverVersion = 12.8; DevicePciBusId = "0000:01:00.0"; GlobalMemoryMb = 40442; MaxSupportedVersion = 12080 ]
+	Memory = 16384
+...
+006 (169050.000.000) 2026-06-28 20:09:26 Image size of job updated: 471
+	471  -  MemoryUsage of job (MB)
+	483020  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 20:14:26 Image size of job updated: 2415
+	2415  -  MemoryUsage of job (MB)
+	2473012  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 20:19:26 Image size of job updated: 2496
+	2496  -  MemoryUsage of job (MB)
+	2555996  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 20:24:26 Image size of job updated: 2581
+	2581  -  MemoryUsage of job (MB)
+	2643008  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 20:29:27 Image size of job updated: 2671
+	2671  -  MemoryUsage of job (MB)
+	2735412  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 20:34:29 Image size of job updated: 2793
+	2793  -  MemoryUsage of job (MB)
+	2860468  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 20:39:29 Image size of job updated: 2892
+	2892  -  MemoryUsage of job (MB)
+	2962380  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 20:44:30 Image size of job updated: 3094
+	3094  -  MemoryUsage of job (MB)
+	3168968  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 20:49:30 Image size of job updated: 3109
+	3109  -  MemoryUsage of job (MB)
+	3184152  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 20:54:30 Image size of job updated: 3277
+	3277  -  MemoryUsage of job (MB)
+	3356540  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-28 21:24:33 Image size of job updated: 4260
+	4260  -  MemoryUsage of job (MB)
+	4362528  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-29 02:45:03 Image size of job updated: 4503
+	4503  -  MemoryUsage of job (MB)
+	4611684  -  ResidentSetSize of job (KB)
+...
+006 (169050.000.000) 2026-06-29 18:01:39 Image size of job updated: 4521
+	4521  -  MemoryUsage of job (MB)
+	4629728  -  ResidentSetSize of job (KB)
+...
+022 (169050.000.000) 2026-07-01 12:19:06 Job disconnected, attempting to reconnect
+    Local schedd and job shadow died, schedd now running again
+    Trying to reconnect to slot1_5@surt.hpc.uni-saarland.de <10.143.248.13:9618?PrivAddr=%3c10.143.250.13:9618%3fsock%3dstartd_5111_4ca2%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.13-9618&alias=surt.hpc.uni-saarland.de&noUDP&sock=startd_5111_4ca2>
+...
+023 (169050.000.000) 2026-07-01 12:19:07 Job reconnected to slot1_5@surt.hpc.uni-saarland.de
+    startd address: <10.143.248.13:9618?PrivAddr=%3c10.143.250.13:9618%3fsock%3dstartd_5111_4ca2%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.13-9618&alias=surt.hpc.uni-saarland.de&noUDP&sock=startd_5111_4ca2>
+    starter address: <10.143.248.13:9618?PrivAddr=%3c10.143.250.13:9618%3fsock%3dslot1_5_5153_812b_12092%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.13-9618&alias=surt.hpc.uni-saarland.de&noUDP&sock=slot1_5_5153_812b_12092>
+...
+004 (169050.000.000) 2026-07-01 22:20:09 Job was evicted. Code 1009 Subcode 0
+	(0) CPU times
+		Usr 3 05:50:59, Sys 0 02:34:30  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	Reason: Claim deactivated
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        4         4 
+	   Disk (KB)            :        1        1     12069 
+	   Memory (MB)          :     4521    16384     16384 
+	   TimeExecute (s)      :   267052                    
+	   TimeSlotBusy (s)     :   267052                    
+...
+009 (169050.000.000) 2026-07-01 22:20:09 Job was aborted.
+	via condor_rm (by user bdldt_team007)
+...
