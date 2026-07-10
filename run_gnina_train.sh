@@ -1,10 +1,11 @@
 #!/bin/bash
 #Irem_Dogruoglu_7061348_Lizzie_Schmitz_7056551
 #References:
-#1. [https://stackoverflow.com/questions/60303997/activating-conda-environment-from-bash-script](https://stackoverflow.com/questions/60303997/activating-conda-environment-from-bash-script)
-#2. [https://github.com/gnina/scripts](https://github.com/gnina/scripts)
-#3. [https://stackoverflow.com/questions/47932165/tar-gz-unpacking-file-data](https://stackoverflow.com/questions/47932165/tar-gz-unpacking-file-data)
-#4. [https://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files](https://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files)
+#1.https://stackoverflow.com/questions/60303997/activating-conda-environment-from-bash-script 
+#2.https://github.com/gnina/scripts
+#3.https://stackoverflow.com/questions/47932165/tar-gz-unpacking-file-data
+#4.https://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files
+#5.https://pypi.org/project/gninatorch/
 #
 #run_gnina.sh file runs the GNINA-Torch pipeline inside a container by following the workflow below:
 #1) activating conda environment.
