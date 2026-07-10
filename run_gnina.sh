@@ -9,8 +9,8 @@
 # 1) activating conda environment.
 # 2) unpacking data while doing checks on gninatorch.
 # 3) activating Python pipeline, and generating results.
-# It takes gninatorch_env, prototype_data.tar.gz as archive folder and run_proto_gnina.py script.
-# Then it produces gninatorch_training, plots results, data/proto_train.types, and proto_test_retrained files.
+# It takes gninatorch_env, full_data.tar.gz as archive folder and run_gnina_train.py script.
+# Then, after training, upon redocking, we will produce gninatorch_training, data/proto_train.types, and proto_test_retrained files.
 
 set -e
 
