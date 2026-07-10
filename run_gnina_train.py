@@ -8,17 +8,21 @@
 #6.https://docs.python.org/3/library/subprocess.html
 #7.https://matplotlib.org/stable/tutorials/introductory/pyplot.html
 #8.https://github.com/RMeli/gnina-torch
+#9.https://gnina-torch.readthedocs.io/en/latest/api/gninatorch.setup.html#module-gninatorch.setup
+#10.https://stackoverflow.com/questions/63967302/pytorch-multi-gpu-issue
 
 """
-This script automates a GNINA/GNINA-Torch retraining workflow:
+This script does a GNINA/GNINA-Torch retraining in the following workflow:
 
-1. Dock the training set with original GNINA.
-2. Dock the validation set with original GNINA.
-3. Build train and validation .types files.
-4. Retrain GNINA-Torch model(s), using train.types for optimization and val.types as the held-out evaluation file.
+1. Docking the training set with the original GNINA model.
+2. Docking the validation set with the original GNINA model.
+3. Building GNINA `.types` files for the training and validation sets.
+4. Retraining GNINA-Torch models using the training and validation `.types` files.
 
-This script does not redock or evaluate the external test set.
+The script does not redock or evaluate an external test set. These steps will be applied in further separated code files. 
+The limitations behind of this were, our runs took so much amount of time regardless how much epochs we were applied. Also, even though we set 2 GPUs in the .sub file, GNINA-Torch primarily operated on a single GPU because the it did not provide guaranteed support for true multi-GPU parallelism.
 """
+
 
 import argparse
 import subprocess
@@ -28,13 +32,14 @@ import time
 import re
 import matplotlib.pyplot as plt
 
-#global var
-#setting the epoch to 5 for the sake of saving time
+
+#Epoch number kept small to reduce runtime.
 EPOCHS = 5
+
 
 def get_args():
     """
-    Parse command-line arguments function for setting parameters for docking, .types file generation, GNINA-Torch training, redocking with checkpoint.
+    Parse command-line arguments function for setting parameters for docking, .types file generation, GNINA-Torch training.
     This function returns argparse.Namespace with including file paths, runtime flags, and configuration settings.
     """
     arg_parser = argparse.ArgumentParser()
@@ -42,26 +47,22 @@ def get_args():
     arg_parser.add_argument("--training-out-dir", type=Path, default=Path("results/gninatorch_training"), help="Directory where checkpoints and logs are stored")
     arg_parser.add_argument("--training-log", type=Path, default=Path("results/gninatorch_training/training.log"), help="Path to the gnina-torch training log file")
 
-
-    #Training dataset input/output arguments
+    #Training dataset input/output arguments.
     arg_parser.add_argument("--train-csv", type=Path, default=Path("data/full_sealed_train.csv"))
     arg_parser.add_argument("--train-input-dir", type=Path, default=Path("data/full_sealed_train"))
     arg_parser.add_argument("--train-out-dir", type=Path, default=Path("results/full_sealed_train_redocked"))
     
-    # Validation dataset input/output arguments
+    #Validation dataset input/output arguments.
     arg_parser.add_argument("--val-csv", type=Path, required=True)
     arg_parser.add_argument("--val-input-dir", type=Path, required=True)
     arg_parser.add_argument("--val-out-dir", type=Path, required=True)
-    
 
-    # Run GNINA docking
+    #Running GNINA docking.
     arg_parser.add_argument("--run", action="store_true", help="Runs GNINA docking")
 
-
-    #GNINA/gnina-torch .types file arguments.
+    #.types file arguments.
     arg_parser.add_argument("--train-types", type=Path, default=Path("data/full_sealed_train.types"))
     arg_parser.add_argument("--val-types", type=Path, required=True)
-
 
     arg_parser.add_argument(
         "--make-types",
@@ -74,15 +75,13 @@ def get_args():
         help="Runs gnina-torch training",
     )
 
-
-    # CNN type (Default2018 or Dense) and seed (for reproducibility)
+    #Setting CNN type (Default2018 or Dense) and seed (for reproducibility).
     arg_parser.add_argument(
         "--models",
         nargs="+",
         default=["default2018"],
         help="GNINA-Torch model architectures to train, e.g. default2018 dense",
     )
-
 
     arg_parser.add_argument(
         "--seeds",
@@ -92,31 +91,34 @@ def get_args():
         help="Random seeds for ensemble variants",
     )
 
-    # Plotting args
+    #Adding the plotting arguments.
     arg_parser.add_argument("--plot-dir", type=Path, default=Path("results/plots"))
     arg_parser.add_argument("--make-plots", action="store_true")
-
 
     return arg_parser.parse_args()
 
 
-def get_files_from_csv_row(csv_row, input_dir: Path): # parse through "3ix2_AC2_A_302_ligand_refined.sdf" format
+def get_files_from_csv_row(csv_row, input_dir: Path):
+    """
+    This function gets the native ligand and receptor files for dataset CSV row and uses them
+    to build the expected file name prefix for a protein-ligand complex. The input arguments are csv_row (dict) that comes from the dataset CSV file including keys like `PDBID`, 
+    `Ligand Name`,and input_dir which is the path of the directory contains receptor and ligand structure files. The function returns a tuple containing, complex_id, ligand_path, and eceptor_path.
+    """
     pdbid = csv_row["PDBID"].strip() 
     ligand_name = csv_row["Ligand Name"].strip()
     chain = csv_row["Ligand Chain"].strip()
     residue = str(csv_row["Ligand Residue Number"]).strip()
 
-    prefix = f"{pdbid}_{ligand_name}_{chain}_{residue}" # name prefix of file
+    prefix = f"{pdbid}_{ligand_name}_{chain}_{residue}"
 
-    # glob finds all files in the dir that match the prefix name
     ligand_matches = list(input_dir.glob(f"{prefix}_ligand_refined.sdf"))
     protein_matches = list(input_dir.glob(f"{prefix}_protein_refined.pdb"))
 
-    if not ligand_matches or not protein_matches: # error handling case, if no files with prefix are found in the dir 
+    if not ligand_matches or not protein_matches:
         ligand_matches = list(input_dir.glob(f"{pdbid}_*_{chain}_*_ligand_refined.sdf"))
         protein_matches = list(input_dir.glob(f"{pdbid}_*_{chain}_*_protein_refined.pdb"))
 
-    if len(ligand_matches) != 1 or len(protein_matches) != 1: # error handling: 0 or >1 files with name found
+    if len(ligand_matches) != 1 or len(protein_matches) != 1:
         raise RuntimeError(
             f"Could not find one file for PDBID={pdbid}, "
             f"chain={chain}, ligand={ligand_name}, residue={residue}. "
@@ -124,7 +126,7 @@ def get_files_from_csv_row(csv_row, input_dir: Path): # parse through "3ix2_AC2_
         )
 
     complex_id = ligand_matches[0].name.replace("_ligand_refined.sdf", "")
-    return complex_id, ligand_matches[0], protein_matches[0] 
+    return complex_id, ligand_matches[0], protein_matches[0]
 
 
 def gnina_args(receptor_file: Path, ligand_file: Path, out_file: Path):
@@ -164,10 +166,9 @@ def run_dataset(csv_file: Path, input_dir: Path, out_dir: Path, run: bool, datas
         reader = csv.DictReader(f)
 
         for csv_row in reader:
-            complex_id, ligand_path, receptor_path = get_files_from_csv_row(csv_row, input_dir) # parse through CSV
+            complex_id, ligand_path, receptor_path = get_files_from_csv_row(csv_row, input_dir)
             out_file = out_dir / f"{complex_id}_pred.sdf"
 
-            #Skipping complexes with missing source files
             ligand_miss = not ligand_path.exists()
             receptor_miss = not receptor_path.exists()
 
@@ -179,7 +180,6 @@ def run_dataset(csv_file: Path, input_dir: Path, out_dir: Path, run: bool, datas
                     print(f"Missing protein: {receptor_path}")
                 continue
 
-            #Skipping docking if an output file already exists
             if out_file.exists():
                 print(f"Skipping docking for {complex_id}: found existing output {out_file}")
                 continue
@@ -210,24 +210,22 @@ def compute_pose_label(native_ligand: Path, predicted_sdf: Path) -> int:
     """
     try:
         result = subprocess.run(
-            ["obrms", str(native_ligand), str(predicted_sdf)], # obrms check function
+            ["obrms", str(native_ligand), str(predicted_sdf)],
             check=True,
             capture_output=True,
             text=True,
         )
         lines = result.stdout.strip().splitlines()
 
-        # Error handling cases
         if not lines:
             raise ValueError("obrms produced no output")
 
         first_line = lines[0]
         tokens = first_line.split()
 
-        if len(tokens) < 2:
+        if len(tokens) < 2: #Adding checks to handle proper input.
             raise ValueError(f"Unexpected obrms output line: {first_line}")
 
-        # extract RMSD values
         rmsd = None
         for token in tokens:
             try:
@@ -235,6 +233,7 @@ def compute_pose_label(native_ligand: Path, predicted_sdf: Path) -> int:
                 break
             except ValueError:
                 continue
+
         if rmsd is None:
             raise ValueError(f"No numeric RMSD found in line: {first_line}")
 
@@ -242,6 +241,7 @@ def compute_pose_label(native_ligand: Path, predicted_sdf: Path) -> int:
             return 1
         else:
             return 0
+
     except FileNotFoundError:
         print("obrms not found in PATH. Labelling 1 for all poses.")
         return 1
@@ -266,21 +266,16 @@ def build_types(csv_file: Path, input_dir: Path, out_dir: Path, types_file: Path
         reader = csv.DictReader(f_in)
 
         for csv_row in reader:
-            complex_id, native_ligand, receptor_file = get_files_from_csv_row(csv_row, input_dir) # parse using csv function
+            complex_id, native_ligand, receptor_file = get_files_from_csv_row(csv_row, input_dir)
             pred_sdf = out_dir / f"{complex_id}_pred.sdf"
 
-            # error handling for missing files, skip
             if not receptor_file.exists() or not pred_sdf.exists() or not native_ligand.exists():
                 print(f"Skipping {complex_id} in types: missing receptor, predicted SDF, or native ligand")
                 continue
 
-            # get pose labels and affinities from CSV
             label = compute_pose_label(native_ligand, pred_sdf)
-            affinity = -float(csv_row["Log Binding Affinity"]) # convert to positive pK affinity vals 
-            # previously, most of the affinity labels were all negative log values (in kcal/mol), derived by log10(Kd), according to AutoDock VINA
-            # GNINA expects pK vals, s.t. pK = -log10(Kd), so we just multiply by -1
-            
-            # computing GNINA-style output line format in label-affinity-receptor-ligand order
+            affinity = -float(csv_row["Log Binding Affinity"])
+
             f_out.write(f"{label} {affinity} {receptor_file} {pred_sdf}\n")
 
 
@@ -296,20 +291,19 @@ def run_training(train_types: Path, val_types: Path, EPOCHS: int, training_out_d
         "python",
         "-m", "gninatorch.training",
         str(train_types),
-        "--model", model_name, # default2018 or dense
+        "--model", model_name,
         "--seed", str(seed),
         "--affinity_pos", "1",
         "--batch_size", "32",
-        "--iterations", str(EPOCHS), # (EPOCHS) number of epochs
+        "--iterations", str(EPOCHS),
         "--test_every", "1",
-        "--checkpoint_every", str(EPOCHS), # train every (EPOCH) epochs
+        "--checkpoint_every", str(EPOCHS),
         "--num_checkpoints", "1",
         "--out_dir", str(training_out_dir),
     ]
 
-    # we need to use a validation set, add it here 
     if val_types is not None:
-        cmd.extend(["--testfile", str(val_types)]) # GNINA-Torch calls the held-out validation set "--testfile".
+        cmd.extend(["--testfile", str(val_types)])
 
     print("\nRunning gnina-torch training with command:")
     print(" ".join(cmd))
@@ -326,17 +320,16 @@ def run_training(train_types: Path, val_types: Path, EPOCHS: int, training_out_d
             )
             proc.wait()
 
-         # runtime error if training fails
         if proc.returncode != 0:
             raise RuntimeError(
                 f"gnina-torch training failed with exit code {proc.returncode}. "
                 f"Check log: {training_log}"
             )
-        else: # timing reports
+        else:
             total_hours = (time.time() - start) / 3600.0
             print(f"Training completed in {total_hours:.2f} hours.")
             print(f"Training log saved to: {training_log}")
-    # error handling
+
     except FileNotFoundError:
         print("gninatorch was not found.")
         print("training step is skipped, check gnina-torch installation.")
@@ -350,12 +343,12 @@ def find_latest_checkpoint(training_out_dir: Path):
     The function searches .pt, .pth, .ckpt files to identify most recently modified checkpoint file. (Should be gnina_retrained_full_model.pt)
     It has training_out_dir directory as an input.
     """
-    full_model = training_out_dir / "gnina_retrained_full_model.pt" # as defined in the dockerfile, to be output
+    full_model = training_out_dir / "gnina_retrained_full_model.pt"
     if full_model.exists():
         return full_model
 
     raise FileNotFoundError(
-    f"Expected exported model not found: {full_model}"
+        f"Expected exported model not found: {full_model}"
     )
 
 
@@ -369,12 +362,9 @@ def parse_gnina_sdf_scores(sdf_file: Path):
     pose_scores = []
     affinity_scores = []
 
-    #Including multiple labels used in GNINA SDF files for flexibility
     score_patterns = ["CNNscore", "CNN_score", "CNN_pose_score", "CNN Pose Score", "CNN pose score"]
     affinity_patterns = ["CNNaffinity", "CNN_affinity", "CNN Affinity", "CNN affinity"]
 
-    #Extracting floating-point values in SDF property tags
-    # Use regex expressions for more flexibility
     for pattern in score_patterns:
         matches = re.findall(rf">\s*<\s*{re.escape(pattern)}\s*>\s*\n([-\d.eE]+)", text)
         pose_scores.extend(float(x) for x in matches)
@@ -386,19 +376,19 @@ def parse_gnina_sdf_scores(sdf_file: Path):
     return pose_scores, affinity_scores
 
 
-def compute_rmsd_value(native_ligand: Path, predicted_sdf: Path): # replace with evaluation.py script later, after prototype submisison
+def compute_rmsd_value(native_ligand: Path, predicted_sdf: Path):
     """
     This function calculates an RMSD value between a native ligand and predicted docked pose.
     It uses native_ligand and he predicted GNINA SDF file (predicted_sdf) paths, returning float of RMSD value.
     """
     try:
-        result = subprocess.run( # same obrms function from compute_pose_label()
+        result = subprocess.run(
             ["obrms", str(native_ligand), str(predicted_sdf)],
             check=True,
             capture_output=True,
             text=True,
         )
-        # parse through results
+
         for line in result.stdout.strip().splitlines():
             tokens = line.split()
             for token in tokens:
@@ -415,30 +405,30 @@ def compute_rmsd_value(native_ligand: Path, predicted_sdf: Path): # replace with
 
 def main():
     """
-    Runs the main GNINA workflow by including docking on training datasets, .types file generation, GNINA-Torch training, redocking, and plots generation.
+    Runs the main GNINA workflow by including docking on training datasets, .types file generation, and GNINA-Torch training.
     """
     total_start = time.time()
 
     cli_args = get_args()
 
-    trained_model_dirs = [] # each trained model gets a dir in the format of [model name]_seed[seed number]
+    trained_model_dirs = []
 
-    # Step 1: Docking the training and val set with GNINA
+    #Step 1: Docking the training and validation sets with GNINA.
     run_dataset(cli_args.train_csv, cli_args.train_input_dir, cli_args.train_out_dir, cli_args.run, "TRAIN DATA")
     run_dataset(cli_args.val_csv, cli_args.val_input_dir, cli_args.val_out_dir, cli_args.run, "VALIDATION DATA")
 
-    # Step 2: Build train and validation .types files
+    #Step 2: Building train and validation .types files.
     if cli_args.make_types:
         t0 = time.time()
 
-        build_types( # train types
+        build_types(
             cli_args.train_csv,
             cli_args.train_input_dir,
             cli_args.train_out_dir,
             cli_args.train_types,
         )
 
-        build_types( # val types
+        build_types(
             cli_args.val_csv,
             cli_args.val_input_dir,
             cli_args.val_out_dir,
@@ -449,18 +439,18 @@ def main():
     else:
         print("\nSkipping .types preprocessing.")
 
-    # Step 3: Training GNINA-Torch model variants from the generated train .types
+    #Step 3: Training GNINA-Torch model variants.
     if cli_args.train_model:
         t1 = time.time()
-        for model_name in cli_args.models: # across model types
-            for seed in cli_args.seeds: # across the different seeds used
-                run_name = f"{model_name}_seed{seed}" # the output dir is named after the run_name
+        for model_name in cli_args.models:
+            for seed in cli_args.seeds:
+                run_name = f"{model_name}_seed{seed}"
                 model_out_dir = cli_args.training_out_dir / run_name
                 model_log = model_out_dir / "training.log"
 
-                run_training( # train the model variants 
+                run_training(
                     cli_args.train_types,
-                    cli_args.val_types, # ADDED: val types
+                    cli_args.val_types,
                     cli_args.epochs,
                     model_out_dir,
                     model_log,
@@ -468,16 +458,14 @@ def main():
                     seed,
                 )
                 checkpoint_file = find_latest_checkpoint(model_out_dir)
-                print(f"submitting the checkpoint: {checkpoint_file}") #ADDED TO MAKE SURE WE OBTAIN CHECKPOINTS
+                print(f"submitting the checkpoint: {checkpoint_file}")
                 trained_model_dirs.append(model_out_dir)
 
         print(f"Training step took {time.time() - t1:.1f} seconds")
-
     else:
         print("Skipping model training.")
 
     print(f"Total runtime: {time.time() - total_start:.1f} seconds")
-
 
 
 if __name__ == "__main__":
