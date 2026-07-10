@@ -1,0 +1,101 @@
+000 (169049.000.000) 2026-06-28 19:10:39 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_3439953_36a5>
+...
+001 (169049.000.000) 2026-06-28 19:10:41 Job executing on host: <10.143.248.13:9618?PrivAddr=%3c10.143.250.13:9618%3fsock%3dstartd_5111_4ca2%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.13-9618&alias=surt.hpc.uni-saarland.de&noUDP&sock=startd_5111_4ca2>
+	SlotName: slot1_9@surt.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_98b294f4 }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_805180"
+	Cpus = 4
+	Disk = 12069
+	GPUs = 1
+	GPUs_GPU_98b294f4 = [ Id = "GPU-98b294f4"; Capability = 8.0; DeviceName = "NVIDIA A100-PCIE-40GB"; DeviceUuid = "98b294f4-a59f-7faa-4577-bba3ea6cebd8"; ECCEnabled = true; NvidiaDriver = "570.211.01"; DriverVersion = 12.8; DevicePciBusId = "0000:41:00.0"; GlobalMemoryMb = 40442; MaxSupportedVersion = 12080 ]
+	Memory = 16384
+...
+006 (169049.000.000) 2026-06-28 19:10:50 Image size of job updated: 304
+	304  -  MemoryUsage of job (MB)
+	311844  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-28 19:15:51 Image size of job updated: 2420
+	2420  -  MemoryUsage of job (MB)
+	2478796  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-28 19:20:52 Image size of job updated: 2658
+	2658  -  MemoryUsage of job (MB)
+	2722428  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-28 19:40:55 Image size of job updated: 2722
+	2722  -  MemoryUsage of job (MB)
+	2788008  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-28 19:50:57 Image size of job updated: 2732
+	2732  -  MemoryUsage of job (MB)
+	2798392  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-28 19:55:57 Image size of job updated: 2964
+	2964  -  MemoryUsage of job (MB)
+	3035832  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-28 22:11:10 Image size of job updated: 3000
+	3000  -  MemoryUsage of job (MB)
+	3072316  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-28 22:21:12 Image size of job updated: 3026
+	3026  -  MemoryUsage of job (MB)
+	3099028  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-28 22:41:14 Image size of job updated: 4462
+	4462  -  MemoryUsage of job (MB)
+	4569820  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-29 10:37:26 Image size of job updated: 4474
+	4474  -  MemoryUsage of job (MB)
+	4581540  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-29 17:58:04 Image size of job updated: 4474
+	4474  -  MemoryUsage of job (MB)
+	4582224  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-30 14:35:07 Image size of job updated: 4477
+	4477  -  MemoryUsage of job (MB)
+	4584956  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-30 17:35:22 Image size of job updated: 4478
+	4478  -  MemoryUsage of job (MB)
+	4586028  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-06-30 19:05:35 Image size of job updated: 4478
+	4478  -  MemoryUsage of job (MB)
+	4586192  -  ResidentSetSize of job (KB)
+...
+006 (169049.000.000) 2026-07-01 05:36:42 Image size of job updated: 4479
+	4479  -  MemoryUsage of job (MB)
+	4586732  -  ResidentSetSize of job (KB)
+...
+022 (169049.000.000) 2026-07-01 12:19:05 Job disconnected, attempting to reconnect
+    Local schedd and job shadow died, schedd now running again
+    Trying to reconnect to slot1_9@surt.hpc.uni-saarland.de <10.143.248.13:9618?PrivAddr=%3c10.143.250.13:9618%3fsock%3dstartd_5111_4ca2%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.13-9618&alias=surt.hpc.uni-saarland.de&noUDP&sock=startd_5111_4ca2>
+...
+023 (169049.000.000) 2026-07-01 12:19:07 Job reconnected to slot1_9@surt.hpc.uni-saarland.de
+    startd address: <10.143.248.13:9618?PrivAddr=%3c10.143.250.13:9618%3fsock%3dstartd_5111_4ca2%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.13-9618&alias=surt.hpc.uni-saarland.de&noUDP&sock=startd_5111_4ca2>
+    starter address: <10.143.248.13:9618?PrivAddr=%3c10.143.250.13:9618%3fsock%3dslot1_9_5153_812b_12091%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.13-9618&alias=surt.hpc.uni-saarland.de&noUDP&sock=slot1_9_5153_812b_12091>
+...
+006 (169049.000.000) 2026-07-01 21:38:29 Image size of job updated: 4500
+	4481  -  MemoryUsage of job (MB)
+	4750000  -  ResidentSetSize of job (KB)
+...
+004 (169049.000.000) 2026-07-01 22:34:37 Job was evicted. Code 1009 Subcode 0
+	(0) CPU times
+		Usr 3 07:26:51, Sys 0 03:23:16  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	Reason: Claim deactivated
+	Partitionable Resources :     Usage  Request Allocated 
+	   Cpus                 :      0.00        4         4 
+	   Disk (KB)            :      1           1     12069 
+	   Memory (MB)          :   4481       16384     16384 
+	   TimeExecute (s)      : 271436                       
+	   TimeSlotBusy (s)     : 271436                       
+...
+009 (169049.000.000) 2026-07-01 22:34:37 Job was aborted.
+	via condor_rm (by user bdldt_team007)
+...
