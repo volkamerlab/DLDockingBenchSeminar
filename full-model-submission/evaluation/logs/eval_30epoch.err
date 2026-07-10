@@ -1,0 +1,263 @@
+18:26:51 [INFO] Loaded 2609 complexes from data/full_val_30epoch.csv
+18:26:51 [INFO] Dataset: full_val_30epoch | Top-N: 1 | PoseBusters: False
+18:26:51 [WARNING]   [1bkf_FK5_A_108] Missing files: predicted poses: results/full_val_30epoch/1bkf_FK5_A_108_pred.sdf
+18:26:51 [WARNING]   [1djx_I3P_B_1] Missing files: predicted poses: results/full_val_30epoch/1djx_I3P_B_1_pred.sdf
+18:26:51 [WARNING]   [1dx6_GNT_A_602] Missing files: predicted poses: results/full_val_30epoch/1dx6_GNT_A_602_pred.sdf
+18:26:51 [WARNING]   [1ecq_DXG_A_499] Missing files: predicted poses: results/full_val_30epoch/1ecq_DXG_A_499_pred.sdf
+18:26:51 [WARNING]   [1eei_GAA_H_508] Missing files: predicted poses: results/full_val_30epoch/1eei_GAA_H_508_pred.sdf
+18:26:51 [WARNING]   [1efi_GAT_D_104] Missing files: predicted poses: results/full_val_30epoch/1efi_GAT_D_104_pred.sdf
+18:26:51 [WARNING]   [1f73_HMN_A_700] Missing files: predicted poses: results/full_val_30epoch/1f73_HMN_A_700_pred.sdf
+18:26:51 [INFO]   Progress: 50/2609
+18:26:51 [WARNING]   [1f73_HMN_B_701] Missing files: predicted poses: results/full_val_30epoch/1f73_HMN_B_701_pred.sdf
+18:26:51 [WARNING]   [1fd7_AI1_E_104] Missing files: predicted poses: results/full_val_30epoch/1fd7_AI1_E_104_pred.sdf
+18:26:51 [WARNING]   [1fd7_AI1_H_104] Missing files: predicted poses: results/full_val_30epoch/1fd7_AI1_H_104_pred.sdf
+18:26:51 [WARNING]   [1fd7_AI1_N_104] Missing files: predicted poses: results/full_val_30epoch/1fd7_AI1_N_104_pred.sdf
+18:26:51 [WARNING]   [1fkf_FK5_A_108] Missing files: predicted poses: results/full_val_30epoch/1fkf_FK5_A_108_pred.sdf
+18:26:51 [WARNING]   [1ggn_GLS_A_998] Missing files: predicted poses: results/full_val_30epoch/1ggn_GLS_A_998_pred.sdf
+18:26:51 [WARNING]   [1gpy_G6P_A_998] Missing files: predicted poses: results/full_val_30epoch/1gpy_G6P_A_998_pred.sdf
+18:26:51 [WARNING]   [1hw8_114_D_3] Missing files: predicted poses: results/full_val_30epoch/1hw8_114_D_3_pred.sdf
+18:26:51 [WARNING]   [1jak_IFG_A_601] Missing files: predicted poses: results/full_val_30epoch/1jak_IFG_A_601_pred.sdf
+18:26:51 [INFO]   Progress: 100/2609
+18:26:51 [WARNING]   [1jyx_IPT_C_2001] Missing files: predicted poses: results/full_val_30epoch/1jyx_IPT_C_2001_pred.sdf
+18:26:51 [WARNING]   [1km2_UP6_A_2001] Missing files: predicted poses: results/full_val_30epoch/1km2_UP6_A_2001_pred.sdf
+18:26:51 [WARNING]   [1loq_U_A_2001] Missing files: predicted poses: results/full_val_30epoch/1loq_U_A_2001_pred.sdf
+18:26:51 [WARNING]   [1los_UP6_D_5004] Missing files: predicted poses: results/full_val_30epoch/1los_UP6_D_5004_pred.sdf
+18:26:51 [WARNING]   [1nc1_MTH_A_233] Missing files: predicted poses: results/full_val_30epoch/1nc1_MTH_A_233_pred.sdf
+18:26:51 [WARNING]   [1nc1_MTH_B_234] Missing files: predicted poses: results/full_val_30epoch/1nc1_MTH_B_234_pred.sdf
+18:26:51 [WARNING]   [1o0n_U3P_B_1201] Missing files: predicted poses: results/full_val_30epoch/1o0n_U3P_B_1201_pred.sdf
+18:26:51 [INFO]   Progress: 150/2609
+18:26:51 [WARNING]   [1p4g_CGF_A_998] Missing files: predicted poses: results/full_val_30epoch/1p4g_CGF_A_998_pred.sdf
+18:26:51 [WARNING]   [1rdi_MFU_2_1] Missing files: predicted poses: results/full_val_30epoch/1rdi_MFU_2_1_pred.sdf
+18:26:51 [INFO]   Progress: 200/2609
+18:26:51 [WARNING]   [1t36_U5P_A_1091] Missing files: predicted poses: results/full_val_30epoch/1t36_U5P_A_1091_pred.sdf
+18:26:51 [WARNING]   [1t36_U5P_C_1093] Missing files: predicted poses: results/full_val_30epoch/1t36_U5P_C_1093_pred.sdf
+18:26:51 [WARNING]   [1tl2_NDG_A_241] Missing files: predicted poses: results/full_val_30epoch/1tl2_NDG_A_241_pred.sdf
+18:26:51 [WARNING]   [1tl2_NDG_A_240] Missing files: predicted poses: results/full_val_30epoch/1tl2_NDG_A_240_pred.sdf
+18:26:51 [WARNING]   [1u33_LM2_A_500] Missing files: predicted poses: results/full_val_30epoch/1u33_LM2_A_500_pred.sdf
+18:26:51 [WARNING]   [1uz1_IFL_A_1446] Missing files: predicted poses: results/full_val_30epoch/1uz1_IFL_A_1446_pred.sdf
+18:26:51 [WARNING]   [1w96_S1A_A_1567] Missing files: predicted poses: results/full_val_30epoch/1w96_S1A_A_1567_pred.sdf
+18:26:51 [WARNING]   [1ws5_MMA_A_501] Missing files: predicted poses: results/full_val_30epoch/1ws5_MMA_A_501_pred.sdf
+18:26:51 [WARNING]   [1ww2_NBG_A_998] Missing files: predicted poses: results/full_val_30epoch/1ww2_NBG_A_998_pred.sdf
+18:26:51 [INFO]   Progress: 250/2609
+18:26:51 [WARNING]   [2a2i_A5P_A_1269] Missing files: predicted poses: results/full_val_30epoch/2a2i_A5P_A_1269_pred.sdf
+18:26:51 [WARNING]   [2am4_U2F_A_449] Missing files: predicted poses: results/full_val_30epoch/2am4_U2F_A_449_pred.sdf
+18:26:51 [INFO]   Progress: 300/2609
+18:26:51 [WARNING]   [2arc_ARA_A_171] Missing files: predicted poses: results/full_val_30epoch/2arc_ARA_A_171_pred.sdf
+18:26:52 [WARNING]   [2boj_ARW_A_1115] Missing files: predicted poses: results/full_val_30epoch/2boj_ARW_A_1115_pred.sdf
+18:26:52 [WARNING]   [2bt9_MFU_B_1089] Missing files: predicted poses: results/full_val_30epoch/2bt9_MFU_B_1089_pred.sdf
+18:26:52 [WARNING]   [2bv4_MMA_B_400] Missing files: predicted poses: results/full_val_30epoch/2bv4_MMA_B_400_pred.sdf
+18:26:52 [WARNING]   [2cht_TSA_I_208] Missing files: predicted poses: results/full_val_30epoch/2cht_TSA_I_208_pred.sdf
+18:26:52 [WARNING]   [2dw7_SRT_J_1010] Missing files: predicted poses: results/full_val_30epoch/2dw7_SRT_J_1010_pred.sdf
+18:26:52 [WARNING]   [2dw7_SRT_M_1013] Missing files: predicted poses: results/full_val_30epoch/2dw7_SRT_M_1013_pred.sdf
+18:26:52 [WARNING]   [2dw7_SRT_N_1014] Missing files: predicted poses: results/full_val_30epoch/2dw7_SRT_N_1014_pred.sdf
+18:26:52 [WARNING]   [2e27_AB0_H_6001] Missing files: predicted poses: results/full_val_30epoch/2e27_AB0_H_6001_pred.sdf
+18:26:52 [WARNING]   [2f25_DAN_A_1001] Missing files: predicted poses: results/full_val_30epoch/2f25_DAN_A_1001_pred.sdf
+18:26:52 [INFO]   Progress: 350/2609
+18:26:52 [WARNING]   [2ff5_H53_A_998] Missing files: predicted poses: results/full_val_30epoch/2ff5_H53_A_998_pred.sdf
+18:26:52 [WARNING]   [2fwp_ICR_A_1001] Missing files: predicted poses: results/full_val_30epoch/2fwp_ICR_A_1001_pred.sdf
+18:26:52 [INFO]   Progress: 400/2609
+18:26:52 [WARNING]   [2hl4_BO1_A_264] Missing files: predicted poses: results/full_val_30epoch/2hl4_BO1_A_264_pred.sdf
+18:26:52 [WARNING]   [2j7d_GI1_A_1446] Missing files: predicted poses: results/full_val_30epoch/2j7d_GI1_A_1446_pred.sdf
+18:26:52 [WARNING]   [2j7f_GI3_B_1446] Missing files: predicted poses: results/full_val_30epoch/2j7f_GI3_B_1446_pred.sdf
+18:26:52 [WARNING]   [2jdm_MFU_D_1117] Missing files: predicted poses: results/full_val_30epoch/2jdm_MFU_D_1117_pred.sdf
+18:26:52 [WARNING]   [2jdp_MFU_A_1115] Missing files: predicted poses: results/full_val_30epoch/2jdp_MFU_A_1115_pred.sdf
+18:26:52 [WARNING]   [2jdp_MFU_B_1115] Missing files: predicted poses: results/full_val_30epoch/2jdp_MFU_B_1115_pred.sdf
+18:26:52 [WARNING]   [2mas_PIR_B_400] Missing files: predicted poses: results/full_val_30epoch/2mas_PIR_B_400_pred.sdf
+18:26:52 [WARNING]   [2nsx_IFM_D_503] Missing files: predicted poses: results/full_val_30epoch/2nsx_IFM_D_503_pred.sdf
+18:26:52 [WARNING]   [2nx3_A5P_C_269] Missing files: predicted poses: results/full_val_30epoch/2nx3_A5P_C_269_pred.sdf
+18:26:52 [WARNING]   [2oyl_IDC_A_600] Missing files: predicted poses: results/full_val_30epoch/2oyl_IDC_A_600_pred.sdf
+18:26:52 [INFO]   Progress: 450/2609
+18:26:52 [WARNING]   [2pwg_CTS_A_8000] Missing files: predicted poses: results/full_val_30epoch/2pwg_CTS_A_8000_pred.sdf
+18:26:52 [WARNING]   [2q5f_DTA_A_273] Missing files: predicted poses: results/full_val_30epoch/2q5f_DTA_A_273_pred.sdf
+18:26:52 [WARNING]   [2qnb_BZD_A_998] Missing files: predicted poses: results/full_val_30epoch/2qnb_BZD_A_998_pred.sdf
+18:26:52 [WARNING]   [2qwd_4AM_A_800] Missing files: predicted poses: results/full_val_30epoch/2qwd_4AM_A_800_pred.sdf
+18:26:52 [WARNING]   [2r5n_R5P_A_670] Missing files: predicted poses: results/full_val_30epoch/2r5n_R5P_A_670_pred.sdf
+18:26:52 [INFO]   Progress: 500/2609
+18:26:52 [WARNING]   [2rid_291_C_503] Missing files: predicted poses: results/full_val_30epoch/2rid_291_C_503_pred.sdf
+18:26:52 [WARNING]   [2vo5_VBZ_A_1865] Missing files: predicted poses: results/full_val_30epoch/2vo5_VBZ_A_1865_pred.sdf
+18:26:52 [WARNING]   [2vqt_15A_B_1867] Missing files: predicted poses: results/full_val_30epoch/2vqt_15A_B_1867_pred.sdf
+18:26:52 [WARNING]   [2vur_YX1_A_1626] Missing files: predicted poses: results/full_val_30epoch/2vur_YX1_A_1626_pred.sdf
+18:26:52 [WARNING]   [2vur_YX1_B_1626] Missing files: predicted poses: results/full_val_30epoch/2vur_YX1_B_1626_pred.sdf
+18:26:52 [WARNING]   [2vvz_DAN_B_1792] Missing files: predicted poses: results/full_val_30epoch/2vvz_DAN_B_1792_pred.sdf
+18:26:52 [WARNING]   [2vw1_DAN_A_1000] Missing files: predicted poses: results/full_val_30epoch/2vw1_DAN_A_1000_pred.sdf
+18:26:52 [WARNING]   [2vzm_NRB_B_1408] Missing files: predicted poses: results/full_val_30epoch/2vzm_NRB_B_1408_pred.sdf
+18:26:52 [INFO]   Progress: 550/2609
+18:26:52 [WARNING]   [2wc4_AMF_A_1446] Missing files: predicted poses: results/full_val_30epoch/2wc4_AMF_A_1446_pred.sdf
+18:26:52 [WARNING]   [2wc4_AMF_D_1446] Missing files: predicted poses: results/full_val_30epoch/2wc4_AMF_D_1446_pred.sdf
+18:26:52 [WARNING]   [2wnc_TKT_B_300] Missing files: predicted poses: results/full_val_30epoch/2wnc_TKT_B_300_pred.sdf
+18:26:52 [WARNING]   [2x00_GYN_D_301] Missing files: predicted poses: results/full_val_30epoch/2x00_GYN_D_301_pred.sdf
+18:26:53 [WARNING]   [2xm1_LTM_A_1717] Missing files: predicted poses: results/full_val_30epoch/2xm1_LTM_A_1717_pred.sdf
+18:26:53 [INFO]   Progress: 600/2609
+18:26:53 [WARNING]   [2xys_SY9_E_1206] Missing files: predicted poses: results/full_val_30epoch/2xys_SY9_E_1206_pred.sdf
+18:26:53 [WARNING]   [2y54_V63_B_301] Missing files: predicted poses: results/full_val_30epoch/2y54_V63_B_301_pred.sdf
+18:26:53 [WARNING]   [2y54_V63_D_301] Missing files: predicted poses: results/full_val_30epoch/2y54_V63_D_301_pred.sdf
+18:26:53 [WARNING]   [2y56_V11_E_301] Missing files: predicted poses: results/full_val_30epoch/2y56_V11_E_301_pred.sdf
+18:26:53 [WARNING]   [2yme_CWB_G_1207] Missing files: predicted poses: results/full_val_30epoch/2yme_CWB_G_1207_pred.sdf
+18:26:53 [WARNING]   [2ziz_AD3_B_500] Missing files: predicted poses: results/full_val_30epoch/2ziz_AD3_B_500_pred.sdf
+18:26:53 [WARNING]   [3aj5_NGA_A_2000] Missing files: predicted poses: results/full_val_30epoch/3aj5_NGA_A_2000_pred.sdf
+18:26:53 [INFO]   Progress: 650/2609
+18:26:53 [WARNING]   [3axm_6PG_D_479] Missing files: predicted poses: results/full_val_30epoch/3axm_6PG_D_479_pred.sdf
+18:26:53 [WARNING]   [3axm_6PG_F_479] Missing files: predicted poses: results/full_val_30epoch/3axm_6PG_F_479_pred.sdf
+18:26:53 [WARNING]   [3bia_TLA_X_118] Missing files: predicted poses: results/full_val_30epoch/3bia_TLA_X_118_pred.sdf
+18:26:53 [WARNING]   [3bxg_BG6_B_401] Missing files: predicted poses: results/full_val_30epoch/3bxg_BG6_B_401_pred.sdf
+18:26:53 [INFO]   Progress: 700/2609
+18:26:53 [WARNING]   [3ddg_GB7_A_5001] Missing files: predicted poses: results/full_val_30epoch/3ddg_GB7_A_5001_pred.sdf
+18:26:53 [WARNING]   [3djv_C3P_A_125] Missing files: predicted poses: results/full_val_30epoch/3djv_C3P_A_125_pred.sdf
+18:26:53 [WARNING]   [3dx2_MZB_A_1048] Missing files: predicted poses: results/full_val_30epoch/3dx2_MZB_A_1048_pred.sdf
+18:26:53 [WARNING]   [3ejr_HN4_A_1049] Missing files: predicted poses: results/full_val_30epoch/3ejr_HN4_A_1049_pred.sdf
+18:26:53 [INFO]   Progress: 750/2609
+18:26:53 [WARNING]   [3fv2_NDZ_B_791] Missing files: predicted poses: results/full_val_30epoch/3fv2_NDZ_B_791_pred.sdf
+18:26:53 [WARNING]   [3g1a_UP6_B_229] Missing files: predicted poses: results/full_val_30epoch/3g1a_UP6_B_229_pred.sdf
+18:26:53 [WARNING]   [3g31_GF1_B_3] Missing files: predicted poses: results/full_val_30epoch/3g31_GF1_B_3_pred.sdf
+18:26:53 [WARNING]   [3gba_DYH_C_258] Missing files: predicted poses: results/full_val_30epoch/3gba_DYH_C_258_pred.sdf
+18:26:53 [INFO]   Progress: 800/2609
+18:26:53 [WARNING]   [3gz8_APR_B_302] Missing files: predicted poses: results/full_val_30epoch/3gz8_APR_B_302_pred.sdf
+18:26:53 [WARNING]   [3h8b_NSY_F_800] Missing files: predicted poses: results/full_val_30epoch/3h8b_NSY_F_800_pred.sdf
+18:26:53 [WARNING]   [3i8p_840_A_501] Missing files: predicted poses: results/full_val_30epoch/3i8p_840_A_501_pred.sdf
+18:26:54 [WARNING]   [3ind_593_A_1] Missing files: predicted poses: results/full_val_30epoch/3ind_593_A_1_pred.sdf
+18:26:54 [WARNING]   [3ine_X17_A_1] Missing files: predicted poses: results/full_val_30epoch/3ine_X17_A_1_pred.sdf
+18:26:54 [INFO]   Progress: 850/2609
+18:26:54 [WARNING]   [3l7b_DKZ_A_843] Missing files: predicted poses: results/full_val_30epoch/3l7b_DKZ_A_843_pred.sdf
+18:26:54 [WARNING]   [3lkj_LKJ_C_1] Missing files: predicted poses: results/full_val_30epoch/3lkj_LKJ_C_1_pred.sdf
+18:26:54 [INFO]   Progress: 900/2609
+18:26:54 [WARNING]   [3luj_U5P_C_1] Missing files: predicted poses: results/full_val_30epoch/3luj_U5P_C_1_pred.sdf
+18:26:54 [WARNING]   [3mkn_DNB_B_502] Missing files: predicted poses: results/full_val_30epoch/3mkn_DNB_B_502_pred.sdf
+18:26:54 [WARNING]   [3muz_IPT_3_2001] Missing files: predicted poses: results/full_val_30epoch/3muz_IPT_3_2001_pred.sdf
+18:26:54 [WARNING]   [3my5_RFZ_A_300] Missing files: predicted poses: results/full_val_30epoch/3my5_RFZ_A_300_pred.sdf
+18:26:54 [INFO]   Progress: 950/2609
+18:26:54 [WARNING]   [3pbu_UP6_A_229] Missing files: predicted poses: results/full_val_30epoch/3pbu_UP6_A_229_pred.sdf
+18:26:54 [WARNING]   [3pby_UP6_A_229] Missing files: predicted poses: results/full_val_30epoch/3pby_UP6_A_229_pred.sdf
+18:26:54 [INFO]   Progress: 1000/2609
+18:26:54 [WARNING]   [3rug_DB6_C_303] Missing files: predicted poses: results/full_val_30epoch/3rug_DB6_C_303_pred.sdf
+18:26:54 [INFO]   Progress: 1050/2609
+18:26:54 [WARNING]   [3t0d_149_B_2001] Missing files: predicted poses: results/full_val_30epoch/3t0d_149_B_2001_pred.sdf
+18:26:55 [INFO]   Progress: 1100/2609
+18:26:55 [WARNING]   [3uj0_I3P_A_1000] Missing files: predicted poses: results/full_val_30epoch/3uj0_I3P_A_1000_pred.sdf
+18:26:55 [WARNING]   [3w07_U5P_A_301] Missing files: predicted poses: results/full_val_30epoch/3w07_U5P_A_301_pred.sdf
+18:26:55 [INFO]   Progress: 1150/2609
+18:26:55 [WARNING]   [3zy6_GFB_A_1381] Missing files: predicted poses: results/full_val_30epoch/3zy6_GFB_A_1381_pred.sdf
+18:26:55 [INFO]   Progress: 1200/2609
+18:26:55 [WARNING]   [4av4_FVQ_A_201] Missing files: predicted poses: results/full_val_30epoch/4av4_FVQ_A_201_pred.sdf
+18:26:55 [INFO]   Progress: 1250/2609
+18:26:55 [WARNING]   [4csd_MFU_A_306] Missing files: predicted poses: results/full_val_30epoch/4csd_MFU_A_306_pred.sdf
+18:26:55 [WARNING]   [4csd_MFU_B_301] Missing files: predicted poses: results/full_val_30epoch/4csd_MFU_B_301_pred.sdf
+18:26:55 [INFO]   Progress: 1300/2609
+18:26:56 [INFO]   Progress: 1350/2609
+18:26:56 [WARNING]   [4ge6_B26_A_601] Missing files: predicted poses: results/full_val_30epoch/4ge6_B26_A_601_pred.sdf
+18:26:56 [INFO]   Progress: 1400/2609
+18:26:56 [WARNING]   [4i71_AGV_A_401] Missing files: predicted poses: results/full_val_30epoch/4i71_AGV_A_401_pred.sdf
+18:26:56 [WARNING]   [4iie_CGB_B_952] Missing files: predicted poses: results/full_val_30epoch/4iie_CGB_B_952_pred.sdf
+18:26:56 [WARNING]   [4ilx_1EZ_A_303] Missing files: predicted poses: results/full_val_30epoch/4ilx_1EZ_A_303_pred.sdf
+18:26:56 [WARNING]   [4j28_EAT_A_501] Missing files: predicted poses: results/full_val_30epoch/4j28_EAT_A_501_pred.sdf
+18:26:56 [INFO]   Progress: 1450/2609
+18:26:56 [WARNING]   [4j9a_DOG_D_201] Missing files: predicted poses: results/full_val_30epoch/4j9a_DOG_D_201_pred.sdf
+18:26:56 [WARNING]   [4jfs_16Z_A_501] Missing files: predicted poses: results/full_val_30epoch/4jfs_16Z_A_501_pred.sdf
+18:26:56 [INFO]   Progress: 1500/2609
+18:26:56 [WARNING]   [4lge_1Y0_B_402] Missing files: predicted poses: results/full_val_30epoch/4lge_1Y0_B_402_pred.sdf
+18:26:56 [WARNING]   [4lzj_22H_D_402] Missing files: predicted poses: results/full_val_30epoch/4lzj_22H_D_402_pred.sdf
+18:26:56 [WARNING]   [4mi3_26R_A_901] Missing files: predicted poses: results/full_val_30epoch/4mi3_26R_A_901_pred.sdf
+18:26:56 [INFO]   Progress: 1550/2609
+18:26:56 [INFO]   Progress: 1600/2609
+18:26:56 [WARNING]   [4qjr_PIZ_A_501] Missing files: predicted poses: results/full_val_30epoch/4qjr_PIZ_A_501_pred.sdf
+18:26:56 [WARNING]   [4r08_URI_D_901] Missing files: predicted poses: results/full_val_30epoch/4r08_URI_D_901_pred.sdf
+18:26:57 [WARNING]   [4ra1_BNX_A_602] Missing files: predicted poses: results/full_val_30epoch/4ra1_BNX_A_602_pred.sdf
+18:26:57 [INFO]   Progress: 1650/2609
+18:26:57 [WARNING]   [4rr9_A3S_A_201] Missing files: predicted poses: results/full_val_30epoch/4rr9_A3S_A_201_pred.sdf
+18:26:57 [WARNING]   [4rrt_3V4_B_502] Missing files: predicted poses: results/full_val_30epoch/4rrt_3V4_B_502_pred.sdf
+18:26:57 [WARNING]   [4tqk_NAG_A_505] Missing files: predicted poses: results/full_val_30epoch/4tqk_NAG_A_505_pred.sdf
+18:26:57 [WARNING]   [4tqk_NAG_A_501] Missing files: predicted poses: results/full_val_30epoch/4tqk_NAG_A_501_pred.sdf
+18:26:57 [WARNING]   [4url_XAM_B_2000] Missing files: predicted poses: results/full_val_30epoch/4url_XAM_B_2000_pred.sdf
+18:26:57 [INFO]   Progress: 1700/2609
+19:31:37 [INFO]   Progress: 1750/2609
+19:32:08 [INFO]   Progress: 1800/2609
+19:32:08 [WARNING]   [5abe_XQO_B_1717] Missing files: predicted poses: results/full_val_30epoch/5abe_XQO_B_1717_pred.sdf
+19:32:09 [WARNING]   [5axb_NRN_A_502] Missing files: predicted poses: results/full_val_30epoch/5axb_NRN_A_502_pred.sdf
+19:32:09 [WARNING]   [5cdh_TLA_G_401] Missing files: predicted poses: results/full_val_30epoch/5cdh_TLA_G_401_pred.sdf
+19:32:09 [INFO]   Progress: 1850/2609
+19:32:09 [WARNING]   [5dus_APR_A_201] Missing files: predicted poses: results/full_val_30epoch/5dus_APR_A_201_pred.sdf
+19:32:10 [WARNING]   [5f8y_X6X_A_202] Missing files: predicted poses: results/full_val_30epoch/5f8y_X6X_A_202_pred.sdf
+19:32:10 [INFO]   Progress: 1900/2609
+19:32:10 [WARNING]   [5fol_SO8_A_1544] Missing files: predicted poses: results/full_val_30epoch/5fol_SO8_A_1544_pred.sdf
+19:32:10 [WARNING]   [5g5k_NOK_B_1333] Missing files: predicted poses: results/full_val_30epoch/5g5k_NOK_B_1333_pred.sdf
+19:32:10 [WARNING]   [5ggj_PNA_A_301] Missing files: predicted poses: results/full_val_30epoch/5ggj_PNA_A_301_pred.sdf
+19:32:10 [WARNING]   [5ggj_PNA_B_301] Missing files: predicted poses: results/full_val_30epoch/5ggj_PNA_B_301_pred.sdf
+19:32:10 [WARNING]   [5ggk_MBE_B_301] Missing files: predicted poses: results/full_val_30epoch/5ggk_MBE_B_301_pred.sdf
+19:32:10 [WARNING]   [5gmf_GMP_C_902] Missing files: predicted poses: results/full_val_30epoch/5gmf_GMP_C_902_pred.sdf
+19:32:10 [INFO]   Progress: 1950/2609
+19:32:10 [WARNING]   [5igi_ZIT_A_402] Missing files: predicted poses: results/full_val_30epoch/5igi_ZIT_A_402_pred.sdf
+19:32:10 [WARNING]   [5in5_GFB_D_401] Missing files: predicted poses: results/full_val_30epoch/5in5_GFB_D_401_pred.sdf
+19:32:11 [INFO]   Progress: 2000/2609
+19:32:11 [WARNING]   [5kew_6SB_D_301] Missing files: predicted poses: results/full_val_30epoch/5kew_6SB_D_301_pred.sdf
+19:32:11 [WARNING]   [5kew_6SB_F_301] Missing files: predicted poses: results/full_val_30epoch/5kew_6SB_F_301_pred.sdf
+19:32:11 [WARNING]   [5kxe_6Y2_D_303] Missing files: predicted poses: results/full_val_30epoch/5kxe_6Y2_D_303_pred.sdf
+19:32:11 [WARNING]   [5l9g_MO0_B_401] Missing files: predicted poses: results/full_val_30epoch/5l9g_MO0_B_401_pred.sdf
+19:32:11 [WARNING]   [5lxt_7AK_B_505] Missing files: predicted poses: results/full_val_30epoch/5lxt_7AK_B_505_pred.sdf
+19:32:11 [INFO]   Progress: 2050/2609
+19:32:11 [WARNING]   [5mb4_NAG_A_513] Missing files: predicted poses: results/full_val_30epoch/5mb4_NAG_A_513_pred.sdf
+19:32:11 [WARNING]   [5mih_7NU_B_201] Missing files: predicted poses: results/full_val_30epoch/5mih_7NU_B_201_pred.sdf
+19:32:11 [WARNING]   [5mxf_MFU_A_401] Missing files: predicted poses: results/full_val_30epoch/5mxf_MFU_A_401_pred.sdf
+19:32:12 [WARNING]   [5n0f_7K2_A_401] Missing files: predicted poses: results/full_val_30epoch/5n0f_7K2_A_401_pred.sdf
+19:32:12 [WARNING]   [5n0f_7K2_B_401] Missing files: predicted poses: results/full_val_30epoch/5n0f_7K2_B_401_pred.sdf
+19:32:12 [INFO]   Progress: 2100/2609
+19:32:12 [WARNING]   [5nc1_NAG_A_801] Missing files: predicted poses: results/full_val_30epoch/5nc1_NAG_A_801_pred.sdf
+19:32:12 [WARNING]   [5nc1_NAG_B_801] Missing files: predicted poses: results/full_val_30epoch/5nc1_NAG_B_801_pred.sdf
+19:32:12 [WARNING]   [5ne5_KIF_A_501] Missing files: predicted poses: results/full_val_30epoch/5ne5_KIF_A_501_pred.sdf
+19:32:12 [WARNING]   [5odu_AMG_A_201] Missing files: predicted poses: results/full_val_30epoch/5odu_AMG_A_201_pred.sdf
+19:32:12 [WARNING]   [5pgu_8K4_B_302] Missing files: predicted poses: results/full_val_30epoch/5pgu_8K4_B_302_pred.sdf
+19:32:12 [WARNING]   [5pgv_8K7_B_302] Missing files: predicted poses: results/full_val_30epoch/5pgv_8K7_B_302_pred.sdf
+19:32:12 [INFO]   Progress: 2150/2609
+19:32:12 [INFO]   Progress: 2200/2609
+19:32:12 [WARNING]   [5ulp_KB1_A_301] Missing files: predicted poses: results/full_val_30epoch/5ulp_KB1_A_301_pred.sdf
+19:32:13 [INFO]   Progress: 2250/2609
+19:32:13 [WARNING]   [5xg5_A2G_A_202] Missing files: predicted poses: results/full_val_30epoch/5xg5_A2G_A_202_pred.sdf
+19:32:13 [WARNING]   [5yg7_RI2_A_401] Missing files: predicted poses: results/full_val_30epoch/5yg7_RI2_A_401_pred.sdf
+19:32:13 [INFO]   Progress: 2300/2609
+19:32:13 [WARNING]   [6aak_9T6_A_1201] Missing files: predicted poses: results/full_val_30epoch/6aak_9T6_A_1201_pred.sdf
+19:32:13 [WARNING]   [6aam_9T6_A_1201] Missing files: predicted poses: results/full_val_30epoch/6aam_9T6_A_1201_pred.sdf
+19:32:13 [WARNING]   [6ayi_C3G_B_201] Missing files: predicted poses: results/full_val_30epoch/6ayi_C3G_B_201_pred.sdf
+19:32:13 [INFO]   Progress: 2350/2609
+19:32:13 [WARNING]   [6cwi_6LA_A_202] Missing files: predicted poses: results/full_val_30epoch/6cwi_6LA_A_202_pred.sdf
+19:32:13 [WARNING]   [6f5w_KG1_A_415] Missing files: predicted poses: results/full_val_30epoch/6f5w_KG1_A_415_pred.sdf
+19:32:13 [WARNING]   [6fii_SG9_D_502] Missing files: predicted poses: results/full_val_30epoch/6fii_SG9_D_502_pred.sdf
+19:32:14 [INFO]   Progress: 2400/2609
+20:47:15 [WARNING]   [6hl1_JN3_A_501] Missing files: predicted poses: results/full_val_30epoch/6hl1_JN3_A_501_pred.sdf
+20:47:15 [WARNING]   [6htn_MFU_D_203] Missing files: predicted poses: results/full_val_30epoch/6htn_MFU_D_203_pred.sdf
+20:47:15 [WARNING]   [6htn_MFU_F_202] Missing files: predicted poses: results/full_val_30epoch/6htn_MFU_F_202_pred.sdf
+20:47:15 [WARNING]   [6htn_MFU_F_203] Missing files: predicted poses: results/full_val_30epoch/6htn_MFU_F_203_pred.sdf
+20:47:16 [INFO]   Progress: 2450/2609
+20:47:17 [WARNING]   [6pws_MMA_A_303] Missing files: predicted poses: results/full_val_30epoch/6pws_MMA_A_303_pred.sdf
+20:47:17 [WARNING]   [6vaw_S3W_C_301] Missing files: predicted poses: results/full_val_30epoch/6vaw_S3W_C_301_pred.sdf
+20:47:17 [WARNING]   [6vaw_S3W_D_301] Missing files: predicted poses: results/full_val_30epoch/6vaw_S3W_D_301_pred.sdf
+20:47:17 [WARNING]   [6vgf_WA3_B_301] Missing files: predicted poses: results/full_val_30epoch/6vgf_WA3_B_301_pred.sdf
+20:47:17 [INFO]   Progress: 2500/2609
+20:47:17 [WARNING]   [6x9a_UY7_A_2004] Missing files: predicted poses: results/full_val_30epoch/6x9a_UY7_A_2004_pred.sdf
+20:47:17 [WARNING]   [6x9b_UYA_A_2006] Missing files: predicted poses: results/full_val_30epoch/6x9b_UYA_A_2006_pred.sdf
+20:47:18 [INFO]   Progress: 2550/2609
+20:47:18 [WARNING]   [2b1q_GLC-GLC_B_1-2] Missing files: predicted poses: results/full_val_30epoch/2b1q_GLC-GLC_B_1-2_pred.sdf
+20:47:18 [WARNING]   [2bqz_ARG-TYR_F_17-26] Missing files: predicted poses: results/full_val_30epoch/2bqz_ARG-TYR_F_17-26_pred.sdf
+20:47:18 [WARNING]   [2bs5_BGC-FUC_C_1-3] Missing files: predicted poses: results/full_val_30epoch/2bs5_BGC-FUC_C_1-3_pred.sdf
+20:47:18 [WARNING]   [2gv2_ACE-LEU_B_1-9] Missing files: predicted poses: results/full_val_30epoch/2gv2_ACE-LEU_B_1-9_pred.sdf
+20:47:18 [WARNING]   [2hyq_MAN-MAN_C_1-2] Missing files: predicted poses: results/full_val_30epoch/2hyq_MAN-MAN_C_1-2_pred.sdf
+20:47:18 [WARNING]   [2rdg_NDG-FUC_B_1-4] Missing files: predicted poses: results/full_val_30epoch/2rdg_NDG-FUC_B_1-4_pred.sdf
+20:47:18 [WARNING]   [2xju_MAN-MAN_B_1-2] Missing files: predicted poses: results/full_val_30epoch/2xju_MAN-MAN_B_1-2_pred.sdf
+20:47:18 [WARNING]   [3alt_GLC-GLA_F_1-2] Missing files: predicted poses: results/full_val_30epoch/3alt_GLC-GLA_F_1-2_pred.sdf
+20:47:18 [WARNING]   [3alt_GLC-GLA_G_1-2] Missing files: predicted poses: results/full_val_30epoch/3alt_GLC-GLA_G_1-2_pred.sdf
+20:47:18 [WARNING]   [4bh4_NAG-SIA_D_1-3] Missing files: predicted poses: results/full_val_30epoch/4bh4_NAG-SIA_D_1-3_pred.sdf
+20:47:19 [WARNING]   [4lo3_NDG-GAL_E_1-2] Missing files: predicted poses: results/full_val_30epoch/4lo3_NDG-GAL_E_1-2_pred.sdf
+20:47:19 [WARNING]   [5bqu_FRU-GAL_D_1-2] Missing files: predicted poses: results/full_val_30epoch/5bqu_FRU-GAL_D_1-2_pred.sdf
+20:47:19 [WARNING]   [5bqu_FRU-GAL_E_1-2] Missing files: predicted poses: results/full_val_30epoch/5bqu_FRU-GAL_E_1-2_pred.sdf
+20:47:19 [WARNING]   [5elb_NDG-FUC_Q_1-4] Missing files: predicted poses: results/full_val_30epoch/5elb_NDG-FUC_Q_1-4_pred.sdf
+20:47:19 [WARNING]   [5elb_NDG-FUC_R_1-4] Missing files: predicted poses: results/full_val_30epoch/5elb_NDG-FUC_R_1-4_pred.sdf
+20:47:19 [WARNING]   [5elc_NDG-FUC_K_1-4] Missing files: predicted poses: results/full_val_30epoch/5elc_NDG-FUC_K_1-4_pred.sdf
+20:47:19 [INFO]   Progress: 2600/2609
+20:47:19 [WARNING]   [5lne_A2G-GAL_D_1-2] Missing files: predicted poses: results/full_val_30epoch/5lne_A2G-GAL_D_1-2_pred.sdf
+20:47:19 [WARNING]   [5vmf_NAG-SIA_K_1-3] Missing files: predicted poses: results/full_val_30epoch/5vmf_NAG-SIA_K_1-3_pred.sdf
+20:47:19 [WARNING]   [6hjd_NDG-GAL_L_1-3] Missing files: predicted poses: results/full_val_30epoch/6hjd_NDG-GAL_L_1-3_pred.sdf
+20:47:19 [INFO]   Progress: 2609/2609
+20:47:19 [INFO] Evaluated 2408 complexes (201 skipped)
+20:47:19 [INFO] Top-1 Results:
+20:47:19 [INFO]   RMSD < 2.0 Å: 8.1%
+20:47:19 [INFO]   RMSD < 1.0 Å: 0.9%
+20:47:19 [INFO]   Median RMSD: 3.79 Å
+20:47:19 [INFO] Results saved to run6/logs/eval_30epoch_valid.csv
+20:47:19 [INFO] Evaluation complete.

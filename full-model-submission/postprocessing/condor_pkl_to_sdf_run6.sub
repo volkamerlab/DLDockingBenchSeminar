@@ -1,0 +1,13 @@
+universe = docker
+docker_image = docker.io/elab00003/unimol:1
+executable = /home/bdldt_team007/DLDockingBenchSeminar/run6/run_pkl_to_sdf_run6.sh
+output = /home/bdldt_team007/DLDockingBenchSeminar/run6/logs/pkl_to_sdf_run6.out
+error  = /home/bdldt_team007/DLDockingBenchSeminar/run6/logs/pkl_to_sdf_run6.err
+log    = /home/bdldt_team007/DLDockingBenchSeminar/run6/logs/pkl_to_sdf_run6.log
+should_transfer_files = NO
+request_GPUs = 1
+request_CPUs = 2
+request_memory = 8G
+requirements = (UidDomain == "cs.uni-saarland.de") && regexp("A100", GPUs_DeviceName)
++WantGPUHomeMounted = true
+queue

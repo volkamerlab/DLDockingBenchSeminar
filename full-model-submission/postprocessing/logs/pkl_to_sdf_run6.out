@@ -1,0 +1,227 @@
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 22.04 (build 36527063)
+PyTorch Version 1.12.0a0+bd13bc6
+
+Container image Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Copyright (c) 2014-2022 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+Loaded 2601 complex_ids from LMDB
+Loaded 3252 batches from pkl
+Total poses: 26010, complexes: 2601
+  [SKIP] 1jyx_IPT_C_2001: EmbedMolecule failed
+  [SKIP] 3t0d_149_B_2001: EmbedMolecule failed
+  [SKIP] 1bkf_FK5_A_108: EmbedMolecule failed
+  [SKIP] 3uj0_I3P_A_1000: EmbedMolecule failed
+  [SKIP] 1km2_UP6_A_2001: EmbedMolecule failed
+  [SKIP] 3w07_U5P_A_301: EmbedMolecule failed
+  [SKIP] 3zy6_GFB_A_1381: EmbedMolecule failed
+  [SKIP] 1loq_U_A_2001: EmbedMolecule failed
+  [SKIP] 1los_UP6_D_5004: EmbedMolecule failed
+  [SKIP] 4av4_FVQ_A_201: EmbedMolecule failed
+  [SKIP] 4csd_MFU_A_306: EmbedMolecule failed
+  [SKIP] 4csd_MFU_B_301: EmbedMolecule failed
+  [SKIP] 1nc1_MTH_A_233: EmbedMolecule failed
+  [SKIP] 1nc1_MTH_B_234: EmbedMolecule failed
+  [SKIP] 4i71_AGV_A_401: EmbedMolecule failed
+  [SKIP] 4iie_CGB_B_952: EmbedMolecule failed
+  [SKIP] 4ilx_1EZ_A_303: EmbedMolecule failed
+  [SKIP] 4j28_EAT_A_501: EmbedMolecule failed
+  [SKIP] 4j9a_DOG_D_201: EmbedMolecule failed
+  [SKIP] 4jfs_16Z_A_501: EmbedMolecule failed
+  [SKIP] 1o0n_U3P_B_1201: EmbedMolecule failed
+  [SKIP] 4lge_1Y0_B_402: EmbedMolecule failed
+  [SKIP] 4lzj_22H_D_402: EmbedMolecule failed
+  [SKIP] 4mi3_26R_A_901: EmbedMolecule failed
+  [SKIP] 4r08_URI_D_901: EmbedMolecule failed
+  [SKIP] 4ra1_BNX_A_602: EmbedMolecule failed
+  [SKIP] 4rr9_A3S_A_201: EmbedMolecule failed
+  [SKIP] 4rrt_3V4_B_502: EmbedMolecule failed
+  [SKIP] 4tqk_NAG_A_505: EmbedMolecule failed
+  [SKIP] 4tqk_NAG_A_501: EmbedMolecule failed
+  [SKIP] 1p4g_CGF_A_998: EmbedMolecule failed
+  [SKIP] 4url_XAM_B_2000: EmbedMolecule failed
+  [SKIP] 5abe_XQO_B_1717: EmbedMolecule failed
+  [SKIP] 5axb_NRN_A_502: EmbedMolecule failed
+  [SKIP] 5cdh_TLA_G_401: EmbedMolecule failed
+  [SKIP] 5dus_APR_A_201: EmbedMolecule failed
+  [SKIP] 5f8y_X6X_A_202: EmbedMolecule failed
+  [SKIP] 5fol_SO8_A_1544: EmbedMolecule failed
+  [SKIP] 1rdi_MFU_2_1: EmbedMolecule failed
+  [SKIP] 5g5k_NOK_B_1333: EmbedMolecule failed
+  [SKIP] 5ggj_PNA_A_301: EmbedMolecule failed
+  [SKIP] 5ggj_PNA_B_301: EmbedMolecule failed
+  [SKIP] 5ggk_MBE_B_301: EmbedMolecule failed
+  [SKIP] 5gmf_GMP_C_902: EmbedMolecule failed
+  [SKIP] 5igi_ZIT_A_402: EmbedMolecule failed
+  [SKIP] 5in5_GFB_D_401: EmbedMolecule failed
+  [SKIP] 5kew_6SB_D_301: EmbedMolecule failed
+  [SKIP] 5kew_6SB_F_301: EmbedMolecule failed
+  [SKIP] 5kxe_6Y2_D_303: EmbedMolecule failed
+  [SKIP] 5l9g_MO0_B_401: EmbedMolecule failed
+  [SKIP] 1t36_U5P_A_1091: EmbedMolecule failed
+  [SKIP] 5lxt_7AK_B_505: EmbedMolecule failed
+  [SKIP] 1t36_U5P_C_1093: EmbedMolecule failed
+  [SKIP] 5mb4_NAG_A_513: EmbedMolecule failed
+  [SKIP] 5mih_7NU_B_201: EmbedMolecule failed
+  [SKIP] 5mxf_MFU_A_401: EmbedMolecule failed
+  [SKIP] 5n0f_7K2_A_401: EmbedMolecule failed
+  [SKIP] 5n0f_7K2_B_401: EmbedMolecule failed
+  [SKIP] 5nc1_NAG_A_801: EmbedMolecule failed
+  [SKIP] 5nc1_NAG_B_801: EmbedMolecule failed
+  [SKIP] 5ne5_KIF_A_501: EmbedMolecule failed
+  [SKIP] 1tl2_NDG_A_241: EmbedMolecule failed
+  [SKIP] 1tl2_NDG_A_240: EmbedMolecule failed
+  [SKIP] 5odu_AMG_A_201: EmbedMolecule failed
+  [SKIP] 5pgu_8K4_B_302: EmbedMolecule failed
+  [SKIP] 5pgv_8K7_B_302: EmbedMolecule failed
+  [SKIP] 1u33_LM2_A_500: EmbedMolecule failed
+  [SKIP] 5ulp_KB1_A_301: EmbedMolecule failed
+  [SKIP] 5xg5_A2G_A_202: EmbedMolecule failed
+  [SKIP] 5yg7_RI2_A_401: EmbedMolecule failed
+  [SKIP] 6aak_9T6_A_1201: EmbedMolecule failed
+  [SKIP] 6aam_9T6_A_1201: EmbedMolecule failed
+  [SKIP] 1uz1_IFL_A_1446: EmbedMolecule failed
+  [SKIP] 6ayi_C3G_B_201: EmbedMolecule failed
+  [SKIP] 6cwi_6LA_A_202: EmbedMolecule failed
+  [SKIP] 6f5w_KG1_A_415: EmbedMolecule failed
+  [SKIP] 6fii_SG9_D_502: EmbedMolecule failed
+  [SKIP] 1w96_S1A_A_1567: EmbedMolecule failed
+  [SKIP] 6hl1_JN3_A_501: EmbedMolecule failed
+  [SKIP] 6htn_MFU_D_203: EmbedMolecule failed
+  [SKIP] 6htn_MFU_F_202: EmbedMolecule failed
+  [SKIP] 6htn_MFU_F_203: EmbedMolecule failed
+  [SKIP] 6pws_MMA_A_303: EmbedMolecule failed
+  [SKIP] 1ws5_MMA_A_501: EmbedMolecule failed
+  [SKIP] 1ww2_NBG_A_998: EmbedMolecule failed
+  [SKIP] 6vaw_S3W_C_301: EmbedMolecule failed
+  [SKIP] 6vaw_S3W_D_301: EmbedMolecule failed
+  [SKIP] 6vgf_WA3_B_301: EmbedMolecule failed
+  [SKIP] 6x9a_UY7_A_2004: EmbedMolecule failed
+  [SKIP] 6x9b_UYA_A_2006: EmbedMolecule failed
+  [SKIP] 2b1q_GLC-GLC_B_1-2: EmbedMolecule failed
+  [SKIP] 2bs5_BGC-FUC_C_1-3: EmbedMolecule failed
+  [SKIP] 2hyq_MAN-MAN_C_1-2: EmbedMolecule failed
+  [SKIP] 2rdg_NDG-FUC_B_1-4: EmbedMolecule failed
+  [SKIP] 2xju_MAN-MAN_B_1-2: EmbedMolecule failed
+  [SKIP] 3alt_GLC-GLA_F_1-2: EmbedMolecule failed
+  [SKIP] 3alt_GLC-GLA_G_1-2: EmbedMolecule failed
+  [SKIP] 4bh4_NAG-SIA_D_1-3: EmbedMolecule failed
+  [SKIP] 4lo3_NDG-GAL_E_1-2: EmbedMolecule failed
+  [SKIP] 5bqu_FRU-GAL_D_1-2: EmbedMolecule failed
+  [SKIP] 5bqu_FRU-GAL_E_1-2: EmbedMolecule failed
+  [SKIP] 5elb_NDG-FUC_Q_1-4: EmbedMolecule failed
+  [SKIP] 5elb_NDG-FUC_R_1-4: EmbedMolecule failed
+  [SKIP] 5elc_NDG-FUC_K_1-4: EmbedMolecule failed
+  [SKIP] 5lne_A2G-GAL_D_1-2: EmbedMolecule failed
+  [SKIP] 5vmf_NAG-SIA_K_1-3: EmbedMolecule failed
+  [SKIP] 6hjd_NDG-GAL_L_1-3: EmbedMolecule failed
+  [SKIP] 1djx_I3P_B_1: EmbedMolecule failed
+  [SKIP] 2a2i_A5P_A_1269: EmbedMolecule failed
+  [SKIP] 2am4_U2F_A_449: EmbedMolecule failed
+  [SKIP] 2arc_ARA_A_171: EmbedMolecule failed
+  [SKIP] 2boj_ARW_A_1115: EmbedMolecule failed
+  [SKIP] 2bt9_MFU_B_1089: EmbedMolecule failed
+  [SKIP] 2bv4_MMA_B_400: EmbedMolecule failed
+  [SKIP] 2cht_TSA_I_208: EmbedMolecule failed
+  [SKIP] 2dw7_SRT_J_1010: EmbedMolecule failed
+  [SKIP] 2dw7_SRT_M_1013: EmbedMolecule failed
+  [SKIP] 2dw7_SRT_N_1014: EmbedMolecule failed
+  [SKIP] 2e27_AB0_H_6001: EmbedMolecule failed
+  [SKIP] 1dx6_GNT_A_602: EmbedMolecule failed
+  [SKIP] 2f25_DAN_A_1001: EmbedMolecule failed
+  [SKIP] 2ff5_H53_A_998: EmbedMolecule failed
+  [SKIP] 2fwp_ICR_A_1001: EmbedMolecule failed
+  [SKIP] 1ecq_DXG_A_499: EmbedMolecule failed
+  [SKIP] 2hl4_BO1_A_264: EmbedMolecule failed
+  [SKIP] 1eei_GAA_H_508: EmbedMolecule failed
+  [SKIP] 2j7d_GI1_A_1446: EmbedMolecule failed
+  [SKIP] 2j7f_GI3_B_1446: EmbedMolecule failed
+  [SKIP] 1efi_GAT_D_104: EmbedMolecule failed
+  [SKIP] 2jdm_MFU_D_1117: EmbedMolecule failed
+  [SKIP] 2jdp_MFU_A_1115: EmbedMolecule failed
+  [SKIP] 2jdp_MFU_B_1115: EmbedMolecule failed
+  [SKIP] 2mas_PIR_B_400: EmbedMolecule failed
+  [SKIP] 2nsx_IFM_D_503: EmbedMolecule failed
+  [SKIP] 2nx3_A5P_C_269: EmbedMolecule failed
+  [SKIP] 2oyl_IDC_A_600: EmbedMolecule failed
+  [SKIP] 2pwg_CTS_A_8000: EmbedMolecule failed
+  [SKIP] 2q5f_DTA_A_273: EmbedMolecule failed
+  [SKIP] 1f73_HMN_A_700: EmbedMolecule failed
+  [SKIP] 2qnb_BZD_A_998: EmbedMolecule failed
+  [SKIP] 2qwd_4AM_A_800: EmbedMolecule failed
+  [SKIP] 1f73_HMN_B_701: EmbedMolecule failed
+  [SKIP] 2r5n_R5P_A_670: EmbedMolecule failed
+  [SKIP] 2rid_291_C_503: EmbedMolecule failed
+  [SKIP] 1fd7_AI1_E_104: EmbedMolecule failed
+  [SKIP] 1fd7_AI1_H_104: EmbedMolecule failed
+  [SKIP] 2vo5_VBZ_A_1865: EmbedMolecule failed
+  [SKIP] 2vqt_15A_B_1867: EmbedMolecule failed
+  [SKIP] 1fd7_AI1_N_104: EmbedMolecule failed
+  [SKIP] 2vur_YX1_A_1626: EmbedMolecule failed
+  [SKIP] 2vur_YX1_B_1626: EmbedMolecule failed
+  [SKIP] 2vvz_DAN_B_1792: EmbedMolecule failed
+  [SKIP] 2vw1_DAN_A_1000: EmbedMolecule failed
+  [SKIP] 2vzm_NRB_B_1408: EmbedMolecule failed
+  [SKIP] 1fkf_FK5_A_108: EmbedMolecule failed
+  [SKIP] 2wc4_AMF_A_1446: EmbedMolecule failed
+  [SKIP] 2wc4_AMF_D_1446: EmbedMolecule failed
+  [SKIP] 2wnc_TKT_B_300: EmbedMolecule failed
+  [SKIP] 2x00_GYN_D_301: EmbedMolecule failed
+  [SKIP] 2xm1_LTM_A_1717: EmbedMolecule failed
+  [SKIP] 2xys_SY9_E_1206: EmbedMolecule failed
+  [SKIP] 2y54_V63_B_301: EmbedMolecule failed
+  [SKIP] 2y54_V63_D_301: EmbedMolecule failed
+  [SKIP] 2y56_V11_E_301: EmbedMolecule failed
+  [SKIP] 2yme_CWB_G_1207: EmbedMolecule failed
+  [SKIP] 2ziz_AD3_B_500: EmbedMolecule failed
+  [SKIP] 3aj5_NGA_A_2000: EmbedMolecule failed
+  [SKIP] 3axm_6PG_D_479: EmbedMolecule failed
+  [SKIP] 3axm_6PG_F_479: EmbedMolecule failed
+  [SKIP] 1ggn_GLS_A_998: EmbedMolecule failed
+  [SKIP] 3bia_TLA_X_118: EmbedMolecule failed
+  [SKIP] 3bxg_BG6_B_401: EmbedMolecule failed
+  [SKIP] 1gpy_G6P_A_998: EmbedMolecule failed
+  [SKIP] 3ddg_GB7_A_5001: EmbedMolecule failed
+  [SKIP] 3djv_C3P_A_125: EmbedMolecule failed
+  [SKIP] 3dx2_MZB_A_1048: EmbedMolecule failed
+  [SKIP] 3ejr_HN4_A_1049: EmbedMolecule failed
+  [SKIP] 3fv2_NDZ_B_791: EmbedMolecule failed
+  [SKIP] 3g1a_UP6_B_229: EmbedMolecule failed
+  [SKIP] 3g31_GF1_B_3: EmbedMolecule failed
+  [SKIP] 3gba_DYH_C_258: EmbedMolecule failed
+  [SKIP] 3gz8_APR_B_302: EmbedMolecule failed
+  [SKIP] 1hw8_114_D_3: EmbedMolecule failed
+  [SKIP] 3ind_593_A_1: EmbedMolecule failed
+  [SKIP] 3ine_X17_A_1: EmbedMolecule failed
+  [SKIP] 3l7b_DKZ_A_843: EmbedMolecule failed
+  [SKIP] 3luj_U5P_C_1: EmbedMolecule failed
+  [SKIP] 3mkn_DNB_B_502: EmbedMolecule failed
+  [SKIP] 3muz_IPT_3_2001: EmbedMolecule failed
+  [SKIP] 3my5_RFZ_A_300: EmbedMolecule failed
+  [SKIP] 1jak_IFG_A_601: EmbedMolecule failed
+  [SKIP] 3pbu_UP6_A_229: EmbedMolecule failed
+  [SKIP] 3pby_UP6_A_229: EmbedMolecule failed
+
+Done: 2408 SDF files written, 193 failed -> /home/bdldt_team007/DLDockingBenchSeminar/run6/inference_results/sdf

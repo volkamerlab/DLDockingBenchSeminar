@@ -1,0 +1,191 @@
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 22.04 (build 36527063)
+PyTorch Version 1.12.0a0+bd13bc6
+
+Container image Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Copyright (c) 2014-2022 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+=== RUN7 TEST INFERENCE START ===
+2026-07-08 16:16:57 | INFO | unimol.inference | loading model(s) from /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-08 16:17:18 | INFO | unimol.tasks.docking_pose_v2 | ligand dictionary: 30 types
+2026-07-08 16:17:18 | INFO | unimol.tasks.docking_pose_v2 | pocket dictionary: 9 types
+2026-07-08 16:17:22 | INFO | unimol.inference | Namespace(activation_dropout=0.0, activation_fn='gelu', adam_betas='(0.9, 0.999)', adam_eps=1e-08, all_gather_list_size=16384, allreduce_fp32_grad=False, arch='docking_pose_v2', attention_dropout=0.1, batch_size=8, batch_size_valid=8, bf16=False, bf16_sr=False, broadcast_buffers=False, bucket_cap_mb=25, conf_size=10, cpu=False, curriculum=0, data='/home/bdldt_team007/DLDockingBenchSeminar/data/processed_test_clean', data_buffer_size=10, ddp_backend='c10d', delta_pair_repr_norm_loss=-1.0, device_id=0, disable_validation=False, dist_threshold=8.0, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_num_procs=1, distributed_port=-1, distributed_rank=0, distributed_world_size=1, dropout=0.1, ema_decay=-1.0, emb_dropout=0.1, empty_cache_freq=0, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, fast_stat_sync=False, find_unused_parameters=False, finetune_mol_model=None, finetune_pocket_model=None, fix_batches_to_gpus=False, fixed_validation_seed=None, force_anneal=None, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, log_format='simple', log_interval=50, loss='docking_pose_v2', lr_scheduler='fixed', lr_shrink=0.1, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_pocket_atoms=256, max_seq_len=512, max_valid_steps=None, min_loss_scale=0.0001, model_overrides='{}', mol=Namespace(activation_dropout=0.0, activation_fn='gelu', attention_dropout=0.1, delta_pair_repr_norm_loss=-1.0, dropout=0.1, emb_dropout=0.1, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_seq_len=512, pooler_activation_fn='tanh', pooler_dropout=0.0, post_ln=False, x_norm_loss=-1.0), no_progress_bar=False, no_seed_provided=False, nprocs_per_node=1, num_workers=0, optimizer='adam', path='/home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt', pocket=Namespace(activation_dropout=0.0, activation_fn='gelu', attention_dropout=0.1, delta_pair_repr_norm_loss=-1.0, dropout=0.1, emb_dropout=0.1, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_seq_len=512, pooler_activation_fn='tanh', pooler_dropout=0.0, post_ln=False, x_norm_loss=-1.0), pooler_activation_fn='tanh', pooler_dropout=0.0, post_ln=False, profile=False, quiet=False, recycling=4, required_batch_size_multiple=1, results_path='/home/bdldt_team007/DLDockingBenchSeminar/run7/test_results', seed=1, skip_invalid_size_inputs_valid_test=False, suppress_crashes=False, task='docking_pose_v2', tensorboard_logdir='', threshold_loss_scale=None, train_subset='train', user_dir='/home/bdldt_team007/DLDockingBenchSeminar/unimol/unimol_docking_v2/unimol', valid_subset='test', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, validate_with_ema=False, wandb_name='', wandb_project='', warmup_updates=0, weight_decay=0.0, x_norm_loss=-1.0)
+2026-07-08 16:17:22 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-08 16:18:27 | INFO | unicore.logging.progress_bar | valid on 'test' subset:     51 / 7727 
+2026-07-08 16:19:26 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    101 / 7727 
+2026-07-08 16:20:45 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    151 / 7727 
+2026-07-08 16:21:36 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    201 / 7727 
+2026-07-08 16:22:25 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    251 / 7727 
+2026-07-08 16:23:11 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    301 / 7727 
+2026-07-08 16:24:15 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    351 / 7727 
+2026-07-08 16:25:09 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    401 / 7727 
+2026-07-08 16:25:51 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    451 / 7727 
+2026-07-08 16:26:45 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    501 / 7727 
+2026-07-08 16:27:24 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    551 / 7727 
+2026-07-08 16:28:25 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    601 / 7727 
+2026-07-08 16:29:26 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    651 / 7727 
+2026-07-08 16:30:45 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    701 / 7727 
+2026-07-08 16:31:26 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    751 / 7727 
+2026-07-08 16:32:32 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    801 / 7727 
+2026-07-08 16:33:36 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    851 / 7727 
+2026-07-08 16:34:33 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    901 / 7727 
+2026-07-08 16:35:39 | INFO | unicore.logging.progress_bar | valid on 'test' subset:    951 / 7727 
+2026-07-08 16:36:41 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1001 / 7727 
+2026-07-08 16:37:50 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1051 / 7727 
+2026-07-08 16:39:12 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1101 / 7727 
+2026-07-08 16:40:03 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1151 / 7727 
+2026-07-08 16:41:03 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1201 / 7727 
+2026-07-08 16:41:56 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1251 / 7727 
+2026-07-08 16:42:44 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1301 / 7727 
+2026-07-08 16:43:35 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1351 / 7727 
+2026-07-08 16:44:20 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1401 / 7727 
+2026-07-08 16:45:31 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1451 / 7727 
+2026-07-08 16:46:35 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1501 / 7727 
+2026-07-08 16:47:24 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1551 / 7727 
+2026-07-08 16:48:33 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1601 / 7727 
+2026-07-08 16:49:33 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1651 / 7727 
+2026-07-08 16:50:35 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1701 / 7727 
+2026-07-08 16:51:28 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1751 / 7727 
+2026-07-08 16:52:18 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1801 / 7727 
+2026-07-08 16:53:21 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1851 / 7727 
+2026-07-08 16:54:10 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1901 / 7727 
+2026-07-08 16:55:35 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   1951 / 7727 
+2026-07-08 16:57:28 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2001 / 7727 
+2026-07-08 16:59:22 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2051 / 7727 
+2026-07-08 17:01:19 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2101 / 7727 
+2026-07-08 17:03:11 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2151 / 7727 
+2026-07-08 17:04:19 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2201 / 7727 
+2026-07-08 17:05:14 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2251 / 7727 
+2026-07-08 17:06:07 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2301 / 7727 
+2026-07-08 17:07:14 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2351 / 7727 
+2026-07-08 17:08:18 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2401 / 7727 
+2026-07-08 17:09:10 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2451 / 7727 
+2026-07-08 17:10:13 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2501 / 7727 
+2026-07-08 17:11:18 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2551 / 7727 
+2026-07-08 17:12:10 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2601 / 7727 
+2026-07-08 17:13:30 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2651 / 7727 
+2026-07-08 17:14:18 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2701 / 7727 
+2026-07-08 17:15:16 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2751 / 7727 
+2026-07-08 17:16:14 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2801 / 7727 
+2026-07-08 17:17:18 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2851 / 7727 
+2026-07-08 17:18:07 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2901 / 7727 
+2026-07-08 17:18:56 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   2951 / 7727 
+2026-07-08 17:19:46 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3001 / 7727 
+2026-07-08 17:20:30 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3051 / 7727 
+2026-07-08 17:21:29 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3101 / 7727 
+2026-07-08 17:22:21 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3151 / 7727 
+2026-07-08 17:23:23 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3201 / 7727 
+2026-07-08 17:24:20 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3251 / 7727 
+2026-07-08 17:25:13 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3301 / 7727 
+2026-07-08 17:26:09 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3351 / 7727 
+2026-07-08 17:26:57 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3401 / 7727 
+2026-07-08 17:28:03 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3451 / 7727 
+2026-07-08 17:29:06 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3501 / 7727 
+2026-07-08 17:30:03 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3551 / 7727 
+2026-07-08 17:30:58 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3601 / 7727 
+2026-07-08 17:31:46 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3651 / 7727 
+2026-07-08 17:32:36 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3701 / 7727 
+2026-07-08 17:33:15 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3751 / 7727 
+2026-07-08 17:34:11 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3801 / 7727 
+2026-07-08 17:35:01 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3851 / 7727 
+2026-07-08 17:35:49 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3901 / 7727 
+2026-07-08 17:37:01 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   3951 / 7727 
+2026-07-08 17:38:17 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4001 / 7727 
+2026-07-08 17:39:08 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4051 / 7727 
+2026-07-08 17:40:03 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4101 / 7727 
+2026-07-08 17:40:47 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4151 / 7727 
+2026-07-08 17:42:18 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4201 / 7727 
+2026-07-08 17:43:13 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4251 / 7727 
+2026-07-08 17:44:02 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4301 / 7727 
+2026-07-08 17:45:01 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4351 / 7727 
+2026-07-08 17:46:00 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4401 / 7727 
+2026-07-08 17:47:00 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4451 / 7727 
+2026-07-08 17:48:07 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4501 / 7727 
+2026-07-08 17:49:09 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4551 / 7727 
+2026-07-08 17:49:55 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4601 / 7727 
+2026-07-08 17:50:50 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4651 / 7727 
+2026-07-08 17:51:48 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4701 / 7727 
+2026-07-08 17:52:39 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4751 / 7727 
+2026-07-08 17:53:38 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4801 / 7727 
+2026-07-08 17:54:54 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4851 / 7727 
+2026-07-08 17:55:47 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4901 / 7727 
+2026-07-08 17:57:07 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   4951 / 7727 
+2026-07-08 17:58:13 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5001 / 7727 
+2026-07-08 17:58:55 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5051 / 7727 
+2026-07-08 17:59:54 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5101 / 7727 
+2026-07-08 18:00:40 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5151 / 7727 
+2026-07-08 18:01:54 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5201 / 7727 
+2026-07-08 18:02:48 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5251 / 7727 
+2026-07-08 18:03:57 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5301 / 7727 
+2026-07-08 18:05:09 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5351 / 7727 
+2026-07-08 18:06:14 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5401 / 7727 
+2026-07-08 18:07:12 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5451 / 7727 
+2026-07-08 18:08:15 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5501 / 7727 
+2026-07-08 18:09:06 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5551 / 7727 
+2026-07-08 18:09:57 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5601 / 7727 
+2026-07-08 18:11:00 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5651 / 7727 
+2026-07-08 18:11:54 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5701 / 7727 
+2026-07-08 18:13:03 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5751 / 7727 
+2026-07-08 18:14:10 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5801 / 7727 
+2026-07-08 18:15:12 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5851 / 7727 
+2026-07-08 18:16:15 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5901 / 7727 
+2026-07-08 18:17:08 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   5951 / 7727 
+2026-07-08 18:17:55 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6001 / 7727 
+2026-07-08 18:19:02 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6051 / 7727 
+2026-07-08 18:20:14 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6101 / 7727 
+2026-07-08 18:21:32 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6151 / 7727 
+2026-07-08 18:22:36 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6201 / 7727 
+2026-07-08 18:23:46 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6251 / 7727 
+2026-07-08 18:24:57 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6301 / 7727 
+2026-07-08 18:26:46 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6351 / 7727 
+2026-07-08 18:27:47 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6401 / 7727 
+2026-07-08 18:28:47 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6451 / 7727 
+2026-07-08 18:29:55 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6501 / 7727 
+2026-07-08 18:30:42 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6551 / 7727 
+2026-07-08 18:31:49 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6601 / 7727 
+2026-07-08 18:32:45 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6651 / 7727 
+2026-07-08 18:34:23 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6701 / 7727 
+2026-07-08 18:35:09 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6751 / 7727 
+2026-07-08 18:36:12 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6801 / 7727 
+2026-07-08 18:37:45 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6851 / 7727 
+2026-07-08 18:38:46 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6901 / 7727 
+2026-07-08 18:39:49 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   6951 / 7727 
+2026-07-08 18:40:45 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7001 / 7727 
+2026-07-08 18:42:33 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7051 / 7727 
+2026-07-08 18:44:11 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7101 / 7727 
+2026-07-08 18:45:47 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7151 / 7727 
+2026-07-08 18:47:26 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7201 / 7727 
+2026-07-08 18:48:28 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7251 / 7727 
+2026-07-08 18:49:33 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7301 / 7727 
+2026-07-08 18:50:27 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7351 / 7727 
+2026-07-08 18:51:23 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7401 / 7727 
+2026-07-08 18:52:13 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7451 / 7727 
+2026-07-08 18:53:16 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7501 / 7727 
+2026-07-08 18:54:19 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7551 / 7727 
+2026-07-08 18:55:10 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7601 / 7727 
+2026-07-08 18:56:01 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7651 / 7727 
+2026-07-08 18:57:00 | INFO | unicore.logging.progress_bar | valid on 'test' subset:   7701 / 7727 
+2026-07-08 18:57:41 | INFO | unimol.inference | Done inference! 
+=== RUN7 TEST INFERENCE DONE ===

@@ -1,0 +1,1509 @@
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 22.04 (build 36527063)
+PyTorch Version 1.12.0a0+bd13bc6
+
+Container image Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Copyright (c) 2014-2022 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+=== RUN7 TRAIN COMMAND START ===
+2026-07-05 23:22:50 | INFO | unicore_cli.train | Namespace(activation_dropout=0.0, activation_fn='gelu', adam_betas='(0.9, 0.99)', adam_eps=1e-06, all_gather_list_size=16384, allreduce_fp32_grad=False, arch='docking_pose_v2', attention_dropout=0.1, batch_size=16, batch_size_valid=16, best_checkpoint_metric='loss', bf16=False, bf16_sr=False, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', clip_norm=1.0, conf_size=10, cpu=False, curriculum=0, data='/home/bdldt_team007/DLDockingBenchSeminar/run7/data', data_buffer_size=10, ddp_backend='c10d', delta_pair_repr_norm_loss=-1.0, device_id=0, disable_validation=False, dist_threshold=8.0, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_num_procs=1, distributed_port=-1, distributed_rank=0, distributed_world_size=1, dropout=0.1, ema_decay=-1.0, emb_dropout=0.1, empty_cache_freq=0, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, end_learning_rate=0.0, fast_stat_sync=False, find_unused_parameters=False, finetune_from_model=None, finetune_mol_model='/home/bdldt_team007/DLDockingBenchSeminar/run7/weights/mol_pre_no_h_220816.pt', finetune_pocket_model='/home/bdldt_team007/DLDockingBenchSeminar/run7/weights/pocket_pre_220816.pt', fix_batches_to_gpus=False, fixed_validation_seed=None, force_anneal=None, fp16=True, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, keep_best_checkpoints=-1, keep_interval_updates=-1, keep_last_epochs=10, load_from_ema=False, log_format='simple', log_interval=50, loss='docking_pose_v2', lr=[0.0003], lr_scheduler='polynomial_decay', masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_epoch=10, max_pocket_atoms=256, max_seq_len=512, max_update=0, max_valid_steps=None, maximize_best_checkpoint_metric=False, min_loss_scale=0.0001, mol=Namespace(activation_dropout=0.0, activation_fn='gelu', attention_dropout=0.1, delta_pair_repr_norm_loss=-1.0, dropout=0.1, emb_dropout=0.1, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_seq_len=512, pooler_activation_fn='tanh', pooler_dropout=0.2, post_ln=False, x_norm_loss=-1.0), mol_pooler_dropout=0.2, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_save=False, no_save_optimizer_state=False, no_seed_provided=False, nprocs_per_node=1, num_workers=0, optimizer='adam', optimizer_overrides='{}', patience=-1, per_sample_clip_norm=0, pocket=Namespace(activation_dropout=0.0, activation_fn='gelu', attention_dropout=0.1, delta_pair_repr_norm_loss=-1.0, dropout=0.1, emb_dropout=0.1, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_seq_len=512, pooler_activation_fn='tanh', pooler_dropout=0.2, post_ln=False, x_norm_loss=-1.0), pocket_pooler_dropout=0.2, pooler_activation_fn='tanh', pooler_dropout=0.0, post_ln=False, power=1.0, profile=False, recycling=4, required_batch_size_multiple=1, reset_dataloader=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, restore_file='checkpoint_last.pt', save_dir='/home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints', save_interval=1, save_interval_updates=300, seed=42, skip_invalid_size_inputs_valid_test=True, stop_min_lr=-1, stop_time_hours=0, suppress_crashes=False, task='docking_pose_v2', tensorboard_logdir='', threshold_loss_scale=None, tmp_save_dir='./', total_num_update=14660, train_subset='train', update_freq=[1], user_dir='/home/bdldt_team007/DLDockingBenchSeminar/unimol/unimol_docking_v2/unimol', valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, validate_with_ema=False, wandb_name='', wandb_project='', warmup_ratio=-1.0, warmup_updates=880, weight_decay=0.0, x_norm_loss=-1.0)
+2026-07-05 23:22:50 | INFO | unimol.tasks.docking_pose_v2 | ligand dictionary: 30 types
+2026-07-05 23:22:50 | INFO | unimol.tasks.docking_pose_v2 | pocket dictionary: 9 types
+load pretrain model weight from... /home/bdldt_team007/DLDockingBenchSeminar/run7/weights/mol_pre_no_h_220816.pt
+load pretrain model weight from... /home/bdldt_team007/DLDockingBenchSeminar/run7/weights/pocket_pre_220816.pt
+2026-07-05 23:22:52 | INFO | unicore_cli.train | DockingPoseV2Model(
+  (mol_model): UniMolModel(
+    (embed_tokens): Embedding(31, 512, padding_idx=0)
+    (encoder): TransformerEncoderWithPair(
+      (emb_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (1): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (2): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (3): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (4): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (5): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (6): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (7): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (8): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (9): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (10): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (11): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (12): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (13): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (14): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (gbf_proj): NonLinearHead(
+      (linear1): Linear(in_features=128, out_features=128, bias=True)
+      (linear2): Linear(in_features=128, out_features=64, bias=True)
+    )
+    (gbf): GaussianLayer(
+      (means): Embedding(1, 128)
+      (stds): Embedding(1, 128)
+      (mul): Embedding(961, 1)
+      (bias): Embedding(961, 1)
+    )
+    (classification_heads): ModuleDict()
+  )
+  (pocket_model): UniMolModel(
+    (embed_tokens): Embedding(10, 512, padding_idx=0)
+    (encoder): TransformerEncoderWithPair(
+      (emb_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (1): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (2): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (3): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (4): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (5): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (6): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (7): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (8): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (9): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (10): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (11): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (12): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (13): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (14): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (gbf_proj): NonLinearHead(
+      (linear1): Linear(in_features=128, out_features=128, bias=True)
+      (linear2): Linear(in_features=128, out_features=64, bias=True)
+    )
+    (gbf): GaussianLayer(
+      (means): Embedding(1, 128)
+      (stds): Embedding(1, 128)
+      (mul): Embedding(100, 1)
+      (bias): Embedding(100, 1)
+    )
+    (classification_heads): ModuleDict()
+  )
+  (concat_decoder): TransformerEncoderWithPair(
+    (emb_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+    (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+    (final_head_layer_norm): LayerNorm(torch.Size([64]), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (cross_distance_project): NonLinearHead(
+    (linear1): Linear(in_features=1088, out_features=1088, bias=True)
+    (linear2): Linear(in_features=1088, out_features=1, bias=True)
+  )
+  (holo_distance_project): DistanceHead(
+    (dense): Linear(in_features=576, out_features=576, bias=True)
+    (layer_norm): LayerNorm((576,), eps=1e-05, elementwise_affine=True)
+    (out_proj): Linear(in_features=576, out_features=1, bias=True)
+  )
+  (concat_gbf): GaussianLayer(
+    (means): Embedding(1, 128)
+    (stds): Embedding(1, 128)
+    (mul): Embedding(1681, 1)
+    (bias): Embedding(1681, 1)
+  )
+  (concat_gbf_proj): NonLinearHead(
+    (linear1): Linear(in_features=128, out_features=128, bias=True)
+    (linear2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (coord_decoder): TransformerEncoderWithPair(
+    (emb_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+    (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+    (final_head_layer_norm): LayerNorm(torch.Size([64]), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (coord_delta_project): NonLinearHead(
+    (linear1): Linear(in_features=64, out_features=64, bias=True)
+    (linear2): Linear(in_features=64, out_features=1, bias=True)
+  )
+  (prmsd_project): NonLinearHead(
+    (linear1): Linear(in_features=512, out_features=512, bias=True)
+    (linear2): Linear(in_features=512, out_features=32, bias=True)
+  )
+)
+2026-07-05 23:22:52 | INFO | unicore_cli.train | task: DockingPoseV2
+2026-07-05 23:22:52 | INFO | unicore_cli.train | model: DockingPoseV2Model
+2026-07-05 23:22:52 | INFO | unicore_cli.train | loss: DockingPosseV2Loss
+2026-07-05 23:22:52 | INFO | unicore_cli.train | num. model params: 121,703,887 (num. trained: 121,703,887)
+2026-07-05 23:22:57 | INFO | unicore.utils | ***********************CUDA enviroments for all 1 workers***********************
+2026-07-05 23:22:57 | INFO | unicore.utils | rank   0: capabilities =  8.0  ; total memory = 39.495 GB ; name = NVIDIA A100-PCIE-40GB                   
+2026-07-05 23:22:57 | INFO | unicore.utils | ***********************CUDA enviroments for all 1 workers***********************
+2026-07-05 23:22:57 | INFO | unicore_cli.train | training on 1 devices (GPUs)
+2026-07-05 23:22:57 | INFO | unicore_cli.train | batch size per device = 16
+2026-07-05 23:22:57 | INFO | unicore.trainer | Preparing to load checkpoint /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-05 23:23:13 | INFO | unicore.optim.adam | using FusedAdam
+2026-07-05 23:23:14 | INFO | unicore.trainer | Loaded checkpoint /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt (epoch 5 @ 1400 updates)
+2026-07-05 23:23:14 | INFO | unicore.trainer | loading train data for epoch 5
+2026-07-05 23:23:14 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 5
+2026-07-05 23:23:14 | INFO | unicore.data.iterators | Iterator size is changed. it is possible due to the change of update_freq/num_gpu. The itr_pos is change from 313 to 626 for consistency
+2026-07-05 23:23:14 | INFO | unicore.trainer | begin training epoch 5
+2026-07-05 23:23:14 | INFO | unicore_cli.train | Start iterating over samples
+2026-07-05 23:25:57 | INFO | train_inner | epoch 005:    676 / 1466 loss=5.924, train_loss=5.924, cross_distance_loss=0.831, distance_loss=0.479, coord_loss=4.308, RMSD=4.305, prmsd_loss=3.057, ups=0.02, bsz=16, num_updates=1450, lr=0.000287591, gnorm=4.355, clip=100, loss_scale=8, train_wall=162.81, gb_free=23.9, wall=0
+2026-07-05 23:28:08 | WARNING | unicore.trainer | OOM: Ran out of memory with exception: CUDA out of memory. Tried to allocate 508.00 MiB (GPU 0; 39.49 GiB total capacity; 33.80 GiB already allocated; 477.56 MiB free; 37.77 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2026-07-05 23:28:08 | WARNING | unicore.trainer | |===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 1            |        cudaMalloc retries: 5         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   34616 MB |   34616 MB |    5507 GB |    5473 GB |
+|       from large pool |   34581 MB |   34581 MB |    5261 GB |    5227 GB |
+|       from small pool |      34 MB |      43 MB |     246 GB |     246 GB |
+|---------------------------------------------------------------------------|
+| Active memory         |   34616 MB |   34616 MB |    5507 GB |    5473 GB |
+|       from large pool |   34581 MB |   34581 MB |    5261 GB |    5227 GB |
+|       from small pool |      34 MB |      43 MB |     246 GB |     246 GB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   38680 MB |   38682 MB |   64244 MB |   25564 MB |
+|       from large pool |   38642 MB |   38642 MB |   63816 MB |   25174 MB |
+|       from small pool |      38 MB |     160 MB |     428 MB |     390 MB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |    4063 MB |    6490 MB |    4674 GB |    4670 GB |
+|       from large pool |    4060 MB |    6484 MB |    4383 GB |    4379 GB |
+|       from small pool |       3 MB |      14 MB |     291 GB |     291 GB |
+|---------------------------------------------------------------------------|
+| Allocations           |    1181    |    1518    |   14806 K  |   14805 K  |
+|       from large pool |     814    |     814    |     295 K  |     295 K  |
+|       from small pool |     367    |     772    |   14510 K  |   14510 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    1181    |    1518    |   14806 K  |   14805 K  |
+|       from large pool |     814    |     814    |     295 K  |     295 K  |
+|       from small pool |     367    |     772    |   14510 K  |   14510 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     232    |     287    |     546    |     314    |
+|       from large pool |     213    |     213    |     332    |     119    |
+|       from small pool |      19    |      80    |     214    |     195    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |     117    |     203    |   13105 K  |   13105 K  |
+|       from large pool |      95    |      98    |     176 K  |     176 K  |
+|       from small pool |      22    |     110    |   12928 K  |   12928 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+2026-07-05 23:28:08 | WARNING | unicore.trainer | attempting to recover from OOM in forward/backward pass
+2026-07-05 23:29:07 | INFO | train_inner | epoch 005:    727 / 1466 loss=6.006, train_loss=6.006, cross_distance_loss=0.846, distance_loss=0.458, coord_loss=4.395, RMSD=4.39, prmsd_loss=3.066, ups=0.26, bsz=16, num_updates=1500, lr=0.000286502, gnorm=3.171, clip=96, loss_scale=8, train_wall=185.2, gb_free=7.6, wall=0
+2026-07-05 23:29:07 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-05 23:29:07 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 00:19:19 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 5.782 | valid_loss 5.782 | cross_distance_loss 0.834 | distance_loss 0.313 | coord_loss 4.329 | RMSD 4.321 | prmsd_loss 3.061 | bsz 26010 | num_updates 1500 | best_loss 5.411
+2026-07-06 00:19:19 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 1500 updates
+2026-07-06 00:19:19 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_5_1500.pt
+2026-07-06 00:19:23 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_5_1500.pt
+2026-07-06 00:19:23 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_5_1500.pt (epoch 5 @ 1500 updates, score 5.782) (writing took 4.257827885448933 seconds)
+2026-07-06 00:19:23 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_1500.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_5_1500.pt
+2026-07-06 00:19:28 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_1500.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 00:19:31 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_5_1500.pt ...
+2026-07-06 00:19:31 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 00:20:47 | WARNING | unicore.trainer | OOM: Ran out of memory with exception: CUDA out of memory. Tried to allocate 484.00 MiB (GPU 0; 39.49 GiB total capacity; 32.63 GiB already allocated; 417.56 MiB free; 37.83 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2026-07-06 00:20:47 | WARNING | unicore.trainer | |===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 2            |        cudaMalloc retries: 7         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   33409 MB |   33409 MB |   40375 GB |   40342 GB |
+|       from large pool |   33376 MB |   33376 MB |   37321 GB |   37288 GB |
+|       from small pool |      32 MB |      40 MB |    3053 GB |    3053 GB |
+|---------------------------------------------------------------------------|
+| Active memory         |   33409 MB |   33409 MB |   40375 GB |   40342 GB |
+|       from large pool |   33376 MB |   33376 MB |   37321 GB |   37288 GB |
+|       from small pool |      32 MB |      40 MB |    3053 GB |    3053 GB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   38740 MB |   38894 MB |   64942 MB |   26202 MB |
+|       from large pool |   38704 MB |   38704 MB |   64300 MB |   25596 MB |
+|       from small pool |      36 MB |     252 MB |     642 MB |     606 MB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |    5330 MB |    7299 MB |   31726 GB |   31721 GB |
+|       from large pool |    5327 MB |    7293 MB |   27869 GB |   27864 GB |
+|       from small pool |       3 MB |      10 MB |    3856 GB |    3856 GB |
+|---------------------------------------------------------------------------|
+| Allocations           |    1181    |    1518    |  179111 K  |  179110 K  |
+|       from large pool |     813    |     813    |    2634 K  |    2633 K  |
+|       from small pool |     368    |     773    |  176476 K  |  176476 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    1181    |    1518    |  179111 K  |  179110 K  |
+|       from large pool |     813    |     813    |    2634 K  |    2633 K  |
+|       from small pool |     368    |     773    |  176476 K  |  176476 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     231    |     339    |     654    |     423    |
+|       from large pool |     213    |     213    |     333    |     120    |
+|       from small pool |      18    |     126    |     321    |     303    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |     115    |     198    |  157304 K  |  157304 K  |
+|       from large pool |      93    |     110    |    1737 K  |    1737 K  |
+|       from small pool |      22    |     103    |  155567 K  |  155567 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+2026-07-06 00:20:47 | WARNING | unicore.trainer | attempting to recover from OOM in forward/backward pass
+2026-07-06 00:22:06 | INFO | train_inner | epoch 005:    778 / 1466 loss=5.772, train_loss=5.772, cross_distance_loss=0.785, distance_loss=0.452, coord_loss=4.232, RMSD=4.228, prmsd_loss=3.025, ups=0.02, bsz=16, num_updates=1550, lr=0.000285414, gnorm=4.07, clip=100, loss_scale=8, train_wall=159.31, gb_free=24.8, wall=0
+2026-07-06 00:24:49 | INFO | train_inner | epoch 005:    828 / 1466 loss=5.935, train_loss=5.935, cross_distance_loss=0.808, distance_loss=0.434, coord_loss=4.381, RMSD=4.378, prmsd_loss=3.118, ups=0.31, bsz=16, num_updates=1600, lr=0.000284325, gnorm=3.133, clip=96, loss_scale=8, train_wall=163.64, gb_free=25.6, wall=0
+2026-07-06 00:27:31 | INFO | train_inner | epoch 005:    878 / 1466 loss=5.903, train_loss=5.903, cross_distance_loss=0.824, distance_loss=0.427, coord_loss=4.347, RMSD=4.345, prmsd_loss=3.058, ups=0.31, bsz=16, num_updates=1650, lr=0.000283237, gnorm=2.8, clip=98, loss_scale=8, train_wall=161.92, gb_free=20.3, wall=0
+2026-07-06 00:30:18 | INFO | train_inner | epoch 005:    928 / 1466 loss=6, train_loss=6, cross_distance_loss=0.823, distance_loss=0.483, coord_loss=4.391, RMSD=4.387, prmsd_loss=3.03, ups=0.3, bsz=16, num_updates=1700, lr=0.000282148, gnorm=4.489, clip=98, loss_scale=8, train_wall=166.05, gb_free=24.9, wall=0
+2026-07-06 00:33:09 | INFO | train_inner | epoch 005:    978 / 1466 loss=5.652, train_loss=5.652, cross_distance_loss=0.784, distance_loss=0.396, coord_loss=4.169, RMSD=4.166, prmsd_loss=3.033, ups=0.29, bsz=16, num_updates=1750, lr=0.00028106, gnorm=4.548, clip=98, loss_scale=8, train_wall=171.12, gb_free=25.5, wall=0
+2026-07-06 00:36:01 | INFO | train_inner | epoch 005:   1028 / 1466 loss=5.891, train_loss=5.891, cross_distance_loss=0.826, distance_loss=0.454, coord_loss=4.306, RMSD=4.302, prmsd_loss=3.052, ups=0.29, bsz=16, num_updates=1800, lr=0.000279971, gnorm=2.443, clip=98, loss_scale=8, train_wall=171.9, gb_free=19.2, wall=0
+2026-07-06 00:36:01 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 00:36:01 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 01:54:59 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 5.825 | valid_loss 5.825 | cross_distance_loss 0.869 | distance_loss 0.33 | coord_loss 4.322 | RMSD 4.321 | prmsd_loss 3.039 | bsz 26010 | num_updates 1800 | best_loss 5.411
+2026-07-06 01:54:59 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 1800 updates
+2026-07-06 01:54:59 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_5_1800.pt
+2026-07-06 01:55:04 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_5_1800.pt
+2026-07-06 01:55:04 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_5_1800.pt (epoch 5 @ 1800 updates, score 5.825) (writing took 5.559340028092265 seconds)
+2026-07-06 01:55:04 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_1800.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_5_1800.pt
+2026-07-06 01:55:09 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_1800.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 01:55:12 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_5_1800.pt ...
+2026-07-06 01:55:12 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 01:57:46 | INFO | train_inner | epoch 005:   1078 / 1466 loss=5.779, train_loss=5.779, cross_distance_loss=0.815, distance_loss=0.443, coord_loss=4.215, RMSD=4.214, prmsd_loss=3.069, ups=0.01, bsz=16, num_updates=1850, lr=0.000278882, gnorm=3.206, clip=96, loss_scale=8, train_wall=162.15, gb_free=23, wall=0
+2026-07-06 01:58:05 | WARNING | unicore.trainer | OOM: Ran out of memory with exception: CUDA out of memory. Tried to allocate 484.00 MiB (GPU 0; 39.49 GiB total capacity; 32.15 GiB already allocated; 417.56 MiB free; 37.83 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2026-07-06 01:58:05 | WARNING | unicore.trainer | |===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 3            |        cudaMalloc retries: 8         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   32924 MB |   33159 MB |   94651 GB |   94619 GB |
+|       from large pool |   32892 MB |   33126 MB |   87157 GB |   87125 GB |
+|       from small pool |      32 MB |      40 MB |    7494 GB |    7494 GB |
+|---------------------------------------------------------------------------|
+| Active memory         |   32924 MB |   33159 MB |   94651 GB |   94619 GB |
+|       from large pool |   32892 MB |   33126 MB |   87157 GB |   87125 GB |
+|       from small pool |      32 MB |      40 MB |    7494 GB |    7494 GB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   38740 MB |   38956 MB |   65158 MB |   26418 MB |
+|       from large pool |   38704 MB |   38704 MB |   64300 MB |   25596 MB |
+|       from small pool |      36 MB |     252 MB |     858 MB |     822 MB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |    5815 MB |    7503 MB |   76080 GB |   76074 GB |
+|       from large pool |    5811 MB |    7498 MB |   66603 GB |   66598 GB |
+|       from small pool |       3 MB |      12 MB |    9476 GB |    9476 GB |
+|---------------------------------------------------------------------------|
+| Allocations           |    1180    |    1518    |  489977 K  |  489976 K  |
+|       from large pool |     812    |     812    |    6061 K  |    6060 K  |
+|       from small pool |     368    |     773    |  483915 K  |  483915 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    1180    |    1518    |  489977 K  |  489976 K  |
+|       from large pool |     812    |     812    |    6061 K  |    6060 K  |
+|       from small pool |     368    |     773    |  483915 K  |  483915 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     231    |     339    |     762    |     531    |
+|       from large pool |     213    |     213    |     333    |     120    |
+|       from small pool |      18    |     126    |     429    |     411    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |     117    |     191    |  436518 K  |  436518 K  |
+|       from large pool |      96    |     109    |    3971 K  |    3971 K  |
+|       from small pool |      21    |      94    |  432547 K  |  432547 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+2026-07-06 01:58:05 | WARNING | unicore.trainer | attempting to recover from OOM in forward/backward pass
+2026-07-06 02:00:32 | INFO | train_inner | epoch 005:   1129 / 1466 loss=5.596, train_loss=5.596, cross_distance_loss=0.77, distance_loss=0.377, coord_loss=4.15, RMSD=4.149, prmsd_loss=2.992, ups=0.3, bsz=16, num_updates=1900, lr=0.000277794, gnorm=3.119, clip=100, loss_scale=8, train_wall=162.86, gb_free=22.3, wall=0
+2026-07-06 02:03:06 | INFO | train_inner | epoch 005:   1179 / 1466 loss=5.515, train_loss=5.515, cross_distance_loss=0.78, distance_loss=0.414, coord_loss=4.021, RMSD=4.019, prmsd_loss=2.992, ups=0.32, bsz=16, num_updates=1950, lr=0.000276705, gnorm=3.921, clip=94, loss_scale=8, train_wall=153.81, gb_free=24.8, wall=0
+2026-07-06 02:05:43 | INFO | train_inner | epoch 005:   1229 / 1466 loss=5.871, train_loss=5.871, cross_distance_loss=0.815, distance_loss=0.463, coord_loss=4.288, RMSD=4.285, prmsd_loss=3.047, ups=0.32, bsz=16, num_updates=2000, lr=0.000275617, gnorm=3.882, clip=98, loss_scale=8, train_wall=156.11, gb_free=23.9, wall=0
+2026-07-06 02:08:26 | INFO | train_inner | epoch 005:   1279 / 1466 loss=5.701, train_loss=5.701, cross_distance_loss=0.78, distance_loss=0.423, coord_loss=4.197, RMSD=4.194, prmsd_loss=3.017, ups=0.31, bsz=16, num_updates=2050, lr=0.000274528, gnorm=2.91, clip=100, loss_scale=8, train_wall=163.31, gb_free=22.2, wall=0
+2026-07-06 02:10:56 | INFO | train_inner | epoch 005:   1329 / 1466 loss=5.45, train_loss=5.45, cross_distance_loss=0.775, distance_loss=0.386, coord_loss=3.99, RMSD=3.986, prmsd_loss=2.996, ups=0.33, bsz=16, num_updates=2100, lr=0.00027344, gnorm=2.895, clip=94, loss_scale=8, train_wall=149.61, gb_free=24.9, wall=0
+2026-07-06 02:10:56 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 02:10:56 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 02:59:58 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 5.243 | valid_loss 5.243 | cross_distance_loss 0.753 | distance_loss 0.288 | coord_loss 3.901 | RMSD 3.895 | prmsd_loss 3.018 | bsz 26010 | num_updates 2100 | best_loss 5.243
+2026-07-06 02:59:58 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 2100 updates
+2026-07-06 02:59:58 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_5_2100.pt
+2026-07-06 03:00:02 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_5_2100.pt
+2026-07-06 03:00:02 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_5_2100.pt (epoch 5 @ 2100 updates, score 5.243) (writing took 4.015390151180327 seconds)
+2026-07-06 03:00:02 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_2100.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_5_2100.pt
+2026-07-06 03:00:07 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_2100.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 03:00:09 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_2100.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 03:00:11 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_5_2100.pt ...
+2026-07-06 03:00:11 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 03:02:40 | INFO | train_inner | epoch 005:   1379 / 1466 loss=5.54, train_loss=5.54, cross_distance_loss=0.782, distance_loss=0.407, coord_loss=4.048, RMSD=4.046, prmsd_loss=3.028, ups=0.02, bsz=16, num_updates=2150, lr=0.000272351, gnorm=3.214, clip=100, loss_scale=8, train_wall=157.34, gb_free=19.1, wall=0
+2026-07-06 03:05:16 | INFO | train_inner | epoch 005:   1429 / 1466 loss=5.623, train_loss=5.623, cross_distance_loss=0.773, distance_loss=0.403, coord_loss=4.149, RMSD=4.145, prmsd_loss=2.987, ups=0.32, bsz=16, num_updates=2200, lr=0.000271263, gnorm=2.657, clip=96, loss_scale=8, train_wall=155.71, gb_free=24.8, wall=0
+2026-07-06 03:05:45 | WARNING | unicore.trainer | OOM: Ran out of memory with exception: CUDA out of memory. Tried to allocate 484.00 MiB (GPU 0; 39.49 GiB total capacity; 32.15 GiB already allocated; 417.56 MiB free; 37.83 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2026-07-06 03:05:45 | WARNING | unicore.trainer | |===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 4            |        cudaMalloc retries: 9         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   32924 MB |   33159 MB |  149562 GB |  149530 GB |
+|       from large pool |   32892 MB |   33126 MB |  138451 GB |  138419 GB |
+|       from small pool |      32 MB |      40 MB |   11110 GB |   11110 GB |
+|---------------------------------------------------------------------------|
+| Active memory         |   32924 MB |   33159 MB |  149562 GB |  149530 GB |
+|       from large pool |   32892 MB |   33126 MB |  138451 GB |  138419 GB |
+|       from small pool |      32 MB |      40 MB |   11110 GB |   11110 GB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   38740 MB |   38956 MB |   65374 MB |   26634 MB |
+|       from large pool |   38704 MB |   38704 MB |   64300 MB |   25596 MB |
+|       from small pool |      36 MB |     252 MB |    1074 MB |    1038 MB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |    5815 MB |    7503 MB |  120443 GB |  120438 GB |
+|       from large pool |    5811 MB |    7498 MB |  106470 GB |  106464 GB |
+|       from small pool |       3 MB |      12 MB |   13973 GB |   13973 GB |
+|---------------------------------------------------------------------------|
+| Allocations           |    1180    |    1518    |  700316 K  |  700315 K  |
+|       from large pool |     812    |     812    |    9463 K  |    9462 K  |
+|       from small pool |     368    |     773    |  690853 K  |  690852 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    1180    |    1518    |  700316 K  |  700315 K  |
+|       from large pool |     812    |     812    |    9463 K  |    9462 K  |
+|       from small pool |     368    |     773    |  690853 K  |  690852 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     231    |     339    |     870    |     639    |
+|       from large pool |     213    |     213    |     333    |     120    |
+|       from small pool |      18    |     126    |     537    |     519    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |     119    |     195    |  621374 K  |  621374 K  |
+|       from large pool |      96    |     109    |    6165 K  |    6165 K  |
+|       from small pool |      23    |      98    |  615209 K  |  615209 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+2026-07-06 03:05:45 | WARNING | unicore.trainer | attempting to recover from OOM in forward/backward pass
+2026-07-06 03:07:12 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 03:07:12 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 04:00:50 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 5.187 | valid_loss 5.187 | cross_distance_loss 0.778 | distance_loss 0.314 | coord_loss 3.799 | RMSD 3.791 | prmsd_loss 2.965 | bsz 26010 | num_updates 2236 | best_loss 5.187
+2026-07-06 04:00:50 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 2236 updates
+2026-07-06 04:00:50 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint5.pt
+2026-07-06 04:00:54 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint5.pt
+2026-07-06 04:00:55 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint5.pt (epoch 5 @ 2236 updates, score 5.187) (writing took 4.16826809477061 seconds)
+2026-07-06 04:00:55 | INFO | unicore_cli.train | end of epoch 5 (average epoch stats below)
+2026-07-06 04:00:55 | INFO | unicore.checkpoint_utils | copy ./checkpoint5.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint5.pt
+2026-07-06 04:00:55 | INFO | train | epoch 005 | loss 5.682 | train_loss 5.682 | cross_distance_loss 0.79 | distance_loss 0.415 | coord_loss 4.173 | RMSD 4.171 | prmsd_loss 3.031 | ups 0.05 | bsz 18.3 | num_updates 2236 | lr 0.000270479 | gnorm 3.09 | clip 89 | loss_scale 8 | train_wall 3226.22 | gb_free 12.6 | wall 0
+2026-07-06 04:00:55 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 6
+2026-07-06 04:00:55 | INFO | unicore.trainer | begin training epoch 6
+2026-07-06 04:00:55 | INFO | unicore_cli.train | Start iterating over samples
+2026-07-06 04:00:59 | INFO | unicore.checkpoint_utils | copy ./checkpoint5.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 04:01:01 | INFO | unicore.checkpoint_utils | copy ./checkpoint5.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 04:01:04 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint5.pt ...
+2026-07-06 04:01:04 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 04:01:49 | INFO | train_inner | epoch 006:     14 / 1466 loss=5.412, train_loss=5.412, cross_distance_loss=0.77, distance_loss=0.381, coord_loss=3.959, RMSD=3.955, prmsd_loss=3.011, ups=0.01, bsz=16, num_updates=2250, lr=0.000270174, gnorm=4.016, clip=100, loss_scale=8, train_wall=165.62, gb_free=19.2, wall=0
+2026-07-06 04:04:22 | WARNING | unicore.trainer | OOM: Ran out of memory with exception: CUDA out of memory. Tried to allocate 484.00 MiB (GPU 0; 39.49 GiB total capacity; 32.15 GiB already allocated; 417.56 MiB free; 37.83 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2026-07-06 04:04:22 | WARNING | unicore.trainer | |===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 5            |        cudaMalloc retries: 10        |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   32924 MB |   33159 MB |  187393 GB |  187361 GB |
+|       from large pool |   32892 MB |   33126 MB |  173229 GB |  173197 GB |
+|       from small pool |      32 MB |      40 MB |   14164 GB |   14164 GB |
+|---------------------------------------------------------------------------|
+| Active memory         |   32924 MB |   33159 MB |  187393 GB |  187361 GB |
+|       from large pool |   32892 MB |   33126 MB |  173229 GB |  173197 GB |
+|       from small pool |      32 MB |      40 MB |   14164 GB |   14164 GB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   38740 MB |   38956 MB |   65590 MB |   26850 MB |
+|       from large pool |   38704 MB |   38704 MB |   64300 MB |   25596 MB |
+|       from small pool |      36 MB |     252 MB |    1290 MB |    1254 MB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |    5815 MB |    7503 MB |  150175 GB |  150169 GB |
+|       from large pool |    5811 MB |    7498 MB |  132326 GB |  132321 GB |
+|       from small pool |       3 MB |      10 MB |   17848 GB |   17848 GB |
+|---------------------------------------------------------------------------|
+| Allocations           |    1180    |    1518    |     884 M  |     884 M  |
+|       from large pool |     812    |     812    |      11 M  |      11 M  |
+|       from small pool |     368    |     773    |     872 M  |     872 M  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    1180    |    1518    |     884 M  |     884 M  |
+|       from large pool |     812    |     812    |      11 M  |      11 M  |
+|       from small pool |     368    |     773    |     872 M  |     872 M  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     231    |     339    |     978    |     747    |
+|       from large pool |     213    |     213    |     333    |     120    |
+|       from small pool |      18    |     126    |     645    |     627    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |     117    |     203    |     783 M  |     783 M  |
+|       from large pool |      96    |     109    |       7 M  |       7 M  |
+|       from small pool |      21    |     106    |     775 M  |     775 M  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+2026-07-06 04:04:22 | WARNING | unicore.trainer | attempting to recover from OOM in forward/backward pass
+2026-07-06 04:04:35 | INFO | train_inner | epoch 006:     65 / 1466 loss=5.447, train_loss=5.447, cross_distance_loss=0.759, distance_loss=0.403, coord_loss=3.984, RMSD=3.983, prmsd_loss=3.004, ups=0.3, bsz=16, num_updates=2300, lr=0.000269086, gnorm=3.153, clip=98, loss_scale=8, train_wall=162.35, gb_free=27.2, wall=0
+2026-07-06 04:07:18 | INFO | train_inner | epoch 006:    115 / 1466 loss=5.398, train_loss=5.398, cross_distance_loss=0.758, distance_loss=0.434, coord_loss=3.911, RMSD=3.909, prmsd_loss=2.952, ups=0.31, bsz=16, num_updates=2350, lr=0.000267997, gnorm=3.348, clip=94, loss_scale=8, train_wall=163.3, gb_free=21.1, wall=0
+2026-07-06 04:09:52 | WARNING | unicore.trainer | OOM: Ran out of memory with exception: CUDA out of memory. Tried to allocate 484.00 MiB (GPU 0; 39.49 GiB total capacity; 32.15 GiB already allocated; 417.56 MiB free; 37.83 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2026-07-06 04:09:52 | WARNING | unicore.trainer | |===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 6            |        cudaMalloc retries: 11        |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   32919 MB |   33153 MB |  193910 GB |  193878 GB |
+|       from large pool |   32886 MB |   33121 MB |  179452 GB |  179420 GB |
+|       from small pool |      32 MB |      40 MB |   14458 GB |   14458 GB |
+|---------------------------------------------------------------------------|
+| Active memory         |   32919 MB |   33153 MB |  193910 GB |  193878 GB |
+|       from large pool |   32886 MB |   33121 MB |  179452 GB |  179420 GB |
+|       from small pool |      32 MB |      40 MB |   14458 GB |   14458 GB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   38740 MB |   38864 MB |   65714 MB |   26974 MB |
+|       from large pool |   38704 MB |   38704 MB |   64300 MB |   25596 MB |
+|       from small pool |      36 MB |     160 MB |    1414 MB |    1378 MB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |    5820 MB |    7503 MB |  155819 GB |  155813 GB |
+|       from large pool |    5817 MB |    7498 MB |  137620 GB |  137614 GB |
+|       from small pool |       3 MB |      10 MB |   18199 GB |   18199 GB |
+|---------------------------------------------------------------------------|
+| Allocations           |    1179    |    1518    |     901 M  |     901 M  |
+|       from large pool |     811    |     811    |      12 M  |      12 M  |
+|       from small pool |     368    |     773    |     888 M  |     888 M  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    1179    |    1518    |     901 M  |     901 M  |
+|       from large pool |     811    |     811    |      12 M  |      12 M  |
+|       from small pool |     368    |     773    |     888 M  |     888 M  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     231    |     293    |    1040    |     809    |
+|       from large pool |     213    |     213    |     333    |     120    |
+|       from small pool |      18    |      80    |     707    |     689    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |     119    |     192    |     798 M  |     798 M  |
+|       from large pool |      96    |     109    |       8 M  |       8 M  |
+|       from small pool |      23    |      95    |     790 M  |     790 M  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+2026-07-06 04:09:52 | WARNING | unicore.trainer | attempting to recover from OOM in forward/backward pass
+2026-07-06 04:10:01 | INFO | train_inner | epoch 006:    166 / 1466 loss=5.439, train_loss=5.439, cross_distance_loss=0.756, distance_loss=0.383, coord_loss=3.996, RMSD=3.994, prmsd_loss=3.035, ups=0.31, bsz=16, num_updates=2400, lr=0.000266909, gnorm=3.219, clip=100, loss_scale=8, train_wall=158.73, gb_free=26.3, wall=0
+2026-07-06 04:10:01 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 04:10:01 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 04:58:49 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 5.162 | valid_loss 5.162 | cross_distance_loss 0.735 | distance_loss 0.345 | coord_loss 3.782 | RMSD 3.78 | prmsd_loss 2.993 | bsz 26010 | num_updates 2400 | best_loss 5.162
+2026-07-06 04:58:49 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 6 @ 2400 updates
+2026-07-06 04:58:49 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_6_2400.pt
+2026-07-06 04:58:53 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_6_2400.pt
+2026-07-06 04:58:53 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_6_2400.pt (epoch 6 @ 2400 updates, score 5.162) (writing took 4.0383615512400866 seconds)
+2026-07-06 04:58:53 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_2400.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_6_2400.pt
+2026-07-06 04:58:58 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_2400.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 04:59:00 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_2400.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 04:59:02 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_6_2400.pt ...
+2026-07-06 04:59:03 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 05:01:24 | INFO | train_inner | epoch 006:    216 / 1466 loss=5.452, train_loss=5.452, cross_distance_loss=0.757, distance_loss=0.459, coord_loss=3.944, RMSD=3.941, prmsd_loss=2.929, ups=0.02, bsz=16, num_updates=2450, lr=0.00026582, gnorm=3.075, clip=98, loss_scale=8, train_wall=150.73, gb_free=20.4, wall=0
+2026-07-06 05:03:53 | WARNING | unicore.trainer | OOM: Ran out of memory with exception: CUDA out of memory. Tried to allocate 484.00 MiB (GPU 0; 39.49 GiB total capacity; 32.15 GiB already allocated; 417.56 MiB free; 37.83 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2026-07-06 05:03:53 | WARNING | unicore.trainer | |===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 7            |        cudaMalloc retries: 12        |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   32919 MB |   33153 MB |  232979 GB |  232947 GB |
+|       from large pool |   32886 MB |   33121 MB |  215602 GB |  215570 GB |
+|       from small pool |      32 MB |      40 MB |   17377 GB |   17377 GB |
+|---------------------------------------------------------------------------|
+| Active memory         |   32919 MB |   33153 MB |  232979 GB |  232947 GB |
+|       from large pool |   32886 MB |   33121 MB |  215602 GB |  215570 GB |
+|       from small pool |      32 MB |      40 MB |   17377 GB |   17377 GB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   38740 MB |   38956 MB |   65930 MB |   27190 MB |
+|       from large pool |   38704 MB |   38704 MB |   64300 MB |   25596 MB |
+|       from small pool |      36 MB |     252 MB |    1630 MB |    1594 MB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |    5820 MB |    7503 MB |  186428 GB |  186422 GB |
+|       from large pool |    5817 MB |    7498 MB |  164542 GB |  164537 GB |
+|       from small pool |       3 MB |      10 MB |   21885 GB |   21885 GB |
+|---------------------------------------------------------------------------|
+| Allocations           |    1179    |    1518    |    1069 M  |    1069 M  |
+|       from large pool |     811    |     811    |      14 M  |      14 M  |
+|       from small pool |     368    |     773    |    1054 M  |    1054 M  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    1179    |    1518    |    1069 M  |    1069 M  |
+|       from large pool |     811    |     811    |      14 M  |      14 M  |
+|       from small pool |     368    |     773    |    1054 M  |    1054 M  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     231    |     339    |    1148    |     917    |
+|       from large pool |     213    |     213    |     333    |     120    |
+|       from small pool |      18    |     126    |     815    |     797    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |     118    |     207    |     945 M  |     945 M  |
+|       from large pool |      96    |     109    |       9 M  |       9 M  |
+|       from small pool |      22    |     110    |     936 M  |     936 M  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+2026-07-06 05:03:53 | WARNING | unicore.trainer | attempting to recover from OOM in forward/backward pass
+2026-07-06 05:04:05 | INFO | train_inner | epoch 006:    267 / 1466 loss=5.315, train_loss=5.315, cross_distance_loss=0.764, distance_loss=0.452, coord_loss=3.806, RMSD=3.804, prmsd_loss=2.921, ups=0.31, bsz=16, num_updates=2500, lr=0.000264731, gnorm=2.835, clip=98, loss_scale=8, train_wall=157.83, gb_free=19, wall=0
+2026-07-06 05:06:38 | INFO | train_inner | epoch 006:    317 / 1466 loss=5.327, train_loss=5.327, cross_distance_loss=0.742, distance_loss=0.459, coord_loss=3.832, RMSD=3.83, prmsd_loss=2.937, ups=0.33, bsz=16, num_updates=2550, lr=0.000263643, gnorm=4.098, clip=100, loss_scale=8, train_wall=153.08, gb_free=19.1, wall=0
+2026-07-06 05:09:03 | INFO | train_inner | epoch 006:    367 / 1466 loss=5.004, train_loss=5.004, cross_distance_loss=0.738, distance_loss=0.376, coord_loss=3.592, RMSD=3.59, prmsd_loss=2.974, ups=0.35, bsz=16, num_updates=2600, lr=0.000262554, gnorm=2.835, clip=98, loss_scale=8, train_wall=144.55, gb_free=25.5, wall=0
+2026-07-06 05:11:19 | INFO | train_inner | epoch 006:    417 / 1466 loss=4.723, train_loss=4.723, cross_distance_loss=0.698, distance_loss=0.305, coord_loss=3.426, RMSD=3.424, prmsd_loss=2.941, ups=0.37, bsz=16, num_updates=2650, lr=0.000261466, gnorm=2.516, clip=94, loss_scale=8, train_wall=136.18, gb_free=24, wall=0
+2026-07-06 05:13:45 | INFO | train_inner | epoch 006:    467 / 1466 loss=4.904, train_loss=4.904, cross_distance_loss=0.725, distance_loss=0.367, coord_loss=3.519, RMSD=3.517, prmsd_loss=2.917, ups=0.34, bsz=16, num_updates=2700, lr=0.000260377, gnorm=3.266, clip=98, loss_scale=8, train_wall=146.1, gb_free=21.3, wall=0
+2026-07-06 05:13:45 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 05:13:45 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 06:01:52 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 4.687 | valid_loss 4.687 | cross_distance_loss 0.709 | distance_loss 0.286 | coord_loss 3.405 | RMSD 3.402 | prmsd_loss 2.865 | bsz 26010 | num_updates 2700 | best_loss 4.687
+2026-07-06 06:01:52 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 6 @ 2700 updates
+2026-07-06 06:01:52 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_6_2700.pt
+2026-07-06 06:01:57 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_6_2700.pt
+2026-07-06 06:01:57 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_6_2700.pt (epoch 6 @ 2700 updates, score 4.687) (writing took 4.9708825862035155 seconds)
+2026-07-06 06:01:57 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_2700.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_6_2700.pt
+2026-07-06 06:02:01 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_2700.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 06:02:03 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_2700.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 06:02:05 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_6_2700.pt ...
+2026-07-06 06:02:06 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 06:03:50 | WARNING | unicore.trainer | OOM: Ran out of memory with exception: CUDA out of memory. Tried to allocate 484.00 MiB (GPU 0; 39.49 GiB total capacity; 32.15 GiB already allocated; 417.56 MiB free; 37.83 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2026-07-06 06:03:50 | WARNING | unicore.trainer | |===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 8            |        cudaMalloc retries: 13        |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   32919 MB |   33153 MB |  280245 GB |  280213 GB |
+|       from large pool |   32886 MB |   33121 MB |  259616 GB |  259583 GB |
+|       from small pool |      32 MB |      40 MB |   20629 GB |   20629 GB |
+|---------------------------------------------------------------------------|
+| Active memory         |   32919 MB |   33153 MB |  280245 GB |  280213 GB |
+|       from large pool |   32886 MB |   33121 MB |  259616 GB |  259583 GB |
+|       from small pool |      32 MB |      40 MB |   20629 GB |   20629 GB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   38740 MB |   38956 MB |   66146 MB |   27406 MB |
+|       from large pool |   38704 MB |   38704 MB |   64300 MB |   25596 MB |
+|       from small pool |      36 MB |     252 MB |    1846 MB |    1810 MB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |    5820 MB |    7503 MB |  224217 GB |  224211 GB |
+|       from large pool |    5817 MB |    7498 MB |  198270 GB |  198264 GB |
+|       from small pool |       3 MB |      10 MB |   25946 GB |   25946 GB |
+|---------------------------------------------------------------------------|
+| Allocations           |    1179    |    1518    |    1255 M  |    1255 M  |
+|       from large pool |     811    |     811    |      17 M  |      17 M  |
+|       from small pool |     368    |     773    |    1237 M  |    1237 M  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    1179    |    1518    |    1255 M  |    1255 M  |
+|       from large pool |     811    |     811    |      17 M  |      17 M  |
+|       from small pool |     368    |     773    |    1237 M  |    1237 M  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     231    |     339    |    1256    |    1025    |
+|       from large pool |     213    |     213    |     333    |     120    |
+|       from small pool |      18    |     126    |     923    |     905    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |     117    |     190    |    1108 M  |    1108 M  |
+|       from large pool |      96    |     109    |      11 M  |      11 M  |
+|       from small pool |      21    |      93    |    1097 M  |    1097 M  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+2026-07-06 06:03:50 | WARNING | unicore.trainer | attempting to recover from OOM in forward/backward pass
+2026-07-06 06:04:03 | WARNING | unicore.trainer | OOM: Ran out of memory with exception: CUDA out of memory. Tried to allocate 484.00 MiB (GPU 0; 39.49 GiB total capacity; 32.15 GiB already allocated; 417.56 MiB free; 37.83 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+2026-07-06 06:04:03 | WARNING | unicore.trainer | |===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 9            |        cudaMalloc retries: 14        |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   32919 MB |   33153 MB |  280518 GB |  280486 GB |
+|       from large pool |   32886 MB |   33121 MB |  259879 GB |  259847 GB |
+|       from small pool |      32 MB |      40 MB |   20639 GB |   20639 GB |
+|---------------------------------------------------------------------------|
+| Active memory         |   32919 MB |   33153 MB |  280518 GB |  280486 GB |
+|       from large pool |   32886 MB |   33121 MB |  259879 GB |  259847 GB |
+|       from small pool |      32 MB |      40 MB |   20639 GB |   20639 GB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   38740 MB |   38852 MB |   66258 MB |   27518 MB |
+|       from large pool |   38704 MB |   38704 MB |   64300 MB |   25596 MB |
+|       from small pool |      36 MB |     148 MB |    1958 MB |    1922 MB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |    5820 MB |    7503 MB |  224446 GB |  224440 GB |
+|       from large pool |    5817 MB |    7498 MB |  198487 GB |  198481 GB |
+|       from small pool |       3 MB |      10 MB |   25958 GB |   25958 GB |
+|---------------------------------------------------------------------------|
+| Allocations           |    1179    |    1518    |    1255 M  |    1255 M  |
+|       from large pool |     811    |     811    |      17 M  |      17 M  |
+|       from small pool |     368    |     773    |    1238 M  |    1238 M  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    1179    |    1518    |    1255 M  |    1255 M  |
+|       from large pool |     811    |     811    |      17 M  |      17 M  |
+|       from small pool |     368    |     773    |    1238 M  |    1238 M  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     231    |     287    |    1312    |    1081    |
+|       from large pool |     213    |     213    |     333    |     120    |
+|       from small pool |      18    |      74    |     979    |     961    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |     117    |     211    |    1109 M  |    1109 M  |
+|       from large pool |      96    |     109    |      11 M  |      11 M  |
+|       from small pool |      21    |     114    |    1097 M  |    1097 M  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+2026-07-06 06:04:03 | WARNING | unicore.trainer | attempting to recover from OOM in forward/backward pass
+2026-07-06 06:04:29 | INFO | train_inner | epoch 006:    519 / 1466 loss=4.808, train_loss=4.808, cross_distance_loss=0.713, distance_loss=0.393, coord_loss=3.411, RMSD=3.409, prmsd_loss=2.913, ups=0.02, bsz=16, num_updates=2750, lr=0.000259289, gnorm=3.67, clip=100, loss_scale=8, train_wall=146.81, gb_free=24.7, wall=0
+2026-07-06 06:06:54 | INFO | train_inner | epoch 006:    569 / 1466 loss=4.855, train_loss=4.855, cross_distance_loss=0.705, distance_loss=0.392, coord_loss=3.469, RMSD=3.467, prmsd_loss=2.888, ups=0.35, bsz=16, num_updates=2800, lr=0.0002582, gnorm=3.084, clip=100, loss_scale=8, train_wall=144.31, gb_free=23.1, wall=0
+2026-07-06 06:09:14 | INFO | train_inner | epoch 006:    619 / 1466 loss=4.926, train_loss=4.926, cross_distance_loss=0.71, distance_loss=0.369, coord_loss=3.559, RMSD=3.557, prmsd_loss=2.876, ups=0.36, bsz=16, num_updates=2850, lr=0.000257112, gnorm=2.727, clip=96, loss_scale=8, train_wall=139.87, gb_free=19.1, wall=0
+2026-07-06 06:11:42 | INFO | train_inner | epoch 006:    669 / 1466 loss=4.878, train_loss=4.878, cross_distance_loss=0.738, distance_loss=0.389, coord_loss=3.465, RMSD=3.463, prmsd_loss=2.858, ups=0.34, bsz=16, num_updates=2900, lr=0.000256023, gnorm=3.182, clip=100, loss_scale=8, train_wall=147.78, gb_free=19.1, wall=0
+2026-07-06 06:14:20 | INFO | train_inner | epoch 006:    719 / 1466 loss=4.712, train_loss=4.712, cross_distance_loss=0.687, distance_loss=0.36, coord_loss=3.377, RMSD=3.375, prmsd_loss=2.871, ups=0.31, bsz=16, num_updates=2950, lr=0.000254935, gnorm=2.919, clip=98, loss_scale=8, train_wall=158.85, gb_free=23.9, wall=0
+2026-07-06 06:16:53 | INFO | train_inner | epoch 006:    769 / 1466 loss=4.913, train_loss=4.913, cross_distance_loss=0.718, distance_loss=0.429, coord_loss=3.483, RMSD=3.481, prmsd_loss=2.837, ups=0.33, bsz=15.8, num_updates=3000, lr=0.000253846, gnorm=3.709, clip=100, loss_scale=8, train_wall=152.55, gb_free=20.3, wall=0
+2026-07-06 06:16:53 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 06:16:53 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 07:10:00 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 4.647 | valid_loss 4.647 | cross_distance_loss 0.707 | distance_loss 0.278 | coord_loss 3.376 | RMSD 3.374 | prmsd_loss 2.849 | bsz 26010 | num_updates 3000 | best_loss 4.647
+2026-07-06 07:10:00 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 6 @ 3000 updates
+2026-07-06 07:10:00 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_6_3000.pt
+2026-07-06 07:10:05 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_6_3000.pt
+2026-07-06 07:10:05 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_6_3000.pt (epoch 6 @ 3000 updates, score 4.647) (writing took 5.3543915171176195 seconds)
+2026-07-06 07:10:05 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_3000.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_6_3000.pt
+2026-07-06 07:10:10 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_3000.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 07:10:12 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_3000.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 07:10:15 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_6_3000.pt ...
+2026-07-06 07:10:15 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 07:12:40 | INFO | train_inner | epoch 006:    819 / 1466 loss=4.888, train_loss=4.888, cross_distance_loss=0.727, distance_loss=0.425, coord_loss=3.449, RMSD=3.446, prmsd_loss=2.871, ups=0.01, bsz=16, num_updates=3050, lr=0.000252758, gnorm=3.881, clip=100, loss_scale=8, train_wall=154.46, gb_free=25.6, wall=0
+2026-07-06 07:15:20 | INFO | train_inner | epoch 006:    869 / 1466 loss=5.078, train_loss=5.078, cross_distance_loss=0.739, distance_loss=0.445, coord_loss=3.603, RMSD=3.601, prmsd_loss=2.907, ups=0.31, bsz=16, num_updates=3100, lr=0.000251669, gnorm=3.014, clip=98, loss_scale=8, train_wall=160, gb_free=22.2, wall=0
+2026-07-06 07:17:36 | INFO | train_inner | epoch 006:    919 / 1466 loss=4.789, train_loss=4.789, cross_distance_loss=0.725, distance_loss=0.409, coord_loss=3.367, RMSD=3.365, prmsd_loss=2.881, ups=0.37, bsz=16, num_updates=3150, lr=0.000250581, gnorm=4.192, clip=100, loss_scale=8, train_wall=135.43, gb_free=23.8, wall=0
+2026-07-06 07:20:13 | INFO | train_inner | epoch 006:    969 / 1466 loss=4.949, train_loss=4.949, cross_distance_loss=0.752, distance_loss=0.418, coord_loss=3.494, RMSD=3.492, prmsd_loss=2.858, ups=0.32, bsz=16, num_updates=3200, lr=0.000249492, gnorm=3.594, clip=100, loss_scale=8, train_wall=157.29, gb_free=25.8, wall=0
+2026-07-06 07:22:33 | INFO | train_inner | epoch 006:   1019 / 1466 loss=4.65, train_loss=4.65, cross_distance_loss=0.698, distance_loss=0.364, coord_loss=3.302, RMSD=3.3, prmsd_loss=2.862, ups=0.36, bsz=16, num_updates=3250, lr=0.000248403, gnorm=3.929, clip=100, loss_scale=8, train_wall=139.9, gb_free=18.2, wall=0
+2026-07-06 07:24:55 | INFO | train_inner | epoch 006:   1069 / 1466 loss=4.742, train_loss=4.742, cross_distance_loss=0.705, distance_loss=0.361, coord_loss=3.387, RMSD=3.385, prmsd_loss=2.895, ups=0.35, bsz=16, num_updates=3300, lr=0.000247315, gnorm=3.339, clip=98, loss_scale=8, train_wall=141.65, gb_free=17.1, wall=0
+2026-07-06 07:24:55 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 07:24:55 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 08:18:08 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 4.81 | valid_loss 4.81 | cross_distance_loss 0.739 | distance_loss 0.363 | coord_loss 3.419 | RMSD 3.415 | prmsd_loss 2.887 | bsz 26010 | num_updates 3300 | best_loss 4.647
+2026-07-06 08:18:08 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 6 @ 3300 updates
+2026-07-06 08:18:08 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_6_3300.pt
+2026-07-06 08:18:14 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_6_3300.pt
+2026-07-06 08:18:14 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_6_3300.pt (epoch 6 @ 3300 updates, score 4.81) (writing took 5.430325685068965 seconds)
+2026-07-06 08:18:14 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_3300.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_6_3300.pt
+2026-07-06 08:18:18 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_3300.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 08:18:21 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_6_3300.pt ...
+2026-07-06 08:18:21 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 08:20:46 | INFO | train_inner | epoch 006:   1119 / 1466 loss=4.718, train_loss=4.718, cross_distance_loss=0.703, distance_loss=0.362, coord_loss=3.365, RMSD=3.362, prmsd_loss=2.882, ups=0.01, bsz=16, num_updates=3350, lr=0.000246226, gnorm=2.869, clip=100, loss_scale=8, train_wall=152.55, gb_free=24.1, wall=0
+2026-07-06 08:23:23 | INFO | train_inner | epoch 006:   1169 / 1466 loss=4.551, train_loss=4.551, cross_distance_loss=0.698, distance_loss=0.359, coord_loss=3.207, RMSD=3.205, prmsd_loss=2.867, ups=0.32, bsz=16, num_updates=3400, lr=0.000245138, gnorm=3.823, clip=96, loss_scale=8, train_wall=156.55, gb_free=28.6, wall=0
+2026-07-06 08:25:56 | INFO | train_inner | epoch 006:   1219 / 1466 loss=4.663, train_loss=4.663, cross_distance_loss=0.701, distance_loss=0.381, coord_loss=3.296, RMSD=3.294, prmsd_loss=2.848, ups=0.33, bsz=16, num_updates=3450, lr=0.000244049, gnorm=3.337, clip=98, loss_scale=8, train_wall=152.98, gb_free=25.7, wall=0
+2026-07-06 08:28:33 | INFO | train_inner | epoch 006:   1269 / 1466 loss=4.652, train_loss=4.652, cross_distance_loss=0.703, distance_loss=0.378, coord_loss=3.289, RMSD=3.288, prmsd_loss=2.828, ups=0.32, bsz=16, num_updates=3500, lr=0.000242961, gnorm=3.033, clip=98, loss_scale=8, train_wall=157.01, gb_free=24.8, wall=0
+2026-07-06 08:30:50 | INFO | train_inner | epoch 006:   1319 / 1466 loss=4.592, train_loss=4.592, cross_distance_loss=0.693, distance_loss=0.344, coord_loss=3.272, RMSD=3.27, prmsd_loss=2.834, ups=0.37, bsz=16, num_updates=3550, lr=0.000241872, gnorm=7.961, clip=98, loss_scale=8, train_wall=136.43, gb_free=17.3, wall=0
+2026-07-06 08:33:11 | INFO | train_inner | epoch 006:   1369 / 1466 loss=4.527, train_loss=4.527, cross_distance_loss=0.694, distance_loss=0.336, coord_loss=3.213, RMSD=3.21, prmsd_loss=2.842, ups=0.35, bsz=16, num_updates=3600, lr=0.000240784, gnorm=3.438, clip=100, loss_scale=8, train_wall=141.37, gb_free=24.8, wall=0
+2026-07-06 08:33:11 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 08:33:11 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 09:41:43 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 4.411 | valid_loss 4.411 | cross_distance_loss 0.672 | distance_loss 0.283 | coord_loss 3.177 | RMSD 3.174 | prmsd_loss 2.782 | bsz 26010 | num_updates 3600 | best_loss 4.411
+2026-07-06 09:41:43 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 6 @ 3600 updates
+2026-07-06 09:41:43 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_6_3600.pt
+2026-07-06 09:41:48 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_6_3600.pt
+2026-07-06 09:41:48 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_6_3600.pt (epoch 6 @ 3600 updates, score 4.411) (writing took 5.393216148018837 seconds)
+2026-07-06 09:41:48 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_3600.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_6_3600.pt
+2026-07-06 09:41:53 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_3600.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 09:41:55 | INFO | unicore.checkpoint_utils | copy ./checkpoint_6_3600.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 09:41:57 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_6_3600.pt ...
+2026-07-06 09:41:58 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 09:44:23 | INFO | train_inner | epoch 006:   1419 / 1466 loss=4.434, train_loss=4.434, cross_distance_loss=0.677, distance_loss=0.386, coord_loss=3.083, RMSD=3.081, prmsd_loss=2.879, ups=0.01, bsz=16, num_updates=3650, lr=0.000239695, gnorm=3.204, clip=100, loss_scale=8, train_wall=154.48, gb_free=25.5, wall=0
+2026-07-06 09:46:37 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 09:46:37 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 10:46:33 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 4.455 | valid_loss 4.455 | cross_distance_loss 0.688 | distance_loss 0.264 | coord_loss 3.218 | RMSD 3.214 | prmsd_loss 2.857 | bsz 26010 | num_updates 3697 | best_loss 4.411
+2026-07-06 10:46:33 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 6 @ 3697 updates
+2026-07-06 10:46:33 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint6.pt
+2026-07-06 10:47:13 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint6.pt
+2026-07-06 10:47:13 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint6.pt (epoch 6 @ 3697 updates, score 4.455) (writing took 39.96145568881184 seconds)
+2026-07-06 10:47:13 | INFO | unicore_cli.train | end of epoch 6 (average epoch stats below)
+2026-07-06 10:47:13 | INFO | unicore.checkpoint_utils | copy ./checkpoint6.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint6.pt
+2026-07-06 10:47:13 | INFO | train | epoch 006 | loss 4.905 | train_loss 4.905 | cross_distance_loss 0.721 | distance_loss 0.391 | coord_loss 3.504 | RMSD 3.502 | prmsd_loss 2.895 | ups 0.06 | bsz 16 | num_updates 3697 | lr 0.000238672 | gnorm 3.504 | clip 98.6 | loss_scale 8 | train_wall 4391.81 | gb_free 21.2 | wall 0
+2026-07-06 10:47:13 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 7
+2026-07-06 10:47:13 | INFO | unicore.trainer | begin training epoch 7
+2026-07-06 10:47:13 | INFO | unicore_cli.train | Start iterating over samples
+2026-07-06 10:47:22 | INFO | train_inner | epoch 007:      3 / 1466 loss=4.669, train_loss=4.669, cross_distance_loss=0.693, distance_loss=0.378, coord_loss=3.316, RMSD=3.315, prmsd_loss=2.823, ups=0.01, bsz=16, num_updates=3700, lr=0.000238607, gnorm=3.9, clip=100, loss_scale=8, train_wall=142.01, gb_free=16.1, wall=0
+2026-07-06 10:48:51 | INFO | unicore.checkpoint_utils | copy ./checkpoint6.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 10:49:25 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint6.pt ...
+2026-07-06 10:49:25 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 10:49:50 | INFO | train_inner | epoch 007:     53 / 1466 loss=4.343, train_loss=4.343, cross_distance_loss=0.676, distance_loss=0.351, coord_loss=3.036, RMSD=3.034, prmsd_loss=2.801, ups=0.34, bsz=15.8, num_updates=3750, lr=0.000237518, gnorm=3.421, clip=100, loss_scale=8, train_wall=140.58, gb_free=24, wall=0
+2026-07-06 10:52:21 | INFO | train_inner | epoch 007:    103 / 1466 loss=4.413, train_loss=4.413, cross_distance_loss=0.689, distance_loss=0.368, coord_loss=3.073, RMSD=3.071, prmsd_loss=2.829, ups=0.33, bsz=16, num_updates=3800, lr=0.00023643, gnorm=4.246, clip=94, loss_scale=8, train_wall=151.03, gb_free=24.8, wall=0
+2026-07-06 10:54:52 | INFO | train_inner | epoch 007:    153 / 1466 loss=4.307, train_loss=4.307, cross_distance_loss=0.674, distance_loss=0.351, coord_loss=2.999, RMSD=2.997, prmsd_loss=2.833, ups=0.33, bsz=16, num_updates=3850, lr=0.000235341, gnorm=4.475, clip=100, loss_scale=8, train_wall=150.31, gb_free=22.3, wall=0
+2026-07-06 10:57:18 | INFO | train_inner | epoch 007:    203 / 1466 loss=4.419, train_loss=4.419, cross_distance_loss=0.676, distance_loss=0.341, coord_loss=3.12, RMSD=3.118, prmsd_loss=2.823, ups=0.34, bsz=16, num_updates=3900, lr=0.000234253, gnorm=4.683, clip=100, loss_scale=8, train_wall=146.14, gb_free=24.8, wall=0
+2026-07-06 10:57:18 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 10:57:18 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 11:46:39 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 4.225 | valid_loss 4.225 | cross_distance_loss 0.688 | distance_loss 0.263 | coord_loss 2.996 | RMSD 2.992 | prmsd_loss 2.781 | bsz 26010 | num_updates 3900 | best_loss 4.225
+2026-07-06 11:46:39 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 7 @ 3900 updates
+2026-07-06 11:46:39 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_7_3900.pt
+2026-07-06 11:46:50 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_7_3900.pt
+2026-07-06 11:46:50 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_7_3900.pt (epoch 7 @ 3900 updates, score 4.225) (writing took 10.697545664384961 seconds)
+2026-07-06 11:46:50 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_3900.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_7_3900.pt
+2026-07-06 11:46:58 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_3900.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 11:47:01 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_3900.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 11:47:03 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_7_3900.pt ...
+2026-07-06 11:47:03 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 11:49:29 | INFO | train_inner | epoch 007:    253 / 1466 loss=4.438, train_loss=4.438, cross_distance_loss=0.691, distance_loss=0.37, coord_loss=3.095, RMSD=3.093, prmsd_loss=2.823, ups=0.02, bsz=16, num_updates=3950, lr=0.000233164, gnorm=4.09, clip=96, loss_scale=8, train_wall=158.4, gb_free=21.4, wall=0
+2026-07-06 11:51:58 | INFO | train_inner | epoch 007:    303 / 1466 loss=4.425, train_loss=4.425, cross_distance_loss=0.681, distance_loss=0.352, coord_loss=3.112, RMSD=3.11, prmsd_loss=2.809, ups=0.33, bsz=16, num_updates=4000, lr=0.000232075, gnorm=4.524, clip=100, loss_scale=8, train_wall=149.46, gb_free=24.7, wall=0
+2026-07-06 11:54:34 | INFO | train_inner | epoch 007:    353 / 1466 loss=4.645, train_loss=4.645, cross_distance_loss=0.713, distance_loss=0.36, coord_loss=3.284, RMSD=3.282, prmsd_loss=2.879, ups=0.32, bsz=16, num_updates=4050, lr=0.000230987, gnorm=4.595, clip=98, loss_scale=8, train_wall=155.41, gb_free=23.9, wall=0
+2026-07-06 11:57:09 | INFO | train_inner | epoch 007:    403 / 1466 loss=4.567, train_loss=4.567, cross_distance_loss=0.71, distance_loss=0.342, coord_loss=3.233, RMSD=3.231, prmsd_loss=2.818, ups=0.32, bsz=16, num_updates=4100, lr=0.000229898, gnorm=4.564, clip=100, loss_scale=8, train_wall=154.97, gb_free=25.5, wall=0
+2026-07-06 11:59:31 | INFO | train_inner | epoch 007:    453 / 1466 loss=4.237, train_loss=4.237, cross_distance_loss=0.662, distance_loss=0.343, coord_loss=2.952, RMSD=2.95, prmsd_loss=2.798, ups=0.35, bsz=16, num_updates=4150, lr=0.00022881, gnorm=3.417, clip=100, loss_scale=8, train_wall=141.49, gb_free=15, wall=0
+2026-07-06 12:01:52 | INFO | train_inner | epoch 007:    503 / 1466 loss=4.332, train_loss=4.332, cross_distance_loss=0.676, distance_loss=0.354, coord_loss=3.025, RMSD=3.022, prmsd_loss=2.78, ups=0.35, bsz=16, num_updates=4200, lr=0.000227721, gnorm=3.781, clip=98, loss_scale=8, train_wall=141.37, gb_free=23.1, wall=0
+2026-07-06 12:01:52 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 12:01:52 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 12:57:19 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 4.405 | valid_loss 4.405 | cross_distance_loss 0.697 | distance_loss 0.266 | coord_loss 3.163 | RMSD 3.159 | prmsd_loss 2.799 | bsz 26010 | num_updates 4200 | best_loss 4.225
+2026-07-06 12:57:19 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 7 @ 4200 updates
+2026-07-06 12:57:19 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_7_4200.pt
+2026-07-06 12:58:02 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_7_4200.pt
+2026-07-06 12:58:02 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_7_4200.pt (epoch 7 @ 4200 updates, score 4.405) (writing took 43.7142497273162 seconds)
+2026-07-06 12:58:02 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_4200.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_7_4200.pt
+2026-07-06 12:59:44 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_4200.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 12:59:53 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_7_4200.pt ...
+2026-07-06 12:59:53 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 13:00:37 | INFO | train_inner | epoch 007:    553 / 1466 loss=4.485, train_loss=4.485, cross_distance_loss=0.702, distance_loss=0.349, coord_loss=3.152, RMSD=3.15, prmsd_loss=2.821, ups=0.01, bsz=16, num_updates=4250, lr=0.000226633, gnorm=5.161, clip=98, loss_scale=8, train_wall=146.31, gb_free=23.1, wall=0
+2026-07-06 13:02:57 | INFO | train_inner | epoch 007:    603 / 1466 loss=4.404, train_loss=4.404, cross_distance_loss=0.683, distance_loss=0.379, coord_loss=3.063, RMSD=3.061, prmsd_loss=2.78, ups=0.36, bsz=16, num_updates=4300, lr=0.000225544, gnorm=4.89, clip=96, loss_scale=8, train_wall=139.71, gb_free=23.8, wall=0
+2026-07-06 13:05:18 | INFO | train_inner | epoch 007:    653 / 1466 loss=4.345, train_loss=4.345, cross_distance_loss=0.687, distance_loss=0.371, coord_loss=3.008, RMSD=3.006, prmsd_loss=2.8, ups=0.36, bsz=16, num_updates=4350, lr=0.000224456, gnorm=4.462, clip=98, loss_scale=8, train_wall=140.43, gb_free=22.1, wall=0
+2026-07-06 13:07:43 | INFO | train_inner | epoch 007:    703 / 1466 loss=4.311, train_loss=4.311, cross_distance_loss=0.676, distance_loss=0.366, coord_loss=2.992, RMSD=2.99, prmsd_loss=2.771, ups=0.34, bsz=16, num_updates=4400, lr=0.000223367, gnorm=6.372, clip=100, loss_scale=8, train_wall=145.07, gb_free=17.1, wall=0
+2026-07-06 13:10:11 | INFO | train_inner | epoch 007:    753 / 1466 loss=4.387, train_loss=4.387, cross_distance_loss=0.683, distance_loss=0.368, coord_loss=3.06, RMSD=3.058, prmsd_loss=2.763, ups=0.34, bsz=16, num_updates=4450, lr=0.000222279, gnorm=4.776, clip=100, loss_scale=8, train_wall=148.28, gb_free=22.1, wall=0
+2026-07-06 13:12:32 | INFO | train_inner | epoch 007:    803 / 1466 loss=4.312, train_loss=4.312, cross_distance_loss=0.677, distance_loss=0.366, coord_loss=2.995, RMSD=2.993, prmsd_loss=2.738, ups=0.36, bsz=16, num_updates=4500, lr=0.00022119, gnorm=5.433, clip=100, loss_scale=8, train_wall=140.67, gb_free=23.1, wall=0
+2026-07-06 13:12:32 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 13:12:32 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 13:58:12 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 3.937 | valid_loss 3.937 | cross_distance_loss 0.643 | distance_loss 0.253 | coord_loss 2.77 | RMSD 2.766 | prmsd_loss 2.71 | bsz 26010 | num_updates 4500 | best_loss 3.937
+2026-07-06 13:58:12 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 7 @ 4500 updates
+2026-07-06 13:58:12 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_7_4500.pt
+2026-07-06 13:58:20 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_7_4500.pt
+2026-07-06 13:58:20 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_7_4500.pt (epoch 7 @ 4500 updates, score 3.937) (writing took 7.947403351776302 seconds)
+2026-07-06 13:58:20 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_4500.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_7_4500.pt
+2026-07-06 13:58:30 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_4500.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 13:58:32 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_4500.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 13:58:34 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_7_4500.pt ...
+2026-07-06 13:58:34 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 14:00:36 | INFO | train_inner | epoch 007:    853 / 1466 loss=4.013, train_loss=4.013, cross_distance_loss=0.635, distance_loss=0.318, coord_loss=2.789, RMSD=2.787, prmsd_loss=2.712, ups=0.02, bsz=16, num_updates=4550, lr=0.000220102, gnorm=4.856, clip=96, loss_scale=8, train_wall=135.89, gb_free=22.1, wall=0
+2026-07-06 14:02:56 | INFO | train_inner | epoch 007:    903 / 1466 loss=4.045, train_loss=4.045, cross_distance_loss=0.652, distance_loss=0.32, coord_loss=2.797, RMSD=2.795, prmsd_loss=2.76, ups=0.36, bsz=16, num_updates=4600, lr=0.000219013, gnorm=4.42, clip=98, loss_scale=8, train_wall=139.15, gb_free=24.7, wall=0
+2026-07-06 14:05:13 | INFO | train_inner | epoch 007:    953 / 1466 loss=4.234, train_loss=4.234, cross_distance_loss=0.691, distance_loss=0.327, coord_loss=2.94, RMSD=2.938, prmsd_loss=2.755, ups=0.36, bsz=16, num_updates=4650, lr=0.000217925, gnorm=5.749, clip=100, loss_scale=8, train_wall=137.66, gb_free=24.8, wall=0
+2026-07-06 14:07:25 | INFO | train_inner | epoch 007:   1003 / 1466 loss=4.158, train_loss=4.158, cross_distance_loss=0.672, distance_loss=0.312, coord_loss=2.894, RMSD=2.893, prmsd_loss=2.795, ups=0.38, bsz=16, num_updates=4700, lr=0.000216836, gnorm=4.329, clip=98, loss_scale=8, train_wall=131.45, gb_free=23.9, wall=0
+2026-07-06 14:09:49 | INFO | train_inner | epoch 007:   1053 / 1466 loss=4.042, train_loss=4.042, cross_distance_loss=0.649, distance_loss=0.339, coord_loss=2.778, RMSD=2.777, prmsd_loss=2.759, ups=0.35, bsz=16, num_updates=4750, lr=0.000215747, gnorm=4.942, clip=96, loss_scale=8, train_wall=144.13, gb_free=20.2, wall=0
+2026-07-06 14:12:08 | INFO | train_inner | epoch 007:   1103 / 1466 loss=4.083, train_loss=4.083, cross_distance_loss=0.653, distance_loss=0.32, coord_loss=2.835, RMSD=2.833, prmsd_loss=2.745, ups=0.36, bsz=16, num_updates=4800, lr=0.000214659, gnorm=5.377, clip=98, loss_scale=8, train_wall=138.42, gb_free=19.1, wall=0
+2026-07-06 14:12:08 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 14:12:08 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 15:09:13 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 3.971 | valid_loss 3.971 | cross_distance_loss 0.664 | distance_loss 0.245 | coord_loss 2.792 | RMSD 2.79 | prmsd_loss 2.705 | bsz 26010 | num_updates 4800 | best_loss 3.937
+2026-07-06 15:09:13 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 7 @ 4800 updates
+2026-07-06 15:09:13 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_7_4800.pt
+2026-07-06 15:09:18 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_7_4800.pt
+2026-07-06 15:09:18 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_7_4800.pt (epoch 7 @ 4800 updates, score 3.971) (writing took 5.817679266445339 seconds)
+2026-07-06 15:09:18 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_4800.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_7_4800.pt
+2026-07-06 15:09:23 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_4800.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 15:09:26 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_7_4800.pt ...
+2026-07-06 15:09:26 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 15:11:50 | INFO | train_inner | epoch 007:   1153 / 1466 loss=4.075, train_loss=4.075, cross_distance_loss=0.664, distance_loss=0.337, coord_loss=2.802, RMSD=2.801, prmsd_loss=2.726, ups=0.01, bsz=16, num_updates=4850, lr=0.00021357, gnorm=7.98, clip=100, loss_scale=8, train_wall=151.31, gb_free=25.6, wall=0
+2026-07-06 15:14:09 | INFO | train_inner | epoch 007:   1203 / 1466 loss=4.148, train_loss=4.148, cross_distance_loss=0.663, distance_loss=0.368, coord_loss=2.842, RMSD=2.84, prmsd_loss=2.745, ups=0.36, bsz=16, num_updates=4900, lr=0.000212482, gnorm=5.952, clip=100, loss_scale=8, train_wall=139.14, gb_free=12.8, wall=0
+2026-07-06 15:16:37 | INFO | train_inner | epoch 007:   1253 / 1466 loss=4.14, train_loss=4.14, cross_distance_loss=0.662, distance_loss=0.337, coord_loss=2.863, RMSD=2.861, prmsd_loss=2.784, ups=0.34, bsz=16, num_updates=4950, lr=0.000211393, gnorm=5.049, clip=98, loss_scale=8, train_wall=147.29, gb_free=23, wall=0
+2026-07-06 15:19:03 | INFO | train_inner | epoch 007:   1303 / 1466 loss=4.189, train_loss=4.189, cross_distance_loss=0.672, distance_loss=0.351, coord_loss=2.892, RMSD=2.891, prmsd_loss=2.731, ups=0.34, bsz=16, num_updates=5000, lr=0.000210305, gnorm=5.939, clip=100, loss_scale=8, train_wall=146.01, gb_free=16.1, wall=0
+2026-07-06 15:21:27 | INFO | train_inner | epoch 007:   1353 / 1466 loss=4.187, train_loss=4.187, cross_distance_loss=0.671, distance_loss=0.33, coord_loss=2.914, RMSD=2.912, prmsd_loss=2.729, ups=0.35, bsz=16, num_updates=5050, lr=0.000209216, gnorm=7.212, clip=100, loss_scale=8, train_wall=143.44, gb_free=19.2, wall=0
+2026-07-06 15:23:46 | INFO | train_inner | epoch 007:   1403 / 1466 loss=4.133, train_loss=4.133, cross_distance_loss=0.677, distance_loss=0.35, coord_loss=2.834, RMSD=2.833, prmsd_loss=2.725, ups=0.36, bsz=16, num_updates=5100, lr=0.000208128, gnorm=4.942, clip=100, loss_scale=8, train_wall=139.51, gb_free=18.1, wall=0
+2026-07-06 15:23:46 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 15:23:46 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 16:16:37 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 3.888 | valid_loss 3.888 | cross_distance_loss 0.633 | distance_loss 0.242 | coord_loss 2.745 | RMSD 2.743 | prmsd_loss 2.676 | bsz 26010 | num_updates 5100 | best_loss 3.888
+2026-07-06 16:16:37 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 7 @ 5100 updates
+2026-07-06 16:16:37 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_7_5100.pt
+2026-07-06 16:16:45 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_7_5100.pt
+2026-07-06 16:16:45 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_7_5100.pt (epoch 7 @ 5100 updates, score 3.888) (writing took 8.109407149255276 seconds)
+2026-07-06 16:16:45 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_5100.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_7_5100.pt
+2026-07-06 16:16:52 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_5100.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 16:16:54 | INFO | unicore.checkpoint_utils | copy ./checkpoint_7_5100.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 16:16:57 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_7_5100.pt ...
+2026-07-06 16:16:57 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 16:19:10 | INFO | train_inner | epoch 007:   1453 / 1466 loss=4.18, train_loss=4.18, cross_distance_loss=0.715, distance_loss=0.317, coord_loss=2.868, RMSD=2.867, prmsd_loss=2.792, ups=0.02, bsz=16, num_updates=5150, lr=0.000207039, gnorm=5.784, clip=100, loss_scale=8, train_wall=144.87, gb_free=26.4, wall=0
+2026-07-06 16:19:50 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 16:19:50 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 17:11:27 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 3.733 | valid_loss 3.733 | cross_distance_loss 0.637 | distance_loss 0.241 | coord_loss 2.589 | RMSD 2.586 | prmsd_loss 2.664 | bsz 26010 | num_updates 5163 | best_loss 3.733
+2026-07-06 17:11:27 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 7 @ 5163 updates
+2026-07-06 17:11:27 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint7.pt
+2026-07-06 17:11:32 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint7.pt
+2026-07-06 17:11:32 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint7.pt (epoch 7 @ 5163 updates, score 3.733) (writing took 5.227119756862521 seconds)
+2026-07-06 17:11:32 | INFO | unicore_cli.train | end of epoch 7 (average epoch stats below)
+2026-07-06 17:11:32 | INFO | unicore.checkpoint_utils | copy ./checkpoint7.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint7.pt
+2026-07-06 17:11:32 | INFO | train | epoch 007 | loss 4.273 | train_loss 4.273 | cross_distance_loss 0.677 | distance_loss 0.346 | coord_loss 2.972 | RMSD 2.97 | prmsd_loss 2.78 | ups 0.06 | bsz 16 | num_updates 5163 | lr 0.000206756 | gnorm 5 | clip 98.7 | loss_scale 8 | train_wall 4235.33 | gb_free 23.1 | wall 0
+2026-07-06 17:11:32 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 8
+2026-07-06 17:11:32 | INFO | unicore.trainer | begin training epoch 8
+2026-07-06 17:11:32 | INFO | unicore_cli.train | Start iterating over samples
+2026-07-06 17:11:37 | INFO | unicore.checkpoint_utils | copy ./checkpoint7.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 17:11:40 | INFO | unicore.checkpoint_utils | copy ./checkpoint7.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 17:11:42 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint7.pt ...
+2026-07-06 17:11:42 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 17:13:17 | INFO | train_inner | epoch 008:     37 / 1466 loss=3.789, train_loss=3.789, cross_distance_loss=0.629, distance_loss=0.306, coord_loss=2.587, RMSD=2.586, prmsd_loss=2.674, ups=0.02, bsz=16, num_updates=5200, lr=0.000205951, gnorm=9.749, clip=100, loss_scale=8, train_wall=144.48, gb_free=22.2, wall=0
+2026-07-06 17:15:53 | INFO | train_inner | epoch 008:     87 / 1466 loss=3.932, train_loss=3.932, cross_distance_loss=0.64, distance_loss=0.35, coord_loss=2.673, RMSD=2.671, prmsd_loss=2.694, ups=0.32, bsz=16, num_updates=5250, lr=0.000204862, gnorm=4.7, clip=100, loss_scale=8, train_wall=155.22, gb_free=24, wall=0
+2026-07-06 17:18:07 | INFO | train_inner | epoch 008:    137 / 1466 loss=3.854, train_loss=3.854, cross_distance_loss=0.622, distance_loss=0.325, coord_loss=2.641, RMSD=2.639, prmsd_loss=2.668, ups=0.37, bsz=16, num_updates=5300, lr=0.000203774, gnorm=16.084, clip=98, loss_scale=8, train_wall=134.13, gb_free=24.8, wall=0
+2026-07-06 17:20:35 | INFO | train_inner | epoch 008:    187 / 1466 loss=4.103, train_loss=4.103, cross_distance_loss=0.643, distance_loss=0.385, coord_loss=2.804, RMSD=2.803, prmsd_loss=2.706, ups=0.34, bsz=16, num_updates=5350, lr=0.000202685, gnorm=5.124, clip=98, loss_scale=8, train_wall=147.84, gb_free=25.6, wall=0
+2026-07-06 17:23:06 | INFO | train_inner | epoch 008:    237 / 1466 loss=3.904, train_loss=3.904, cross_distance_loss=0.628, distance_loss=0.342, coord_loss=2.665, RMSD=2.664, prmsd_loss=2.69, ups=0.33, bsz=16, num_updates=5400, lr=0.000201597, gnorm=4.837, clip=100, loss_scale=8, train_wall=150.56, gb_free=21.4, wall=0
+2026-07-06 17:23:06 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 17:23:06 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 18:19:45 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 3.712 | valid_loss 3.712 | cross_distance_loss 0.624 | distance_loss 0.236 | coord_loss 2.587 | RMSD 2.586 | prmsd_loss 2.651 | bsz 26010 | num_updates 5400 | best_loss 3.712
+2026-07-06 18:19:45 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 8 @ 5400 updates
+2026-07-06 18:19:45 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_8_5400.pt
+2026-07-06 18:19:51 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_8_5400.pt
+2026-07-06 18:19:52 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_8_5400.pt (epoch 8 @ 5400 updates, score 3.712) (writing took 6.628337137401104 seconds)
+2026-07-06 18:19:52 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_5400.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_8_5400.pt
+2026-07-06 18:19:57 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_5400.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 18:20:00 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_5400.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 18:20:03 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_8_5400.pt ...
+2026-07-06 18:20:03 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 18:22:04 | INFO | train_inner | epoch 008:    287 / 1466 loss=3.589, train_loss=3.589, cross_distance_loss=0.599, distance_loss=0.29, coord_loss=2.436, RMSD=2.434, prmsd_loss=2.651, ups=0.01, bsz=16, num_updates=5450, lr=0.000200508, gnorm=6.959, clip=100, loss_scale=8, train_wall=132.49, gb_free=25.5, wall=0
+2026-07-06 18:24:18 | INFO | train_inner | epoch 008:    337 / 1466 loss=4.01, train_loss=4.01, cross_distance_loss=0.628, distance_loss=0.305, coord_loss=2.802, RMSD=2.801, prmsd_loss=2.748, ups=0.37, bsz=16, num_updates=5500, lr=0.000199419, gnorm=9.099, clip=100, loss_scale=8, train_wall=134.14, gb_free=27.1, wall=0
+2026-07-06 18:26:37 | INFO | train_inner | epoch 008:    387 / 1466 loss=4.09, train_loss=4.09, cross_distance_loss=0.643, distance_loss=0.34, coord_loss=2.827, RMSD=2.825, prmsd_loss=2.789, ups=0.36, bsz=16, num_updates=5550, lr=0.000198331, gnorm=16.829, clip=100, loss_scale=8, train_wall=138.07, gb_free=20.4, wall=0
+2026-07-06 18:28:57 | INFO | train_inner | epoch 008:    437 / 1466 loss=4.045, train_loss=4.045, cross_distance_loss=0.663, distance_loss=0.316, coord_loss=2.794, RMSD=2.792, prmsd_loss=2.715, ups=0.36, bsz=16, num_updates=5600, lr=0.000197242, gnorm=16.674, clip=98, loss_scale=8, train_wall=140.68, gb_free=27.9, wall=0
+2026-07-06 18:31:11 | INFO | train_inner | epoch 008:    487 / 1466 loss=3.982, train_loss=3.982, cross_distance_loss=0.647, distance_loss=0.345, coord_loss=2.719, RMSD=2.717, prmsd_loss=2.714, ups=0.37, bsz=15.8, num_updates=5650, lr=0.000196154, gnorm=6.577, clip=100, loss_scale=8, train_wall=133.57, gb_free=23.9, wall=0
+2026-07-06 18:33:27 | INFO | train_inner | epoch 008:    537 / 1466 loss=3.953, train_loss=3.953, cross_distance_loss=0.644, distance_loss=0.359, coord_loss=2.679, RMSD=2.678, prmsd_loss=2.707, ups=0.37, bsz=16, num_updates=5700, lr=0.000195065, gnorm=7.874, clip=98, loss_scale=8, train_wall=136.06, gb_free=21.2, wall=0
+2026-07-06 18:33:27 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 18:33:27 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 19:22:58 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 3.746 | valid_loss 3.746 | cross_distance_loss 0.643 | distance_loss 0.24 | coord_loss 2.598 | RMSD 2.596 | prmsd_loss 2.652 | bsz 26010 | num_updates 5700 | best_loss 3.712
+2026-07-06 19:22:58 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 8 @ 5700 updates
+2026-07-06 19:22:58 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_8_5700.pt
+2026-07-06 19:23:03 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_8_5700.pt
+2026-07-06 19:23:04 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_8_5700.pt (epoch 8 @ 5700 updates, score 3.746) (writing took 5.759991258382797 seconds)
+2026-07-06 19:23:04 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_5700.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_8_5700.pt
+2026-07-06 19:23:09 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_5700.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 19:23:13 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_8_5700.pt ...
+2026-07-06 19:23:13 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 19:25:15 | INFO | train_inner | epoch 008:    587 / 1466 loss=3.785, train_loss=3.785, cross_distance_loss=0.611, distance_loss=0.29, coord_loss=2.614, RMSD=2.613, prmsd_loss=2.703, ups=0.02, bsz=16, num_updates=5750, lr=0.000193977, gnorm=5.571, clip=100, loss_scale=8, train_wall=131.23, gb_free=27.9, wall=0
+2026-07-06 19:27:40 | INFO | train_inner | epoch 008:    637 / 1466 loss=3.831, train_loss=3.831, cross_distance_loss=0.633, distance_loss=0.337, coord_loss=2.596, RMSD=2.595, prmsd_loss=2.659, ups=0.34, bsz=16, num_updates=5800, lr=0.000192888, gnorm=4.707, clip=100, loss_scale=8, train_wall=145.1, gb_free=23.1, wall=0
+2026-07-06 19:29:53 | INFO | train_inner | epoch 008:    687 / 1466 loss=3.747, train_loss=3.747, cross_distance_loss=0.609, distance_loss=0.286, coord_loss=2.585, RMSD=2.584, prmsd_loss=2.672, ups=0.38, bsz=16, num_updates=5850, lr=0.0001918, gnorm=7.003, clip=98, loss_scale=8, train_wall=132.44, gb_free=21.2, wall=0
+2026-07-06 19:32:10 | INFO | train_inner | epoch 008:    737 / 1466 loss=3.715, train_loss=3.715, cross_distance_loss=0.626, distance_loss=0.297, coord_loss=2.524, RMSD=2.523, prmsd_loss=2.678, ups=0.36, bsz=16, num_updates=5900, lr=0.000190711, gnorm=5.561, clip=100, loss_scale=8, train_wall=136.96, gb_free=19.1, wall=0
+2026-07-06 19:34:39 | INFO | train_inner | epoch 008:    787 / 1466 loss=3.777, train_loss=3.777, cross_distance_loss=0.644, distance_loss=0.312, coord_loss=2.557, RMSD=2.556, prmsd_loss=2.636, ups=0.34, bsz=16, num_updates=5950, lr=0.000189623, gnorm=6.03, clip=98, loss_scale=8, train_wall=148.93, gb_free=19.3, wall=0
+2026-07-06 19:37:05 | INFO | train_inner | epoch 008:    837 / 1466 loss=3.653, train_loss=3.653, cross_distance_loss=0.616, distance_loss=0.316, coord_loss=2.455, RMSD=2.453, prmsd_loss=2.666, ups=0.34, bsz=16, num_updates=6000, lr=0.000188534, gnorm=6.714, clip=100, loss_scale=8, train_wall=145.71, gb_free=25.7, wall=0
+2026-07-06 19:37:05 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 19:37:05 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 20:24:31 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 3.592 | valid_loss 3.592 | cross_distance_loss 0.603 | distance_loss 0.239 | coord_loss 2.489 | RMSD 2.488 | prmsd_loss 2.614 | bsz 26010 | num_updates 6000 | best_loss 3.592
+2026-07-06 20:24:31 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 8 @ 6000 updates
+2026-07-06 20:24:31 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_8_6000.pt
+2026-07-06 20:24:36 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_8_6000.pt
+2026-07-06 20:24:36 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_8_6000.pt (epoch 8 @ 6000 updates, score 3.592) (writing took 5.096793968230486 seconds)
+2026-07-06 20:24:36 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_6000.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_8_6000.pt
+2026-07-06 20:24:42 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_6000.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 20:24:45 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_6000.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 20:24:47 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_8_6000.pt ...
+2026-07-06 20:24:47 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 20:27:02 | INFO | train_inner | epoch 008:    887 / 1466 loss=3.621, train_loss=3.621, cross_distance_loss=0.606, distance_loss=0.324, coord_loss=2.427, RMSD=2.426, prmsd_loss=2.632, ups=0.02, bsz=16, num_updates=6050, lr=0.000187446, gnorm=5.113, clip=100, loss_scale=8, train_wall=145.91, gb_free=22.4, wall=0
+2026-07-06 20:29:19 | INFO | train_inner | epoch 008:    937 / 1466 loss=3.903, train_loss=3.903, cross_distance_loss=0.616, distance_loss=0.314, coord_loss=2.699, RMSD=2.698, prmsd_loss=2.734, ups=0.36, bsz=16, num_updates=6100, lr=0.000186357, gnorm=4.955, clip=100, loss_scale=8, train_wall=137.3, gb_free=24, wall=0
+2026-07-06 20:32:03 | INFO | train_inner | epoch 008:    987 / 1466 loss=3.797, train_loss=3.797, cross_distance_loss=0.616, distance_loss=0.307, coord_loss=2.607, RMSD=2.606, prmsd_loss=2.673, ups=0.31, bsz=16, num_updates=6150, lr=0.000185269, gnorm=16.421, clip=100, loss_scale=8, train_wall=129.78, gb_free=17, wall=0
+2026-07-06 20:34:51 | INFO | train_inner | epoch 008:   1037 / 1466 loss=3.786, train_loss=3.786, cross_distance_loss=0.611, distance_loss=0.294, coord_loss=2.613, RMSD=2.611, prmsd_loss=2.681, ups=0.3, bsz=16, num_updates=6200, lr=0.00018418, gnorm=6.27, clip=100, loss_scale=8, train_wall=125.96, gb_free=23.9, wall=0
+2026-07-06 20:37:10 | INFO | train_inner | epoch 008:   1087 / 1466 loss=3.728, train_loss=3.728, cross_distance_loss=0.609, distance_loss=0.285, coord_loss=2.57, RMSD=2.568, prmsd_loss=2.639, ups=0.36, bsz=16, num_updates=6250, lr=0.000183091, gnorm=7.91, clip=100, loss_scale=8, train_wall=126.3, gb_free=23.2, wall=0
+2026-07-06 20:40:02 | INFO | train_inner | epoch 008:   1137 / 1466 loss=3.665, train_loss=3.665, cross_distance_loss=0.612, distance_loss=0.32, coord_loss=2.467, RMSD=2.466, prmsd_loss=2.667, ups=0.29, bsz=16, num_updates=6300, lr=0.000182003, gnorm=14.351, clip=100, loss_scale=8, train_wall=132.54, gb_free=11.6, wall=0
+2026-07-06 20:40:02 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 20:40:02 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 21:37:10 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 3.584 | valid_loss 3.584 | cross_distance_loss 0.632 | distance_loss 0.249 | coord_loss 2.437 | RMSD 2.436 | prmsd_loss 2.66 | bsz 26010 | num_updates 6300 | best_loss 3.584
+2026-07-06 21:37:10 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 8 @ 6300 updates
+2026-07-06 21:37:10 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_8_6300.pt
+2026-07-06 21:37:15 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_8_6300.pt
+2026-07-06 21:37:15 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_8_6300.pt (epoch 8 @ 6300 updates, score 3.584) (writing took 5.548422788269818 seconds)
+2026-07-06 21:37:15 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_6300.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_8_6300.pt
+2026-07-06 21:37:20 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_6300.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 21:37:22 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_6300.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 21:37:25 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_8_6300.pt ...
+2026-07-06 21:37:25 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 21:39:36 | INFO | train_inner | epoch 008:   1187 / 1466 loss=3.832, train_loss=3.832, cross_distance_loss=0.636, distance_loss=0.344, coord_loss=2.587, RMSD=2.586, prmsd_loss=2.652, ups=0.01, bsz=16, num_updates=6350, lr=0.000180914, gnorm=20.568, clip=98, loss_scale=8, train_wall=140.37, gb_free=23.9, wall=0
+2026-07-06 21:41:55 | INFO | train_inner | epoch 008:   1237 / 1466 loss=3.813, train_loss=3.813, cross_distance_loss=0.631, distance_loss=0.333, coord_loss=2.586, RMSD=2.585, prmsd_loss=2.637, ups=0.36, bsz=16, num_updates=6400, lr=0.000179826, gnorm=5.256, clip=100, loss_scale=8, train_wall=139.44, gb_free=19.4, wall=0
+2026-07-06 21:44:05 | INFO | train_inner | epoch 008:   1287 / 1466 loss=3.638, train_loss=3.638, cross_distance_loss=0.614, distance_loss=0.306, coord_loss=2.459, RMSD=2.458, prmsd_loss=2.594, ups=0.39, bsz=16, num_updates=6450, lr=0.000178737, gnorm=8.64, clip=100, loss_scale=8, train_wall=129.12, gb_free=22.1, wall=0
+2026-07-06 21:46:17 | INFO | train_inner | epoch 008:   1337 / 1466 loss=3.588, train_loss=3.588, cross_distance_loss=0.609, distance_loss=0.334, coord_loss=2.387, RMSD=2.386, prmsd_loss=2.583, ups=0.38, bsz=16, num_updates=6500, lr=0.000177649, gnorm=10.613, clip=100, loss_scale=8, train_wall=132.22, gb_free=14.9, wall=0
+2026-07-06 21:48:33 | INFO | train_inner | epoch 008:   1387 / 1466 loss=3.641, train_loss=3.641, cross_distance_loss=0.593, distance_loss=0.333, coord_loss=2.454, RMSD=2.452, prmsd_loss=2.606, ups=0.37, bsz=16, num_updates=6550, lr=0.00017656, gnorm=5.78, clip=100, loss_scale=8, train_wall=135.46, gb_free=27.1, wall=0
+2026-07-06 21:50:49 | INFO | train_inner | epoch 008:   1437 / 1466 loss=3.768, train_loss=3.768, cross_distance_loss=0.624, distance_loss=0.341, coord_loss=2.541, RMSD=2.539, prmsd_loss=2.625, ups=0.37, bsz=16, num_updates=6600, lr=0.000175472, gnorm=7.939, clip=100, loss_scale=8, train_wall=135.99, gb_free=19.1, wall=0
+2026-07-06 21:50:49 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 21:50:49 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 22:37:38 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 3.457 | valid_loss 3.457 | cross_distance_loss 0.608 | distance_loss 0.236 | coord_loss 2.359 | RMSD 2.357 | prmsd_loss 2.539 | bsz 26010 | num_updates 6600 | best_loss 3.457
+2026-07-06 22:37:38 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 8 @ 6600 updates
+2026-07-06 22:37:38 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_8_6600.pt
+2026-07-06 22:37:43 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_8_6600.pt
+2026-07-06 22:37:43 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_8_6600.pt (epoch 8 @ 6600 updates, score 3.457) (writing took 5.181428484618664 seconds)
+2026-07-06 22:37:43 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_6600.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_8_6600.pt
+2026-07-06 22:37:48 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_6600.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 22:37:50 | INFO | unicore.checkpoint_utils | copy ./checkpoint_8_6600.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 22:37:52 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_8_6600.pt ...
+2026-07-06 22:37:53 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 22:39:04 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 22:39:04 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-06 23:26:13 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 3.381 | valid_loss 3.381 | cross_distance_loss 0.592 | distance_loss 0.227 | coord_loss 2.312 | RMSD 2.31 | prmsd_loss 2.511 | bsz 26010 | num_updates 6629 | best_loss 3.381
+2026-07-06 23:26:13 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 8 @ 6629 updates
+2026-07-06 23:26:13 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint8.pt
+2026-07-06 23:26:18 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint8.pt
+2026-07-06 23:26:18 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint8.pt (epoch 8 @ 6629 updates, score 3.381) (writing took 5.313540939241648 seconds)
+2026-07-06 23:26:18 | INFO | unicore_cli.train | end of epoch 8 (average epoch stats below)
+2026-07-06 23:26:18 | INFO | unicore.checkpoint_utils | copy ./checkpoint8.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint8.pt
+2026-07-06 23:26:18 | INFO | train | epoch 008 | loss 3.805 | train_loss 3.805 | cross_distance_loss 0.624 | distance_loss 0.322 | coord_loss 2.592 | RMSD 2.591 | prmsd_loss 2.67 | ups 0.07 | bsz 16 | num_updates 6629 | lr 0.00017484 | gnorm 8.852 | clip 99.5 | loss_scale 8 | train_wall 4038.99 | gb_free 24.8 | wall 0
+2026-07-06 23:26:18 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 9
+2026-07-06 23:26:18 | INFO | unicore.trainer | begin training epoch 9
+2026-07-06 23:26:18 | INFO | unicore_cli.train | Start iterating over samples
+2026-07-06 23:26:22 | INFO | unicore.checkpoint_utils | copy ./checkpoint8.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-06 23:26:25 | INFO | unicore.checkpoint_utils | copy ./checkpoint8.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-06 23:26:27 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint8.pt ...
+2026-07-06 23:26:27 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-06 23:27:17 | INFO | train_inner | epoch 009:     21 / 1466 loss=3.372, train_loss=3.372, cross_distance_loss=0.58, distance_loss=0.279, coord_loss=2.256, RMSD=2.254, prmsd_loss=2.574, ups=0.01, bsz=16, num_updates=6650, lr=0.000174383, gnorm=8.26, clip=100, loss_scale=8, train_wall=139.32, gb_free=17.1, wall=0
+2026-07-06 23:29:39 | INFO | train_inner | epoch 009:     71 / 1466 loss=3.494, train_loss=3.494, cross_distance_loss=0.573, distance_loss=0.317, coord_loss=2.349, RMSD=2.348, prmsd_loss=2.549, ups=0.35, bsz=16, num_updates=6700, lr=0.000173295, gnorm=4.91, clip=98, loss_scale=8, train_wall=141.61, gb_free=21.2, wall=0
+2026-07-06 23:31:47 | INFO | train_inner | epoch 009:    121 / 1466 loss=3.498, train_loss=3.498, cross_distance_loss=0.577, distance_loss=0.28, coord_loss=2.381, RMSD=2.38, prmsd_loss=2.593, ups=0.39, bsz=16, num_updates=6750, lr=0.000172206, gnorm=8.716, clip=96, loss_scale=8, train_wall=128.22, gb_free=23, wall=0
+2026-07-06 23:34:12 | INFO | train_inner | epoch 009:    171 / 1466 loss=3.504, train_loss=3.504, cross_distance_loss=0.569, distance_loss=0.318, coord_loss=2.361, RMSD=2.36, prmsd_loss=2.554, ups=0.34, bsz=16, num_updates=6800, lr=0.000171118, gnorm=7.759, clip=98, loss_scale=8, train_wall=144.89, gb_free=23.9, wall=0
+2026-07-06 23:34:56 | INFO | unicore.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2026-07-06 23:36:29 | INFO | train_inner | epoch 009:    222 / 1466 loss=3.664, train_loss=3.664, cross_distance_loss=0.598, distance_loss=0.304, coord_loss=2.501, RMSD=2.5, prmsd_loss=2.612, ups=0.37, bsz=16, num_updates=6850, lr=0.000170029, gnorm=12.257, clip=100, loss_scale=4, train_wall=136.71, gb_free=21.3, wall=0
+2026-07-06 23:38:52 | INFO | train_inner | epoch 009:    272 / 1466 loss=3.464, train_loss=3.464, cross_distance_loss=0.586, distance_loss=0.284, coord_loss=2.335, RMSD=2.334, prmsd_loss=2.583, ups=0.35, bsz=16, num_updates=6900, lr=0.00016894, gnorm=6.131, clip=98, loss_scale=4, train_wall=143.04, gb_free=20.3, wall=0
+2026-07-06 23:38:52 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-06 23:38:52 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 00:28:51 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 3.393 | valid_loss 3.393 | cross_distance_loss 0.585 | distance_loss 0.225 | coord_loss 2.327 | RMSD 2.326 | prmsd_loss 2.559 | bsz 26010 | num_updates 6900 | best_loss 3.381
+2026-07-07 00:28:51 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 9 @ 6900 updates
+2026-07-07 00:28:51 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_9_6900.pt
+2026-07-07 00:28:57 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_9_6900.pt
+2026-07-07 00:28:57 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_9_6900.pt (epoch 9 @ 6900 updates, score 3.393) (writing took 6.0704972902312875 seconds)
+2026-07-07 00:28:57 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_6900.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_9_6900.pt
+2026-07-07 00:29:02 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_6900.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 00:29:04 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_9_6900.pt ...
+2026-07-07 00:29:05 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 00:31:07 | INFO | train_inner | epoch 009:    322 / 1466 loss=3.383, train_loss=3.383, cross_distance_loss=0.569, distance_loss=0.299, coord_loss=2.261, RMSD=2.26, prmsd_loss=2.534, ups=0.02, bsz=16, num_updates=6950, lr=0.000167852, gnorm=12.941, clip=96, loss_scale=4, train_wall=130.13, gb_free=23, wall=0
+2026-07-07 00:33:32 | INFO | train_inner | epoch 009:    372 / 1466 loss=3.488, train_loss=3.488, cross_distance_loss=0.576, distance_loss=0.292, coord_loss=2.362, RMSD=2.361, prmsd_loss=2.577, ups=0.34, bsz=16, num_updates=7000, lr=0.000166763, gnorm=6.743, clip=96, loss_scale=4, train_wall=144.94, gb_free=20.3, wall=0
+2026-07-07 00:35:59 | INFO | train_inner | epoch 009:    422 / 1466 loss=3.504, train_loss=3.504, cross_distance_loss=0.576, distance_loss=0.298, coord_loss=2.372, RMSD=2.37, prmsd_loss=2.584, ups=0.34, bsz=16, num_updates=7050, lr=0.000165675, gnorm=6.812, clip=98, loss_scale=4, train_wall=146.66, gb_free=27.2, wall=0
+2026-07-07 00:38:30 | INFO | train_inner | epoch 009:    472 / 1466 loss=3.562, train_loss=3.562, cross_distance_loss=0.595, distance_loss=0.309, coord_loss=2.4, RMSD=2.399, prmsd_loss=2.58, ups=0.33, bsz=16, num_updates=7100, lr=0.000164586, gnorm=4.504, clip=100, loss_scale=4, train_wall=150.81, gb_free=21.3, wall=0
+2026-07-07 00:40:53 | INFO | train_inner | epoch 009:    522 / 1466 loss=3.534, train_loss=3.534, cross_distance_loss=0.594, distance_loss=0.32, coord_loss=2.362, RMSD=2.361, prmsd_loss=2.581, ups=0.35, bsz=16, num_updates=7150, lr=0.000163498, gnorm=7.17, clip=100, loss_scale=4, train_wall=142.51, gb_free=16.1, wall=0
+2026-07-07 00:43:15 | INFO | train_inner | epoch 009:    572 / 1466 loss=3.385, train_loss=3.385, cross_distance_loss=0.562, distance_loss=0.313, coord_loss=2.257, RMSD=2.255, prmsd_loss=2.523, ups=0.35, bsz=16, num_updates=7200, lr=0.000162409, gnorm=9.144, clip=100, loss_scale=4, train_wall=142.21, gb_free=20.4, wall=0
+2026-07-07 00:43:15 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 00:43:15 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 01:32:51 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 3.38 | valid_loss 3.38 | cross_distance_loss 0.571 | distance_loss 0.219 | coord_loss 2.326 | RMSD 2.325 | prmsd_loss 2.636 | bsz 26010 | num_updates 7200 | best_loss 3.38
+2026-07-07 01:32:51 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 9 @ 7200 updates
+2026-07-07 01:32:51 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_9_7200.pt
+2026-07-07 01:33:11 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_9_7200.pt
+2026-07-07 01:33:11 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_9_7200.pt (epoch 9 @ 7200 updates, score 3.38) (writing took 19.973088222555816 seconds)
+2026-07-07 01:33:11 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_7200.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_9_7200.pt
+2026-07-07 01:33:44 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_7200.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-07 01:34:09 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_7200.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 01:34:17 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_9_7200.pt ...
+2026-07-07 01:34:17 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 01:35:29 | INFO | train_inner | epoch 009:    622 / 1466 loss=3.412, train_loss=3.412, cross_distance_loss=0.566, distance_loss=0.294, coord_loss=2.296, RMSD=2.295, prmsd_loss=2.558, ups=0.02, bsz=16, num_updates=7250, lr=0.000161321, gnorm=31.116, clip=100, loss_scale=4, train_wall=134.69, gb_free=23.1, wall=0
+2026-07-07 01:37:45 | INFO | train_inner | epoch 009:    672 / 1466 loss=3.574, train_loss=3.574, cross_distance_loss=0.6, distance_loss=0.284, coord_loss=2.429, RMSD=2.428, prmsd_loss=2.605, ups=0.37, bsz=16, num_updates=7300, lr=0.000160232, gnorm=6.31, clip=100, loss_scale=4, train_wall=136.1, gb_free=22.9, wall=0
+2026-07-07 01:40:08 | INFO | train_inner | epoch 009:    722 / 1466 loss=3.427, train_loss=3.427, cross_distance_loss=0.579, distance_loss=0.27, coord_loss=2.32, RMSD=2.318, prmsd_loss=2.58, ups=0.35, bsz=16, num_updates=7350, lr=0.000159144, gnorm=6.757, clip=98, loss_scale=4, train_wall=142.42, gb_free=17.1, wall=0
+2026-07-07 01:42:08 | INFO | unicore.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2026-07-07 01:42:18 | INFO | train_inner | epoch 009:    773 / 1466 loss=3.447, train_loss=3.447, cross_distance_loss=0.573, distance_loss=0.286, coord_loss=2.332, RMSD=2.331, prmsd_loss=2.552, ups=0.38, bsz=15.8, num_updates=7400, lr=0.000158055, gnorm=7.153, clip=100, loss_scale=2, train_wall=130.19, gb_free=23.2, wall=0
+2026-07-07 01:44:35 | INFO | train_inner | epoch 009:    823 / 1466 loss=3.523, train_loss=3.523, cross_distance_loss=0.565, distance_loss=0.306, coord_loss=2.392, RMSD=2.391, prmsd_loss=2.596, ups=0.37, bsz=16, num_updates=7450, lr=0.000156967, gnorm=6.506, clip=100, loss_scale=2, train_wall=135.96, gb_free=20.5, wall=0
+2026-07-07 01:46:55 | INFO | train_inner | epoch 009:    873 / 1466 loss=3.404, train_loss=3.404, cross_distance_loss=0.56, distance_loss=0.277, coord_loss=2.312, RMSD=2.311, prmsd_loss=2.545, ups=0.36, bsz=16, num_updates=7500, lr=0.000155878, gnorm=4.346, clip=96, loss_scale=2, train_wall=139.69, gb_free=27.9, wall=0
+2026-07-07 01:46:55 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 01:46:55 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 02:36:01 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 3.222 | valid_loss 3.222 | cross_distance_loss 0.576 | distance_loss 0.23 | coord_loss 2.167 | RMSD 2.167 | prmsd_loss 2.484 | bsz 26010 | num_updates 7500 | best_loss 3.222
+2026-07-07 02:36:01 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 9 @ 7500 updates
+2026-07-07 02:36:01 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_9_7500.pt
+2026-07-07 02:36:07 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_9_7500.pt
+2026-07-07 02:36:08 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_9_7500.pt (epoch 9 @ 7500 updates, score 3.222) (writing took 6.572225675918162 seconds)
+2026-07-07 02:36:08 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_7500.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_9_7500.pt
+2026-07-07 02:36:28 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_7500.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-07 02:36:30 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_7500.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 02:36:32 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_9_7500.pt ...
+2026-07-07 02:36:33 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 02:38:20 | INFO | train_inner | epoch 009:    923 / 1466 loss=3.416, train_loss=3.416, cross_distance_loss=0.57, distance_loss=0.304, coord_loss=2.284, RMSD=2.283, prmsd_loss=2.582, ups=0.02, bsz=16, num_updates=7550, lr=0.00015479, gnorm=5.197, clip=96, loss_scale=2, train_wall=131.59, gb_free=22.1, wall=0
+2026-07-07 02:40:34 | INFO | train_inner | epoch 009:    973 / 1466 loss=3.383, train_loss=3.383, cross_distance_loss=0.567, distance_loss=0.296, coord_loss=2.266, RMSD=2.266, prmsd_loss=2.534, ups=0.37, bsz=16, num_updates=7600, lr=0.000153701, gnorm=6.529, clip=100, loss_scale=2, train_wall=133.47, gb_free=21.4, wall=0
+2026-07-07 02:42:53 | INFO | train_inner | epoch 009:   1023 / 1466 loss=3.274, train_loss=3.274, cross_distance_loss=0.552, distance_loss=0.286, coord_loss=2.188, RMSD=2.187, prmsd_loss=2.485, ups=0.36, bsz=16, num_updates=7650, lr=0.000152612, gnorm=5.631, clip=98, loss_scale=2, train_wall=139.19, gb_free=23.1, wall=0
+2026-07-07 02:45:06 | INFO | train_inner | epoch 009:   1073 / 1466 loss=3.275, train_loss=3.275, cross_distance_loss=0.55, distance_loss=0.286, coord_loss=2.187, RMSD=2.186, prmsd_loss=2.518, ups=0.38, bsz=16, num_updates=7700, lr=0.000151524, gnorm=6.327, clip=100, loss_scale=2, train_wall=132.53, gb_free=21.4, wall=0
+2026-07-07 02:47:18 | INFO | train_inner | epoch 009:   1123 / 1466 loss=3.374, train_loss=3.374, cross_distance_loss=0.582, distance_loss=0.287, coord_loss=2.249, RMSD=2.248, prmsd_loss=2.561, ups=0.38, bsz=16, num_updates=7750, lr=0.000150435, gnorm=7.515, clip=100, loss_scale=2, train_wall=131.99, gb_free=22.2, wall=0
+2026-07-07 02:49:37 | INFO | train_inner | epoch 009:   1173 / 1466 loss=3.232, train_loss=3.232, cross_distance_loss=0.56, distance_loss=0.29, coord_loss=2.13, RMSD=2.128, prmsd_loss=2.521, ups=0.36, bsz=16, num_updates=7800, lr=0.000149347, gnorm=5.183, clip=98, loss_scale=2, train_wall=139.09, gb_free=19.2, wall=0
+2026-07-07 02:49:37 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 02:49:37 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 03:37:49 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 3.351 | valid_loss 3.351 | cross_distance_loss 0.563 | distance_loss 0.232 | coord_loss 2.307 | RMSD 2.306 | prmsd_loss 2.49 | bsz 26010 | num_updates 7800 | best_loss 3.222
+2026-07-07 03:37:49 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 9 @ 7800 updates
+2026-07-07 03:37:49 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_9_7800.pt
+2026-07-07 03:37:55 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_9_7800.pt
+2026-07-07 03:37:55 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_9_7800.pt (epoch 9 @ 7800 updates, score 3.351) (writing took 5.82857926376164 seconds)
+2026-07-07 03:37:55 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_7800.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_9_7800.pt
+2026-07-07 03:38:00 | INFO | unicore.checkpoint_utils | copy ./checkpoint_9_7800.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 03:38:02 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_9_7800.pt ...
+2026-07-07 03:38:02 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 03:40:13 | INFO | train_inner | epoch 009:   1223 / 1466 loss=3.349, train_loss=3.349, cross_distance_loss=0.548, distance_loss=0.292, coord_loss=2.256, RMSD=2.255, prmsd_loss=2.53, ups=0.02, bsz=16, num_updates=7850, lr=0.000148258, gnorm=22.103, clip=100, loss_scale=2, train_wall=137.75, gb_free=25.5, wall=0
+2026-07-07 03:42:19 | INFO | train_inner | epoch 009:   1273 / 1466 loss=3.361, train_loss=3.361, cross_distance_loss=0.544, distance_loss=0.282, coord_loss=2.28, RMSD=2.279, prmsd_loss=2.555, ups=0.4, bsz=16, num_updates=7900, lr=0.00014717, gnorm=11.231, clip=100, loss_scale=2, train_wall=125.76, gb_free=7.7, wall=0
+2026-07-07 03:44:53 | INFO | train_inner | epoch 009:   1323 / 1466 loss=3.369, train_loss=3.369, cross_distance_loss=0.571, distance_loss=0.311, coord_loss=2.236, RMSD=2.235, prmsd_loss=2.522, ups=0.32, bsz=16, num_updates=7950, lr=0.000146081, gnorm=12.26, clip=98, loss_scale=2, train_wall=154.11, gb_free=25.5, wall=0
+2026-07-07 03:47:22 | INFO | train_inner | epoch 009:   1373 / 1466 loss=3.273, train_loss=3.273, cross_distance_loss=0.557, distance_loss=0.276, coord_loss=2.188, RMSD=2.187, prmsd_loss=2.514, ups=0.33, bsz=16, num_updates=8000, lr=0.000144993, gnorm=11.921, clip=100, loss_scale=2, train_wall=149.2, gb_free=24.7, wall=0
+2026-07-07 03:49:41 | INFO | train_inner | epoch 009:   1423 / 1466 loss=3.311, train_loss=3.311, cross_distance_loss=0.563, distance_loss=0.287, coord_loss=2.212, RMSD=2.211, prmsd_loss=2.494, ups=0.36, bsz=16, num_updates=8050, lr=0.000143904, gnorm=12.046, clip=98, loss_scale=2, train_wall=138.96, gb_free=23.3, wall=0
+2026-07-07 03:51:39 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 03:51:39 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 04:46:39 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 3.164 | valid_loss 3.164 | cross_distance_loss 0.547 | distance_loss 0.217 | coord_loss 2.155 | RMSD 2.154 | prmsd_loss 2.455 | bsz 26010 | num_updates 8093 | best_loss 3.164
+2026-07-07 04:46:39 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 9 @ 8093 updates
+2026-07-07 04:46:39 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint9.pt
+2026-07-07 04:46:44 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint9.pt
+2026-07-07 04:46:44 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint9.pt (epoch 9 @ 8093 updates, score 3.164) (writing took 5.526235485449433 seconds)
+2026-07-07 04:46:44 | INFO | unicore_cli.train | end of epoch 9 (average epoch stats below)
+2026-07-07 04:46:44 | INFO | unicore.checkpoint_utils | copy ./checkpoint9.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint9.pt
+2026-07-07 04:46:44 | INFO | train | epoch 009 | loss 3.415 | train_loss 3.415 | cross_distance_loss 0.57 | distance_loss 0.293 | coord_loss 2.296 | RMSD 2.295 | prmsd_loss 2.553 | ups 0.08 | bsz 16 | num_updates 8093 | lr 0.000142968 | gnorm 8.924 | clip 98.7 | loss_scale 2 | train_wall 4060.7 | gb_free 23.9 | wall 0
+2026-07-07 04:46:44 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 10
+2026-07-07 04:46:44 | INFO | unicore.trainer | begin training epoch 10
+2026-07-07 04:46:44 | INFO | unicore_cli.train | Start iterating over samples
+2026-07-07 04:46:49 | INFO | unicore.checkpoint_utils | copy ./checkpoint9.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-07 04:46:51 | INFO | unicore.checkpoint_utils | copy ./checkpoint9.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 04:46:54 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint9.pt ...
+2026-07-07 04:46:54 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 04:46:59 | INFO | train_inner | epoch 010:      7 / 1466 loss=3.207, train_loss=3.207, cross_distance_loss=0.548, distance_loss=0.27, coord_loss=2.139, RMSD=2.138, prmsd_loss=2.497, ups=0.01, bsz=16, num_updates=8100, lr=0.000142816, gnorm=5.517, clip=100, loss_scale=2, train_wall=132.02, gb_free=27.1, wall=0
+2026-07-07 04:46:59 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 04:46:59 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 05:28:02 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 3.075 | valid_loss 3.075 | cross_distance_loss 0.572 | distance_loss 0.215 | coord_loss 2.042 | RMSD 2.041 | prmsd_loss 2.448 | bsz 26010 | num_updates 8100 | best_loss 3.075
+2026-07-07 05:28:02 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 10 @ 8100 updates
+2026-07-07 05:28:02 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_10_8100.pt
+2026-07-07 05:28:07 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_10_8100.pt
+2026-07-07 05:28:08 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_10_8100.pt (epoch 10 @ 8100 updates, score 3.075) (writing took 5.940423182211816 seconds)
+2026-07-07 05:28:08 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_8100.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_10_8100.pt
+2026-07-07 05:28:12 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_8100.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-07 05:28:15 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_8100.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 05:28:17 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_10_8100.pt ...
+2026-07-07 05:28:18 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 05:30:30 | INFO | train_inner | epoch 010:     57 / 1466 loss=3.049, train_loss=3.049, cross_distance_loss=0.53, distance_loss=0.266, coord_loss=2.009, RMSD=2.008, prmsd_loss=2.44, ups=0.02, bsz=16, num_updates=8150, lr=0.000141727, gnorm=12.472, clip=100, loss_scale=2, train_wall=142.58, gb_free=7.7, wall=0
+2026-07-07 05:32:39 | INFO | train_inner | epoch 010:    107 / 1466 loss=3.158, train_loss=3.158, cross_distance_loss=0.535, distance_loss=0.295, coord_loss=2.08, RMSD=2.079, prmsd_loss=2.488, ups=0.39, bsz=16, num_updates=8200, lr=0.000140639, gnorm=4.893, clip=98, loss_scale=2, train_wall=128.97, gb_free=21.2, wall=0
+2026-07-07 05:34:53 | INFO | train_inner | epoch 010:    157 / 1466 loss=3.259, train_loss=3.259, cross_distance_loss=0.549, distance_loss=0.257, coord_loss=2.2, RMSD=2.198, prmsd_loss=2.542, ups=0.38, bsz=16, num_updates=8250, lr=0.00013955, gnorm=18.33, clip=96, loss_scale=2, train_wall=133.09, gb_free=7.7, wall=0
+2026-07-07 05:37:12 | INFO | train_inner | epoch 010:    207 / 1466 loss=3.163, train_loss=3.163, cross_distance_loss=0.533, distance_loss=0.273, coord_loss=2.108, RMSD=2.107, prmsd_loss=2.491, ups=0.36, bsz=16, num_updates=8300, lr=0.000138462, gnorm=9.205, clip=100, loss_scale=2, train_wall=139.33, gb_free=23.9, wall=0
+2026-07-07 05:39:36 | INFO | train_inner | epoch 010:    257 / 1466 loss=3.092, train_loss=3.092, cross_distance_loss=0.523, distance_loss=0.266, coord_loss=2.058, RMSD=2.057, prmsd_loss=2.445, ups=0.35, bsz=16, num_updates=8350, lr=0.000137373, gnorm=7.874, clip=96, loss_scale=2, train_wall=143.68, gb_free=21.3, wall=0
+2026-07-07 05:41:49 | INFO | train_inner | epoch 010:    307 / 1466 loss=3.149, train_loss=3.149, cross_distance_loss=0.534, distance_loss=0.262, coord_loss=2.105, RMSD=2.104, prmsd_loss=2.479, ups=0.38, bsz=16, num_updates=8400, lr=0.000136284, gnorm=6.253, clip=100, loss_scale=2, train_wall=132.8, gb_free=19.3, wall=0
+2026-07-07 05:41:49 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 05:41:49 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 06:22:11 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 12.046 | valid_loss 12.046 | cross_distance_loss 0.568 | distance_loss 0.211 | coord_loss 11.025 | RMSD 9.69 | prmsd_loss 2.415 | bsz 26010 | num_updates 8400 | best_loss 3.075
+2026-07-07 06:22:11 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 10 @ 8400 updates
+2026-07-07 06:22:11 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_10_8400.pt
+2026-07-07 06:22:17 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_10_8400.pt
+2026-07-07 06:22:18 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_10_8400.pt (epoch 10 @ 8400 updates, score 12.046) (writing took 6.283657740801573 seconds)
+2026-07-07 06:22:18 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_8400.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_10_8400.pt
+2026-07-07 06:22:22 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_8400.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 06:22:24 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_10_8400.pt ...
+2026-07-07 06:22:25 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 06:24:25 | INFO | train_inner | epoch 010:    357 / 1466 loss=3.091, train_loss=3.091, cross_distance_loss=0.529, distance_loss=0.286, coord_loss=2.032, RMSD=2.031, prmsd_loss=2.442, ups=0.02, bsz=16, num_updates=8450, lr=0.000135196, gnorm=4.353, clip=100, loss_scale=2, train_wall=127.22, gb_free=18.1, wall=0
+2026-07-07 06:26:42 | INFO | train_inner | epoch 010:    407 / 1466 loss=3.095, train_loss=3.095, cross_distance_loss=0.519, distance_loss=0.275, coord_loss=2.054, RMSD=2.053, prmsd_loss=2.478, ups=0.37, bsz=16, num_updates=8500, lr=0.000134107, gnorm=8.319, clip=94, loss_scale=2, train_wall=136.58, gb_free=18.3, wall=0
+2026-07-07 06:28:44 | INFO | train_inner | epoch 010:    457 / 1466 loss=3.071, train_loss=3.071, cross_distance_loss=0.513, distance_loss=0.274, coord_loss=2.038, RMSD=2.037, prmsd_loss=2.471, ups=0.41, bsz=16, num_updates=8550, lr=0.000133019, gnorm=3.699, clip=100, loss_scale=2, train_wall=122.6, gb_free=23.9, wall=0
+2026-07-07 06:30:55 | INFO | train_inner | epoch 010:    507 / 1466 loss=3.032, train_loss=3.032, cross_distance_loss=0.516, distance_loss=0.28, coord_loss=1.994, RMSD=1.993, prmsd_loss=2.42, ups=0.38, bsz=16, num_updates=8600, lr=0.00013193, gnorm=5.099, clip=98, loss_scale=2, train_wall=130.64, gb_free=28.6, wall=0
+2026-07-07 06:33:01 | INFO | train_inner | epoch 010:    557 / 1466 loss=2.904, train_loss=2.904, cross_distance_loss=0.503, distance_loss=0.262, coord_loss=1.899, RMSD=1.899, prmsd_loss=2.392, ups=0.4, bsz=16, num_updates=8650, lr=0.000130842, gnorm=16.677, clip=100, loss_scale=2, train_wall=125.89, gb_free=22.1, wall=0
+2026-07-07 06:35:00 | INFO | train_inner | epoch 010:    607 / 1466 loss=3.068, train_loss=3.068, cross_distance_loss=0.519, distance_loss=0.285, coord_loss=2.022, RMSD=2.021, prmsd_loss=2.427, ups=0.42, bsz=16, num_updates=8700, lr=0.000129753, gnorm=9.414, clip=98, loss_scale=2, train_wall=118.74, gb_free=7.6, wall=0
+2026-07-07 06:35:00 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 06:35:00 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 07:27:13 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 2.971 | valid_loss 2.971 | cross_distance_loss 0.522 | distance_loss 0.219 | coord_loss 1.993 | RMSD 1.992 | prmsd_loss 2.369 | bsz 26010 | num_updates 8700 | best_loss 2.971
+2026-07-07 07:27:13 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 10 @ 8700 updates
+2026-07-07 07:27:13 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_10_8700.pt
+2026-07-07 07:27:20 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_10_8700.pt
+2026-07-07 07:27:20 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_10_8700.pt (epoch 10 @ 8700 updates, score 2.971) (writing took 6.72492905613035 seconds)
+2026-07-07 07:27:20 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_8700.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_10_8700.pt
+2026-07-07 07:27:24 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_8700.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-07 07:27:27 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_8700.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 07:27:30 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_10_8700.pt ...
+2026-07-07 07:27:30 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 07:29:39 | INFO | train_inner | epoch 010:    657 / 1466 loss=3.113, train_loss=3.113, cross_distance_loss=0.505, distance_loss=0.292, coord_loss=2.071, RMSD=2.07, prmsd_loss=2.447, ups=0.02, bsz=16, num_updates=8750, lr=0.000128665, gnorm=4.2, clip=98, loss_scale=2, train_wall=139.21, gb_free=22.1, wall=0
+2026-07-07 07:31:55 | INFO | train_inner | epoch 010:    707 / 1466 loss=3.092, train_loss=3.092, cross_distance_loss=0.517, distance_loss=0.274, coord_loss=2.056, RMSD=2.056, prmsd_loss=2.443, ups=0.37, bsz=16, num_updates=8800, lr=0.000127576, gnorm=5.24, clip=98, loss_scale=2, train_wall=135.35, gb_free=22.1, wall=0
+2026-07-07 07:34:18 | INFO | train_inner | epoch 010:    757 / 1466 loss=3.174, train_loss=3.174, cross_distance_loss=0.529, distance_loss=0.279, coord_loss=2.121, RMSD=2.12, prmsd_loss=2.45, ups=0.35, bsz=16, num_updates=8850, lr=0.000126488, gnorm=4.023, clip=98, loss_scale=2, train_wall=142.56, gb_free=20.3, wall=0
+2026-07-07 07:36:33 | INFO | train_inner | epoch 010:    807 / 1466 loss=2.955, train_loss=2.955, cross_distance_loss=0.504, distance_loss=0.262, coord_loss=1.947, RMSD=1.946, prmsd_loss=2.427, ups=0.37, bsz=16, num_updates=8900, lr=0.000125399, gnorm=3.934, clip=94, loss_scale=2, train_wall=135.74, gb_free=18.1, wall=0
+2026-07-07 07:38:38 | INFO | train_inner | epoch 010:    857 / 1466 loss=2.979, train_loss=2.979, cross_distance_loss=0.504, distance_loss=0.228, coord_loss=2.002, RMSD=2.001, prmsd_loss=2.444, ups=0.4, bsz=16, num_updates=8950, lr=0.000124311, gnorm=6.293, clip=100, loss_scale=2, train_wall=124.13, gb_free=23.2, wall=0
+2026-07-07 07:40:53 | INFO | train_inner | epoch 010:    907 / 1466 loss=2.795, train_loss=2.795, cross_distance_loss=0.491, distance_loss=0.24, coord_loss=1.827, RMSD=1.825, prmsd_loss=2.375, ups=0.37, bsz=16, num_updates=9000, lr=0.000123222, gnorm=4.272, clip=98, loss_scale=2, train_wall=135.41, gb_free=27.1, wall=0
+2026-07-07 07:40:53 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 07:40:53 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 08:31:05 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 2.936 | valid_loss 2.936 | cross_distance_loss 0.521 | distance_loss 0.206 | coord_loss 1.97 | RMSD 1.969 | prmsd_loss 2.394 | bsz 26010 | num_updates 9000 | best_loss 2.936
+2026-07-07 08:31:05 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 10 @ 9000 updates
+2026-07-07 08:31:05 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_10_9000.pt
+2026-07-07 08:31:27 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_10_9000.pt
+2026-07-07 08:31:27 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_10_9000.pt (epoch 10 @ 9000 updates, score 2.936) (writing took 22.325991914607584 seconds)
+2026-07-07 08:31:27 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_9000.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_10_9000.pt
+2026-07-07 08:31:58 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_9000.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-07 08:32:00 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_9000.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 08:32:05 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_10_9000.pt ...
+2026-07-07 08:32:05 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 08:33:50 | INFO | train_inner | epoch 010:    957 / 1466 loss=2.916, train_loss=2.916, cross_distance_loss=0.502, distance_loss=0.263, coord_loss=1.912, RMSD=1.911, prmsd_loss=2.393, ups=0.02, bsz=16, num_updates=9050, lr=0.000122134, gnorm=7.713, clip=98, loss_scale=2, train_wall=142.19, gb_free=23.1, wall=0
+2026-07-07 08:36:09 | INFO | train_inner | epoch 010:   1007 / 1466 loss=3.045, train_loss=3.045, cross_distance_loss=0.514, distance_loss=0.254, coord_loss=2.033, RMSD=2.032, prmsd_loss=2.445, ups=0.36, bsz=15.8, num_updates=9100, lr=0.000121045, gnorm=11.512, clip=98, loss_scale=2, train_wall=139.04, gb_free=27.9, wall=0
+2026-07-07 08:38:35 | INFO | train_inner | epoch 010:   1057 / 1466 loss=3.12, train_loss=3.12, cross_distance_loss=0.526, distance_loss=0.289, coord_loss=2.057, RMSD=2.056, prmsd_loss=2.481, ups=0.34, bsz=16, num_updates=9150, lr=0.000119956, gnorm=9.45, clip=100, loss_scale=2, train_wall=144.32, gb_free=23.1, wall=0
+2026-07-07 08:40:54 | INFO | train_inner | epoch 010:   1107 / 1466 loss=2.959, train_loss=2.959, cross_distance_loss=0.496, distance_loss=0.292, coord_loss=1.929, RMSD=1.928, prmsd_loss=2.417, ups=0.36, bsz=16, num_updates=9200, lr=0.000118868, gnorm=27.876, clip=100, loss_scale=2, train_wall=139.15, gb_free=25.6, wall=0
+2026-07-07 08:43:17 | INFO | train_inner | epoch 010:   1157 / 1466 loss=3.054, train_loss=3.054, cross_distance_loss=0.512, distance_loss=0.296, coord_loss=2.006, RMSD=2.005, prmsd_loss=2.403, ups=0.35, bsz=16, num_updates=9250, lr=0.000117779, gnorm=5.676, clip=98, loss_scale=2, train_wall=143.22, gb_free=23.1, wall=0
+2026-07-07 08:45:27 | INFO | train_inner | epoch 010:   1207 / 1466 loss=2.949, train_loss=2.949, cross_distance_loss=0.502, distance_loss=0.224, coord_loss=1.983, RMSD=1.982, prmsd_loss=2.412, ups=0.39, bsz=16, num_updates=9300, lr=0.000116691, gnorm=4.366, clip=94, loss_scale=2, train_wall=129.43, gb_free=17, wall=0
+2026-07-07 08:45:27 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 08:45:27 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 09:36:07 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 2.94 | valid_loss 2.94 | cross_distance_loss 0.513 | distance_loss 0.199 | coord_loss 1.991 | RMSD 1.99 | prmsd_loss 2.359 | bsz 26010 | num_updates 9300 | best_loss 2.936
+2026-07-07 09:36:07 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 10 @ 9300 updates
+2026-07-07 09:36:07 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_10_9300.pt
+2026-07-07 09:36:12 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_10_9300.pt
+2026-07-07 09:36:12 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_10_9300.pt (epoch 10 @ 9300 updates, score 2.94) (writing took 5.484641573391855 seconds)
+2026-07-07 09:36:12 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_9300.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_10_9300.pt
+2026-07-07 09:36:17 | INFO | unicore.checkpoint_utils | copy ./checkpoint_10_9300.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 09:36:19 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_10_9300.pt ...
+2026-07-07 09:36:19 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 09:38:24 | INFO | train_inner | epoch 010:   1257 / 1466 loss=3.125, train_loss=3.125, cross_distance_loss=0.521, distance_loss=0.305, coord_loss=2.055, RMSD=2.054, prmsd_loss=2.444, ups=0.02, bsz=16, num_updates=9350, lr=0.000115602, gnorm=6.127, clip=98, loss_scale=2, train_wall=132.2, gb_free=22.3, wall=0
+2026-07-07 09:40:29 | INFO | train_inner | epoch 010:   1307 / 1466 loss=2.946, train_loss=2.946, cross_distance_loss=0.511, distance_loss=0.277, coord_loss=1.917, RMSD=1.916, prmsd_loss=2.416, ups=0.4, bsz=16, num_updates=9400, lr=0.000114514, gnorm=10.471, clip=96, loss_scale=2, train_wall=124.6, gb_free=20.4, wall=0
+2026-07-07 09:42:36 | INFO | train_inner | epoch 010:   1357 / 1466 loss=2.989, train_loss=2.989, cross_distance_loss=0.511, distance_loss=0.27, coord_loss=1.968, RMSD=1.967, prmsd_loss=2.403, ups=0.4, bsz=16, num_updates=9450, lr=0.000113425, gnorm=10.364, clip=98, loss_scale=2, train_wall=126.32, gb_free=7.9, wall=0
+2026-07-07 09:44:41 | INFO | train_inner | epoch 010:   1407 / 1466 loss=2.974, train_loss=2.974, cross_distance_loss=0.506, distance_loss=0.242, coord_loss=1.985, RMSD=1.984, prmsd_loss=2.413, ups=0.4, bsz=16, num_updates=9500, lr=0.000112337, gnorm=7.16, clip=98, loss_scale=2, train_wall=125.16, gb_free=23.9, wall=0
+2026-07-07 09:46:37 | INFO | train_inner | epoch 010:   1457 / 1466 loss=2.914, train_loss=2.914, cross_distance_loss=0.505, distance_loss=0.23, coord_loss=1.935, RMSD=1.934, prmsd_loss=2.438, ups=0.43, bsz=16, num_updates=9550, lr=0.000111248, gnorm=6.69, clip=96, loss_scale=2, train_wall=116.02, gb_free=24.8, wall=0
+2026-07-07 09:46:57 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-07-07 09:46:57 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-07 10:30:16 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 2.895 | valid_loss 2.895 | cross_distance_loss 0.513 | distance_loss 0.2 | coord_loss 1.947 | RMSD 1.945 | prmsd_loss 2.356 | bsz 26010 | num_updates 9559 | best_loss 2.895
+2026-07-07 10:30:16 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 10 @ 9559 updates
+2026-07-07 10:30:16 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint10.pt
+2026-07-07 10:30:37 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint10.pt
+2026-07-07 10:30:37 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint10.pt (epoch 10 @ 9559 updates, score 2.895) (writing took 21.169136992655694 seconds)
+2026-07-07 10:30:37 | INFO | unicore_cli.train | end of epoch 10 (average epoch stats below)
+2026-07-07 10:30:37 | INFO | unicore.checkpoint_utils | copy ./checkpoint10.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint10.pt
+2026-07-07 10:30:37 | INFO | train | epoch 010 | loss 3.042 | train_loss 3.042 | cross_distance_loss 0.516 | distance_loss 0.268 | coord_loss 2.014 | RMSD 2.013 | prmsd_loss 2.44 | ups 0.07 | bsz 16 | num_updates 9559 | lr 0.000111052 | gnorm 8.304 | clip 97.9 | loss_scale 2 | train_wall 3890.28 | gb_free 24.9 | wall 0
+2026-07-07 10:30:37 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 11
+2026-07-07 10:31:09 | INFO | unicore.checkpoint_utils | copy ./checkpoint10.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_best.pt
+2026-07-07 10:31:29 | INFO | unicore.checkpoint_utils | copy ./checkpoint10.pt to /home/bdldt_team007/DLDockingBenchSeminar/run7/checkpoints/checkpoint_last.pt
+2026-07-07 10:31:40 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint10.pt ...
+2026-07-07 10:31:40 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-07-07 10:31:40 | INFO | unicore_cli.train | done training in 126443.4 seconds
+=== RUN7 TRAIN COMMAND END ===

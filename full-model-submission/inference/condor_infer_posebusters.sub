@@ -1,0 +1,13 @@
+universe = docker
+docker_image = docker.io/elab00003/unimol:1
+executable = /home/bdldt_team007/DLDockingBenchSeminar/run_infer_posebusters.sh
+output = /home/bdldt_team007/DLDockingBenchSeminar/logs/infer_posebusters.out
+error = /home/bdldt_team007/DLDockingBenchSeminar/logs/infer_posebusters.err
+log = /home/bdldt_team007/DLDockingBenchSeminar/logs/infer_posebusters.log
+should_transfer_files = NO
+request_GPUs = 1
+request_CPUs = 4
+request_memory = 16G
+requirements = (UidDomain == "cs.uni-saarland.de") && regexp("A100", GPUs_DeviceName)
++WantGPUHomeMounted = true
+queue

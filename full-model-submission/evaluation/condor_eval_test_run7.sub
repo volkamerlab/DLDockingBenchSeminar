@@ -1,0 +1,13 @@
+universe = docker
+docker_image = docker.io/elab00003/unimol:1
+executable = /home/bdldt_team007/DLDockingBenchSeminar/run7/run_eval_test_run7.sh
+output = /home/bdldt_team007/DLDockingBenchSeminar/run7/logs/eval_test.out
+error  = /home/bdldt_team007/DLDockingBenchSeminar/run7/logs/eval_test.err
+log    = /home/bdldt_team007/DLDockingBenchSeminar/run7/logs/eval_test.log
+should_transfer_files = NO
+request_GPUs = 0
+request_CPUs = 2
+request_memory = 8G
+requirements = UidDomain == "cs.uni-saarland.de"
++WantGPUHomeMounted = true
+queue

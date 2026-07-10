@@ -1,0 +1,188 @@
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 22.04 (build 36527063)
+PyTorch Version 1.12.0a0+bd13bc6
+
+Container image Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Copyright (c) 2014-2022 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+ERROR: No supported GPU(s) detected to run this container
+
+Failed to detect NVIDIA driver version.
+
+=== VALID ===
+Processing 3ix2_AC2_A_302
+Processing 3ix2_AC2_B_302
+Processing 3ix2_AC2_C_302
+Processing 4jdf_SPD_A_401
+Processing 5qtv_QLS_A_301
+Processing 5qtw_QLM_A_301
+Processing 5qtx_QLD_A_301
+Processing 5qty_QLJ_A_301
+Processing 5qtz_QMY_A_601
+Processing 5qu0_QMV_A_601
+Processing 5qur_LZ1_A_401
+Processing 5qus_LZ1_A_401
+Processing 5qut_LZ1_A_401
+Processing 5ree_T1M_A_404
+Processing 5rfa_JGY_A_403
+Processing 5rgv_UGG_A_1001
+Processing 5rgx_UGP_A_1001
+Processing 5rh2_UH7_A_1001
+Processing 5rh3_UHA_A_1001
+Processing 5rhd_US7_A_408
+Processing 5s75_LU8_B_501
+Processing 5s75_LU8_A_508
+Processing 5s75_LU8_A_509
+Processing 5s75_LU8_A_501
+Processing 5s76_LU8_A_508
+Processing 5s76_LU8_B_501
+Processing 5s76_LU8_A_501
+Processing 5s76_LU8_A_507
+Processing 5s77_LU8_A_501
+Processing 5s77_LU8_A_509
+Processing 5s77_LU8_A_508
+Processing 5s77_LU8_B_501
+Processing 5s78_LU8_A_501
+Processing 5s78_LU8_A_506
+Processing 5s78_LU8_B_501
+Processing 5s79_LU8_A_501
+Processing 5s79_LU8_A_507
+Processing 5s79_LU8_B_501
+Processing 5s7a_LU8_A_507
+Processing 5s7a_LU8_A_501
+Processing 5s7a_LU8_A_508
+Processing 5s7a_LU8_B_501
+Processing 5s7b_LU8_A_507
+Processing 5s7b_LU8_B_501
+Processing 5s7b_LU8_A_508
+Processing 5s7b_LU8_A_501
+Processing 5s7c_LU8_A_501
+Processing 5s7c_LU8_B_501
+Processing 5s7c_LU8_A_507
+Processing 5s7d_LU8_A_501
+Processing 5s7d_LU8_A_509
+Processing 5s7d_LU8_A_508
+Processing 5s7d_LU8_B_501
+Processing 5s7e_LU8_B_501
+Processing 5s7e_LU8_A_501
+Processing 5s7f_LU8_A_508
+Processing 5s7f_LU8_A_509
+Processing 5s7f_LU8_A_501
+Processing 5s7f_LU8_B_501
+Processing 5s7g_LU8_A_501
+Processing 5s7g_LU8_B_501
+Processing 5s7h_LU8_B_501
+Processing 5s7h_LU8_A_507
+Processing 5s7h_LU8_A_501
+Processing 5s7h_LU8_A_508
+Processing 5s7i_LU8_A_508
+Processing 5s7i_LU8_A_507
+Processing 5s7i_LU8_B_501
+Processing 5s7i_LU8_A_501
+Processing 5s7j_LU8_A_501
+Processing 5s7j_LU8_B_501
+Processing 5s7k_LU8_A_501
+Processing 5s7k_LU8_A_507
+Processing 5s7k_LU8_A_506
+Processing 5s7k_LU8_B_501
+Processing 5s7l_LU8_A_507
+Processing 5s7l_LU8_A_501
+Processing 5s7l_LU8_B_501
+Processing 5s7m_LU8_A_501
+Processing 5s7m_LU8_B_501
+Processing 5s7n_LU8_B_501
+Processing 5s7n_LU8_A_501
+Processing 5s7n_LU8_A_507
+Processing 5s7n_LU8_A_508
+Processing 5s7o_LU8_A_508
+Processing 5s7o_LU8_A_507
+Processing 5s7o_LU8_A_501
+Processing 5s7o_LU8_B_501
+Processing 5s7p_LU8_A_508
+Processing 5s7p_LU8_B_501
+Processing 5s7p_LU8_A_507
+Processing 5s7p_LU8_A_501
+Processing 5s7q_LU8_A_508
+Processing 5s7q_LU8_A_507
+Processing 5s7q_LU8_A_501
+Processing 5s7q_LU8_B_1802
+Processing 5s7r_LU8_A_501
+Processing 5s7r_LU8_A_508
+Processing 5s7r_LU8_A_507
+Processing 5s7r_LU8_B_501
+  ... 100 samples written so far
+Processing 5s7s_LU8_B_501
+Processing 5s7s_LU8_A_501
+Processing 5s7s_LU8_A_508
+Processing 5s7s_LU8_A_509
+Processing 5s7t_LU8_A_507
+Processing 5s7t_LU8_A_501
+Processing 5s7t_LU8_A_508
+Processing 5s7t_LU8_B_501
+Processing 5s7u_LU8_A_508
+Processing 5s7u_LU8_A_507
+Processing 5s7u_LU8_A_501
+Processing 5s7u_LU8_B_501
+Processing 5s7v_LU8_B_501
+Processing 5s7v_LU8_A_507
+Processing 5s7v_LU8_A_501
+Processing 5s7v_LU8_A_508
+Processing 5s7w_LU8_A_507
+Processing 5s7w_LU8_A_508
+Processing 5s7w_LU8_A_501
+Processing 5s7w_LU8_B_501
+Processing 5s7x_LU8_A_508
+Processing 5s7x_LU8_B_501
+Processing 5s7x_LU8_A_509
+Processing 5s7x_LU8_A_501
+Processing 5s7y_LU8_A_508
+Processing 5s7y_LU8_A_507
+Processing 5s7y_LU8_A_501
+Processing 5s7y_LU8_B_501
+Processing 5s7z_LU8_A_501
+Processing 5s7z_LU8_A_509
+Processing 5s7z_LU8_A_508
+Processing 5s7z_LU8_B_501
+Processing 5s80_LU8_B_501
+Processing 5s80_LU8_A_508
+Processing 5s80_LU8_A_501
+Processing 5s80_LU8_A_509
+✅ Done: 136 samples saved, 0 failed → /home/bdldt_team007/DLDockingBenchSeminar/data/processed/valid.lmdb
+Processing 308 complexes
+  ... 20 saved
+  ... 40 saved
+  ... 60 saved
+  ... 80 saved
+  ... 100 saved
+  ... 120 saved
+  ... 140 saved
+  ... 160 saved
+  ... 180 saved
+  ... 200 saved
+  ... 220 saved
+  ... 240 saved
+  ... 260 saved
+  ... 280 saved
+  ... 300 saved
+Done: 308 saved, 0 failed -> /home/bdldt_team007/DLDockingBenchSeminar/data/processed_posebusters/posebusters_filtered.lmdb

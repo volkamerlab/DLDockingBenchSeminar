@@ -1,0 +1,102 @@
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 22.04 (build 36527063)
+PyTorch Version 1.12.0a0+bd13bc6
+
+Container image Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Copyright (c) 2014-2022 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+=== INFERENCE (run6 checkpoint_best) START ===
+2026-07-05 23:27:56 | INFO | unimol.inference | loading model(s) from /home/bdldt_team007/DLDockingBenchSeminar/run6/checkpoints/checkpoint_best.pt
+2026-07-05 23:28:14 | INFO | unimol.tasks.docking_pose_v2 | ligand dictionary: 30 types
+2026-07-05 23:28:14 | INFO | unimol.tasks.docking_pose_v2 | pocket dictionary: 9 types
+2026-07-05 23:28:18 | INFO | unimol.inference | Namespace(activation_dropout=0.0, activation_fn='gelu', adam_betas='(0.9, 0.999)', adam_eps=1e-08, all_gather_list_size=16384, allreduce_fp32_grad=False, arch='docking_pose_v2', attention_dropout=0.1, batch_size=8, batch_size_valid=8, bf16=False, bf16_sr=False, broadcast_buffers=False, bucket_cap_mb=25, conf_size=10, cpu=False, curriculum=0, data='/home/bdldt_team007/DLDockingBenchSeminar/run6/data', data_buffer_size=10, ddp_backend='c10d', delta_pair_repr_norm_loss=-1.0, device_id=0, disable_validation=False, dist_threshold=8.0, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_num_procs=1, distributed_port=-1, distributed_rank=0, distributed_world_size=1, dropout=0.1, ema_decay=-1.0, emb_dropout=0.1, empty_cache_freq=0, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, fast_stat_sync=False, find_unused_parameters=False, finetune_mol_model=None, finetune_pocket_model=None, fix_batches_to_gpus=False, fixed_validation_seed=None, force_anneal=None, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, log_format='simple', log_interval=50, loss='docking_pose_v2', lr_scheduler='fixed', lr_shrink=0.1, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_pocket_atoms=256, max_seq_len=512, max_valid_steps=None, min_loss_scale=0.0001, model_overrides='{}', mol=Namespace(activation_dropout=0.0, activation_fn='gelu', attention_dropout=0.1, delta_pair_repr_norm_loss=-1.0, dropout=0.1, emb_dropout=0.1, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_seq_len=512, pooler_activation_fn='tanh', pooler_dropout=0.0, post_ln=False, x_norm_loss=-1.0), no_progress_bar=False, no_seed_provided=False, nprocs_per_node=1, num_workers=0, optimizer='adam', path='/home/bdldt_team007/DLDockingBenchSeminar/run6/checkpoints/checkpoint_best.pt', pocket=Namespace(activation_dropout=0.0, activation_fn='gelu', attention_dropout=0.1, delta_pair_repr_norm_loss=-1.0, dropout=0.1, emb_dropout=0.1, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_seq_len=512, pooler_activation_fn='tanh', pooler_dropout=0.0, post_ln=False, x_norm_loss=-1.0), pooler_activation_fn='tanh', pooler_dropout=0.0, post_ln=False, profile=False, quiet=False, recycling=1, required_batch_size_multiple=1, results_path='/home/bdldt_team007/DLDockingBenchSeminar/run6/inference_results', seed=1, skip_invalid_size_inputs_valid_test=False, suppress_crashes=False, task='docking_pose_v2', tensorboard_logdir='', threshold_loss_scale=None, train_subset='train', user_dir='/home/bdldt_team007/DLDockingBenchSeminar/unimol/unimol_docking_v2/unimol', valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, validate_with_ema=False, wandb_name='', wandb_project='', warmup_updates=0, weight_decay=0.0, x_norm_loss=-1.0)
+2026-07-05 23:28:19 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-07-05 23:29:06 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:     51 / 3252 
+2026-07-05 23:29:59 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    101 / 3252 
+2026-07-05 23:30:49 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    151 / 3252 
+2026-07-05 23:31:30 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    201 / 3252 
+2026-07-05 23:32:07 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    251 / 3252 
+2026-07-05 23:32:44 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    301 / 3252 
+2026-07-05 23:33:33 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    351 / 3252 
+2026-07-05 23:34:11 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    401 / 3252 
+2026-07-05 23:34:45 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    451 / 3252 
+2026-07-05 23:35:26 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    501 / 3252 
+2026-07-05 23:36:20 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    551 / 3252 
+2026-07-05 23:37:01 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    601 / 3252 
+2026-07-05 23:37:51 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    651 / 3252 
+2026-07-05 23:38:40 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    701 / 3252 
+2026-07-05 23:39:19 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    751 / 3252 
+2026-07-05 23:40:08 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    801 / 3252 
+2026-07-05 23:40:46 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    851 / 3252 
+2026-07-05 23:41:46 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    901 / 3252 
+2026-07-05 23:42:24 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:    951 / 3252 
+2026-07-05 23:43:08 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1001 / 3252 
+2026-07-05 23:43:57 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1051 / 3252 
+2026-07-05 23:44:53 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1101 / 3252 
+2026-07-05 23:45:43 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1151 / 3252 
+2026-07-05 23:46:29 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1201 / 3252 
+2026-07-05 23:47:14 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1251 / 3252 
+2026-07-05 23:48:01 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1301 / 3252 
+2026-07-05 23:48:44 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1351 / 3252 
+2026-07-05 23:49:31 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1401 / 3252 
+2026-07-05 23:50:15 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1451 / 3252 
+2026-07-05 23:50:59 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1501 / 3252 
+2026-07-05 23:51:43 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1551 / 3252 
+2026-07-05 23:52:22 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1601 / 3252 
+2026-07-05 23:53:06 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1651 / 3252 
+2026-07-05 23:53:56 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1701 / 3252 
+2026-07-05 23:54:39 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1751 / 3252 
+2026-07-05 23:55:40 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1801 / 3252 
+2026-07-05 23:56:25 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1851 / 3252 
+2026-07-05 23:57:13 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1901 / 3252 
+2026-07-05 23:58:10 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   1951 / 3252 
+2026-07-05 23:58:54 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2001 / 3252 
+2026-07-05 23:59:46 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2051 / 3252 
+2026-07-06 00:00:44 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2101 / 3252 
+2026-07-06 00:01:24 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2151 / 3252 
+2026-07-06 00:02:50 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2201 / 3252 
+2026-07-06 00:03:55 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2251 / 3252 
+2026-07-06 00:04:43 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2301 / 3252 
+2026-07-06 00:05:22 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2351 / 3252 
+2026-07-06 00:06:10 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2401 / 3252 
+2026-07-06 00:06:57 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2451 / 3252 
+2026-07-06 00:07:35 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2501 / 3252 
+2026-07-06 00:08:18 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2551 / 3252 
+2026-07-06 00:09:04 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2601 / 3252 
+2026-07-06 00:09:41 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2651 / 3252 
+2026-07-06 00:10:32 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2701 / 3252 
+2026-07-06 00:11:16 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2751 / 3252 
+2026-07-06 00:12:02 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2801 / 3252 
+2026-07-06 00:12:46 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2851 / 3252 
+2026-07-06 00:13:38 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2901 / 3252 
+2026-07-06 00:14:25 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   2951 / 3252 
+2026-07-06 00:15:19 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   3001 / 3252 
+2026-07-06 00:15:57 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   3051 / 3252 
+2026-07-06 00:16:41 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   3101 / 3252 
+2026-07-06 00:17:24 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   3151 / 3252 
+2026-07-06 00:18:01 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   3201 / 3252 
+2026-07-06 00:18:44 | INFO | unicore.logging.progress_bar | valid on 'valid' subset:   3251 / 3252 
+2026-07-06 00:18:48 | INFO | unimol.inference | Done inference! 
+=== INFERENCE (run6 checkpoint_best) DONE ===

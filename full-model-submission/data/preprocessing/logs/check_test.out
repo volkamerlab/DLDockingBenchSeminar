@@ -1,0 +1,46 @@
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 22.04 (build 36527063)
+PyTorch Version 1.12.0a0+bd13bc6
+
+Container image Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Copyright (c) 2014-2022 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+ERROR: No supported GPU(s) detected to run this container
+
+Failed to detect NVIDIA driver version.
+
+
+=== data/processed_test/test.lmdb ===
+Total entries: 6182
+
+Conformer count distribution (n_conformers -> n_entries):
+   7 conformers ->     1 entries
+  10 conformers ->  6181 entries
+
+Entries with FEWER than 10 conformers (would crash TTADockingPoseDataset with --conf-size 10):
+  Count: 1 / 6182 (0.02%)
+
+First 20 problem entries (key, n_conformers, pocket/pdbid):
+  key=2859  n_conformers=7  pocket=6cvw_FH1_A_1206
+Wrote 6181 entries (dropped 1) to data/processed_test/test_clean.lmdb

@@ -1,0 +1,364 @@
+WARNING: Error parsing requirements for ml-collections: [Errno 13] Permission denied: '/opt/conda/lib/python3.8/site-packages/ml_collections-0.1.1-py3.8.egg/EGG-INFO/requires.txt'
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+ImportError: numpy.core._multiarray_umath failed to import
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+RuntimeError: module compiled against API version 0x10 but this version of numpy is 0xe . Check the section C-API incompatibility at the Troubleshooting ImportError section at https://numpy.org/devdocs/user/troubleshooting-importerror.html#c-api-incompatibility for indications on how to solve this problem .
+12:35:30 [INFO] Loaded 308 complexes from data/posebusters_filtered.csv
+12:35:30 [INFO] Dataset: posebusters_filtered | Top-N: 1 | PoseBusters: True
+12:35:30 [INFO] Using default configuration for mode dock.
+12:35:31 [INFO] Using default configuration for mode dock.
+12:35:31 [INFO] Using default configuration for mode dock.
+12:35:32 [INFO] Using default configuration for mode dock.
+12:35:33 [INFO] Using default configuration for mode dock.
+12:35:34 [INFO] Using default configuration for mode dock.
+12:35:34 [INFO] Using default configuration for mode dock.
+12:35:35 [INFO] Using default configuration for mode dock.
+12:35:37 [INFO] Using default configuration for mode dock.
+12:35:38 [WARNING]   [6VTA_AKN] Missing files: predicted poses: results/posebusters_filtered/6VTA_AKN_pred.sdf
+12:35:38 [INFO] Using default configuration for mode dock.
+12:35:39 [INFO] Using default configuration for mode dock.
+12:35:39 [INFO] Using default configuration for mode dock.
+12:35:41 [INFO] Using default configuration for mode dock.
+12:35:41 [WARNING]   [6XHT_V2V] Missing files: predicted poses: results/posebusters_filtered/6XHT_V2V_pred.sdf
+12:35:41 [INFO] Using default configuration for mode dock.
+12:35:42 [INFO] Using default configuration for mode dock.
+[12:35:42] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+12:35:43 [INFO] Using default configuration for mode dock.
+[12:35:43] UFFTYPER: Warning: hybridization set to SP3 for atom 9
+12:35:44 [INFO] Using default configuration for mode dock.
+12:35:45 [INFO] Using default configuration for mode dock.
+12:35:45 [INFO] Using default configuration for mode dock.
+12:35:47 [INFO] Using default configuration for mode dock.
+12:35:47 [INFO] Using default configuration for mode dock.
+12:35:50 [INFO] Using default configuration for mode dock.
+12:35:51 [INFO] Using default configuration for mode dock.
+12:35:52 [INFO] Using default configuration for mode dock.
+12:35:52 [WARNING]   [6Z14_Q4Z] Missing files: predicted poses: results/posebusters_filtered/6Z14_Q4Z_pred.sdf
+12:35:52 [INFO] Using default configuration for mode dock.
+12:35:53 [INFO] Using default configuration for mode dock.
+12:35:54 [INFO] Using default configuration for mode dock.
+12:35:54 [INFO] Using default configuration for mode dock.
+12:35:55 [INFO] Using default configuration for mode dock.
+12:35:56 [INFO] Using default configuration for mode dock.
+12:35:56 [INFO] Using default configuration for mode dock.
+12:35:57 [WARNING]   [6ZPB_3D1] Missing files: predicted poses: results/posebusters_filtered/6ZPB_3D1_pred.sdf
+12:35:57 [INFO] Using default configuration for mode dock.
+12:35:58 [INFO] Using default configuration for mode dock.
+12:35:58 [INFO] Using default configuration for mode dock.
+[12:35:58] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+12:36:02 [INFO] Using default configuration for mode dock.
+12:36:03 [INFO] Using default configuration for mode dock.
+12:36:03 [INFO] Using default configuration for mode dock.
+12:36:04 [INFO] Using default configuration for mode dock.
+12:36:10 [INFO] Using default configuration for mode dock.
+12:36:11 [WARNING]   [7BCP_GCO] Missing files: predicted poses: results/posebusters_filtered/7BCP_GCO_pred.sdf
+12:36:11 [INFO] Using default configuration for mode dock.
+12:36:11 [INFO] Using default configuration for mode dock.
+12:36:12 [INFO] Using default configuration for mode dock.
+12:36:13 [INFO] Using default configuration for mode dock.
+12:36:14 [INFO] Using default configuration for mode dock.
+12:36:15 [INFO]   Progress: 50/308
+12:36:15 [INFO] Using default configuration for mode dock.
+12:36:17 [INFO] Using default configuration for mode dock.
+12:36:17 [INFO] Using default configuration for mode dock.
+12:36:19 [INFO] Using default configuration for mode dock.
+12:36:20 [INFO] Using default configuration for mode dock.
+12:36:21 [INFO] Using default configuration for mode dock.
+12:36:22 [WARNING]   [7CNQ_G8X] Missing files: predicted poses: results/posebusters_filtered/7CNQ_G8X_pred.sdf
+12:36:22 [INFO] Using default configuration for mode dock.
+12:36:23 [WARNING]   [7CTM_BDP] Missing files: predicted poses: results/posebusters_filtered/7CTM_BDP_pred.sdf
+12:36:23 [INFO] Using default configuration for mode dock.
+12:36:23 [INFO] Using default configuration for mode dock.
+12:36:25 [INFO] Using default configuration for mode dock.
+12:36:30 [WARNING]   [7DKT_GLF] Missing files: predicted poses: results/posebusters_filtered/7DKT_GLF_pred.sdf
+12:36:30 [INFO] Using default configuration for mode dock.
+12:36:30 [INFO] Using default configuration for mode dock.
+12:36:31 [INFO] Using default configuration for mode dock.
+[12:36:31] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+12:36:31 [INFO] Using default configuration for mode dock.
+12:36:32 [INFO] Using default configuration for mode dock.
+12:36:34 [INFO] Using default configuration for mode dock.
+12:36:35 [INFO] Using default configuration for mode dock.
+12:36:36 [INFO] Using default configuration for mode dock.
+[12:36:36] UFFTYPER: Warning: hybridization set to SP3 for atom 19
+[12:36:36] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+12:36:37 [INFO] Using default configuration for mode dock.
+12:36:38 [INFO] Using default configuration for mode dock.
+12:36:39 [INFO] Using default configuration for mode dock.
+12:36:39 [INFO] Using default configuration for mode dock.
+12:36:40 [INFO] Using default configuration for mode dock.
+12:36:41 [INFO] Using default configuration for mode dock.
+12:36:42 [INFO] Using default configuration for mode dock.
+12:36:51 [INFO] Using default configuration for mode dock.
+12:36:52 [WARNING]   [7JG0_GAR] Missing files: predicted poses: results/posebusters_filtered/7JG0_GAR_pred.sdf
+12:36:52 [INFO] Using default configuration for mode dock.
+12:36:53 [INFO] Using default configuration for mode dock.
+12:36:53 [INFO] Using default configuration for mode dock.
+12:36:54 [INFO] Using default configuration for mode dock.
+12:36:55 [INFO] Using default configuration for mode dock.
+12:36:56 [INFO] Using default configuration for mode dock.
+12:36:59 [INFO] Using default configuration for mode dock.
+12:37:00 [INFO] Using default configuration for mode dock.
+12:37:01 [INFO] Using default configuration for mode dock.
+12:37:01 [INFO] Using default configuration for mode dock.
+12:37:05 [INFO] Using default configuration for mode dock.
+12:37:06 [INFO] Using default configuration for mode dock.
+[12:37:06] UFFTYPER: Unrecognized atom type: S_6+6 (20)
+12:37:08 [INFO] Using default configuration for mode dock.
+[12:37:08] UFFTYPER: Unrecognized atom type: S_5+6 (8)
+12:37:09 [INFO] Using default configuration for mode dock.
+12:37:09 [INFO] Using default configuration for mode dock.
+12:37:10 [INFO] Using default configuration for mode dock.
+12:37:11 [INFO] Using default configuration for mode dock.
+12:37:12 [INFO] Using default configuration for mode dock.
+[12:37:12] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+12:37:13 [INFO] Using default configuration for mode dock.
+12:37:14 [INFO] Using default configuration for mode dock.
+12:37:15 [INFO]   Progress: 100/308
+12:37:15 [WARNING]   [7LOU_IFM] Missing files: predicted poses: results/posebusters_filtered/7LOU_IFM_pred.sdf
+12:37:15 [INFO] Using default configuration for mode dock.
+12:37:15 [INFO] Using default configuration for mode dock.
+12:37:16 [INFO] Using default configuration for mode dock.
+12:37:28 [INFO] Using default configuration for mode dock.
+[12:37:28] UFFTYPER: Unrecognized atom type: S_6+6 (6)
+12:37:31 [INFO] Using default configuration for mode dock.
+12:37:33 [INFO] Using default configuration for mode dock.
+[12:37:33] UFFTYPER: Warning: hybridization set to SP3 for atom 27
+12:37:36 [INFO] Using default configuration for mode dock.
+[12:37:36] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+12:37:37 [WARNING]   [7MGY_ZD1] Missing files: predicted poses: results/posebusters_filtered/7MGY_ZD1_pred.sdf
+12:37:37 [INFO] Using default configuration for mode dock.
+12:37:39 [INFO] Using default configuration for mode dock.
+12:37:39 [INFO] Using default configuration for mode dock.
+[12:37:39] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+12:37:42 [INFO] Using default configuration for mode dock.
+12:37:43 [INFO] Using default configuration for mode dock.
+12:37:43 [INFO] Using default configuration for mode dock.
+12:37:43 [INFO] Using default configuration for mode dock.
+12:37:45 [INFO] Using default configuration for mode dock.
+12:37:45 [INFO] Using default configuration for mode dock.
+12:37:47 [INFO] Using default configuration for mode dock.
+12:37:48 [INFO] Using default configuration for mode dock.
+12:37:48 [WARNING]   [7N7B_T3F] Missing files: predicted poses: results/posebusters_filtered/7N7B_T3F_pred.sdf
+12:37:48 [INFO] Using default configuration for mode dock.
+[12:37:48] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[12:37:48] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+12:37:49 [INFO] Using default configuration for mode dock.
+12:37:51 [INFO] Using default configuration for mode dock.
+12:37:52 [INFO] Using default configuration for mode dock.
+12:37:53 [INFO] Using default configuration for mode dock.
+12:37:53 [INFO] Using default configuration for mode dock.
+12:37:54 [INFO] Using default configuration for mode dock.
+12:37:55 [INFO] Using default configuration for mode dock.
+12:37:55 [INFO] Using default configuration for mode dock.
+12:37:56 [INFO] Using default configuration for mode dock.
+12:37:57 [INFO] Using default configuration for mode dock.
+12:37:58 [WARNING]   [7NUT_GLP] Missing files: predicted poses: results/posebusters_filtered/7NUT_GLP_pred.sdf
+12:37:58 [INFO] Using default configuration for mode dock.
+12:37:59 [INFO] Using default configuration for mode dock.
+[12:37:59] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+12:38:00 [WARNING]   [7O1T_5X8] Missing files: predicted poses: results/posebusters_filtered/7O1T_5X8_pred.sdf
+12:38:00 [INFO] Using default configuration for mode dock.
+12:38:01 [INFO] Using default configuration for mode dock.
+12:38:01 [INFO] Using default configuration for mode dock.
+12:38:02 [INFO] Using default configuration for mode dock.
+12:38:03 [INFO] Using default configuration for mode dock.
+12:38:04 [INFO] Using default configuration for mode dock.
+12:38:05 [INFO] Using default configuration for mode dock.
+12:38:10 [INFO] Using default configuration for mode dock.
+12:38:11 [INFO] Using default configuration for mode dock.
+12:38:12 [WARNING]   [7OZ9_NGK] Missing files: predicted poses: results/posebusters_filtered/7OZ9_NGK_pred.sdf
+12:38:12 [WARNING]   [7OZC_G6S] Missing files: predicted poses: results/posebusters_filtered/7OZC_G6S_pred.sdf
+12:38:12 [WARNING]   [7P1F_KFN] Missing files: predicted poses: results/posebusters_filtered/7P1F_KFN_pred.sdf
+12:38:12 [INFO] Using default configuration for mode dock.
+12:38:12 [WARNING]   [7P2I_MFU] Missing files: predicted poses: results/posebusters_filtered/7P2I_MFU_pred.sdf
+12:38:12 [INFO]   Progress: 150/308
+12:38:12 [WARNING]   [7P4C_5OV] Missing files: predicted poses: results/posebusters_filtered/7P4C_5OV_pred.sdf
+12:38:12 [INFO] Using default configuration for mode dock.
+12:38:13 [INFO] Using default configuration for mode dock.
+12:38:14 [INFO] Using default configuration for mode dock.
+12:38:14 [INFO] Using default configuration for mode dock.
+12:38:15 [INFO] Using default configuration for mode dock.
+[12:38:15] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+12:38:17 [WARNING]   [7PL1_SFG] Missing files: predicted poses: results/posebusters_filtered/7PL1_SFG_pred.sdf
+12:38:17 [INFO] Using default configuration for mode dock.
+12:38:18 [INFO] Using default configuration for mode dock.
+[12:38:18] UFFTYPER: Unrecognized atom type: S_5+6 (8)
+12:38:19 [INFO] Using default configuration for mode dock.
+12:38:19 [INFO] Using default configuration for mode dock.
+12:38:25 [INFO] Using default configuration for mode dock.
+12:38:26 [INFO] Using default configuration for mode dock.
+12:38:32 [INFO] Using default configuration for mode dock.
+12:38:35 [INFO] Using default configuration for mode dock.
+12:38:35 [INFO] Using default configuration for mode dock.
+12:38:38 [WARNING]   [7QE4_NGA] Missing files: predicted poses: results/posebusters_filtered/7QE4_NGA_pred.sdf
+12:38:38 [INFO] Using default configuration for mode dock.
+12:38:38 [INFO] Using default configuration for mode dock.
+12:38:39 [INFO] Using default configuration for mode dock.
+12:38:40 [INFO] Using default configuration for mode dock.
+12:38:41 [INFO] Using default configuration for mode dock.
+12:38:42 [INFO] Using default configuration for mode dock.
+12:38:44 [WARNING]   [7QTA_URI] Missing files: predicted poses: results/posebusters_filtered/7QTA_URI_pred.sdf
+12:38:44 [WARNING]   [7R3D_APR] Missing files: predicted poses: results/posebusters_filtered/7R3D_APR_pred.sdf
+12:38:44 [INFO] Using default configuration for mode dock.
+12:38:44 [INFO] Using default configuration for mode dock.
+12:38:47 [INFO] Using default configuration for mode dock.
+12:38:48 [INFO] Using default configuration for mode dock.
+12:38:49 [WARNING]   [7RC3_SAH] Missing files: predicted poses: results/posebusters_filtered/7RC3_SAH_pred.sdf
+12:38:49 [INFO] Using default configuration for mode dock.
+12:38:49 [INFO] Using default configuration for mode dock.
+12:38:50 [INFO] Using default configuration for mode dock.
+12:38:52 [INFO] Using default configuration for mode dock.
+12:38:54 [INFO] Using default configuration for mode dock.
+12:38:55 [INFO] Using default configuration for mode dock.
+12:38:56 [INFO] Using default configuration for mode dock.
+[12:38:56] UFFTYPER: Warning: hybridization set to SP3 for atom 27
+12:38:57 [INFO] Using default configuration for mode dock.
+12:38:57 [INFO] Using default configuration for mode dock.
+12:38:58 [INFO] Using default configuration for mode dock.
+[12:38:58] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+12:38:59 [INFO] Using default configuration for mode dock.
+12:39:00 [INFO] Using default configuration for mode dock.
+12:39:00 [INFO] Using default configuration for mode dock.
+12:39:18 [INFO] Using default configuration for mode dock.
+12:39:19 [INFO] Using default configuration for mode dock.
+12:39:21 [INFO] Using default configuration for mode dock.
+12:39:22 [WARNING]   [7T3E_SLB] Missing files: predicted poses: results/posebusters_filtered/7T3E_SLB_pred.sdf
+12:39:22 [WARNING]   [7TB0_UD1] Missing files: predicted poses: results/posebusters_filtered/7TB0_UD1_pred.sdf
+12:39:22 [INFO] Using default configuration for mode dock.
+12:39:23 [INFO] Using default configuration for mode dock.
+12:39:24 [INFO]   Progress: 200/308
+12:39:24 [INFO] Using default configuration for mode dock.
+12:39:26 [INFO] Using default configuration for mode dock.
+12:39:27 [INFO] Using default configuration for mode dock.
+12:39:28 [WARNING]   [7TOM_5AD] Missing files: predicted poses: results/posebusters_filtered/7TOM_5AD_pred.sdf
+12:39:28 [INFO] Using default configuration for mode dock.
+12:39:31 [INFO] Using default configuration for mode dock.
+12:39:32 [INFO] Using default configuration for mode dock.
+12:39:33 [INFO] Using default configuration for mode dock.
+12:39:35 [INFO] Using default configuration for mode dock.
+12:39:36 [WARNING]   [7U0U_FK5] Missing files: predicted poses: results/posebusters_filtered/7U0U_FK5_pred.sdf
+12:39:36 [INFO] Using default configuration for mode dock.
+12:39:37 [INFO] Using default configuration for mode dock.
+12:39:38 [WARNING]   [7UAW_MF6] Missing files: predicted poses: results/posebusters_filtered/7UAW_MF6_pred.sdf
+12:39:38 [INFO] Using default configuration for mode dock.
+[12:39:38] UFFTYPER: Unrecognized atom type: S_6+6 (34)
+12:39:40 [INFO] Using default configuration for mode dock.
+12:39:43 [INFO] Using default configuration for mode dock.
+12:39:45 [WARNING]   [7ULC_56B] Missing files: predicted poses: results/posebusters_filtered/7ULC_56B_pred.sdf
+12:39:45 [INFO] Using default configuration for mode dock.
+12:39:46 [INFO] Using default configuration for mode dock.
+12:39:46 [INFO] Using default configuration for mode dock.
+12:39:47 [INFO] Using default configuration for mode dock.
+[12:39:47] UFFTYPER: Warning: hybridization set to SP3 for atom 22
+12:39:48 [WARNING]   [7UXS_OJC] Missing files: predicted poses: results/posebusters_filtered/7UXS_OJC_pred.sdf
+12:39:48 [WARNING]   [7UY4_SMI] Missing files: predicted poses: results/posebusters_filtered/7UY4_SMI_pred.sdf
+12:39:48 [INFO] Using default configuration for mode dock.
+12:39:49 [INFO] Using default configuration for mode dock.
+12:39:49 [INFO] Using default configuration for mode dock.
+12:39:50 [INFO] Using default configuration for mode dock.
+12:39:51 [INFO] Using default configuration for mode dock.
+12:39:51 [INFO] Using default configuration for mode dock.
+12:39:52 [INFO] Using default configuration for mode dock.
+12:39:52 [INFO] Using default configuration for mode dock.
+12:39:53 [WARNING]   [7VKZ_NOJ] Missing files: predicted poses: results/posebusters_filtered/7VKZ_NOJ_pred.sdf
+12:39:53 [INFO] Using default configuration for mode dock.
+12:39:54 [INFO] Using default configuration for mode dock.
+12:39:54 [INFO] Using default configuration for mode dock.
+[12:39:54] UFFTYPER: Warning: hybridization set to SP3 for atom 19
+12:39:56 [WARNING]   [7W05_GMP] Missing files: predicted poses: results/posebusters_filtered/7W05_GMP_pred.sdf
+12:39:56 [INFO] Using default configuration for mode dock.
+12:39:57 [INFO] Using default configuration for mode dock.
+12:39:57 [WARNING]   [7WDT_NGS] Missing files: predicted poses: results/posebusters_filtered/7WDT_NGS_pred.sdf
+12:39:57 [WARNING]   [7WJB_BGC] Missing files: predicted poses: results/posebusters_filtered/7WJB_BGC_pred.sdf
+12:39:57 [INFO] Using default configuration for mode dock.
+12:39:59 [INFO] Using default configuration for mode dock.
+[12:39:59] UFFTYPER: Unrecognized atom type: S_6+6 (3)
+12:40:00 [INFO] Using default configuration for mode dock.
+12:40:00 [INFO] Using default configuration for mode dock.
+12:40:01 [INFO] Using default configuration for mode dock.
+12:40:05 [WARNING]   [7WUY_76N] Missing files: predicted poses: results/posebusters_filtered/7WUY_76N_pred.sdf
+12:40:05 [INFO] Using default configuration for mode dock.
+12:40:06 [INFO] Using default configuration for mode dock.
+12:40:07 [INFO] Using default configuration for mode dock.
+12:40:08 [INFO] Using default configuration for mode dock.
+[12:40:08] UFFTYPER: Warning: hybridization set to SP3 for atom 27
+12:40:09 [INFO]   Progress: 250/308
+12:40:09 [INFO] Using default configuration for mode dock.
+12:40:09 [INFO] Using default configuration for mode dock.
+12:40:10 [INFO] Using default configuration for mode dock.
+12:40:10 [INFO] Using default configuration for mode dock.
+12:40:12 [WARNING]   [7XPO_UPG] Missing files: predicted poses: results/posebusters_filtered/7XPO_UPG_pred.sdf
+12:40:12 [INFO] Using default configuration for mode dock.
+12:40:13 [WARNING]   [7XRL_FWK] Missing files: predicted poses: results/posebusters_filtered/7XRL_FWK_pred.sdf
+12:40:13 [WARNING]   [7YZU_DO7] Missing files: predicted poses: results/posebusters_filtered/7YZU_DO7_pred.sdf
+12:40:13 [INFO] Using default configuration for mode dock.
+12:40:13 [INFO] Using default configuration for mode dock.
+12:40:14 [INFO] Using default configuration for mode dock.
+12:40:14 [INFO] Using default configuration for mode dock.
+12:40:19 [WARNING]   [7ZDY_6MJ] Missing files: predicted poses: results/posebusters_filtered/7ZDY_6MJ_pred.sdf
+12:40:19 [INFO] Using default configuration for mode dock.
+12:40:20 [INFO] Using default configuration for mode dock.
+12:40:21 [INFO] Using default configuration for mode dock.
+12:40:22 [INFO] Using default configuration for mode dock.
+12:40:22 [INFO] Using default configuration for mode dock.
+12:40:22 [INFO] Using default configuration for mode dock.
+12:40:23 [INFO] Using default configuration for mode dock.
+12:40:56 [INFO] Using default configuration for mode dock.
+12:40:57 [INFO] Using default configuration for mode dock.
+12:40:59 [INFO] Using default configuration for mode dock.
+12:41:00 [INFO] Using default configuration for mode dock.
+12:41:01 [INFO] Using default configuration for mode dock.
+12:41:01 [INFO] Using default configuration for mode dock.
+[12:41:01] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+12:41:02 [WARNING]   [8AP0_PRP] Missing files: predicted poses: results/posebusters_filtered/8AP0_PRP_pred.sdf
+12:41:02 [INFO] Using default configuration for mode dock.
+12:41:05 [INFO] Using default configuration for mode dock.
+12:41:06 [INFO] Using default configuration for mode dock.
+12:41:07 [INFO] Using default configuration for mode dock.
+12:41:08 [INFO] Using default configuration for mode dock.
+12:41:09 [INFO] Using default configuration for mode dock.
+12:41:10 [INFO] Using default configuration for mode dock.
+12:41:10 [WARNING]   [8C5M_MTA] Missing files: predicted poses: results/posebusters_filtered/8C5M_MTA_pred.sdf
+12:41:10 [INFO] Using default configuration for mode dock.
+12:41:11 [WARNING]   [8CSD_C5P] Missing files: predicted poses: results/posebusters_filtered/8CSD_C5P_pred.sdf
+12:41:11 [INFO] Using default configuration for mode dock.
+12:41:12 [INFO] Using default configuration for mode dock.
+12:41:13 [INFO] Using default configuration for mode dock.
+12:41:16 [INFO] Using default configuration for mode dock.
+12:41:17 [INFO] Using default configuration for mode dock.
+12:41:18 [WARNING]   [8DP2_UMA] Missing files: predicted poses: results/posebusters_filtered/8DP2_UMA_pred.sdf
+12:41:18 [INFO] Using default configuration for mode dock.
+12:41:19 [INFO] Using default configuration for mode dock.
+12:41:20 [INFO] Using default configuration for mode dock.
+12:41:21 [INFO] Using default configuration for mode dock.
+12:41:22 [INFO] Using default configuration for mode dock.
+12:41:24 [INFO] Using default configuration for mode dock.
+12:42:38 [INFO] Using default configuration for mode dock.
+12:42:39 [INFO]   Progress: 300/308
+12:42:39 [INFO] Using default configuration for mode dock.
+12:42:39 [INFO] Using default configuration for mode dock.
+12:42:40 [INFO] Using default configuration for mode dock.
+12:42:41 [INFO] Using default configuration for mode dock.
+12:42:44 [INFO] Using default configuration for mode dock.
+12:42:45 [INFO] Using default configuration for mode dock.
+12:42:46 [INFO] Using default configuration for mode dock.
+12:42:47 [INFO] Using default configuration for mode dock.
+12:42:47 [INFO]   Progress: 308/308
+12:42:47 [INFO] Using default configuration for mode dock.
+12:42:48 [INFO] Evaluated 263 complexes (45 skipped)
+12:42:48 [INFO] Top-1 Results:
+12:42:48 [INFO]   RMSD < 2.0 Å: 8.4%
+12:42:48 [INFO]   RMSD < 1.0 Å: 0.0%
+12:42:48 [INFO]   Median RMSD: 3.71 Å
+12:42:48 [INFO]   PB-Valid: 0.0%
+12:42:48 [INFO] Results saved to run6/logs/posebusters_evaluation.csv
+12:42:48 [INFO] Evaluation complete.
