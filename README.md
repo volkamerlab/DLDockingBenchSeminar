@@ -31,13 +31,13 @@
 
 ## Pipeline Overview
 
-run_gnina_train.py/.sh:
+# run_gnina_train.py/.sh:
 1) Dock the training (full_data.tar.gz) dataset using the default native GNINA CNN.
 2) Generate .types files from the resulting docked training poses.
 3) Retrain the two GNINA-Torch CNN models (default2018 and dense) using the generated .types files.
 4) Save the full retrained TorchScript models in .pt format.
    
-LATER: redocking.py/.sh: 
+# LATER: redocking.py/.sh: 
 1) Redock the *full test* and *PoseBusters* dataset using the retrained CNN models.
 2) Collect docking metrics, including RMSD, CNN Pose Score, and CNN Affinity.
 3) Generate evaluation plots and training loss plots. 
