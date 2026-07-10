@@ -37,8 +37,8 @@ run_gnina_train.py/.sh:
 3) Retrain the two GNINA-Torch CNN models (default2018 and dense) using the generated .types files.
 4) Save the full retrained TorchScript models in .pt format.
    
-redocking.py/.sh: 
-1) Redock the proto_test dataset using the retrained CNN models.
+LATER: redocking.py/.sh: 
+1) Redock the *full test* and *PoseBusters* dataset using the retrained CNN models.
 2) Collect docking metrics, including RMSD, CNN Pose Score, and CNN Affinity.
 3) Generate evaluation plots and training loss plots. 
    
