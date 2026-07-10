@@ -1,15 +1,15 @@
 import os
 
-import plotly.express as px
+# import plotly.express as px  # commented out - only used inside if args.wandb, not installed in env
 import time
 from argparse import FileType, ArgumentParser
 
 import tempfile
 import numpy as np
 import pandas as pd
-import wandb
+# import wandb  # commented out - only used inside if args.wandb, not installed in env
 from Bio.PDB import PDBParser
-from biopandas.pdb import PandasPdb
+# from biopandas.pdb import PandasPdb  # commented out - unused import, not installed in env
 from rdkit import Chem
 
 from tqdm import tqdm
@@ -148,10 +148,10 @@ for i, name in enumerate(tqdm(names)):
             ligand_pos = np.asarray(
                 [np.array(mol_pred.GetConformer(i).GetPositions()) for i in range(args.num_predictions)])
         try:
-            rmsd = get_symmetry_rmsd(mol, orig_ligand_pos, [l for l in ligand_pos], mol_pred)
+            rmsd = np.atleast_1d(get_symmetry_rmsd(mol, orig_ligand_pos, [l for l in ligand_pos], mol_pred))
         except Exception as e:
             print("Using non corrected RMSD because of the error:", e)
-            rmsd = np.sqrt(((ligand_pos - orig_ligand_pos) ** 2).sum(axis=2).mean(axis=1))
+            rmsd = np.atleast_1d(np.sqrt(((ligand_pos - orig_ligand_pos) ** 2).sum(axis=2).mean(axis=1)))
 
         if args.flex:
             rec_path = os.path.join(args.results_path_flex, name, f'{name}{args.orig_rec_suffix}.pdb')

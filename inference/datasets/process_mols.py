@@ -454,13 +454,21 @@ def get_lig_graph(mol, complex_graph):
     return
 
 def generate_conformer(mol):
+    try:
+        mol.GetRingInfo().NumRings()
+    except Exception:
+        from rdkit.Chem import rdmolops
+        rdmolops.FastFindRings(mol)
     ps = AllChem.ETKDGv2()
     id = AllChem.EmbedMolecule(mol, ps)
     if id == -1:
         print('rdkit coords could not be generated without using random coords. using random coords now.')
         ps.useRandomCoords = True
         AllChem.EmbedMolecule(mol, ps)
-        AllChem.MMFFOptimizeMolecule(mol, confId=0)
+        try:
+            AllChem.MMFFOptimizeMolecule(mol, confId=0)
+        except Exception as e:
+            print(f'WARNING: MMFFOptimizeMolecule failed: {e}. Skipping optimization.')
     # else:
     #    AllChem.MMFFOptimizeMolecule(mol_rdkit, confId=0)
 

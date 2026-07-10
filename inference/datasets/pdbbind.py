@@ -378,9 +378,10 @@ class PDBBind(Dataset):
         if res.resname in SORTING_DICT:
             if atom.name in SORTING_DICT[res.resname]:
                 return SORTING_DICT[res.resname].index(atom.name)
+            else:
+                return 998  # Unknown atom in a known residue (e.g. crystallization artifact) - safe fallback, don't crash
         else:
-            raise Exception("Unknown residue", res.resname)
-        raise Exception(f"Could not find atom {atom.name} in {res.resname}")
+            return 998  # Unknown residue (e.g. solvent/ion/cofactor like DMS, IOD, GOL) - safe fallback, don't crash
 
     @property
     def protein_path_list(self):

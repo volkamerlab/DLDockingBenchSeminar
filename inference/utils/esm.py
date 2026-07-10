@@ -95,7 +95,7 @@ def get_sequences_from_pdbfile(file_path):
                 try:
                     seq += three_to_one[residue.get_resname()]
                 except Exception as e:
-                    seq += '-'
+                    seq += 'X'
                     print("encountered unknown AA: ", residue.get_resname(), ' in the complex. Replacing it with a dash - .')
 
         if sequence is None:
@@ -144,7 +144,7 @@ def compute_ESM_embeddings(model, alphabet, labels, sequences, device=None) -> D
 
             for i, label in enumerate(labels):
                 truncate_len = min(truncation_seq_length, len(strs[i]))
-                embeddings[label] = representations[33][i, 1: truncate_len + 1].clone()
+                embeddings[label] = representations[33][i, 1: truncate_len + 1].clone().cpu()
 
             del representations
 
