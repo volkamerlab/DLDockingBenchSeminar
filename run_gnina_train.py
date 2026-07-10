@@ -20,7 +20,7 @@ This script does a GNINA/GNINA-Torch retraining in the following workflow:
 4. Retraining GNINA-Torch models using the training and validation `.types` files.
 
 The script does not redock or evaluate an external test set. These steps will be applied in further separated code files. 
-The limitations behind of this were, our runs took so much amount of time regardless how much epochs we were applied. Also, even though we set 2 GPUs in the .sub file, GNINA-Torch primarily operated on a single GPU because the it did not provide guaranteed support for true multi-GPU parallelism.
+The limitations behind of this were, our runs took so much amount of time regardless how much epochs we were applied. Also, even though we set 2 GPUs in the .sub file, GNINA-Torch primarily operated on a single GPU because it did not provide guaranteed support for full multi-GPU runs. Thus, our runs took more time.
 """
 
 
