@@ -25,7 +25,7 @@ python interformer/inference.py -test_csv $TRAIN_FOLDER/proto_train_val_final.cs
     -ligand_folder ligand/rcsb \
     -gpus 1 \
     -batch_size 1 \
-    -posfix *val_loss* \
+    -posfix *energy_model* \
     -energy_output_folder /home/bdldt_team001/DLDockingBenchSeminar/dock_results/energy_train \
     -reload
 

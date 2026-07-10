@@ -1,0 +1,94 @@
+{
+  "os": "Linux-6.5.0-28-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.12.5",
+  "startedAt": "2026-07-01T19:09:54.550547Z",
+  "args": [
+    "-data_path",
+    "data/proto_train_val_final.csv",
+    "-work_path",
+    "data/proto_train",
+    "-ligand",
+    "ligand/rcsb",
+    "-seed",
+    "1111",
+    "-filter_type",
+    "normal",
+    "-native_sampler",
+    "1",
+    "-Code",
+    "affinity_normal",
+    "-batch_size",
+    "5",
+    "-gpus",
+    "2",
+    "-method",
+    "Gnina2",
+    "-patience",
+    "30",
+    "-early_stop_metric",
+    "val_loss",
+    "-early_stop_mode",
+    "min",
+    "-affinity_pre",
+    "-run_name",
+    "Affinity_normal_model",
+    "--warmup_updates",
+    "10000",
+    "--peak_lr",
+    "0.0008",
+    "--n_layers",
+    "6",
+    "--hidden_dim",
+    "128",
+    "--num_heads",
+    "8",
+    "--dropout_rate",
+    "0.1",
+    "--attention_dropout_rate",
+    "0.1",
+    "--weight_decay",
+    "1e-5"
+  ],
+  "program": "/home/bdldt_team001/DLDockingBenchSeminar/train.py",
+  "codePath": "train.py",
+  "codePathLocal": "train.py",
+  "git": {
+    "remote": "git@github.com:volkamerlab/DLDockingBenchSeminar.git",
+    "commit": "aff61c182dbdab1c954ef45e252f0eeb3401b19f"
+  },
+  "email": "beho00003@uni-saarland.de",
+  "root": ".",
+  "host": "bdldt_team001-169446.0-surt.hpc.uni-saarland.de",
+  "executable": "/main/home/mambaforge/bin/python",
+  "cpu_count": 128,
+  "cpu_count_logical": 256,
+  "gpu": "NVIDIA A100-PCIE-40GB",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "12700431884288",
+      "used": "311678787584"
+    }
+  },
+  "memory": {
+    "total": "1081976958976"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-7632b7f1-dda3-92ee-16b8-7922a3905fa0"
+    },
+    {
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-6ff65502-e395-0605-8c59-86d3eb9a8a37"
+    }
+  ],
+  "cudaVersion": "12.8",
+  "writerId": "id5f05zutfofpf9am2hz6beknzll0ii3"
+}

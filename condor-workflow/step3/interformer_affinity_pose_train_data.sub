@@ -2,8 +2,8 @@ universe = docker
 docker_image = blakshana/interformer:v6
 # input the checkpoints and relevant files
 # for complex and gaussian prediction result
-transfer_input_files = interformer, data, lightning_logs, interformer_affinity_pose_train_data.sh
-executable = condor/step3/interformer_affinity_pose_train_data.sh
+transfer_input_files = interformer, data, interformer_affinity_pose_train_data.sh, checkpoints
+executable = condor-workflow/step3/interformer_affinity_pose_train_data.sh
 
 output = logs/josh-interformer.$(ClusterId).$(ProcId).out
 error = logs/josh-interformer.$(ClusterId).$(ProcId).err

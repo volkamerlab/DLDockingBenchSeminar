@@ -1,10 +1,17 @@
+condor-workflow/zip_doc_results/*
+docking_result-final-model2/*
+docking_result-final-model/*
+lightning_logs/*
+Interformer/**/*.ckpt
+
+
+condor-workflow/transfer
 dock_results_prototype/*
 data-old/*
 full_data/*
 *.pdb
 *.sdf
 *wandb
-*.ckpt
 evaluation/*
 data/*
 *.DS_Store
@@ -217,3 +224,5 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,pythoninterformer_train.tar.gz
 dock_results_prototype/energy_test/ligand_reconstructing/5s7c_LU8_A_507_docked.sdf_stat.csv
+docking_result-final-model2/1a4g_ZMR_A_466_docked.sdf_stat.csv
+condor-workflow/step4/interformer_affinity_pose_docking.sh

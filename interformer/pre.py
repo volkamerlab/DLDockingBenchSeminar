@@ -1,4 +1,4 @@
-# This sciprt is used for preprocessing the AI feature
+# This script is used for preprocessing the AI feature
 from utils.parser import get_args
 from data.data_process import GraphDataModule
 

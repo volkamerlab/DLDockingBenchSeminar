@@ -1,8 +1,16 @@
 universe = docker
 docker_image = blakshana/interformer:v4
-# Change according to model:
-# interformer_affinity_pose_model.sh, interformer_energy_model.sh, interformer_affinity_normal.sh
-executable = condor/step2/interformer_affinity_normal_model.sh
+
+# Change according to step we are currently at:
+# We run the following scripts in order from top to bottom (please comment in/out accordingly)
+# step 1: ...energy_model.sh
+# step 2: ...affinity_normal.sh
+# step 3: ...affinity_pose_model.sh
+
+executable = condor-workflow/step2/interformer_energy_model.sh
+# executable = condor-workflow/step2/interformer_affinity_normal_model.sh
+# executable = condor-workflow/step2/interformer_affinity_pose_model.sh
+
 output = logs/josh-interformer.$(ClusterId).$(ProcId).out
 error = logs/josh-interformer.$(ClusterId).$(ProcId).err
 log = logs/josh-interformer.$(ClusterId).log

@@ -436,8 +436,8 @@ def get_args_and_mainparser():
     mainparser.add_argument(
         "--num_output_poses",
         type=int,
-        # Default-20; Hamza suggested-50 (to increase chances for negative poses)
-        default=50,
+        # Default-20; Hamza suggested-25 (to increase chances for negative poses)
+        default=25,
         help="num of output poses",
     )
     # calculate
@@ -669,8 +669,10 @@ def cancel_collision_dynamic(
         pose_tmp = (a_minimizer.minimize(pose_tmp))["pose"]
         a_evaluator._CORE_EVALUATOR_NORMALSCORE.ResetOption()
     except Exception as e:
+        import traceback
         print(e)
         print('# failed to do cancel_collision_dynamic, skip this part.')
+        traceback.print_exc()
 
     return pose_tmp
 
@@ -864,8 +866,10 @@ def reconstruct_1_ligand_given_paths(
                     REPEATS_OF_MONTE_CARLO,
                     STEPS_FOR_EACH_MONTE_CARLO,
                 )
-            except Exception:
+            except Exception as e:
+                import traceback
                 print(f'# Error initializing sampler monte carlo skip->index:{index}')
+                traceback.print_exc() # <-- This will print the actual error to your log
                 continue
             #
             _, indices_unique = a_pdbqt_ligand.pick_first_k_unique_poses(

@@ -1,0 +1,58 @@
+universe      = docker
+docker_image  = blakshana/interformer:v6
+
+# --- executable: point this at wherever you place the shell script ---
+executable    = interformer_affinity_pose_docking.sh
+# pass the shard index to the job two ways (belt-and-suspenders): as $1 and $SHARD
+arguments     = $(Process)
+environment   = "SHARD=$(Process)"
+
+# --- per-shard INPUT ---------------------------------------------------------
+# Only THIS shard's slice of each folder is shipped (~1/N of the ~92 GiB total).
+# NOTE: this was previously written as
+#     transfer_input_files = transfer_input_files = ...
+# The doubled token is a bug -- the first list item became the literal string
+# "transfer_input_files = docking". Fixed to a single assignment below.
+# HTCondor drops each file at its basename in the job sandbox; the .sh finds them
+# wherever they land (that path-mismatch is what stopped the unpack loop before).
+transfer_input_files = docking, shards/shard_$(Process)/complex.tar.gz, shards/shard_$(Process)/gaussian_predict.tar.gz, shards/shard_$(Process)/ligand.tar.gz, shards/shard_$(Process)/uff.tar.gz
+
+output = logs/josh-interformer.$(ClusterId).$(Process).out
+error  = logs/josh-interformer.$(ClusterId).$(Process).err
+log    = logs/josh-interformer.$(ClusterId).log
+
+# --- per-shard OUTPUT --------------------------------------------------------
+# Each shard returns ONE tarball of its ligand_reconstructing/ output (SDF poses
+# + stat_concated.csv). The filename embeds $(Process), so shards never collide
+# and there is no missing-file transfer failure like before. merge_shards.py
+# reassembles them afterwards. (Do NOT list proto_train_val_final.round0.csv here
+# -- nothing in the docking job creates it; the merge/label step runs post-shard.)
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_output_files   = out_shard_$(Process).tar.gz
+
+# --- resources ---------------------------------------------------------------
+# The failed run used 20% memory, 1.3% GPU memory, and CPU was idle at the end:
+# it was NOT compute-bound, so more CPU/GPU would not process more rows. Disk was
+# the pinned resource (96.7% full). Sharding is what fixes that.
+request_GPUs   = 1
+request_CPUs   = 32
+request_memory = 32G
+# ~ (92 GiB / N) extracted input + a few GiB of poses. 50G is safe for N ~= 10.
+# Bump this up if you use FEWER shards. Keep it <= what the node actually grants
+# (the previous run asked for 200G but was only given ~95 GiB).
+request_disk   = 50G
+
+# --- requirements ------------------------------------------------------------
+# Previously there were TWO 'requirements =' lines; the second SILENTLY OVERRODE
+# the first, so the A100 constraint was being thrown away. Combined into one below.
+requirements = ((Target.CUDADeviceName == "NVIDIA A100-SXM4-40GB") || \
+                (Target.CUDADeviceName == "NVIDIA A100-PCIE-40GB") || \
+                (Target.CUDADeviceName == "NVIDIA A100-SXM4-80GB") || \
+                (Target.CUDADeviceName == "NVIDIA A100-PCIE-80GB")) && \
+               (UidDomain == "cs.uni-saarland.de")
+
++WantGPUHomeMounted = true
+
+# --- launch N jobs (one per shard). MUST match --num-shards in split_shards.py ---
+queue 10

@@ -115,7 +115,7 @@ def main(args):
         # reload_dataloaders_every_n_epochs=1,
         num_nodes=args['num_nodes'],
         # accumulate_grad_batches=5 # To make up for low batch size due to memory constrain (4*5=20) - energy model
-        accumulate_grad_batches=2 # To make up for low batch size due to memory constrain and since 2GPU (2*2*5=20) - affinity-normal model
+        accumulate_grad_batches=2 # To make up for low batch size due to memory constrain and since 2GPU (5*2*2=20) - affinity-normal model
     )
     trainer.fit(model, datamodule=dm)
 

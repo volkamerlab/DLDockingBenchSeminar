@@ -6,7 +6,7 @@ PROJECT_ROOT="$(pwd)"
 echo "Running in: $PROJECT_ROOT"
 ls -F # Debug: List files to verify they were transferred
 
-TRAIN_FOLDER=~/DLDockingBenchSeminar/data
+TRAIN_FOLDER=~/DLDockingBenchSeminar/data/proto_test
 DOCK_FOLDER=dock_results/energy_test
 
 # export PYTHONPATH="$PROJECT_ROOT/interformer:$PYTHONPATH"
@@ -21,11 +21,11 @@ PYTHONPATH=interformer/
 
 python interformer/inference.py -test_csv $TRAIN_FOLDER/proto_test_final.csv \
     -work_path data/proto_test \
-    -ensemble lightning_logs/proto_train_final_Interformer_Energy/version_5 \
+    -ensemble checkpoints/energy_model \
     -ligand_folder ligand/rcsb \
     -gpus 1 \
     -batch_size 1 \
-    -posfix *val_loss* \
+    -posfix *energy_model* \
     -energy_output_folder /home/bdldt_team001/DLDockingBenchSeminar/dock_results/energy_test \
     -reload
 

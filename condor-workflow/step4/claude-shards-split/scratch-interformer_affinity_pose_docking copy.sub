@@ -1,0 +1,35 @@
+universe = docker
+docker_image = blakshana/interformer:v6
+
+# 1. REMOVE the heavy tar.gz files from here. Only transfer the light docking directory.
+transfer_input_files = docking
+
+# Keep your executable (if it is a relative path, condor copies it to the container scratch)
+executable = condor-workflow/step4/interformer_affinity_pose_docking.sh
+
+output = logs/josh-interformer.$(ClusterId).$(ProcId).out
+error = logs/josh-interformer.$(ClusterId).$(ProcId).err
+log = logs/josh-interformer.$(ClusterId).log
+
+# 2. Change this to IF_NEEDED or NO so condor doesn't try to automatically clone things
+should_transfer_files   = IF_NEEDED
+when_to_transfer_output = ON_EXIT
+
+# 3. Because /home is mounted, your script can write outputs directly to your home directory path 
+# instead of relying on transfer_output_files to pass them back.
+# (Optional: comment out if your bash script explicitly writes to a folder in your $HOME)
+transfer_output_files   = data/proto_train_val_final.round0.csv
+
+request_GPUs = 1
+request_CPUs = 32
+request_memory = 128G
+request_disk = 200G
+
+# requirements = (Target.CUDADeviceName == "NVIDIA A100-SXM4-40GB") || (Target.CUDADeviceName == "NVIDIA A100-PCIE-40GB") || (Target.CUDADeviceName == "NVIDIA A100-SXM4-80GB") || (Target.CUDADeviceName == "NVIDIA A100-PCIE-80GB")
+requirements = UidDomain == "cs.uni-saarland.de"
+
+# 4. Enforce mounting. If your 60GB file is in /scratch instead of /home, add the scratch flag too!
++WantGPUHomeMounted = true
++WantScratchMounted = true 
+
+queue
