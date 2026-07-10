@@ -1,32 +1,23 @@
 #!/usr/bin/env python3
-"""
-Prepare DiffDock training input CSV and split files from full_sealed_train/val CSVs.
-File naming: {PDBID}_{LigandName}_{Chain}_{ResNum}_ligand_refined.sdf
-             {PDBID}_{LigandName}_{Chain}_{ResNum}_protein_refined.pdb
-"""
-
 import csv
 import os
 
-# ── Paths ──────────────────────────────────────────────────────────────────────
-BASE_DIR       = "/home/bdldt_team003/DLDockingBenchSeminar"
+BASE_DIR  = "/home/bdldt_team003/DLDockingBenchSeminar"
 TRAIN_DATA_DIR = os.path.join(BASE_DIR, "full_data", "full_sealed_train")
-VAL_DATA_DIR   = os.path.join(BASE_DIR, "full_data", "full_sealed_val")
-TRAIN_CSV      = os.path.join(BASE_DIR, "full_data", "full_sealed_train.csv")
-VAL_CSV        = os.path.join(BASE_DIR, "full_data", "full_sealed_val.csv")
-TRAINING_DIR   = os.path.join(BASE_DIR, "training")
-OUTPUT_CSV     = os.path.join(TRAINING_DIR, "training_input_full.csv")
-TRAIN_SPLIT    = os.path.join(TRAINING_DIR, "full_split_train.txt")
-VAL_SPLIT      = os.path.join(TRAINING_DIR, "full_split_val.txt")
-# ───────────────────────────────────────────────────────────────────────────────
-
+VAL_DATA_DIR  = os.path.join(BASE_DIR, "full_data", "full_sealed_val")
+TRAIN_CSV  = os.path.join(BASE_DIR, "full_data", "full_sealed_train.csv")
+VAL_CSV = os.path.join(BASE_DIR, "full_data", "full_sealed_val.csv")
+TRAINING_DIR = os.path.join(BASE_DIR, "training")
+OUTPUT_CSV = os.path.join(TRAINING_DIR, "training_input_full.csv")
+TRAIN_SPLIT = os.path.join(TRAINING_DIR, "full_split_train.txt")
+VAL_SPLIT = os.path.join(TRAINING_DIR, "full_split_val.txt")
 os.makedirs(TRAINING_DIR, exist_ok=True)
 
 def build_name(row):
-    pdb     = row["PDBID"].strip()
+    pdb = row["PDBID"].strip()
     ligname = row["Ligand Name"].strip()
-    chain   = row["Ligand Chain"].strip()
-    resraw  = row["Ligand Residue Number"].strip()
+    chain = row["Ligand Chain"].strip()
+    resraw = row["Ligand Residue Number"].strip()
     try:
         resnum = str(int(float(resraw)))
     except ValueError:
@@ -51,7 +42,7 @@ def process_csv(csv_path, data_dir, writer, split_names, missing_log):
             count += 1
     return count, skipped
 
-print("=== Preparing DiffDock training input ===")
+print(" Preparing DiffDock training input ")
 print(f"Train data dir : {TRAIN_DATA_DIR}")
 print(f"Val data dir   : {VAL_DATA_DIR}")
 print()
