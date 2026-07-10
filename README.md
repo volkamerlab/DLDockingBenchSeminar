@@ -20,7 +20,7 @@
 | `run_gnina_train.py` | Redocking Python script that implements native GNINA docking, preprocessing, and model retraining, for the *full dataset*. |
 | `run_gnina.sh` | Shell script that executes the pipeline inside the Docker container. |
 | `run_gnina_train.sh` | Shell script that executes the *full dataset* GNINA retraining inside the Docker container. |
-| `Dockerfile` | Builds the complete GNINA-Torch environment that supports GNINA-Torch retraining. Knowledge distillation dependencies were added, in our attempts to implement knowledge distillation. |
+| `Dockerfile` | Builds the complete GNINA-Torch environment that supports GNINA-Torch retraining. |
 | `gnina_sub.sub` | HTCondor submission script used for running the pipeline on the HPC cluster. |
 | `gnina_train.sub` | HTCondor submission script used for running retraining for the *full dataset* on the HPC cluster. |
 | `plot_inspection.ipynb` | Jupyter notebook for visualization of training metrics and docking results across epochs. |
