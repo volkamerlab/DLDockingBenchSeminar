@@ -167,7 +167,7 @@ def esm_embeddings_from_complexes(complex_names, protein_files, device=None) -> 
     # More efficient to calculate embeddings in batches
     # So we split the chains up for each protein complex,
     # create a numbered label for each chain, and then
-    # make a list of lists at the end.
+    # make list of lists at the end.
 
     for complex_name, protein_sequence in zip(complex_names, protein_sequences):
         cur_seqs = protein_sequence.split(':')
