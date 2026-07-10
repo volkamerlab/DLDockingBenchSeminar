@@ -1,83 +1,99 @@
-#!/bin/bash
-#Irem_Dogruoglu_7061348_Lizzie_Schmitz_7056551
-#References:
-#1. https://stackoverflow.com/questions/60303997/activating-conda-environment-from-bash-script
-#2. https://github.com/gnina/scripts
-#3. https://stackoverflow.com/questions/47932165/tar-gz-unpacking-file-data
-#4. https://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files
-# run_gnina.sh file run the GNINA-Torch pipeline inside a container by following the workflow on below:
-# 1) activating conda environment.
-# 2) unpacking data while doing checks on gninatorch.
-# 3) activating Python pipeline, and generating results.
-# It takes gninatorch_env, full_data.tar.gz as archive folder and run_gnina_train.py script.
-# Then, after training, upon redocking, we will produce gninatorch_training, data/proto_train.types, and proto_test_retrained files.
+FROM docker.io/gnina/gnina:latest
 
-set -e
+SHELL ["/bin/bash", "-lc"]
 
-echo "=== ENTERED run_gnina.sh ==="
-echo "Working directory: $(pwd)"
+ENV DEBIAN_FRONTEND=noninteractive
+ENV CONDA_DIR=/opt/conda
+ENV PATH=$CONDA_DIR/envs/gninatorch_env/bin:$CONDA_DIR/bin:$PATH
+ENV CONDA_DEFAULT_ENV=gninatorch_env
 
-#activating conda env if it exists.
-if [ -f /opt/conda/etc/profile.d/conda.sh ]; then
-    source /opt/conda/etc/profile.d/conda.sh
-    conda activate gninatorch_env
-    export BABEL_DATADIR=/opt/conda/envs/gninatorch_env/share/openbabel/3.1.0
-    echo "BABEL_DATADIR=$BABEL_DATADIR"
-    echo "Using conda env:"
-    conda info --envs | grep '*' || echo "unknown env"
-else
-    echo "WARNING: conda.sh not found, continuing without gninatorch_env"
-fi
+# basic tools
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        python3 python3-pip \
+        wget git ca-certificates build-essential \
+    && pip3 install --no-cache-dir pandas \
+    && rm -rf /var/lib/apt/lists/*
 
-#doing checks of python and gninatorch for further steps.
-echo "Checking Python and GNINA-Torch..."
-which python3
-python3 -c "import sys; print(sys.executable)"
-python3 -c "import gninatorch; print('gninatorch:', gninatorch.__file__)"
-python3 -m gninatorch.training --help || exit 1
+# miniforge/conda installation
+RUN wget -qO /tmp/miniforge.sh \
+    https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh \
+    && bash /tmp/miniforge.sh -b -p $CONDA_DIR \
+    && rm /tmp/miniforge.sh \
+    && conda clean -afy
 
-#unpacking the data with .tar.gz, not unzip.
-echo "Unpacking prototype_data.tar.gz..."
-tar -xzf prototype_data.tar.gz
+# clone gnina-torch
+WORKDIR /opt
+RUN git clone https://github.com/RMeli/gnina-torch.git
 
-#making sure directories for results exist.
-mkdir -p results/proto_test_retrained \
-         results/gninatorch_training \
-         results/plots
+# create gninatorch environment
+WORKDIR /opt/gnina-torch
+RUN conda create -y -n gninatorch_env -c pytorch -c nvidia -c conda-forge \
+    python=3.12 \
+    pytorch \
+    pytorch-cuda=12.1 \
+    pytorch-ignite \
+    "numpy<2" \
+    scipy \
+    pandas \
+    scikit-learn \
+    matplotlib \
+    openbabel \
+    mlflow \
+    pip \
+    && conda clean -afy
 
-#running the all pipeline in the workflow of: docking, generating types, training, redocking and generating plots.
-# LATER: add for validation set: --val-types data/proto_test.types 
-python3 run_proto_gnina.py \
-  --train-csv data/proto_train.csv \
-  --train-input-dir data/proto_train \
-  --train-out-dir results/proto_train \
-  --csv data/proto_test.csv \
-  --input-dir data/proto_test \
-  --retrained-test-out-dir results/proto_test_retrained \
-  --run \
-  --epochs 5 \
-  --make-types \
-  --train-types data/proto_train.types \
-  --train-model \
-  --models default2018 dense \
-  --seeds 1 \
-  --make-plots \
-  --plot-dir results/plots
 
-# ADD LATER FOR VALIDATION: 
-  # --val-csv data/validation.csv \
-  # --val-input-dir data/validation \
-  # --val-types data/validation.types \
+# install matplotlib and molgrid
 
-status=$?
-echo "Python/GNINA exit status: $status"
+RUN conda run -n gninatorch_env python -m pip install "numpy<2"
 
-# Output retrained proto_test outputs as a .tar.gz file:
-echo "Compressing retrained proto_test outputs into tarball..."
+RUN conda run -n gninatorch_env python -m pip install molgrid
 
-tar -czf results/proto_test_retrained/proto_test_retrained_outputs.tar.gz \
-  -C results/proto_test_retrained \
-  --exclude="proto_test_retrained_outputs.tar.gz" \
-  .
+# patch gnina-torch training.py to export a full model file
+RUN python - <<'PY'
+from pathlib import Path
 
-exit $status
+p = Path("/opt/gnina-torch/gninatorch/training.py")
+text = p.read_text()
+
+old = "trainer.run(train_loader, max_epochs=args.iterations)"
+new = old + """
+
+    # Export standalone TorchScript model for GNINA --cnn_model
+    model.eval()
+    model.cpu()
+    model_outfile = os.path.join(args.out_dir, "gnina_retrained_full_model.pt")
+    torch.jit.save(model, model_outfile)
+    print(f"Saved GNINA-readable TorchScript model to: {model_outfile}")
+"""
+
+if old not in text:
+    raise RuntimeError("Could not find trainer.run line for model export patch")
+
+text = text.replace(old, new)
+p.write_text(text)
+PY
+
+# install gninatorch
+
+RUN conda run -n gninatorch_env python -m pip install .
+
+# workspace dirs
+WORKDIR /workspace
+
+COPY run_proto_gnina.py /workspace/run_proto_gnina.py
+COPY run_gnina.sh /workspace/run_gnina.sh
+
+# run shell
+RUN chmod +x /workspace/run_gnina.sh
+
+# debug help
+RUN gnina --help >/dev/null \
+    && conda run -n gninatorch_env obrms --help >/dev/null \
+    && conda run -n gninatorch_env python -c "import numpy; print(numpy.__version__); import torch; import molgrid; import gninatorch; import mlflow; print('gninatorch + mlflow ok')"
+
+RUN conda run -n gninatorch_env python -c "import gninatorch"
+RUN conda run -n gninatorch_env python -m gninatorch.training --help
+
+CMD ["/workspace/run_gnina.sh"]
