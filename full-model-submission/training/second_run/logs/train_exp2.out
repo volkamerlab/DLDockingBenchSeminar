@@ -1,0 +1,1109 @@
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 22.04 (build 36527063)
+PyTorch Version 1.12.0a0+bd13bc6
+
+Container image Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Copyright (c) 2014-2022 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+=== EXP2 TRAIN COMMAND START ===
+2026-06-28 08:40:03 | INFO | unicore_cli.train | Namespace(activation_dropout=0.0, activation_fn='gelu', adam_betas='(0.9, 0.99)', adam_eps=1e-06, all_gather_list_size=16384, allreduce_fp32_grad=False, arch='docking_pose_v2', attention_dropout=0.1, batch_size=8, batch_size_valid=8, best_checkpoint_metric='loss', bf16=False, bf16_sr=False, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', clip_norm=1.0, conf_size=10, cpu=False, curriculum=0, data='/home/bdldt_team007/DLDockingBenchSeminar/second_run/data', data_buffer_size=10, ddp_backend='c10d', delta_pair_repr_norm_loss=-1.0, device_id=0, disable_validation=False, dist_threshold=8.0, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_num_procs=1, distributed_port=-1, distributed_rank=0, distributed_world_size=1, dropout=0.1, ema_decay=-1.0, emb_dropout=0.1, empty_cache_freq=0, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, end_learning_rate=0.0, fast_stat_sync=False, find_unused_parameters=False, finetune_from_model=None, finetune_mol_model='/home/bdldt_team007/DLDockingBenchSeminar/second_run/weights/mol_pre_no_h_220816.pt', finetune_pocket_model='/home/bdldt_team007/DLDockingBenchSeminar/second_run/weights/pocket_pre_220816.pt', fix_batches_to_gpus=False, fixed_validation_seed=None, force_anneal=None, fp16=True, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, keep_best_checkpoints=-1, keep_interval_updates=-1, keep_last_epochs=15, load_from_ema=False, log_format='simple', log_interval=50, loss='docking_pose_v2', lr=[1e-05], lr_scheduler='polynomial_decay', masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_epoch=15, max_pocket_atoms=256, max_seq_len=512, max_update=0, max_valid_steps=None, maximize_best_checkpoint_metric=False, min_loss_scale=0.0001, mol=Namespace(activation_dropout=0.0, activation_fn='gelu', attention_dropout=0.1, delta_pair_repr_norm_loss=-1.0, dropout=0.1, emb_dropout=0.1, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_seq_len=512, pooler_activation_fn='tanh', pooler_dropout=0.2, post_ln=False, x_norm_loss=-1.0), mol_pooler_dropout=0.2, no_epoch_checkpoints=False, no_last_checkpoints=False, no_progress_bar=False, no_save=False, no_save_optimizer_state=False, no_seed_provided=False, nprocs_per_node=1, num_workers=0, optimizer='adam', optimizer_overrides='{}', patience=-1, per_sample_clip_norm=0, pocket=Namespace(activation_dropout=0.0, activation_fn='gelu', attention_dropout=0.1, delta_pair_repr_norm_loss=-1.0, dropout=0.1, emb_dropout=0.1, encoder_attention_heads=64, encoder_embed_dim=512, encoder_ffn_embed_dim=2048, encoder_layers=15, masked_coord_loss=-1.0, masked_dist_loss=-1.0, masked_token_loss=-1.0, max_seq_len=512, pooler_activation_fn='tanh', pooler_dropout=0.2, post_ln=False, x_norm_loss=-1.0), pocket_pooler_dropout=0.2, pooler_activation_fn='tanh', pooler_dropout=0.0, post_ln=False, power=1.0, profile=False, recycling=3, required_batch_size_multiple=1, reset_dataloader=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, restore_file='checkpoint_last.pt', save_dir='/home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints', save_interval=1, save_interval_updates=500, seed=42, skip_invalid_size_inputs_valid_test=True, stop_min_lr=-1, stop_time_hours=0, suppress_crashes=False, task='docking_pose_v2', tensorboard_logdir='', threshold_loss_scale=None, tmp_save_dir='./', total_num_update=43965, train_subset='train', update_freq=[1], user_dir='/home/bdldt_team007/DLDockingBenchSeminar/unimol/unimol_docking_v2/unimol', valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, validate_with_ema=False, wandb_name='', wandb_project='', warmup_ratio=-1.0, warmup_updates=2637, weight_decay=0.0, x_norm_loss=-1.0)
+2026-06-28 08:40:03 | INFO | unimol.tasks.docking_pose_v2 | ligand dictionary: 30 types
+2026-06-28 08:40:03 | INFO | unimol.tasks.docking_pose_v2 | pocket dictionary: 9 types
+load pretrain model weight from... /home/bdldt_team007/DLDockingBenchSeminar/second_run/weights/mol_pre_no_h_220816.pt
+load pretrain model weight from... /home/bdldt_team007/DLDockingBenchSeminar/second_run/weights/pocket_pre_220816.pt
+2026-06-28 08:40:20 | INFO | unicore_cli.train | DockingPoseV2Model(
+  (mol_model): UniMolModel(
+    (embed_tokens): Embedding(31, 512, padding_idx=0)
+    (encoder): TransformerEncoderWithPair(
+      (emb_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (1): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (2): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (3): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (4): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (5): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (6): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (7): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (8): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (9): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (10): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (11): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (12): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (13): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (14): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (gbf_proj): NonLinearHead(
+      (linear1): Linear(in_features=128, out_features=128, bias=True)
+      (linear2): Linear(in_features=128, out_features=64, bias=True)
+    )
+    (gbf): GaussianLayer(
+      (means): Embedding(1, 128)
+      (stds): Embedding(1, 128)
+      (mul): Embedding(961, 1)
+      (bias): Embedding(961, 1)
+    )
+    (classification_heads): ModuleDict()
+  )
+  (pocket_model): UniMolModel(
+    (embed_tokens): Embedding(10, 512, padding_idx=0)
+    (encoder): TransformerEncoderWithPair(
+      (emb_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (1): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (2): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (3): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (4): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (5): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (6): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (7): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (8): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (9): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (10): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (11): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (12): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (13): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+        (14): TransformerEncoderLayer(
+          (self_attn): SelfMultiheadAttention(
+            (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+            (out_proj): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+          (fc1): Linear(in_features=512, out_features=2048, bias=True)
+          (fc2): Linear(in_features=2048, out_features=512, bias=True)
+          (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        )
+      )
+    )
+    (gbf_proj): NonLinearHead(
+      (linear1): Linear(in_features=128, out_features=128, bias=True)
+      (linear2): Linear(in_features=128, out_features=64, bias=True)
+    )
+    (gbf): GaussianLayer(
+      (means): Embedding(1, 128)
+      (stds): Embedding(1, 128)
+      (mul): Embedding(100, 1)
+      (bias): Embedding(100, 1)
+    )
+    (classification_heads): ModuleDict()
+  )
+  (concat_decoder): TransformerEncoderWithPair(
+    (emb_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+    (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+    (final_head_layer_norm): LayerNorm(torch.Size([64]), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (cross_distance_project): NonLinearHead(
+    (linear1): Linear(in_features=1088, out_features=1088, bias=True)
+    (linear2): Linear(in_features=1088, out_features=1, bias=True)
+  )
+  (holo_distance_project): DistanceHead(
+    (dense): Linear(in_features=576, out_features=576, bias=True)
+    (layer_norm): LayerNorm((576,), eps=1e-05, elementwise_affine=True)
+    (out_proj): Linear(in_features=576, out_features=1, bias=True)
+  )
+  (concat_gbf): GaussianLayer(
+    (means): Embedding(1, 128)
+    (stds): Embedding(1, 128)
+    (mul): Embedding(1681, 1)
+    (bias): Embedding(1681, 1)
+  )
+  (concat_gbf_proj): NonLinearHead(
+    (linear1): Linear(in_features=128, out_features=128, bias=True)
+    (linear2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (coord_decoder): TransformerEncoderWithPair(
+    (emb_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+    (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+    (final_head_layer_norm): LayerNorm(torch.Size([64]), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): SelfMultiheadAttention(
+          (in_proj): Linear(in_features=512, out_features=1536, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm(torch.Size([512]), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (coord_delta_project): NonLinearHead(
+    (linear1): Linear(in_features=64, out_features=64, bias=True)
+    (linear2): Linear(in_features=64, out_features=1, bias=True)
+  )
+  (prmsd_project): NonLinearHead(
+    (linear1): Linear(in_features=512, out_features=512, bias=True)
+    (linear2): Linear(in_features=512, out_features=32, bias=True)
+  )
+)
+2026-06-28 08:40:20 | INFO | unicore_cli.train | task: DockingPoseV2
+2026-06-28 08:40:20 | INFO | unicore_cli.train | model: DockingPoseV2Model
+2026-06-28 08:40:20 | INFO | unicore_cli.train | loss: DockingPosseV2Loss
+2026-06-28 08:40:20 | INFO | unicore_cli.train | num. model params: 121,703,887 (num. trained: 121,703,887)
+2026-06-28 08:40:22 | INFO | unicore.utils | ***********************CUDA enviroments for all 1 workers***********************
+2026-06-28 08:40:22 | INFO | unicore.utils | rank   0: capabilities =  8.0  ; total memory = 39.495 GB ; name = NVIDIA A100-PCIE-40GB                   
+2026-06-28 08:40:22 | INFO | unicore.utils | ***********************CUDA enviroments for all 1 workers***********************
+2026-06-28 08:40:22 | INFO | unicore_cli.train | training on 1 devices (GPUs)
+2026-06-28 08:40:22 | INFO | unicore_cli.train | batch size per device = 8
+2026-06-28 08:40:22 | INFO | unicore.trainer | Preparing to load checkpoint /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-28 08:40:33 | INFO | unicore.optim.adam | using FusedAdam
+2026-06-28 08:40:34 | INFO | unicore.trainer | Loaded checkpoint /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt (epoch 1 @ 3500 updates)
+2026-06-28 08:40:34 | INFO | unicore.trainer | loading train data for epoch 1
+2026-06-28 08:40:35 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-28 08:40:35 | INFO | unicore.data.iterators | Iterator size is changed. it is possible due to the change of update_freq/num_gpu. The itr_pos is change from 3507 to 1753 for consistency
+2026-06-28 08:40:35 | INFO | unicore.trainer | begin training epoch 1
+2026-06-28 08:40:35 | INFO | unicore_cli.train | Start iterating over samples
+2026-06-28 08:43:20 | INFO | train_inner | epoch 001:   1803 / 2931 loss=6.965, train_loss=6.965, cross_distance_loss=0.996, distance_loss=0.433, coord_loss=5.235, RMSD=5.235, prmsd_loss=3.017, ups=0, bsz=8, num_updates=3550, lr=9.77908e-06, gnorm=14.725, clip=100, loss_scale=1, train_wall=164.89, gb_free=29.4, wall=0
+2026-06-28 08:45:57 | INFO | train_inner | epoch 001:   1853 / 2931 loss=6.894, train_loss=6.894, cross_distance_loss=0.998, distance_loss=0.519, coord_loss=5.075, RMSD=5.075, prmsd_loss=3.014, ups=0.32, bsz=8, num_updates=3600, lr=9.76699e-06, gnorm=10.567, clip=100, loss_scale=1, train_wall=156.89, gb_free=32.2, wall=0
+2026-06-28 08:48:34 | INFO | train_inner | epoch 001:   1903 / 2931 loss=7.027, train_loss=7.027, cross_distance_loss=1.007, distance_loss=0.505, coord_loss=5.217, RMSD=5.217, prmsd_loss=2.98, ups=0.32, bsz=8, num_updates=3650, lr=9.75489e-06, gnorm=11.729, clip=100, loss_scale=1, train_wall=157.09, gb_free=31.5, wall=0
+2026-06-28 08:51:15 | INFO | train_inner | epoch 001:   1953 / 2931 loss=7.113, train_loss=7.113, cross_distance_loss=0.991, distance_loss=0.538, coord_loss=5.286, RMSD=5.286, prmsd_loss=2.986, ups=0.31, bsz=8, num_updates=3700, lr=9.74279e-06, gnorm=10.149, clip=100, loss_scale=1, train_wall=161.04, gb_free=31.1, wall=0
+2026-06-28 08:53:38 | INFO | train_inner | epoch 001:   2003 / 2931 loss=7.027, train_loss=7.027, cross_distance_loss=0.989, distance_loss=0.465, coord_loss=5.273, RMSD=5.273, prmsd_loss=2.997, ups=0.35, bsz=8, num_updates=3750, lr=9.73069e-06, gnorm=11.521, clip=100, loss_scale=1, train_wall=142.39, gb_free=32.6, wall=0
+2026-06-28 08:56:16 | INFO | train_inner | epoch 001:   2053 / 2931 loss=6.783, train_loss=6.783, cross_distance_loss=0.983, distance_loss=0.42, coord_loss=5.079, RMSD=5.079, prmsd_loss=3.013, ups=0.32, bsz=8, num_updates=3800, lr=9.71859e-06, gnorm=21.87, clip=100, loss_scale=1, train_wall=158.06, gb_free=32.6, wall=0
+2026-06-28 08:58:55 | INFO | train_inner | epoch 001:   2103 / 2931 loss=7.103, train_loss=7.103, cross_distance_loss=0.996, distance_loss=0.54, coord_loss=5.27, RMSD=5.27, prmsd_loss=2.963, ups=0.32, bsz=8, num_updates=3850, lr=9.70649e-06, gnorm=11.453, clip=100, loss_scale=1, train_wall=158.48, gb_free=31.8, wall=0
+2026-06-28 09:01:20 | INFO | train_inner | epoch 001:   2153 / 2931 loss=6.823, train_loss=6.823, cross_distance_loss=0.986, distance_loss=0.424, coord_loss=5.114, RMSD=5.113, prmsd_loss=2.998, ups=0.34, bsz=8, num_updates=3900, lr=9.6944e-06, gnorm=7.658, clip=100, loss_scale=1, train_wall=145, gb_free=30.6, wall=0
+2026-06-28 09:03:44 | INFO | train_inner | epoch 001:   2203 / 2931 loss=6.75, train_loss=6.75, cross_distance_loss=0.989, distance_loss=0.499, coord_loss=4.966, RMSD=4.966, prmsd_loss=2.964, ups=0.35, bsz=8, num_updates=3950, lr=9.6823e-06, gnorm=6.871, clip=100, loss_scale=1, train_wall=144.16, gb_free=30.6, wall=0
+2026-06-28 09:06:22 | INFO | train_inner | epoch 001:   2253 / 2931 loss=6.89, train_loss=6.89, cross_distance_loss=0.979, distance_loss=0.514, coord_loss=5.102, RMSD=5.101, prmsd_loss=2.956, ups=0.32, bsz=8, num_updates=4000, lr=9.6702e-06, gnorm=5.792, clip=100, loss_scale=1, train_wall=157.93, gb_free=29.4, wall=0
+2026-06-28 09:06:22 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-28 09:06:22 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-28 11:07:40 | INFO | valid | epoch 001 | valid on 'valid' subset | loss 6.521 | valid_loss 6.521 | cross_distance_loss 0.982 | distance_loss 0.339 | coord_loss 4.899 | RMSD 4.898 | prmsd_loss 3.014 | bsz 26010 | num_updates 4000 | best_loss 6.521
+2026-06-28 11:07:40 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 1 @ 4000 updates
+2026-06-28 11:07:40 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_1_4000.pt
+2026-06-28 11:07:45 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_1_4000.pt
+2026-06-28 11:07:45 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_1_4000.pt (epoch 1 @ 4000 updates, score 6.521) (writing took 4.9375565480440855 seconds)
+2026-06-28 11:07:45 | INFO | unicore.checkpoint_utils | copy ./checkpoint_1_4000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_1_4000.pt
+2026-06-28 11:07:50 | INFO | unicore.checkpoint_utils | copy ./checkpoint_1_4000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-28 11:07:53 | INFO | unicore.checkpoint_utils | copy ./checkpoint_1_4000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-28 11:07:57 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_1_4000.pt ...
+2026-06-28 11:07:58 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-28 11:10:16 | INFO | train_inner | epoch 001:   2303 / 2931 loss=6.915, train_loss=6.915, cross_distance_loss=0.967, distance_loss=0.469, coord_loss=5.184, RMSD=5.183, prmsd_loss=2.953, ups=0.01, bsz=8, num_updates=4050, lr=9.6581e-06, gnorm=10.222, clip=100, loss_scale=1, train_wall=151.14, gb_free=27.5, wall=0
+2026-06-28 11:12:49 | INFO | train_inner | epoch 001:   2353 / 2931 loss=7.035, train_loss=7.035, cross_distance_loss=0.978, distance_loss=0.502, coord_loss=5.259, RMSD=5.258, prmsd_loss=2.962, ups=0.33, bsz=8, num_updates=4100, lr=9.646e-06, gnorm=7.176, clip=100, loss_scale=1, train_wall=152.59, gb_free=31.1, wall=0
+2026-06-28 11:15:20 | INFO | train_inner | epoch 001:   2403 / 2931 loss=6.844, train_loss=6.844, cross_distance_loss=0.976, distance_loss=0.472, coord_loss=5.099, RMSD=5.098, prmsd_loss=2.98, ups=0.33, bsz=8, num_updates=4150, lr=9.6339e-06, gnorm=6.695, clip=100, loss_scale=1, train_wall=150.55, gb_free=30.8, wall=0
+2026-06-28 11:17:45 | INFO | train_inner | epoch 001:   2453 / 2931 loss=6.814, train_loss=6.814, cross_distance_loss=0.97, distance_loss=0.435, coord_loss=5.109, RMSD=5.109, prmsd_loss=3, ups=0.35, bsz=8, num_updates=4200, lr=9.62181e-06, gnorm=10.831, clip=100, loss_scale=1, train_wall=144.68, gb_free=33.3, wall=0
+2026-06-28 11:20:11 | INFO | train_inner | epoch 001:   2503 / 2931 loss=6.843, train_loss=6.843, cross_distance_loss=0.959, distance_loss=0.421, coord_loss=5.166, RMSD=5.166, prmsd_loss=2.96, ups=0.34, bsz=8, num_updates=4250, lr=9.60971e-06, gnorm=11.994, clip=100, loss_scale=1, train_wall=146.78, gb_free=29.5, wall=0
+2026-06-28 11:22:35 | INFO | train_inner | epoch 001:   2553 / 2931 loss=6.754, train_loss=6.754, cross_distance_loss=0.966, distance_loss=0.478, coord_loss=5.017, RMSD=5.016, prmsd_loss=2.94, ups=0.35, bsz=8, num_updates=4300, lr=9.59761e-06, gnorm=16.324, clip=100, loss_scale=1, train_wall=143.34, gb_free=28.8, wall=0
+2026-06-28 11:25:06 | INFO | train_inner | epoch 001:   2603 / 2931 loss=6.944, train_loss=6.944, cross_distance_loss=0.981, distance_loss=0.538, coord_loss=5.13, RMSD=5.129, prmsd_loss=2.954, ups=0.33, bsz=8, num_updates=4350, lr=9.58551e-06, gnorm=20.108, clip=100, loss_scale=1, train_wall=151.45, gb_free=33.2, wall=0
+2026-06-28 11:27:27 | INFO | train_inner | epoch 001:   2653 / 2931 loss=6.87, train_loss=6.87, cross_distance_loss=0.966, distance_loss=0.548, coord_loss=5.059, RMSD=5.059, prmsd_loss=2.968, ups=0.36, bsz=8, num_updates=4400, lr=9.57341e-06, gnorm=20.506, clip=100, loss_scale=1, train_wall=140.36, gb_free=31.1, wall=0
+2026-06-28 11:29:46 | INFO | train_inner | epoch 001:   2703 / 2931 loss=6.951, train_loss=6.951, cross_distance_loss=0.952, distance_loss=0.534, coord_loss=5.17, RMSD=5.169, prmsd_loss=2.949, ups=0.36, bsz=8, num_updates=4450, lr=9.56131e-06, gnorm=26.336, clip=100, loss_scale=1, train_wall=138.59, gb_free=30.2, wall=0
+2026-06-28 11:32:10 | INFO | train_inner | epoch 001:   2753 / 2931 loss=7.075, train_loss=7.075, cross_distance_loss=0.975, distance_loss=0.561, coord_loss=5.249, RMSD=5.248, prmsd_loss=2.909, ups=0.35, bsz=8, num_updates=4500, lr=9.54922e-06, gnorm=33.646, clip=100, loss_scale=1, train_wall=144.74, gb_free=31.9, wall=0
+2026-06-28 11:32:10 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-28 11:32:10 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-28 13:22:57 | INFO | valid | epoch 001 | valid on 'valid' subset | loss 6.573 | valid_loss 6.573 | cross_distance_loss 0.976 | distance_loss 0.406 | coord_loss 4.887 | RMSD 4.887 | prmsd_loss 3.03 | bsz 26010 | num_updates 4500 | best_loss 6.521
+2026-06-28 13:22:57 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 1 @ 4500 updates
+2026-06-28 13:22:57 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_1_4500.pt
+2026-06-28 13:23:01 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_1_4500.pt
+2026-06-28 13:23:01 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_1_4500.pt (epoch 1 @ 4500 updates, score 6.573) (writing took 4.160531979054213 seconds)
+2026-06-28 13:23:01 | INFO | unicore.checkpoint_utils | copy ./checkpoint_1_4500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_1_4500.pt
+2026-06-28 13:23:06 | INFO | unicore.checkpoint_utils | copy ./checkpoint_1_4500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-28 13:23:08 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_1_4500.pt ...
+2026-06-28 13:23:08 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-28 13:25:16 | INFO | train_inner | epoch 001:   2803 / 2931 loss=6.893, train_loss=6.893, cross_distance_loss=0.946, distance_loss=0.476, coord_loss=5.177, RMSD=5.177, prmsd_loss=2.942, ups=0.01, bsz=8, num_updates=4550, lr=9.53712e-06, gnorm=18.041, clip=100, loss_scale=1, train_wall=134.48, gb_free=32.6, wall=0
+2026-06-28 13:27:49 | INFO | train_inner | epoch 001:   2853 / 2931 loss=7.043, train_loss=7.043, cross_distance_loss=0.949, distance_loss=0.461, coord_loss=5.341, RMSD=5.34, prmsd_loss=2.921, ups=0.33, bsz=8, num_updates=4600, lr=9.52502e-06, gnorm=21.859, clip=100, loss_scale=1, train_wall=153.24, gb_free=32.2, wall=0
+2026-06-28 13:30:16 | INFO | train_inner | epoch 001:   2903 / 2931 loss=6.913, train_loss=6.913, cross_distance_loss=0.957, distance_loss=0.5, coord_loss=5.159, RMSD=5.158, prmsd_loss=2.961, ups=0.34, bsz=8, num_updates=4650, lr=9.51292e-06, gnorm=12.462, clip=100, loss_scale=1, train_wall=146.51, gb_free=31.2, wall=0
+2026-06-28 13:31:44 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-28 13:31:44 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-28 15:19:26 | INFO | valid | epoch 001 | valid on 'valid' subset | loss 6.404 | valid_loss 6.404 | cross_distance_loss 0.93 | distance_loss 0.325 | coord_loss 4.839 | RMSD 4.839 | prmsd_loss 3.103 | bsz 26010 | num_updates 4678 | best_loss 6.404
+2026-06-28 15:19:26 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 1 @ 4678 updates
+2026-06-28 15:19:26 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint1.pt
+2026-06-28 15:19:30 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint1.pt
+2026-06-28 15:19:30 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint1.pt (epoch 1 @ 4678 updates, score 6.404) (writing took 4.045899383723736 seconds)
+2026-06-28 15:19:30 | INFO | unicore_cli.train | end of epoch 1 (average epoch stats below)
+2026-06-28 15:19:30 | INFO | unicore.checkpoint_utils | copy ./checkpoint1.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint1.pt
+2026-06-28 15:19:30 | INFO | train | epoch 001 | loss 8.189 | train_loss 8.189 | cross_distance_loss 1.977 | distance_loss 0.818 | coord_loss 5.082 | RMSD 5.077 | prmsd_loss 3.131 | ups 0.05 | bsz 5 | num_updates 4678 | lr 9.50615e-06 | gnorm 34.61 | clip 100 | loss_scale 1 | train_wall 9349.47 | gb_free 32.6 | wall 0
+2026-06-28 15:19:30 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 2
+2026-06-28 15:19:30 | INFO | unicore.trainer | begin training epoch 2
+2026-06-28 15:19:30 | INFO | unicore_cli.train | Start iterating over samples
+2026-06-28 15:19:34 | INFO | unicore.checkpoint_utils | copy ./checkpoint1.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-28 15:19:37 | INFO | unicore.checkpoint_utils | copy ./checkpoint1.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-28 15:19:39 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint1.pt ...
+2026-06-28 15:19:39 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-28 15:20:27 | INFO | train_inner | epoch 002:     22 / 2931 loss=6.803, train_loss=6.803, cross_distance_loss=0.944, distance_loss=0.429, coord_loss=5.132, RMSD=5.131, prmsd_loss=2.985, ups=0.01, bsz=8, num_updates=4700, lr=9.50082e-06, gnorm=21.385, clip=100, loss_scale=1, train_wall=145.6, gb_free=30.7, wall=0
+2026-06-28 15:22:36 | INFO | train_inner | epoch 002:     72 / 2931 loss=6.677, train_loss=6.677, cross_distance_loss=0.948, distance_loss=0.494, coord_loss=4.936, RMSD=4.936, prmsd_loss=2.985, ups=0.39, bsz=8, num_updates=4750, lr=9.48872e-06, gnorm=8.109, clip=100, loss_scale=1, train_wall=129.01, gb_free=31.1, wall=0
+2026-06-28 15:24:58 | INFO | train_inner | epoch 002:    122 / 2931 loss=6.791, train_loss=6.791, cross_distance_loss=0.942, distance_loss=0.453, coord_loss=5.105, RMSD=5.104, prmsd_loss=2.915, ups=0.35, bsz=8, num_updates=4800, lr=9.47663e-06, gnorm=16.099, clip=100, loss_scale=1, train_wall=141.76, gb_free=31.9, wall=0
+2026-06-28 15:27:22 | INFO | train_inner | epoch 002:    172 / 2931 loss=6.742, train_loss=6.742, cross_distance_loss=0.957, distance_loss=0.44, coord_loss=5.049, RMSD=5.048, prmsd_loss=2.964, ups=0.35, bsz=8, num_updates=4850, lr=9.46453e-06, gnorm=13.465, clip=100, loss_scale=1, train_wall=143.56, gb_free=29.9, wall=0
+2026-06-28 15:29:41 | INFO | train_inner | epoch 002:    222 / 2931 loss=6.866, train_loss=6.866, cross_distance_loss=0.952, distance_loss=0.456, coord_loss=5.162, RMSD=5.162, prmsd_loss=2.955, ups=0.36, bsz=8, num_updates=4900, lr=9.45243e-06, gnorm=16.297, clip=100, loss_scale=1, train_wall=139.15, gb_free=29, wall=0
+2026-06-28 15:31:58 | INFO | train_inner | epoch 002:    272 / 2931 loss=6.74, train_loss=6.74, cross_distance_loss=0.943, distance_loss=0.465, coord_loss=5.037, RMSD=5.037, prmsd_loss=2.945, ups=0.36, bsz=8, num_updates=4950, lr=9.44033e-06, gnorm=10.485, clip=100, loss_scale=1, train_wall=137.4, gb_free=31.1, wall=0
+2026-06-28 15:34:22 | INFO | train_inner | epoch 002:    322 / 2931 loss=6.719, train_loss=6.719, cross_distance_loss=0.945, distance_loss=0.459, coord_loss=5.021, RMSD=5.02, prmsd_loss=2.943, ups=0.35, bsz=8, num_updates=5000, lr=9.42823e-06, gnorm=9.262, clip=100, loss_scale=1, train_wall=143.58, gb_free=31.5, wall=0
+2026-06-28 15:34:22 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-28 15:34:22 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-28 17:13:44 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 6.327 | valid_loss 6.327 | cross_distance_loss 0.929 | distance_loss 0.313 | coord_loss 4.786 | RMSD 4.786 | prmsd_loss 2.992 | bsz 26010 | num_updates 5000 | best_loss 6.327
+2026-06-28 17:13:45 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 2 @ 5000 updates
+2026-06-28 17:13:45 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_2_5000.pt
+2026-06-28 17:13:49 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_2_5000.pt
+2026-06-28 17:13:49 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_2_5000.pt (epoch 2 @ 5000 updates, score 6.327) (writing took 4.800231388304383 seconds)
+2026-06-28 17:13:49 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_5000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_2_5000.pt
+2026-06-28 17:13:54 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_5000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-28 17:13:59 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_5000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-28 17:14:01 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_2_5000.pt ...
+2026-06-28 17:14:01 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-28 17:16:02 | INFO | train_inner | epoch 002:    372 / 2931 loss=6.61, train_loss=6.61, cross_distance_loss=0.929, distance_loss=0.467, coord_loss=4.918, RMSD=4.917, prmsd_loss=2.961, ups=0.01, bsz=8, num_updates=5050, lr=9.41613e-06, gnorm=13.972, clip=100, loss_scale=1, train_wall=132.42, gb_free=30.2, wall=0
+2026-06-28 17:18:29 | INFO | train_inner | epoch 002:    422 / 2931 loss=6.48, train_loss=6.48, cross_distance_loss=0.922, distance_loss=0.413, coord_loss=4.851, RMSD=4.851, prmsd_loss=2.949, ups=0.34, bsz=8, num_updates=5100, lr=9.40404e-06, gnorm=29.054, clip=100, loss_scale=1, train_wall=147.35, gb_free=29.4, wall=0
+2026-06-28 17:20:50 | INFO | train_inner | epoch 002:    472 / 2931 loss=6.57, train_loss=6.57, cross_distance_loss=0.948, distance_loss=0.44, coord_loss=4.886, RMSD=4.885, prmsd_loss=2.961, ups=0.35, bsz=8, num_updates=5150, lr=9.39194e-06, gnorm=68.153, clip=100, loss_scale=1, train_wall=140.82, gb_free=32.6, wall=0
+2026-06-28 17:23:07 | INFO | train_inner | epoch 002:    522 / 2931 loss=6.598, train_loss=6.598, cross_distance_loss=0.93, distance_loss=0.417, coord_loss=4.954, RMSD=4.954, prmsd_loss=2.97, ups=0.36, bsz=8, num_updates=5200, lr=9.37984e-06, gnorm=43.361, clip=100, loss_scale=1, train_wall=136.94, gb_free=29.8, wall=0
+2026-06-28 17:25:36 | INFO | train_inner | epoch 002:    572 / 2931 loss=6.856, train_loss=6.856, cross_distance_loss=0.946, distance_loss=0.515, coord_loss=5.107, RMSD=5.106, prmsd_loss=2.887, ups=0.34, bsz=8, num_updates=5250, lr=9.36774e-06, gnorm=94.557, clip=100, loss_scale=1, train_wall=148.67, gb_free=33.2, wall=0
+2026-06-28 17:27:52 | INFO | train_inner | epoch 002:    622 / 2931 loss=6.422, train_loss=6.422, cross_distance_loss=0.916, distance_loss=0.385, coord_loss=4.825, RMSD=4.824, prmsd_loss=2.961, ups=0.37, bsz=8, num_updates=5300, lr=9.35564e-06, gnorm=41.888, clip=100, loss_scale=1, train_wall=135.9, gb_free=32.6, wall=0
+2026-06-28 17:30:15 | INFO | train_inner | epoch 002:    672 / 2931 loss=6.538, train_loss=6.538, cross_distance_loss=0.922, distance_loss=0.446, coord_loss=4.877, RMSD=4.876, prmsd_loss=2.93, ups=0.35, bsz=8, num_updates=5350, lr=9.34354e-06, gnorm=9.414, clip=100, loss_scale=1, train_wall=142.84, gb_free=33.9, wall=0
+2026-06-28 17:32:31 | INFO | train_inner | epoch 002:    722 / 2931 loss=6.544, train_loss=6.544, cross_distance_loss=0.934, distance_loss=0.438, coord_loss=4.875, RMSD=4.874, prmsd_loss=2.971, ups=0.37, bsz=8, num_updates=5400, lr=9.33145e-06, gnorm=20.755, clip=100, loss_scale=1, train_wall=135.34, gb_free=31.1, wall=0
+2026-06-28 17:35:01 | INFO | train_inner | epoch 002:    772 / 2931 loss=7.083, train_loss=7.083, cross_distance_loss=0.934, distance_loss=0.53, coord_loss=5.33, RMSD=5.329, prmsd_loss=2.888, ups=0.33, bsz=8, num_updates=5450, lr=9.31935e-06, gnorm=24.706, clip=100, loss_scale=1, train_wall=149.47, gb_free=31.4, wall=0
+2026-06-28 17:37:23 | INFO | train_inner | epoch 002:    822 / 2931 loss=6.852, train_loss=6.852, cross_distance_loss=0.937, distance_loss=0.534, coord_loss=5.092, RMSD=5.092, prmsd_loss=2.88, ups=0.35, bsz=8, num_updates=5500, lr=9.30725e-06, gnorm=50.664, clip=100, loss_scale=1, train_wall=142.17, gb_free=30.8, wall=0
+2026-06-28 17:37:23 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-28 17:37:23 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-28 19:18:04 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 6.307 | valid_loss 6.307 | cross_distance_loss 0.904 | distance_loss 0.307 | coord_loss 4.799 | RMSD 4.798 | prmsd_loss 2.973 | bsz 26010 | num_updates 5500 | best_loss 6.307
+2026-06-28 19:18:04 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 2 @ 5500 updates
+2026-06-28 19:18:04 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_2_5500.pt
+2026-06-28 19:18:08 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_2_5500.pt
+2026-06-28 19:18:08 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_2_5500.pt (epoch 2 @ 5500 updates, score 6.307) (writing took 4.210524949710816 seconds)
+2026-06-28 19:18:08 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_5500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_2_5500.pt
+2026-06-28 19:18:14 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_5500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-28 19:18:17 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_5500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-28 19:18:20 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_2_5500.pt ...
+2026-06-28 19:18:20 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-28 19:20:32 | INFO | train_inner | epoch 002:    872 / 2931 loss=6.689, train_loss=6.689, cross_distance_loss=0.925, distance_loss=0.515, coord_loss=4.958, RMSD=4.957, prmsd_loss=2.92, ups=0.01, bsz=8, num_updates=5550, lr=9.29515e-06, gnorm=20.753, clip=100, loss_scale=1, train_wall=143.17, gb_free=31.1, wall=0
+2026-06-28 19:22:38 | INFO | train_inner | epoch 002:    922 / 2931 loss=6.555, train_loss=6.555, cross_distance_loss=0.932, distance_loss=0.408, coord_loss=4.921, RMSD=4.921, prmsd_loss=2.936, ups=0.4, bsz=8, num_updates=5600, lr=9.28305e-06, gnorm=32.913, clip=100, loss_scale=1, train_wall=125.91, gb_free=30.2, wall=0
+2026-06-28 19:24:49 | INFO | train_inner | epoch 002:    972 / 2931 loss=6.47, train_loss=6.47, cross_distance_loss=0.921, distance_loss=0.424, coord_loss=4.832, RMSD=4.832, prmsd_loss=2.939, ups=0.38, bsz=8, num_updates=5650, lr=9.27095e-06, gnorm=20.47, clip=100, loss_scale=1, train_wall=131.66, gb_free=33.2, wall=0
+2026-06-28 19:27:12 | INFO | train_inner | epoch 002:   1022 / 2931 loss=6.653, train_loss=6.653, cross_distance_loss=0.934, distance_loss=0.428, coord_loss=4.996, RMSD=4.996, prmsd_loss=2.952, ups=0.35, bsz=8, num_updates=5700, lr=9.25886e-06, gnorm=67.801, clip=100, loss_scale=1, train_wall=142.39, gb_free=31.9, wall=0
+2026-06-28 19:29:20 | INFO | train_inner | epoch 002:   1072 / 2931 loss=6.392, train_loss=6.392, cross_distance_loss=0.917, distance_loss=0.443, coord_loss=4.739, RMSD=4.738, prmsd_loss=2.939, ups=0.39, bsz=8, num_updates=5750, lr=9.24676e-06, gnorm=15.634, clip=100, loss_scale=1, train_wall=128.52, gb_free=30.7, wall=0
+2026-06-28 19:31:43 | INFO | train_inner | epoch 002:   1122 / 2931 loss=6.648, train_loss=6.648, cross_distance_loss=0.921, distance_loss=0.45, coord_loss=4.985, RMSD=4.984, prmsd_loss=2.909, ups=0.35, bsz=8, num_updates=5800, lr=9.23466e-06, gnorm=59.315, clip=100, loss_scale=1, train_wall=142.25, gb_free=28.9, wall=0
+2026-06-28 19:33:55 | INFO | train_inner | epoch 002:   1172 / 2931 loss=6.511, train_loss=6.511, cross_distance_loss=0.904, distance_loss=0.374, coord_loss=4.938, RMSD=4.937, prmsd_loss=2.949, ups=0.38, bsz=8, num_updates=5850, lr=9.22256e-06, gnorm=19.587, clip=100, loss_scale=1, train_wall=132.4, gb_free=29.8, wall=0
+2026-06-28 19:36:13 | INFO | train_inner | epoch 002:   1222 / 2931 loss=6.459, train_loss=6.459, cross_distance_loss=0.903, distance_loss=0.417, coord_loss=4.844, RMSD=4.843, prmsd_loss=2.949, ups=0.36, bsz=8, num_updates=5900, lr=9.21046e-06, gnorm=43.35, clip=100, loss_scale=1, train_wall=137.83, gb_free=33.9, wall=0
+2026-06-28 19:38:26 | INFO | train_inner | epoch 002:   1272 / 2931 loss=6.8, train_loss=6.8, cross_distance_loss=0.925, distance_loss=0.476, coord_loss=5.111, RMSD=5.11, prmsd_loss=2.881, ups=0.38, bsz=8, num_updates=5950, lr=9.19836e-06, gnorm=26.324, clip=100, loss_scale=1, train_wall=132.46, gb_free=29.8, wall=0
+2026-06-28 19:40:53 | INFO | train_inner | epoch 002:   1322 / 2931 loss=6.498, train_loss=6.498, cross_distance_loss=0.908, distance_loss=0.46, coord_loss=4.836, RMSD=4.835, prmsd_loss=2.929, ups=0.34, bsz=8, num_updates=6000, lr=9.18627e-06, gnorm=18.653, clip=100, loss_scale=1, train_wall=147.27, gb_free=27.4, wall=0
+2026-06-28 19:40:53 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-28 19:40:53 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-28 21:25:14 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 6.268 | valid_loss 6.268 | cross_distance_loss 0.901 | distance_loss 0.321 | coord_loss 4.746 | RMSD 4.745 | prmsd_loss 3.003 | bsz 26010 | num_updates 6000 | best_loss 6.268
+2026-06-28 21:25:14 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 2 @ 6000 updates
+2026-06-28 21:25:14 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_2_6000.pt
+2026-06-28 21:25:18 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_2_6000.pt
+2026-06-28 21:25:18 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_2_6000.pt (epoch 2 @ 6000 updates, score 6.268) (writing took 4.195908365771174 seconds)
+2026-06-28 21:25:18 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_6000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_2_6000.pt
+2026-06-28 21:25:23 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_6000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-28 21:25:26 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_6000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-28 21:25:28 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_2_6000.pt ...
+2026-06-28 21:25:28 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-28 21:27:42 | INFO | train_inner | epoch 002:   1372 / 2931 loss=6.419, train_loss=6.419, cross_distance_loss=0.907, distance_loss=0.437, coord_loss=4.78, RMSD=4.779, prmsd_loss=2.943, ups=0.01, bsz=8, num_updates=6050, lr=9.17417e-06, gnorm=39.744, clip=100, loss_scale=1, train_wall=143.69, gb_free=32.6, wall=0
+2026-06-28 21:29:48 | INFO | train_inner | epoch 002:   1422 / 2931 loss=6.659, train_loss=6.659, cross_distance_loss=0.919, distance_loss=0.457, coord_loss=4.987, RMSD=4.986, prmsd_loss=2.961, ups=0.4, bsz=8, num_updates=6100, lr=9.16207e-06, gnorm=125.087, clip=100, loss_scale=1, train_wall=126.21, gb_free=31.1, wall=0
+2026-06-28 21:32:14 | INFO | train_inner | epoch 002:   1472 / 2931 loss=6.438, train_loss=6.438, cross_distance_loss=0.92, distance_loss=0.401, coord_loss=4.82, RMSD=4.82, prmsd_loss=2.969, ups=0.34, bsz=8, num_updates=6150, lr=9.14997e-06, gnorm=64.638, clip=100, loss_scale=1, train_wall=146.14, gb_free=31.1, wall=0
+2026-06-28 21:34:33 | INFO | train_inner | epoch 002:   1522 / 2931 loss=6.367, train_loss=6.367, cross_distance_loss=0.91, distance_loss=0.412, coord_loss=4.749, RMSD=4.749, prmsd_loss=2.963, ups=0.36, bsz=8, num_updates=6200, lr=9.13787e-06, gnorm=26.584, clip=100, loss_scale=1, train_wall=138.46, gb_free=30.8, wall=0
+2026-06-28 21:36:48 | INFO | train_inner | epoch 002:   1572 / 2931 loss=6.263, train_loss=6.263, cross_distance_loss=0.913, distance_loss=0.427, coord_loss=4.626, RMSD=4.625, prmsd_loss=2.965, ups=0.37, bsz=8, num_updates=6250, lr=9.12577e-06, gnorm=43.375, clip=100, loss_scale=1, train_wall=134.82, gb_free=31.6, wall=0
+2026-06-28 21:39:06 | INFO | train_inner | epoch 002:   1622 / 2931 loss=6.498, train_loss=6.498, cross_distance_loss=0.915, distance_loss=0.433, coord_loss=4.856, RMSD=4.856, prmsd_loss=2.94, ups=0.36, bsz=8, num_updates=6300, lr=9.11368e-06, gnorm=76.059, clip=100, loss_scale=1, train_wall=138.28, gb_free=31, wall=0
+2026-06-28 21:41:21 | INFO | train_inner | epoch 002:   1672 / 2931 loss=6.419, train_loss=6.419, cross_distance_loss=0.916, distance_loss=0.44, coord_loss=4.772, RMSD=4.772, prmsd_loss=2.906, ups=0.37, bsz=8, num_updates=6350, lr=9.10158e-06, gnorm=42.76, clip=100, loss_scale=1, train_wall=134.94, gb_free=32.5, wall=0
+2026-06-28 21:43:41 | INFO | train_inner | epoch 002:   1722 / 2931 loss=6.617, train_loss=6.617, cross_distance_loss=0.916, distance_loss=0.458, coord_loss=4.951, RMSD=4.951, prmsd_loss=2.917, ups=0.36, bsz=8, num_updates=6400, lr=9.08948e-06, gnorm=25.599, clip=100, loss_scale=1, train_wall=139.46, gb_free=30.7, wall=0
+2026-06-28 21:45:50 | INFO | train_inner | epoch 002:   1772 / 2931 loss=6.37, train_loss=6.37, cross_distance_loss=0.894, distance_loss=0.415, coord_loss=4.767, RMSD=4.766, prmsd_loss=2.939, ups=0.39, bsz=8, num_updates=6450, lr=9.07738e-06, gnorm=61.178, clip=100, loss_scale=1, train_wall=128.83, gb_free=31.8, wall=0
+2026-06-28 21:48:11 | INFO | train_inner | epoch 002:   1822 / 2931 loss=6.386, train_loss=6.386, cross_distance_loss=0.901, distance_loss=0.426, coord_loss=4.772, RMSD=4.771, prmsd_loss=2.867, ups=0.35, bsz=8, num_updates=6500, lr=9.06528e-06, gnorm=33.112, clip=100, loss_scale=1, train_wall=140.84, gb_free=29.8, wall=0
+2026-06-28 21:48:11 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-28 21:48:11 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-28 23:26:10 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 6.485 | valid_loss 6.485 | cross_distance_loss 0.895 | distance_loss 0.308 | coord_loss 4.968 | RMSD 4.966 | prmsd_loss 3.133 | bsz 26010 | num_updates 6500 | best_loss 6.268
+2026-06-28 23:26:10 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 2 @ 6500 updates
+2026-06-28 23:26:10 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_2_6500.pt
+2026-06-28 23:26:15 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_2_6500.pt
+2026-06-28 23:26:15 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_2_6500.pt (epoch 2 @ 6500 updates, score 6.485) (writing took 5.242061817087233 seconds)
+2026-06-28 23:26:15 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_6500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_2_6500.pt
+2026-06-28 23:26:20 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_6500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-28 23:26:22 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_2_6500.pt ...
+2026-06-28 23:26:23 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-28 23:28:32 | INFO | train_inner | epoch 002:   1872 / 2931 loss=6.566, train_loss=6.566, cross_distance_loss=0.904, distance_loss=0.502, coord_loss=4.867, RMSD=4.866, prmsd_loss=2.937, ups=0.01, bsz=8, num_updates=6550, lr=9.05318e-06, gnorm=66.415, clip=100, loss_scale=1, train_wall=136.97, gb_free=33.2, wall=0
+2026-06-28 23:30:53 | INFO | train_inner | epoch 002:   1922 / 2931 loss=6.357, train_loss=6.357, cross_distance_loss=0.907, distance_loss=0.452, coord_loss=4.709, RMSD=4.708, prmsd_loss=2.886, ups=0.35, bsz=8, num_updates=6600, lr=9.04109e-06, gnorm=42.849, clip=100, loss_scale=1, train_wall=140.9, gb_free=28.4, wall=0
+2026-06-28 23:33:02 | INFO | train_inner | epoch 002:   1972 / 2931 loss=6.456, train_loss=6.456, cross_distance_loss=0.904, distance_loss=0.463, coord_loss=4.797, RMSD=4.796, prmsd_loss=2.917, ups=0.39, bsz=8, num_updates=6650, lr=9.02899e-06, gnorm=33.351, clip=100, loss_scale=1, train_wall=128.01, gb_free=29.3, wall=0
+2026-06-28 23:35:17 | INFO | train_inner | epoch 002:   2022 / 2931 loss=6.34, train_loss=6.34, cross_distance_loss=0.909, distance_loss=0.421, coord_loss=4.718, RMSD=4.718, prmsd_loss=2.921, ups=0.37, bsz=8, num_updates=6700, lr=9.01689e-06, gnorm=53.726, clip=100, loss_scale=1, train_wall=134.99, gb_free=28.4, wall=0
+2026-06-28 23:37:28 | INFO | train_inner | epoch 002:   2072 / 2931 loss=6.411, train_loss=6.411, cross_distance_loss=0.909, distance_loss=0.431, coord_loss=4.774, RMSD=4.773, prmsd_loss=2.963, ups=0.38, bsz=8, num_updates=6750, lr=9.00479e-06, gnorm=25.216, clip=100, loss_scale=1, train_wall=131.1, gb_free=30.3, wall=0
+2026-06-28 23:39:47 | INFO | train_inner | epoch 002:   2122 / 2931 loss=6.371, train_loss=6.371, cross_distance_loss=0.902, distance_loss=0.448, coord_loss=4.729, RMSD=4.728, prmsd_loss=2.922, ups=0.36, bsz=8, num_updates=6800, lr=8.99269e-06, gnorm=24.526, clip=100, loss_scale=1, train_wall=138.18, gb_free=31, wall=0
+2026-06-28 23:42:02 | INFO | train_inner | epoch 002:   2172 / 2931 loss=6.159, train_loss=6.159, cross_distance_loss=0.893, distance_loss=0.392, coord_loss=4.58, RMSD=4.579, prmsd_loss=2.948, ups=0.37, bsz=8, num_updates=6850, lr=8.98059e-06, gnorm=37.492, clip=100, loss_scale=1, train_wall=135.17, gb_free=32.2, wall=0
+2026-06-28 23:44:28 | INFO | train_inner | epoch 002:   2222 / 2931 loss=6.475, train_loss=6.475, cross_distance_loss=0.905, distance_loss=0.387, coord_loss=4.888, RMSD=4.887, prmsd_loss=2.953, ups=0.34, bsz=8, num_updates=6900, lr=8.9685e-06, gnorm=50.579, clip=100, loss_scale=1, train_wall=145.08, gb_free=29.8, wall=0
+2026-06-28 23:46:34 | INFO | train_inner | epoch 002:   2272 / 2931 loss=6.252, train_loss=6.252, cross_distance_loss=0.899, distance_loss=0.367, coord_loss=4.693, RMSD=4.692, prmsd_loss=2.924, ups=0.4, bsz=8, num_updates=6950, lr=8.9564e-06, gnorm=32.651, clip=100, loss_scale=1, train_wall=126.17, gb_free=32.3, wall=0
+2026-06-28 23:49:01 | INFO | train_inner | epoch 002:   2322 / 2931 loss=6.418, train_loss=6.418, cross_distance_loss=0.905, distance_loss=0.442, coord_loss=4.78, RMSD=4.779, prmsd_loss=2.92, ups=0.34, bsz=8, num_updates=7000, lr=8.9443e-06, gnorm=27.069, clip=100, loss_scale=1, train_wall=146.63, gb_free=33.9, wall=0
+2026-06-28 23:49:01 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-28 23:49:01 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 01:21:16 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 5.995 | valid_loss 5.995 | cross_distance_loss 0.871 | distance_loss 0.29 | coord_loss 4.537 | RMSD 4.537 | prmsd_loss 2.973 | bsz 26010 | num_updates 7000 | best_loss 5.995
+2026-06-29 01:21:16 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 2 @ 7000 updates
+2026-06-29 01:21:16 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_2_7000.pt
+2026-06-29 01:21:22 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_2_7000.pt
+2026-06-29 01:21:22 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_2_7000.pt (epoch 2 @ 7000 updates, score 5.995) (writing took 5.475530492141843 seconds)
+2026-06-29 01:21:22 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_7000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_2_7000.pt
+2026-06-29 01:21:27 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_7000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-29 01:21:30 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_7000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 01:21:32 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_2_7000.pt ...
+2026-06-29 01:21:32 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 01:23:45 | INFO | train_inner | epoch 002:   2372 / 2931 loss=6.36, train_loss=6.36, cross_distance_loss=0.888, distance_loss=0.37, coord_loss=4.807, RMSD=4.806, prmsd_loss=2.947, ups=0.01, bsz=8, num_updates=7050, lr=8.9322e-06, gnorm=39.903, clip=100, loss_scale=1, train_wall=142.84, gb_free=32.3, wall=0
+2026-06-29 01:26:00 | INFO | train_inner | epoch 002:   2422 / 2931 loss=6.389, train_loss=6.389, cross_distance_loss=0.889, distance_loss=0.389, coord_loss=4.817, RMSD=4.816, prmsd_loss=2.948, ups=0.37, bsz=8, num_updates=7100, lr=8.9201e-06, gnorm=80.663, clip=100, loss_scale=1, train_wall=135.59, gb_free=32.9, wall=0
+2026-06-29 01:28:31 | INFO | train_inner | epoch 002:   2472 / 2931 loss=6.631, train_loss=6.631, cross_distance_loss=0.924, distance_loss=0.491, coord_loss=4.926, RMSD=4.925, prmsd_loss=2.893, ups=0.33, bsz=8, num_updates=7150, lr=8.908e-06, gnorm=36.214, clip=100, loss_scale=1, train_wall=150.18, gb_free=31.1, wall=0
+2026-06-29 01:30:42 | INFO | train_inner | epoch 002:   2522 / 2931 loss=6.239, train_loss=6.239, cross_distance_loss=0.901, distance_loss=0.397, coord_loss=4.647, RMSD=4.646, prmsd_loss=2.938, ups=0.38, bsz=8, num_updates=7200, lr=8.89591e-06, gnorm=11.132, clip=100, loss_scale=1, train_wall=131.22, gb_free=31.8, wall=0
+2026-06-29 01:32:58 | INFO | train_inner | epoch 002:   2572 / 2931 loss=6.34, train_loss=6.34, cross_distance_loss=0.883, distance_loss=0.424, coord_loss=4.739, RMSD=4.739, prmsd_loss=2.933, ups=0.37, bsz=8, num_updates=7250, lr=8.88381e-06, gnorm=24.761, clip=100, loss_scale=1, train_wall=135.88, gb_free=31.9, wall=0
+2026-06-29 01:35:03 | INFO | train_inner | epoch 002:   2622 / 2931 loss=6.048, train_loss=6.048, cross_distance_loss=0.868, distance_loss=0.348, coord_loss=4.537, RMSD=4.537, prmsd_loss=2.952, ups=0.4, bsz=8, num_updates=7300, lr=8.87171e-06, gnorm=14.702, clip=100, loss_scale=1, train_wall=124.54, gb_free=30.3, wall=0
+2026-06-29 01:37:19 | INFO | train_inner | epoch 002:   2672 / 2931 loss=6.369, train_loss=6.369, cross_distance_loss=0.886, distance_loss=0.472, coord_loss=4.715, RMSD=4.714, prmsd_loss=2.953, ups=0.37, bsz=8, num_updates=7350, lr=8.85961e-06, gnorm=21.393, clip=100, loss_scale=1, train_wall=136.44, gb_free=30.7, wall=0
+2026-06-29 01:39:21 | INFO | train_inner | epoch 002:   2722 / 2931 loss=6.287, train_loss=6.287, cross_distance_loss=0.873, distance_loss=0.424, coord_loss=4.697, RMSD=4.696, prmsd_loss=2.945, ups=0.41, bsz=8, num_updates=7400, lr=8.84751e-06, gnorm=19.586, clip=100, loss_scale=1, train_wall=122.01, gb_free=31.5, wall=0
+2026-06-29 01:41:38 | INFO | train_inner | epoch 002:   2772 / 2931 loss=6.355, train_loss=6.355, cross_distance_loss=0.906, distance_loss=0.414, coord_loss=4.739, RMSD=4.738, prmsd_loss=2.961, ups=0.37, bsz=8, num_updates=7450, lr=8.83541e-06, gnorm=18.183, clip=100, loss_scale=1, train_wall=136.41, gb_free=32.2, wall=0
+2026-06-29 01:43:44 | INFO | train_inner | epoch 002:   2822 / 2931 loss=6.277, train_loss=6.277, cross_distance_loss=0.881, distance_loss=0.389, coord_loss=4.71, RMSD=4.71, prmsd_loss=2.97, ups=0.4, bsz=8, num_updates=7500, lr=8.82332e-06, gnorm=21.292, clip=100, loss_scale=1, train_wall=125.57, gb_free=31.9, wall=0
+2026-06-29 01:43:44 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 01:43:44 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 03:16:57 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 5.943 | valid_loss 5.943 | cross_distance_loss 0.857 | distance_loss 0.284 | coord_loss 4.502 | RMSD 4.501 | prmsd_loss 2.997 | bsz 26010 | num_updates 7500 | best_loss 5.943
+2026-06-29 03:16:57 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 2 @ 7500 updates
+2026-06-29 03:16:57 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_2_7500.pt
+2026-06-29 03:17:02 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_2_7500.pt
+2026-06-29 03:17:02 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_2_7500.pt (epoch 2 @ 7500 updates, score 5.943) (writing took 5.367564842104912 seconds)
+2026-06-29 03:17:02 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_7500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_2_7500.pt
+2026-06-29 03:17:07 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_7500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-29 03:17:11 | INFO | unicore.checkpoint_utils | copy ./checkpoint_2_7500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 03:17:14 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_2_7500.pt ...
+2026-06-29 03:17:15 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 03:19:21 | INFO | train_inner | epoch 002:   2872 / 2931 loss=6.042, train_loss=6.042, cross_distance_loss=0.867, distance_loss=0.366, coord_loss=4.516, RMSD=4.515, prmsd_loss=2.935, ups=0.01, bsz=8, num_updates=7550, lr=8.81122e-06, gnorm=24.541, clip=100, loss_scale=1, train_wall=138.89, gb_free=31.5, wall=0
+2026-06-29 03:21:32 | INFO | train_inner | epoch 002:   2922 / 2931 loss=6.039, train_loss=6.039, cross_distance_loss=0.871, distance_loss=0.388, coord_loss=4.487, RMSD=4.487, prmsd_loss=2.934, ups=0.38, bsz=8, num_updates=7600, lr=8.79912e-06, gnorm=17.492, clip=100, loss_scale=1, train_wall=130.15, gb_free=32.6, wall=0
+2026-06-29 03:21:54 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 03:21:54 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 04:57:05 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 6.112 | valid_loss 6.112 | cross_distance_loss 0.859 | distance_loss 0.287 | coord_loss 4.66 | RMSD 4.658 | prmsd_loss 3.052 | bsz 26010 | num_updates 7609 | best_loss 5.943
+2026-06-29 04:57:05 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 2 @ 7609 updates
+2026-06-29 04:57:05 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint2.pt
+2026-06-29 04:57:10 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint2.pt
+2026-06-29 04:57:10 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint2.pt (epoch 2 @ 7609 updates, score 6.112) (writing took 5.204271183349192 seconds)
+2026-06-29 04:57:10 | INFO | unicore_cli.train | end of epoch 2 (average epoch stats below)
+2026-06-29 04:57:10 | INFO | unicore.checkpoint_utils | copy ./checkpoint2.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint2.pt
+2026-06-29 04:57:10 | INFO | train | epoch 002 | loss 6.49 | train_loss 6.49 | cross_distance_loss 0.914 | distance_loss 0.435 | coord_loss 4.848 | RMSD 4.847 | prmsd_loss 2.937 | ups 0.06 | bsz 8 | num_updates 7609 | lr 8.79694e-06 | gnorm 35.233 | clip 100 | loss_scale 1 | train_wall 8034.04 | gb_free 30.7 | wall 0
+2026-06-29 04:57:10 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 3
+2026-06-29 04:57:10 | INFO | unicore.trainer | begin training epoch 3
+2026-06-29 04:57:10 | INFO | unicore_cli.train | Start iterating over samples
+2026-06-29 04:57:15 | INFO | unicore.checkpoint_utils | copy ./checkpoint2.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 04:57:17 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint2.pt ...
+2026-06-29 04:57:18 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 04:59:01 | INFO | train_inner | epoch 003:     41 / 2931 loss=6.224, train_loss=6.224, cross_distance_loss=0.872, distance_loss=0.457, coord_loss=4.604, RMSD=4.603, prmsd_loss=2.918, ups=0.01, bsz=8, num_updates=7650, lr=8.78702e-06, gnorm=26.39, clip=100, loss_scale=1, train_wall=132.62, gb_free=32.9, wall=0
+2026-06-29 05:01:05 | INFO | train_inner | epoch 003:     91 / 2931 loss=6.271, train_loss=6.271, cross_distance_loss=0.885, distance_loss=0.417, coord_loss=4.675, RMSD=4.674, prmsd_loss=2.948, ups=0.4, bsz=8, num_updates=7700, lr=8.77492e-06, gnorm=128.3, clip=100, loss_scale=1, train_wall=124.74, gb_free=30.2, wall=0
+2026-06-29 05:03:03 | INFO | train_inner | epoch 003:    141 / 2931 loss=6.196, train_loss=6.196, cross_distance_loss=0.881, distance_loss=0.391, coord_loss=4.628, RMSD=4.627, prmsd_loss=2.95, ups=0.42, bsz=8, num_updates=7750, lr=8.76282e-06, gnorm=33.171, clip=100, loss_scale=1, train_wall=117.85, gb_free=33.5, wall=0
+2026-06-29 05:05:21 | INFO | train_inner | epoch 003:    191 / 2931 loss=6.252, train_loss=6.252, cross_distance_loss=0.879, distance_loss=0.426, coord_loss=4.66, RMSD=4.659, prmsd_loss=2.872, ups=0.36, bsz=8, num_updates=7800, lr=8.75073e-06, gnorm=66.774, clip=100, loss_scale=1, train_wall=137.1, gb_free=32.9, wall=0
+2026-06-29 05:07:46 | INFO | train_inner | epoch 003:    241 / 2931 loss=6.226, train_loss=6.226, cross_distance_loss=0.887, distance_loss=0.44, coord_loss=4.609, RMSD=4.608, prmsd_loss=2.901, ups=0.34, bsz=8, num_updates=7850, lr=8.73863e-06, gnorm=23.001, clip=100, loss_scale=1, train_wall=145.01, gb_free=28.4, wall=0
+2026-06-29 05:09:48 | INFO | train_inner | epoch 003:    291 / 2931 loss=6.157, train_loss=6.157, cross_distance_loss=0.86, distance_loss=0.397, coord_loss=4.61, RMSD=4.609, prmsd_loss=2.906, ups=0.41, bsz=8, num_updates=7900, lr=8.72653e-06, gnorm=80.366, clip=100, loss_scale=1, train_wall=122.08, gb_free=32.6, wall=0
+2026-06-29 05:12:02 | INFO | train_inner | epoch 003:    341 / 2931 loss=6.325, train_loss=6.325, cross_distance_loss=0.878, distance_loss=0.427, coord_loss=4.725, RMSD=4.725, prmsd_loss=2.942, ups=0.37, bsz=8, num_updates=7950, lr=8.71443e-06, gnorm=25.431, clip=100, loss_scale=1, train_wall=134.18, gb_free=29.9, wall=0
+2026-06-29 05:14:20 | INFO | train_inner | epoch 003:    391 / 2931 loss=6.152, train_loss=6.152, cross_distance_loss=0.891, distance_loss=0.417, coord_loss=4.555, RMSD=4.554, prmsd_loss=2.891, ups=0.36, bsz=8, num_updates=8000, lr=8.70233e-06, gnorm=64.018, clip=100, loss_scale=1, train_wall=137.52, gb_free=30.7, wall=0
+2026-06-29 05:14:20 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 05:14:20 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 07:16:35 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 6.082 | valid_loss 6.082 | cross_distance_loss 0.85 | distance_loss 0.287 | coord_loss 4.647 | RMSD 4.646 | prmsd_loss 2.981 | bsz 26010 | num_updates 8000 | best_loss 5.943
+2026-06-29 07:16:35 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 3 @ 8000 updates
+2026-06-29 07:16:35 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_3_8000.pt
+2026-06-29 07:16:40 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_3_8000.pt
+2026-06-29 07:16:40 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_3_8000.pt (epoch 3 @ 8000 updates, score 6.082) (writing took 5.51696115359664 seconds)
+2026-06-29 07:16:40 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_8000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_3_8000.pt
+2026-06-29 07:16:45 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_8000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 07:16:48 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_3_8000.pt ...
+2026-06-29 07:16:48 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 07:18:55 | INFO | train_inner | epoch 003:    441 / 2931 loss=6.151, train_loss=6.151, cross_distance_loss=0.883, distance_loss=0.39, coord_loss=4.587, RMSD=4.586, prmsd_loss=2.913, ups=0.01, bsz=8, num_updates=8050, lr=8.69023e-06, gnorm=68.694, clip=100, loss_scale=1, train_wall=134.23, gb_free=30.7, wall=0
+2026-06-29 07:21:19 | INFO | train_inner | epoch 003:    491 / 2931 loss=6.131, train_loss=6.131, cross_distance_loss=0.858, distance_loss=0.413, coord_loss=4.575, RMSD=4.574, prmsd_loss=2.853, ups=0.35, bsz=8, num_updates=8100, lr=8.67814e-06, gnorm=42.039, clip=100, loss_scale=1, train_wall=143.64, gb_free=30.3, wall=0
+2026-06-29 07:23:36 | INFO | train_inner | epoch 003:    541 / 2931 loss=6.073, train_loss=6.073, cross_distance_loss=0.871, distance_loss=0.404, coord_loss=4.503, RMSD=4.502, prmsd_loss=2.957, ups=0.36, bsz=8, num_updates=8150, lr=8.66604e-06, gnorm=35.229, clip=100, loss_scale=1, train_wall=137.22, gb_free=31.5, wall=0
+2026-06-29 07:25:44 | INFO | train_inner | epoch 003:    591 / 2931 loss=6.048, train_loss=6.048, cross_distance_loss=0.86, distance_loss=0.415, coord_loss=4.481, RMSD=4.48, prmsd_loss=2.913, ups=0.39, bsz=8, num_updates=8200, lr=8.65394e-06, gnorm=55.893, clip=100, loss_scale=1, train_wall=127.58, gb_free=32.9, wall=0
+2026-06-29 07:27:46 | INFO | train_inner | epoch 003:    641 / 2931 loss=6.099, train_loss=6.099, cross_distance_loss=0.865, distance_loss=0.412, coord_loss=4.529, RMSD=4.528, prmsd_loss=2.923, ups=0.41, bsz=8, num_updates=8250, lr=8.64184e-06, gnorm=24.327, clip=100, loss_scale=1, train_wall=122.23, gb_free=31.8, wall=0
+2026-06-29 07:29:54 | INFO | train_inner | epoch 003:    691 / 2931 loss=6.142, train_loss=6.142, cross_distance_loss=0.859, distance_loss=0.395, coord_loss=4.597, RMSD=4.596, prmsd_loss=2.918, ups=0.39, bsz=8, num_updates=8300, lr=8.62974e-06, gnorm=48.579, clip=100, loss_scale=1, train_wall=127.84, gb_free=31.9, wall=0
+2026-06-29 07:31:57 | INFO | train_inner | epoch 003:    741 / 2931 loss=6.007, train_loss=6.007, cross_distance_loss=0.851, distance_loss=0.355, coord_loss=4.508, RMSD=4.507, prmsd_loss=2.94, ups=0.41, bsz=8, num_updates=8350, lr=8.61764e-06, gnorm=33.26, clip=100, loss_scale=1, train_wall=122.72, gb_free=31.5, wall=0
+2026-06-29 07:34:10 | INFO | train_inner | epoch 003:    791 / 2931 loss=5.941, train_loss=5.941, cross_distance_loss=0.843, distance_loss=0.348, coord_loss=4.456, RMSD=4.455, prmsd_loss=2.947, ups=0.38, bsz=8, num_updates=8400, lr=8.60555e-06, gnorm=33.677, clip=100, loss_scale=1, train_wall=132.77, gb_free=32.9, wall=0
+2026-06-29 07:36:15 | INFO | train_inner | epoch 003:    841 / 2931 loss=6.07, train_loss=6.07, cross_distance_loss=0.868, distance_loss=0.364, coord_loss=4.545, RMSD=4.545, prmsd_loss=2.921, ups=0.4, bsz=8, num_updates=8450, lr=8.59345e-06, gnorm=34.315, clip=100, loss_scale=1, train_wall=125.55, gb_free=32.3, wall=0
+2026-06-29 07:38:25 | INFO | train_inner | epoch 003:    891 / 2931 loss=5.913, train_loss=5.913, cross_distance_loss=0.85, distance_loss=0.356, coord_loss=4.414, RMSD=4.413, prmsd_loss=2.934, ups=0.38, bsz=8, num_updates=8500, lr=8.58135e-06, gnorm=25.86, clip=100, loss_scale=1, train_wall=129.94, gb_free=32.9, wall=0
+2026-06-29 07:38:25 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 07:38:25 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 09:06:47 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 6.07 | valid_loss 6.07 | cross_distance_loss 0.842 | distance_loss 0.288 | coord_loss 4.636 | RMSD 4.633 | prmsd_loss 3.029 | bsz 26010 | num_updates 8500 | best_loss 5.943
+2026-06-29 09:06:47 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 3 @ 8500 updates
+2026-06-29 09:06:47 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_3_8500.pt
+2026-06-29 09:06:53 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_3_8500.pt
+2026-06-29 09:06:53 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_3_8500.pt (epoch 3 @ 8500 updates, score 6.07) (writing took 5.448069054633379 seconds)
+2026-06-29 09:06:53 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_8500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_3_8500.pt
+2026-06-29 09:06:57 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_8500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 09:07:54 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_3_8500.pt ...
+2026-06-29 09:07:54 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 09:09:10 | INFO | train_inner | epoch 003:    941 / 2931 loss=6.006, train_loss=6.006, cross_distance_loss=0.858, distance_loss=0.404, coord_loss=4.454, RMSD=4.453, prmsd_loss=2.894, ups=0.01, bsz=8, num_updates=8550, lr=8.56925e-06, gnorm=36.569, clip=100, loss_scale=1, train_wall=137.14, gb_free=31.8, wall=0
+2026-06-29 09:11:15 | INFO | train_inner | epoch 003:    991 / 2931 loss=5.977, train_loss=5.977, cross_distance_loss=0.852, distance_loss=0.367, coord_loss=4.467, RMSD=4.467, prmsd_loss=2.911, ups=0.4, bsz=8, num_updates=8600, lr=8.55715e-06, gnorm=86.429, clip=100, loss_scale=1, train_wall=124.75, gb_free=33.2, wall=0
+2026-06-29 09:13:34 | INFO | train_inner | epoch 003:   1041 / 2931 loss=5.919, train_loss=5.919, cross_distance_loss=0.846, distance_loss=0.389, coord_loss=4.393, RMSD=4.392, prmsd_loss=2.908, ups=0.36, bsz=8, num_updates=8650, lr=8.54505e-06, gnorm=24.295, clip=100, loss_scale=1, train_wall=138.7, gb_free=29.8, wall=0
+2026-06-29 09:15:36 | INFO | train_inner | epoch 003:   1091 / 2931 loss=6.055, train_loss=6.055, cross_distance_loss=0.869, distance_loss=0.408, coord_loss=4.482, RMSD=4.482, prmsd_loss=2.964, ups=0.41, bsz=8, num_updates=8700, lr=8.53296e-06, gnorm=33.137, clip=100, loss_scale=1, train_wall=122.45, gb_free=32.2, wall=0
+2026-06-29 09:17:57 | INFO | train_inner | epoch 003:   1141 / 2931 loss=6.076, train_loss=6.076, cross_distance_loss=0.869, distance_loss=0.418, coord_loss=4.499, RMSD=4.498, prmsd_loss=2.9, ups=0.35, bsz=8, num_updates=8750, lr=8.52086e-06, gnorm=19.807, clip=100, loss_scale=1, train_wall=140.82, gb_free=32.2, wall=0
+2026-06-29 09:19:58 | INFO | train_inner | epoch 003:   1191 / 2931 loss=5.914, train_loss=5.914, cross_distance_loss=0.834, distance_loss=0.363, coord_loss=4.423, RMSD=4.422, prmsd_loss=2.944, ups=0.41, bsz=8, num_updates=8800, lr=8.50876e-06, gnorm=22.239, clip=100, loss_scale=1, train_wall=120.46, gb_free=33.9, wall=0
+2026-06-29 09:22:01 | INFO | train_inner | epoch 003:   1241 / 2931 loss=5.896, train_loss=5.896, cross_distance_loss=0.847, distance_loss=0.389, coord_loss=4.37, RMSD=4.369, prmsd_loss=2.907, ups=0.41, bsz=8, num_updates=8850, lr=8.49666e-06, gnorm=36.04, clip=100, loss_scale=1, train_wall=123.25, gb_free=29, wall=0
+2026-06-29 09:24:09 | INFO | train_inner | epoch 003:   1291 / 2931 loss=6.304, train_loss=6.304, cross_distance_loss=0.864, distance_loss=0.454, coord_loss=4.697, RMSD=4.695, prmsd_loss=2.895, ups=0.39, bsz=8, num_updates=8900, lr=8.48456e-06, gnorm=79.409, clip=100, loss_scale=1, train_wall=128.12, gb_free=32.9, wall=0
+2026-06-29 09:26:18 | INFO | train_inner | epoch 003:   1341 / 2931 loss=6.116, train_loss=6.116, cross_distance_loss=0.863, distance_loss=0.383, coord_loss=4.575, RMSD=4.574, prmsd_loss=2.953, ups=0.39, bsz=8, num_updates=8950, lr=8.47246e-06, gnorm=100.359, clip=100, loss_scale=1, train_wall=128.1, gb_free=31.5, wall=0
+2026-06-29 09:28:13 | INFO | train_inner | epoch 003:   1391 / 2931 loss=6.041, train_loss=6.041, cross_distance_loss=0.844, distance_loss=0.408, coord_loss=4.5, RMSD=4.499, prmsd_loss=2.901, ups=0.43, bsz=8, num_updates=9000, lr=8.46037e-06, gnorm=37.136, clip=100, loss_scale=1, train_wall=115.8, gb_free=29.9, wall=0
+2026-06-29 09:28:13 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 09:28:13 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 10:49:09 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 6.107 | valid_loss 6.107 | cross_distance_loss 0.858 | distance_loss 0.286 | coord_loss 4.652 | RMSD 4.651 | prmsd_loss 3.107 | bsz 26010 | num_updates 9000 | best_loss 5.943
+2026-06-29 10:49:09 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 3 @ 9000 updates
+2026-06-29 10:49:09 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_3_9000.pt
+2026-06-29 10:49:14 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_3_9000.pt
+2026-06-29 10:49:14 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_3_9000.pt (epoch 3 @ 9000 updates, score 6.107) (writing took 5.3306590532884 seconds)
+2026-06-29 10:49:14 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_9000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_3_9000.pt
+2026-06-29 10:49:24 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_9000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 10:49:26 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_3_9000.pt ...
+2026-06-29 10:49:27 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 10:51:00 | INFO | train_inner | epoch 003:   1441 / 2931 loss=5.877, train_loss=5.877, cross_distance_loss=0.852, distance_loss=0.395, coord_loss=4.336, RMSD=4.335, prmsd_loss=2.94, ups=0.01, bsz=8, num_updates=9050, lr=8.44827e-06, gnorm=95.973, clip=100, loss_scale=1, train_wall=105.29, gb_free=31.8, wall=0
+2026-06-29 10:53:13 | INFO | train_inner | epoch 003:   1491 / 2931 loss=6.285, train_loss=6.285, cross_distance_loss=0.871, distance_loss=0.449, coord_loss=4.679, RMSD=4.679, prmsd_loss=2.861, ups=0.37, bsz=8, num_updates=9100, lr=8.43617e-06, gnorm=190.332, clip=100, loss_scale=1, train_wall=133.3, gb_free=28, wall=0
+2026-06-29 10:55:18 | INFO | train_inner | epoch 003:   1541 / 2931 loss=5.818, train_loss=5.818, cross_distance_loss=0.845, distance_loss=0.354, coord_loss=4.323, RMSD=4.322, prmsd_loss=2.957, ups=0.4, bsz=8, num_updates=9150, lr=8.42407e-06, gnorm=44.149, clip=100, loss_scale=1, train_wall=124.75, gb_free=28.9, wall=0
+2026-06-29 10:57:15 | INFO | train_inner | epoch 003:   1591 / 2931 loss=6.219, train_loss=6.219, cross_distance_loss=0.869, distance_loss=0.449, coord_loss=4.609, RMSD=4.608, prmsd_loss=2.915, ups=0.43, bsz=8, num_updates=9200, lr=8.41197e-06, gnorm=38.948, clip=100, loss_scale=1, train_wall=116.56, gb_free=27.4, wall=0
+2026-06-29 10:59:22 | INFO | train_inner | epoch 003:   1641 / 2931 loss=5.748, train_loss=5.748, cross_distance_loss=0.848, distance_loss=0.336, coord_loss=4.269, RMSD=4.269, prmsd_loss=2.949, ups=0.39, bsz=8, num_updates=9250, lr=8.39987e-06, gnorm=141.214, clip=100, loss_scale=1, train_wall=127, gb_free=31, wall=0
+2026-06-29 11:01:28 | INFO | train_inner | epoch 003:   1691 / 2931 loss=5.987, train_loss=5.987, cross_distance_loss=0.855, distance_loss=0.398, coord_loss=4.44, RMSD=4.439, prmsd_loss=2.946, ups=0.4, bsz=8, num_updates=9300, lr=8.38778e-06, gnorm=64.455, clip=100, loss_scale=1, train_wall=126.15, gb_free=23.8, wall=0
+2026-06-29 11:03:34 | INFO | train_inner | epoch 003:   1741 / 2931 loss=5.676, train_loss=5.676, cross_distance_loss=0.833, distance_loss=0.328, coord_loss=4.219, RMSD=4.219, prmsd_loss=2.962, ups=0.4, bsz=8, num_updates=9350, lr=8.37568e-06, gnorm=27.545, clip=100, loss_scale=1, train_wall=125.18, gb_free=29.7, wall=0
+2026-06-29 11:05:30 | INFO | train_inner | epoch 003:   1791 / 2931 loss=5.899, train_loss=5.899, cross_distance_loss=0.838, distance_loss=0.363, coord_loss=4.407, RMSD=4.406, prmsd_loss=2.91, ups=0.43, bsz=8, num_updates=9400, lr=8.36358e-06, gnorm=32.351, clip=100, loss_scale=1, train_wall=116.71, gb_free=32.2, wall=0
+2026-06-29 11:07:33 | INFO | train_inner | epoch 003:   1841 / 2931 loss=6.257, train_loss=6.257, cross_distance_loss=0.872, distance_loss=0.427, coord_loss=4.669, RMSD=4.669, prmsd_loss=2.892, ups=0.41, bsz=8, num_updates=9450, lr=8.35148e-06, gnorm=92.363, clip=100, loss_scale=1, train_wall=122.87, gb_free=30.7, wall=0
+2026-06-29 11:09:32 | INFO | train_inner | epoch 003:   1891 / 2931 loss=5.781, train_loss=5.781, cross_distance_loss=0.819, distance_loss=0.323, coord_loss=4.347, RMSD=4.347, prmsd_loss=2.905, ups=0.42, bsz=8, num_updates=9500, lr=8.33938e-06, gnorm=45.06, clip=100, loss_scale=1, train_wall=118.5, gb_free=32.6, wall=0
+2026-06-29 11:09:32 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 11:09:32 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 12:28:58 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 6.14 | valid_loss 6.14 | cross_distance_loss 0.84 | distance_loss 0.278 | coord_loss 4.705 | RMSD 4.703 | prmsd_loss 3.162 | bsz 26010 | num_updates 9500 | best_loss 5.943
+2026-06-29 12:28:58 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 3 @ 9500 updates
+2026-06-29 12:28:58 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_3_9500.pt
+2026-06-29 12:29:04 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_3_9500.pt
+2026-06-29 12:29:04 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_3_9500.pt (epoch 3 @ 9500 updates, score 6.14) (writing took 5.521458834409714 seconds)
+2026-06-29 12:29:04 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_9500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_3_9500.pt
+2026-06-29 12:29:10 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_9500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 12:29:12 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_3_9500.pt ...
+2026-06-29 12:29:12 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 12:31:05 | INFO | train_inner | epoch 003:   1941 / 2931 loss=5.924, train_loss=5.924, cross_distance_loss=0.82, distance_loss=0.415, coord_loss=4.397, RMSD=4.397, prmsd_loss=2.921, ups=0.01, bsz=8, num_updates=9550, lr=8.32728e-06, gnorm=48.868, clip=100, loss_scale=1, train_wall=121.24, gb_free=31.4, wall=0
+2026-06-29 12:33:21 | INFO | train_inner | epoch 003:   1991 / 2931 loss=6.072, train_loss=6.072, cross_distance_loss=0.839, distance_loss=0.414, coord_loss=4.531, RMSD=4.53, prmsd_loss=2.876, ups=0.37, bsz=8, num_updates=9600, lr=8.31519e-06, gnorm=67.485, clip=100, loss_scale=1, train_wall=135.99, gb_free=29.9, wall=0
+2026-06-29 12:35:34 | INFO | train_inner | epoch 003:   2041 / 2931 loss=5.944, train_loss=5.944, cross_distance_loss=0.847, distance_loss=0.358, coord_loss=4.444, RMSD=4.444, prmsd_loss=2.945, ups=0.38, bsz=8, num_updates=9650, lr=8.30309e-06, gnorm=52.804, clip=100, loss_scale=1, train_wall=132.39, gb_free=31.1, wall=0
+2026-06-29 12:37:30 | INFO | train_inner | epoch 003:   2091 / 2931 loss=6.024, train_loss=6.024, cross_distance_loss=0.834, distance_loss=0.414, coord_loss=4.485, RMSD=4.484, prmsd_loss=2.905, ups=0.43, bsz=8, num_updates=9700, lr=8.29099e-06, gnorm=61.808, clip=100, loss_scale=1, train_wall=115.71, gb_free=29.8, wall=0
+2026-06-29 12:39:53 | INFO | train_inner | epoch 003:   2141 / 2931 loss=5.971, train_loss=5.971, cross_distance_loss=0.854, distance_loss=0.4, coord_loss=4.424, RMSD=4.423, prmsd_loss=2.92, ups=0.35, bsz=8, num_updates=9750, lr=8.27889e-06, gnorm=59.102, clip=100, loss_scale=1, train_wall=143.32, gb_free=31.1, wall=0
+2026-06-29 12:42:25 | INFO | train_inner | epoch 003:   2191 / 2931 loss=6.118, train_loss=6.118, cross_distance_loss=0.861, distance_loss=0.471, coord_loss=4.495, RMSD=4.495, prmsd_loss=2.914, ups=0.33, bsz=8, num_updates=9800, lr=8.26679e-06, gnorm=48.958, clip=100, loss_scale=1, train_wall=151.49, gb_free=27.9, wall=0
+2026-06-29 12:44:36 | INFO | train_inner | epoch 003:   2241 / 2931 loss=6.023, train_loss=6.023, cross_distance_loss=0.854, distance_loss=0.409, coord_loss=4.463, RMSD=4.462, prmsd_loss=2.973, ups=0.38, bsz=8, num_updates=9850, lr=8.25469e-06, gnorm=70.414, clip=100, loss_scale=1, train_wall=131.21, gb_free=32.6, wall=0
+2026-06-29 12:46:39 | INFO | train_inner | epoch 003:   2291 / 2931 loss=6.234, train_loss=6.234, cross_distance_loss=0.845, distance_loss=0.472, coord_loss=4.63, RMSD=4.629, prmsd_loss=2.877, ups=0.41, bsz=8, num_updates=9900, lr=8.2426e-06, gnorm=73.175, clip=100, loss_scale=1, train_wall=123.05, gb_free=23, wall=0
+2026-06-29 12:48:46 | INFO | train_inner | epoch 003:   2341 / 2931 loss=6.014, train_loss=6.014, cross_distance_loss=0.845, distance_loss=0.458, coord_loss=4.422, RMSD=4.421, prmsd_loss=2.899, ups=0.39, bsz=8, num_updates=9950, lr=8.2305e-06, gnorm=75.032, clip=100, loss_scale=1, train_wall=126.57, gb_free=31.5, wall=0
+2026-06-29 12:50:42 | INFO | train_inner | epoch 003:   2391 / 2931 loss=5.946, train_loss=5.946, cross_distance_loss=0.834, distance_loss=0.367, coord_loss=4.452, RMSD=4.451, prmsd_loss=2.927, ups=0.43, bsz=8, num_updates=10000, lr=8.2184e-06, gnorm=37.532, clip=100, loss_scale=1, train_wall=115.87, gb_free=34.4, wall=0
+2026-06-29 12:50:42 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 12:50:42 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 14:11:53 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 5.816 | valid_loss 5.816 | cross_distance_loss 0.822 | distance_loss 0.273 | coord_loss 4.417 | RMSD 4.416 | prmsd_loss 3.037 | bsz 26010 | num_updates 10000 | best_loss 5.816
+2026-06-29 14:11:53 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 3 @ 10000 updates
+2026-06-29 14:11:53 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_3_10000.pt
+2026-06-29 14:11:58 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_3_10000.pt
+2026-06-29 14:11:59 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_3_10000.pt (epoch 3 @ 10000 updates, score 5.816) (writing took 5.5372178899124265 seconds)
+2026-06-29 14:11:59 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_10000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_3_10000.pt
+2026-06-29 14:13:07 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_10000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-29 14:13:28 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_10000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 14:13:51 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_3_10000.pt ...
+2026-06-29 14:13:52 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 14:14:13 | INFO | train_inner | epoch 003:   2441 / 2931 loss=5.663, train_loss=5.663, cross_distance_loss=0.82, distance_loss=0.323, coord_loss=4.223, RMSD=4.223, prmsd_loss=2.969, ups=0.01, bsz=8, num_updates=10050, lr=8.2063e-06, gnorm=33.571, clip=100, loss_scale=1, train_wall=126.56, gb_free=32.2, wall=0
+2026-06-29 14:16:17 | INFO | train_inner | epoch 003:   2491 / 2931 loss=5.795, train_loss=5.795, cross_distance_loss=0.827, distance_loss=0.387, coord_loss=4.289, RMSD=4.288, prmsd_loss=2.924, ups=0.4, bsz=8, num_updates=10100, lr=8.1942e-06, gnorm=32.332, clip=100, loss_scale=1, train_wall=123.11, gb_free=31.5, wall=0
+2026-06-29 14:18:25 | INFO | train_inner | epoch 003:   2541 / 2931 loss=5.918, train_loss=5.918, cross_distance_loss=0.853, distance_loss=0.369, coord_loss=4.401, RMSD=4.401, prmsd_loss=2.94, ups=0.39, bsz=8, num_updates=10150, lr=8.1821e-06, gnorm=90.2, clip=100, loss_scale=1, train_wall=128.37, gb_free=32.2, wall=0
+2026-06-29 14:20:29 | INFO | train_inner | epoch 003:   2591 / 2931 loss=6.094, train_loss=6.094, cross_distance_loss=0.836, distance_loss=0.4, coord_loss=4.571, RMSD=4.57, prmsd_loss=2.881, ups=0.4, bsz=8, num_updates=10200, lr=8.17001e-06, gnorm=34.938, clip=100, loss_scale=1, train_wall=123.46, gb_free=31.5, wall=0
+2026-06-29 14:22:39 | INFO | train_inner | epoch 003:   2641 / 2931 loss=5.73, train_loss=5.73, cross_distance_loss=0.828, distance_loss=0.373, coord_loss=4.236, RMSD=4.236, prmsd_loss=2.918, ups=0.38, bsz=8, num_updates=10250, lr=8.15791e-06, gnorm=17.641, clip=100, loss_scale=1, train_wall=130.21, gb_free=28.8, wall=0
+2026-06-29 14:24:46 | INFO | train_inner | epoch 003:   2691 / 2931 loss=5.95, train_loss=5.95, cross_distance_loss=0.838, distance_loss=0.411, coord_loss=4.412, RMSD=4.411, prmsd_loss=2.898, ups=0.39, bsz=8, num_updates=10300, lr=8.14581e-06, gnorm=168.35, clip=100, loss_scale=1, train_wall=126.62, gb_free=31, wall=0
+2026-06-29 14:26:46 | INFO | train_inner | epoch 003:   2741 / 2931 loss=5.856, train_loss=5.856, cross_distance_loss=0.831, distance_loss=0.404, coord_loss=4.33, RMSD=4.33, prmsd_loss=2.912, ups=0.42, bsz=8, num_updates=10350, lr=8.13371e-06, gnorm=36.121, clip=100, loss_scale=1, train_wall=119.43, gb_free=33.2, wall=0
+2026-06-29 14:28:49 | INFO | train_inner | epoch 003:   2791 / 2931 loss=5.905, train_loss=5.905, cross_distance_loss=0.832, distance_loss=0.377, coord_loss=4.411, RMSD=4.41, prmsd_loss=2.863, ups=0.4, bsz=8, num_updates=10400, lr=8.12161e-06, gnorm=61.672, clip=100, loss_scale=1, train_wall=123.66, gb_free=31.9, wall=0
+2026-06-29 14:30:49 | INFO | train_inner | epoch 003:   2841 / 2931 loss=5.909, train_loss=5.909, cross_distance_loss=0.838, distance_loss=0.387, coord_loss=4.393, RMSD=4.392, prmsd_loss=2.908, ups=0.42, bsz=8, num_updates=10450, lr=8.10951e-06, gnorm=161.903, clip=100, loss_scale=1, train_wall=119.9, gb_free=31.9, wall=0
+2026-06-29 14:32:59 | INFO | train_inner | epoch 003:   2891 / 2931 loss=6.028, train_loss=6.028, cross_distance_loss=0.85, distance_loss=0.418, coord_loss=4.469, RMSD=4.469, prmsd_loss=2.911, ups=0.38, bsz=8, num_updates=10500, lr=8.09742e-06, gnorm=43.732, clip=100, loss_scale=1, train_wall=129.74, gb_free=31.1, wall=0
+2026-06-29 14:32:59 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 14:32:59 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 16:12:57 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 5.83 | valid_loss 5.83 | cross_distance_loss 0.806 | distance_loss 0.276 | coord_loss 4.446 | RMSD 4.442 | prmsd_loss 3.024 | bsz 26010 | num_updates 10500 | best_loss 5.816
+2026-06-29 16:12:57 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 3 @ 10500 updates
+2026-06-29 16:12:57 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_3_10500.pt
+2026-06-29 16:13:02 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_3_10500.pt
+2026-06-29 16:13:02 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_3_10500.pt (epoch 3 @ 10500 updates, score 5.83) (writing took 5.570868590846658 seconds)
+2026-06-29 16:13:02 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_10500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_3_10500.pt
+2026-06-29 16:13:07 | INFO | unicore.checkpoint_utils | copy ./checkpoint_3_10500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 16:13:10 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_3_10500.pt ...
+2026-06-29 16:13:10 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 16:14:41 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 16:14:41 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 17:38:28 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 5.879 | valid_loss 5.879 | cross_distance_loss 0.817 | distance_loss 0.286 | coord_loss 4.471 | RMSD 4.47 | prmsd_loss 3.052 | bsz 26010 | num_updates 10540 | best_loss 5.816
+2026-06-29 17:38:28 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 3 @ 10540 updates
+2026-06-29 17:38:28 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint3.pt
+2026-06-29 17:38:33 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint3.pt
+2026-06-29 17:38:33 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint3.pt (epoch 3 @ 10540 updates, score 5.879) (writing took 5.772695285268128 seconds)
+2026-06-29 17:38:33 | INFO | unicore_cli.train | end of epoch 3 (average epoch stats below)
+2026-06-29 17:38:33 | INFO | unicore.checkpoint_utils | copy ./checkpoint3.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint3.pt
+2026-06-29 17:38:33 | INFO | train | epoch 003 | loss 6.019 | train_loss 6.019 | cross_distance_loss 0.853 | distance_loss 0.397 | coord_loss 4.478 | RMSD 4.477 | prmsd_loss 2.918 | ups 0.06 | bsz 8 | num_updates 10540 | lr 8.08774e-06 | gnorm 58.869 | clip 100 | loss_scale 1 | train_wall 7475.33 | gb_free 33.2 | wall 0
+2026-06-29 17:38:33 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 4
+2026-06-29 17:38:33 | INFO | unicore.trainer | begin training epoch 4
+2026-06-29 17:38:33 | INFO | unicore_cli.train | Start iterating over samples
+2026-06-29 17:38:38 | INFO | unicore.checkpoint_utils | copy ./checkpoint3.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 17:38:41 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint3.pt ...
+2026-06-29 17:38:41 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 17:39:01 | INFO | train_inner | epoch 004:     10 / 2931 loss=5.722, train_loss=5.722, cross_distance_loss=0.826, distance_loss=0.346, coord_loss=4.257, RMSD=4.256, prmsd_loss=2.925, ups=0, bsz=8, num_updates=10550, lr=8.08532e-06, gnorm=84.957, clip=100, loss_scale=1, train_wall=126.65, gb_free=24.8, wall=0
+2026-06-29 17:41:07 | INFO | train_inner | epoch 004:     60 / 2931 loss=5.829, train_loss=5.829, cross_distance_loss=0.808, distance_loss=0.418, coord_loss=4.312, RMSD=4.311, prmsd_loss=2.913, ups=0.4, bsz=8, num_updates=10600, lr=8.07322e-06, gnorm=70.893, clip=100, loss_scale=1, train_wall=126.11, gb_free=33.2, wall=0
+2026-06-29 17:43:22 | INFO | train_inner | epoch 004:    110 / 2931 loss=5.68, train_loss=5.68, cross_distance_loss=0.822, distance_loss=0.355, coord_loss=4.207, RMSD=4.206, prmsd_loss=2.956, ups=0.37, bsz=8, num_updates=10650, lr=8.06112e-06, gnorm=41.595, clip=100, loss_scale=1, train_wall=133.96, gb_free=31.8, wall=0
+2026-06-29 17:45:35 | INFO | train_inner | epoch 004:    160 / 2931 loss=5.911, train_loss=5.911, cross_distance_loss=0.824, distance_loss=0.419, coord_loss=4.379, RMSD=4.378, prmsd_loss=2.884, ups=0.37, bsz=8, num_updates=10700, lr=8.04902e-06, gnorm=76.868, clip=100, loss_scale=1, train_wall=133.53, gb_free=25.8, wall=0
+2026-06-29 17:47:44 | INFO | train_inner | epoch 004:    210 / 2931 loss=5.945, train_loss=5.945, cross_distance_loss=0.818, distance_loss=0.385, coord_loss=4.456, RMSD=4.455, prmsd_loss=2.866, ups=0.39, bsz=8, num_updates=10750, lr=8.03692e-06, gnorm=82.005, clip=100, loss_scale=1, train_wall=128.31, gb_free=31.4, wall=0
+2026-06-29 17:49:36 | INFO | train_inner | epoch 004:    260 / 2931 loss=5.811, train_loss=5.811, cross_distance_loss=0.819, distance_loss=0.35, coord_loss=4.347, RMSD=4.347, prmsd_loss=2.951, ups=0.45, bsz=8, num_updates=10800, lr=8.02483e-06, gnorm=81.172, clip=100, loss_scale=1, train_wall=111.82, gb_free=31.1, wall=0
+2026-06-29 17:51:38 | INFO | train_inner | epoch 004:    310 / 2931 loss=5.891, train_loss=5.891, cross_distance_loss=0.827, distance_loss=0.364, coord_loss=4.408, RMSD=4.407, prmsd_loss=2.921, ups=0.41, bsz=8, num_updates=10850, lr=8.01273e-06, gnorm=50.981, clip=100, loss_scale=1, train_wall=122.36, gb_free=26.4, wall=0
+2026-06-29 17:53:36 | INFO | train_inner | epoch 004:    360 / 2931 loss=5.636, train_loss=5.636, cross_distance_loss=0.818, distance_loss=0.352, coord_loss=4.17, RMSD=4.169, prmsd_loss=2.961, ups=0.42, bsz=8, num_updates=10900, lr=8.00063e-06, gnorm=122.231, clip=100, loss_scale=1, train_wall=117.9, gb_free=33.8, wall=0
+2026-06-29 17:55:41 | INFO | train_inner | epoch 004:    410 / 2931 loss=5.758, train_loss=5.758, cross_distance_loss=0.829, distance_loss=0.391, coord_loss=4.248, RMSD=4.247, prmsd_loss=2.903, ups=0.4, bsz=8, num_updates=10950, lr=7.98853e-06, gnorm=244.243, clip=100, loss_scale=1, train_wall=125.06, gb_free=24.8, wall=0
+2026-06-29 17:57:45 | INFO | train_inner | epoch 004:    460 / 2931 loss=5.819, train_loss=5.819, cross_distance_loss=0.82, distance_loss=0.358, coord_loss=4.347, RMSD=4.347, prmsd_loss=2.938, ups=0.4, bsz=8, num_updates=11000, lr=7.97643e-06, gnorm=82.382, clip=100, loss_scale=1, train_wall=123.7, gb_free=31.4, wall=0
+2026-06-29 17:57:45 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 17:57:45 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 19:17:40 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 5.745 | valid_loss 5.745 | cross_distance_loss 0.815 | distance_loss 0.268 | coord_loss 4.357 | RMSD 4.356 | prmsd_loss 3.046 | bsz 26010 | num_updates 11000 | best_loss 5.745
+2026-06-29 19:17:40 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 4 @ 11000 updates
+2026-06-29 19:17:40 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_4_11000.pt
+2026-06-29 19:17:46 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_4_11000.pt
+2026-06-29 19:17:46 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_4_11000.pt (epoch 4 @ 11000 updates, score 5.745) (writing took 5.741736977361143 seconds)
+2026-06-29 19:17:46 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_11000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_4_11000.pt
+2026-06-29 19:17:51 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_11000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-29 19:17:53 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_11000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 19:17:56 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_4_11000.pt ...
+2026-06-29 19:17:56 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 19:19:37 | INFO | train_inner | epoch 004:    510 / 2931 loss=5.789, train_loss=5.789, cross_distance_loss=0.828, distance_loss=0.385, coord_loss=4.284, RMSD=4.283, prmsd_loss=2.923, ups=0.01, bsz=8, num_updates=11050, lr=7.96433e-06, gnorm=98.659, clip=100, loss_scale=1, train_wall=111.36, gb_free=29.3, wall=0
+2026-06-29 19:21:33 | INFO | train_inner | epoch 004:    560 / 2931 loss=5.667, train_loss=5.667, cross_distance_loss=0.808, distance_loss=0.371, coord_loss=4.196, RMSD=4.196, prmsd_loss=2.926, ups=0.43, bsz=8, num_updates=11100, lr=7.95224e-06, gnorm=43.459, clip=100, loss_scale=1, train_wall=115.48, gb_free=30.3, wall=0
+2026-06-29 19:23:45 | INFO | train_inner | epoch 004:    610 / 2931 loss=5.661, train_loss=5.661, cross_distance_loss=0.822, distance_loss=0.404, coord_loss=4.144, RMSD=4.143, prmsd_loss=2.911, ups=0.38, bsz=8, num_updates=11150, lr=7.94014e-06, gnorm=70.196, clip=100, loss_scale=1, train_wall=131.95, gb_free=31.9, wall=0
+2026-06-29 19:26:09 | INFO | train_inner | epoch 004:    660 / 2931 loss=5.674, train_loss=5.674, cross_distance_loss=0.807, distance_loss=0.41, coord_loss=4.169, RMSD=4.168, prmsd_loss=2.889, ups=0.35, bsz=8, num_updates=11200, lr=7.92804e-06, gnorm=68.694, clip=100, loss_scale=1, train_wall=143.89, gb_free=30.6, wall=0
+2026-06-29 19:28:20 | INFO | train_inner | epoch 004:    710 / 2931 loss=5.774, train_loss=5.774, cross_distance_loss=0.844, distance_loss=0.363, coord_loss=4.272, RMSD=4.271, prmsd_loss=2.96, ups=0.38, bsz=8, num_updates=11250, lr=7.91594e-06, gnorm=53.164, clip=100, loss_scale=1, train_wall=130.94, gb_free=31.9, wall=0
+2026-06-29 19:30:28 | INFO | train_inner | epoch 004:    760 / 2931 loss=5.79, train_loss=5.79, cross_distance_loss=0.839, distance_loss=0.395, coord_loss=4.266, RMSD=4.266, prmsd_loss=2.899, ups=0.39, bsz=8, num_updates=11300, lr=7.90384e-06, gnorm=68.952, clip=100, loss_scale=1, train_wall=127.83, gb_free=32.6, wall=0
+2026-06-29 19:32:27 | INFO | train_inner | epoch 004:    810 / 2931 loss=5.898, train_loss=5.898, cross_distance_loss=0.814, distance_loss=0.406, coord_loss=4.389, RMSD=4.389, prmsd_loss=2.882, ups=0.42, bsz=8, num_updates=11350, lr=7.89174e-06, gnorm=131.524, clip=100, loss_scale=1, train_wall=118.49, gb_free=31.4, wall=0
+2026-06-29 19:34:38 | INFO | train_inner | epoch 004:    860 / 2931 loss=5.84, train_loss=5.84, cross_distance_loss=0.831, distance_loss=0.415, coord_loss=4.307, RMSD=4.306, prmsd_loss=2.872, ups=0.38, bsz=8, num_updates=11400, lr=7.87965e-06, gnorm=82.259, clip=100, loss_scale=1, train_wall=131.56, gb_free=29.4, wall=0
+2026-06-29 19:36:42 | INFO | train_inner | epoch 004:    910 / 2931 loss=5.81, train_loss=5.81, cross_distance_loss=0.823, distance_loss=0.366, coord_loss=4.329, RMSD=4.328, prmsd_loss=2.922, ups=0.4, bsz=8, num_updates=11450, lr=7.86755e-06, gnorm=90.658, clip=100, loss_scale=1, train_wall=123.7, gb_free=32.2, wall=0
+2026-06-29 19:38:41 | INFO | train_inner | epoch 004:    960 / 2931 loss=5.524, train_loss=5.524, cross_distance_loss=0.81, distance_loss=0.323, coord_loss=4.098, RMSD=4.097, prmsd_loss=2.935, ups=0.42, bsz=8, num_updates=11500, lr=7.85545e-06, gnorm=88.602, clip=100, loss_scale=1, train_wall=118.79, gb_free=29.8, wall=0
+2026-06-29 19:38:41 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 19:38:41 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 21:06:14 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 5.603 | valid_loss 5.603 | cross_distance_loss 0.795 | distance_loss 0.267 | coord_loss 4.241 | RMSD 4.239 | prmsd_loss 3 | bsz 26010 | num_updates 11500 | best_loss 5.603
+2026-06-29 21:06:14 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 4 @ 11500 updates
+2026-06-29 21:06:14 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_4_11500.pt
+2026-06-29 21:06:19 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_4_11500.pt
+2026-06-29 21:06:20 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_4_11500.pt (epoch 4 @ 11500 updates, score 5.603) (writing took 5.799956696107984 seconds)
+2026-06-29 21:06:20 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_11500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_4_11500.pt
+2026-06-29 21:06:24 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_11500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-29 21:06:27 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_11500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 21:06:30 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_4_11500.pt ...
+2026-06-29 21:06:30 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 21:08:28 | INFO | train_inner | epoch 004:   1010 / 2931 loss=5.76, train_loss=5.76, cross_distance_loss=0.815, distance_loss=0.382, coord_loss=4.271, RMSD=4.27, prmsd_loss=2.916, ups=0.01, bsz=8, num_updates=11550, lr=7.84335e-06, gnorm=61.509, clip=100, loss_scale=1, train_wall=127.91, gb_free=31.4, wall=0
+2026-06-29 21:10:36 | INFO | train_inner | epoch 004:   1060 / 2931 loss=5.692, train_loss=5.692, cross_distance_loss=0.826, distance_loss=0.387, coord_loss=4.187, RMSD=4.186, prmsd_loss=2.929, ups=0.39, bsz=8, num_updates=11600, lr=7.83125e-06, gnorm=33.37, clip=100, loss_scale=1, train_wall=128.68, gb_free=31.5, wall=0
+2026-06-29 21:12:47 | INFO | train_inner | epoch 004:   1110 / 2931 loss=5.856, train_loss=5.856, cross_distance_loss=0.81, distance_loss=0.346, coord_loss=4.41, RMSD=4.409, prmsd_loss=2.904, ups=0.38, bsz=8, num_updates=11650, lr=7.81915e-06, gnorm=176.319, clip=100, loss_scale=1, train_wall=130.96, gb_free=32.9, wall=0
+2026-06-29 21:14:47 | INFO | train_inner | epoch 004:   1160 / 2931 loss=5.618, train_loss=5.618, cross_distance_loss=0.817, distance_loss=0.378, coord_loss=4.132, RMSD=4.131, prmsd_loss=2.914, ups=0.42, bsz=8, num_updates=11700, lr=7.80706e-06, gnorm=56.711, clip=100, loss_scale=1, train_wall=119.68, gb_free=32.2, wall=0
+2026-06-29 21:16:37 | INFO | train_inner | epoch 004:   1210 / 2931 loss=5.67, train_loss=5.67, cross_distance_loss=0.8, distance_loss=0.361, coord_loss=4.22, RMSD=4.22, prmsd_loss=2.886, ups=0.46, bsz=8, num_updates=11750, lr=7.79496e-06, gnorm=118.376, clip=100, loss_scale=1, train_wall=109.38, gb_free=32.3, wall=0
+2026-06-29 21:18:49 | INFO | train_inner | epoch 004:   1260 / 2931 loss=5.489, train_loss=5.489, cross_distance_loss=0.795, distance_loss=0.34, coord_loss=4.059, RMSD=4.059, prmsd_loss=2.945, ups=0.38, bsz=8, num_updates=11800, lr=7.78286e-06, gnorm=43.089, clip=100, loss_scale=1, train_wall=132.25, gb_free=30.2, wall=0
+2026-06-29 21:20:44 | INFO | train_inner | epoch 004:   1310 / 2931 loss=5.799, train_loss=5.799, cross_distance_loss=0.807, distance_loss=0.433, coord_loss=4.27, RMSD=4.27, prmsd_loss=2.887, ups=0.44, bsz=8, num_updates=11850, lr=7.77076e-06, gnorm=162.855, clip=100, loss_scale=1, train_wall=114.73, gb_free=31, wall=0
+2026-06-29 21:22:38 | INFO | train_inner | epoch 004:   1360 / 2931 loss=5.676, train_loss=5.676, cross_distance_loss=0.815, distance_loss=0.351, coord_loss=4.218, RMSD=4.217, prmsd_loss=2.923, ups=0.44, bsz=8, num_updates=11900, lr=7.75866e-06, gnorm=102.931, clip=100, loss_scale=1, train_wall=114.14, gb_free=32.9, wall=0
+2026-06-29 21:24:37 | INFO | train_inner | epoch 004:   1410 / 2931 loss=5.633, train_loss=5.633, cross_distance_loss=0.822, distance_loss=0.354, coord_loss=4.161, RMSD=4.16, prmsd_loss=2.961, ups=0.42, bsz=8, num_updates=11950, lr=7.74656e-06, gnorm=55.816, clip=100, loss_scale=1, train_wall=118.66, gb_free=29.9, wall=0
+2026-06-29 21:26:41 | INFO | train_inner | epoch 004:   1460 / 2931 loss=5.646, train_loss=5.646, cross_distance_loss=0.81, distance_loss=0.371, coord_loss=4.174, RMSD=4.173, prmsd_loss=2.91, ups=0.4, bsz=8, num_updates=12000, lr=7.73447e-06, gnorm=69.054, clip=100, loss_scale=1, train_wall=123.95, gb_free=32.9, wall=0
+2026-06-29 21:26:41 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 21:26:41 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-29 22:57:23 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 5.789 | valid_loss 5.789 | cross_distance_loss 0.816 | distance_loss 0.266 | coord_loss 4.399 | RMSD 4.396 | prmsd_loss 3.09 | bsz 26010 | num_updates 12000 | best_loss 5.603
+2026-06-29 22:57:23 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 4 @ 12000 updates
+2026-06-29 22:57:23 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_4_12000.pt
+2026-06-29 22:57:29 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_4_12000.pt
+2026-06-29 22:57:29 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_4_12000.pt (epoch 4 @ 12000 updates, score 5.789) (writing took 5.483362508006394 seconds)
+2026-06-29 22:57:29 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_12000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_4_12000.pt
+2026-06-29 22:57:34 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_12000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-29 22:57:36 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_4_12000.pt ...
+2026-06-29 22:57:37 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-29 22:59:48 | INFO | train_inner | epoch 004:   1510 / 2931 loss=5.834, train_loss=5.834, cross_distance_loss=0.828, distance_loss=0.401, coord_loss=4.316, RMSD=4.315, prmsd_loss=2.883, ups=0.01, bsz=8, num_updates=12050, lr=7.72237e-06, gnorm=40.727, clip=100, loss_scale=1, train_wall=139.28, gb_free=30.7, wall=0
+2026-06-29 23:01:49 | INFO | train_inner | epoch 004:   1560 / 2931 loss=5.711, train_loss=5.711, cross_distance_loss=0.821, distance_loss=0.375, coord_loss=4.227, RMSD=4.226, prmsd_loss=2.883, ups=0.41, bsz=8, num_updates=12100, lr=7.71027e-06, gnorm=44.646, clip=100, loss_scale=1, train_wall=120.36, gb_free=32.3, wall=0
+2026-06-29 23:03:51 | INFO | train_inner | epoch 004:   1610 / 2931 loss=5.612, train_loss=5.612, cross_distance_loss=0.813, distance_loss=0.334, coord_loss=4.174, RMSD=4.173, prmsd_loss=2.911, ups=0.41, bsz=8, num_updates=12150, lr=7.69817e-06, gnorm=38.111, clip=100, loss_scale=1, train_wall=122.53, gb_free=32.6, wall=0
+2026-06-29 23:05:59 | INFO | train_inner | epoch 004:   1660 / 2931 loss=5.764, train_loss=5.764, cross_distance_loss=0.821, distance_loss=0.369, coord_loss=4.284, RMSD=4.283, prmsd_loss=2.908, ups=0.39, bsz=8, num_updates=12200, lr=7.68607e-06, gnorm=64.984, clip=100, loss_scale=1, train_wall=127.39, gb_free=31.5, wall=0
+2026-06-29 23:08:03 | INFO | train_inner | epoch 004:   1710 / 2931 loss=5.608, train_loss=5.608, cross_distance_loss=0.793, distance_loss=0.368, coord_loss=4.159, RMSD=4.158, prmsd_loss=2.878, ups=0.4, bsz=8, num_updates=12250, lr=7.67397e-06, gnorm=87.209, clip=100, loss_scale=1, train_wall=124.1, gb_free=30.2, wall=0
+2026-06-29 23:10:11 | INFO | train_inner | epoch 004:   1760 / 2931 loss=5.393, train_loss=5.393, cross_distance_loss=0.811, distance_loss=0.314, coord_loss=3.969, RMSD=3.968, prmsd_loss=2.99, ups=0.39, bsz=8, num_updates=12300, lr=7.66188e-06, gnorm=130.694, clip=100, loss_scale=1, train_wall=127.38, gb_free=31.4, wall=0
+2026-06-29 23:12:15 | INFO | train_inner | epoch 004:   1810 / 2931 loss=5.469, train_loss=5.469, cross_distance_loss=0.804, distance_loss=0.359, coord_loss=4.014, RMSD=4.013, prmsd_loss=2.92, ups=0.4, bsz=8, num_updates=12350, lr=7.64978e-06, gnorm=153.45, clip=100, loss_scale=1, train_wall=124.73, gb_free=32.2, wall=0
+2026-06-29 23:14:09 | INFO | train_inner | epoch 004:   1860 / 2931 loss=5.612, train_loss=5.612, cross_distance_loss=0.816, distance_loss=0.373, coord_loss=4.132, RMSD=4.131, prmsd_loss=2.902, ups=0.44, bsz=8, num_updates=12400, lr=7.63768e-06, gnorm=62.101, clip=100, loss_scale=1, train_wall=113.12, gb_free=31.1, wall=0
+2026-06-29 23:16:05 | INFO | train_inner | epoch 004:   1910 / 2931 loss=5.815, train_loss=5.815, cross_distance_loss=0.823, distance_loss=0.368, coord_loss=4.335, RMSD=4.335, prmsd_loss=2.878, ups=0.43, bsz=8, num_updates=12450, lr=7.62558e-06, gnorm=82.959, clip=100, loss_scale=1, train_wall=116.52, gb_free=28.3, wall=0
+2026-06-29 23:17:57 | INFO | train_inner | epoch 004:   1960 / 2931 loss=5.504, train_loss=5.504, cross_distance_loss=0.783, distance_loss=0.373, coord_loss=4.057, RMSD=4.057, prmsd_loss=2.905, ups=0.45, bsz=8, num_updates=12500, lr=7.61348e-06, gnorm=36.82, clip=100, loss_scale=1, train_wall=111.47, gb_free=31.1, wall=0
+2026-06-29 23:17:57 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-29 23:17:57 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-30 00:34:02 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 5.717 | valid_loss 5.717 | cross_distance_loss 0.789 | distance_loss 0.262 | coord_loss 4.354 | RMSD 4.353 | prmsd_loss 3.121 | bsz 26010 | num_updates 12500 | best_loss 5.603
+2026-06-30 00:34:02 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 4 @ 12500 updates
+2026-06-30 00:34:02 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_4_12500.pt
+2026-06-30 00:34:08 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_4_12500.pt
+2026-06-30 00:34:08 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_4_12500.pt (epoch 4 @ 12500 updates, score 5.717) (writing took 6.003732797689736 seconds)
+2026-06-30 00:34:08 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_12500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_4_12500.pt
+2026-06-30 00:34:15 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_12500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-30 00:34:18 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_4_12500.pt ...
+2026-06-30 00:34:18 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-30 00:36:13 | INFO | train_inner | epoch 004:   2010 / 2931 loss=5.558, train_loss=5.558, cross_distance_loss=0.803, distance_loss=0.392, coord_loss=4.074, RMSD=4.073, prmsd_loss=2.89, ups=0.01, bsz=8, num_updates=12550, lr=7.60138e-06, gnorm=65.43, clip=100, loss_scale=1, train_wall=124.64, gb_free=32.2, wall=0
+2026-06-30 00:38:20 | INFO | train_inner | epoch 004:   2060 / 2931 loss=5.711, train_loss=5.711, cross_distance_loss=0.805, distance_loss=0.378, coord_loss=4.236, RMSD=4.235, prmsd_loss=2.919, ups=0.39, bsz=8, num_updates=12600, lr=7.58929e-06, gnorm=35.331, clip=100, loss_scale=1, train_wall=126.6, gb_free=33.6, wall=0
+2026-06-30 00:40:12 | INFO | train_inner | epoch 004:   2110 / 2931 loss=5.641, train_loss=5.641, cross_distance_loss=0.799, distance_loss=0.352, coord_loss=4.199, RMSD=4.199, prmsd_loss=2.917, ups=0.45, bsz=8, num_updates=12650, lr=7.57719e-06, gnorm=65.48, clip=100, loss_scale=1, train_wall=109.98, gb_free=31.5, wall=0
+2026-06-30 00:42:24 | INFO | train_inner | epoch 004:   2160 / 2931 loss=5.682, train_loss=5.682, cross_distance_loss=0.824, distance_loss=0.363, coord_loss=4.202, RMSD=4.202, prmsd_loss=2.924, ups=0.38, bsz=8, num_updates=12700, lr=7.56509e-06, gnorm=50.269, clip=100, loss_scale=1, train_wall=131.82, gb_free=30.7, wall=0
+2026-06-30 00:44:30 | INFO | train_inner | epoch 004:   2210 / 2931 loss=5.642, train_loss=5.642, cross_distance_loss=0.831, distance_loss=0.386, coord_loss=4.135, RMSD=4.135, prmsd_loss=2.893, ups=0.4, bsz=8, num_updates=12750, lr=7.55299e-06, gnorm=58.669, clip=100, loss_scale=1, train_wall=126.36, gb_free=31.8, wall=0
+2026-06-30 00:46:30 | INFO | train_inner | epoch 004:   2260 / 2931 loss=5.702, train_loss=5.702, cross_distance_loss=0.794, distance_loss=0.339, coord_loss=4.282, RMSD=4.281, prmsd_loss=2.861, ups=0.42, bsz=8, num_updates=12800, lr=7.54089e-06, gnorm=135.305, clip=100, loss_scale=1, train_wall=119.97, gb_free=31.5, wall=0
+2026-06-30 00:48:47 | INFO | train_inner | epoch 004:   2310 / 2931 loss=5.586, train_loss=5.586, cross_distance_loss=0.807, distance_loss=0.347, coord_loss=4.145, RMSD=4.145, prmsd_loss=2.866, ups=0.36, bsz=8, num_updates=12850, lr=7.52879e-06, gnorm=50.55, clip=100, loss_scale=1, train_wall=136.96, gb_free=31.9, wall=0
+2026-06-30 00:50:51 | INFO | train_inner | epoch 004:   2360 / 2931 loss=5.568, train_loss=5.568, cross_distance_loss=0.803, distance_loss=0.336, coord_loss=4.141, RMSD=4.14, prmsd_loss=2.891, ups=0.4, bsz=8, num_updates=12900, lr=7.5167e-06, gnorm=88.152, clip=100, loss_scale=1, train_wall=123.93, gb_free=31.9, wall=0
+2026-06-30 00:53:05 | INFO | train_inner | epoch 004:   2410 / 2931 loss=5.539, train_loss=5.539, cross_distance_loss=0.796, distance_loss=0.358, coord_loss=4.095, RMSD=4.094, prmsd_loss=2.905, ups=0.37, bsz=8, num_updates=12950, lr=7.5046e-06, gnorm=131.009, clip=100, loss_scale=1, train_wall=133.94, gb_free=31.1, wall=0
+2026-06-30 00:54:53 | INFO | train_inner | epoch 004:   2460 / 2931 loss=5.44, train_loss=5.44, cross_distance_loss=0.784, distance_loss=0.321, coord_loss=4.04, RMSD=4.04, prmsd_loss=2.944, ups=0.47, bsz=8, num_updates=13000, lr=7.4925e-06, gnorm=43.373, clip=100, loss_scale=1, train_wall=107.12, gb_free=30.7, wall=0
+2026-06-30 00:54:53 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-30 00:54:53 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-30 02:25:22 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 5.79 | valid_loss 5.79 | cross_distance_loss 0.792 | distance_loss 0.268 | coord_loss 4.409 | RMSD 4.408 | prmsd_loss 3.217 | bsz 26010 | num_updates 13000 | best_loss 5.603
+2026-06-30 02:25:22 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 4 @ 13000 updates
+2026-06-30 02:25:22 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_4_13000.pt
+2026-06-30 02:25:27 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_4_13000.pt
+2026-06-30 02:25:28 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_4_13000.pt (epoch 4 @ 13000 updates, score 5.79) (writing took 5.365152281709015 seconds)
+2026-06-30 02:25:28 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_13000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_4_13000.pt
+2026-06-30 02:25:32 | INFO | unicore.checkpoint_utils | copy ./checkpoint_4_13000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-30 02:25:35 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_4_13000.pt ...
+2026-06-30 02:25:36 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-30 02:27:30 | INFO | train_inner | epoch 004:   2510 / 2931 loss=5.747, train_loss=5.747, cross_distance_loss=0.816, distance_loss=0.419, coord_loss=4.221, RMSD=4.221, prmsd_loss=2.905, ups=0.01, bsz=8, num_updates=13050, lr=7.4804e-06, gnorm=90.928, clip=100, loss_scale=1, train_wall=122.27, gb_free=30.3, wall=0
+2026-06-30 02:29:27 | INFO | train_inner | epoch 004:   2560 / 2931 loss=5.207, train_loss=5.207, cross_distance_loss=0.774, distance_loss=0.322, coord_loss=3.822, RMSD=3.821, prmsd_loss=2.904, ups=0.43, bsz=8, num_updates=13100, lr=7.4683e-06, gnorm=249.18, clip=100, loss_scale=1, train_wall=117.05, gb_free=31.9, wall=0
+2026-06-30 02:31:32 | INFO | train_inner | epoch 004:   2610 / 2931 loss=5.959, train_loss=5.959, cross_distance_loss=0.83, distance_loss=0.472, coord_loss=4.375, RMSD=4.374, prmsd_loss=2.818, ups=0.4, bsz=8, num_updates=13150, lr=7.4562e-06, gnorm=40.242, clip=100, loss_scale=1, train_wall=124.4, gb_free=29.8, wall=0
+2026-06-30 02:33:30 | INFO | train_inner | epoch 004:   2660 / 2931 loss=5.469, train_loss=5.469, cross_distance_loss=0.781, distance_loss=0.382, coord_loss=4.015, RMSD=4.014, prmsd_loss=2.909, ups=0.42, bsz=8, num_updates=13200, lr=7.44411e-06, gnorm=36.901, clip=100, loss_scale=1, train_wall=117.77, gb_free=31.9, wall=0
+2026-06-30 02:35:36 | INFO | train_inner | epoch 004:   2710 / 2931 loss=5.672, train_loss=5.672, cross_distance_loss=0.822, distance_loss=0.421, coord_loss=4.141, RMSD=4.14, prmsd_loss=2.886, ups=0.4, bsz=8, num_updates=13250, lr=7.43201e-06, gnorm=53.149, clip=100, loss_scale=1, train_wall=126.24, gb_free=32.6, wall=0
+2026-06-30 02:37:44 | INFO | train_inner | epoch 004:   2760 / 2931 loss=5.64, train_loss=5.64, cross_distance_loss=0.799, distance_loss=0.398, coord_loss=4.155, RMSD=4.154, prmsd_loss=2.877, ups=0.39, bsz=8, num_updates=13300, lr=7.41991e-06, gnorm=21.407, clip=100, loss_scale=1, train_wall=127.59, gb_free=32.6, wall=0
+2026-06-30 02:39:44 | INFO | train_inner | epoch 004:   2810 / 2931 loss=5.316, train_loss=5.316, cross_distance_loss=0.784, distance_loss=0.301, coord_loss=3.94, RMSD=3.939, prmsd_loss=2.905, ups=0.42, bsz=8, num_updates=13350, lr=7.40781e-06, gnorm=34.251, clip=100, loss_scale=1, train_wall=119.87, gb_free=29.8, wall=0
+2026-06-30 02:41:41 | INFO | train_inner | epoch 004:   2860 / 2931 loss=5.63, train_loss=5.63, cross_distance_loss=0.795, distance_loss=0.405, coord_loss=4.139, RMSD=4.138, prmsd_loss=2.906, ups=0.43, bsz=8, num_updates=13400, lr=7.39571e-06, gnorm=199.763, clip=100, loss_scale=1, train_wall=117.33, gb_free=28.4, wall=0
+2026-06-30 02:43:39 | INFO | train_inner | epoch 004:   2910 / 2931 loss=5.405, train_loss=5.405, cross_distance_loss=0.801, distance_loss=0.349, coord_loss=3.962, RMSD=3.961, prmsd_loss=2.928, ups=0.42, bsz=8, num_updates=13450, lr=7.38361e-06, gnorm=60.944, clip=100, loss_scale=1, train_wall=118.18, gb_free=30.2, wall=0
+2026-06-30 02:44:23 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-30 02:44:23 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-30 04:03:40 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 5.443 | valid_loss 5.443 | cross_distance_loss 0.781 | distance_loss 0.256 | coord_loss 4.102 | RMSD 4.1 | prmsd_loss 3.047 | bsz 26010 | num_updates 13471 | best_loss 5.443
+2026-06-30 04:03:40 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 4 @ 13471 updates
+2026-06-30 04:03:40 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint4.pt
+2026-06-30 04:03:46 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint4.pt
+2026-06-30 04:03:46 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint4.pt (epoch 4 @ 13471 updates, score 5.443) (writing took 5.364784050732851 seconds)
+2026-06-30 04:03:46 | INFO | unicore_cli.train | end of epoch 4 (average epoch stats below)
+2026-06-30 04:03:46 | INFO | unicore.checkpoint_utils | copy ./checkpoint4.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint4.pt
+2026-06-30 04:03:46 | INFO | train | epoch 004 | loss 5.672 | train_loss 5.672 | cross_distance_loss 0.812 | distance_loss 0.372 | coord_loss 4.198 | RMSD 4.197 | prmsd_loss 2.908 | ups 0.08 | bsz 8 | num_updates 13471 | lr 7.37853e-06 | gnorm 82.096 | clip 100 | loss_scale 1 | train_wall 7227.15 | gb_free 32.6 | wall 0
+2026-06-30 04:03:46 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 5
+2026-06-30 04:03:46 | INFO | unicore.trainer | begin training epoch 5
+2026-06-30 04:03:46 | INFO | unicore_cli.train | Start iterating over samples
+2026-06-30 04:03:50 | INFO | unicore.checkpoint_utils | copy ./checkpoint4.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-30 04:03:53 | INFO | unicore.checkpoint_utils | copy ./checkpoint4.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-30 04:03:56 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint4.pt ...
+2026-06-30 04:03:56 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-30 04:04:57 | INFO | train_inner | epoch 005:     29 / 2931 loss=5.656, train_loss=5.656, cross_distance_loss=0.811, distance_loss=0.36, coord_loss=4.196, RMSD=4.196, prmsd_loss=2.888, ups=0.01, bsz=8, num_updates=13500, lr=7.37152e-06, gnorm=70.389, clip=100, loss_scale=1, train_wall=114.44, gb_free=32.3, wall=0
+2026-06-30 04:04:57 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-30 04:04:57 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-30 05:36:07 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 5.723 | valid_loss 5.723 | cross_distance_loss 0.769 | distance_loss 0.258 | coord_loss 4.387 | RMSD 4.385 | prmsd_loss 3.1 | bsz 26010 | num_updates 13500 | best_loss 5.443
+2026-06-30 05:36:07 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 13500 updates
+2026-06-30 05:36:07 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_5_13500.pt
+2026-06-30 05:36:12 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_5_13500.pt
+2026-06-30 05:36:12 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_5_13500.pt (epoch 5 @ 13500 updates, score 5.723) (writing took 5.376231505535543 seconds)
+2026-06-30 05:36:12 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_13500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_5_13500.pt
+2026-06-30 05:36:17 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_13500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-30 05:36:20 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_5_13500.pt ...
+2026-06-30 05:36:20 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-30 05:38:19 | INFO | train_inner | epoch 005:     79 / 2931 loss=5.325, train_loss=5.325, cross_distance_loss=0.785, distance_loss=0.33, coord_loss=3.919, RMSD=3.918, prmsd_loss=2.916, ups=0.01, bsz=8, num_updates=13550, lr=7.35942e-06, gnorm=93.074, clip=100, loss_scale=1, train_wall=126.02, gb_free=32.6, wall=0
+2026-06-30 05:40:23 | INFO | train_inner | epoch 005:    129 / 2931 loss=5.357, train_loss=5.357, cross_distance_loss=0.779, distance_loss=0.334, coord_loss=3.949, RMSD=3.949, prmsd_loss=2.937, ups=0.4, bsz=8, num_updates=13600, lr=7.34732e-06, gnorm=62.324, clip=100, loss_scale=1, train_wall=123.87, gb_free=30.3, wall=0
+2026-06-30 05:42:15 | INFO | train_inner | epoch 005:    179 / 2931 loss=5.261, train_loss=5.261, cross_distance_loss=0.783, distance_loss=0.34, coord_loss=3.846, RMSD=3.845, prmsd_loss=2.928, ups=0.45, bsz=8, num_updates=13650, lr=7.33522e-06, gnorm=23.934, clip=100, loss_scale=1, train_wall=112.1, gb_free=29.4, wall=0
+2026-06-30 05:44:16 | INFO | train_inner | epoch 005:    229 / 2931 loss=5.572, train_loss=5.572, cross_distance_loss=0.805, distance_loss=0.396, coord_loss=4.078, RMSD=4.077, prmsd_loss=2.924, ups=0.41, bsz=8, num_updates=13700, lr=7.32312e-06, gnorm=34.218, clip=100, loss_scale=1, train_wall=121.62, gb_free=30.2, wall=0
+2026-06-30 05:46:22 | INFO | train_inner | epoch 005:    279 / 2931 loss=5.66, train_loss=5.66, cross_distance_loss=0.801, distance_loss=0.374, coord_loss=4.194, RMSD=4.194, prmsd_loss=2.904, ups=0.4, bsz=8, num_updates=13750, lr=7.31102e-06, gnorm=72.94, clip=100, loss_scale=1, train_wall=125.71, gb_free=33.2, wall=0
+2026-06-30 05:48:13 | INFO | train_inner | epoch 005:    329 / 2931 loss=5.68, train_loss=5.68, cross_distance_loss=0.789, distance_loss=0.424, coord_loss=4.181, RMSD=4.181, prmsd_loss=2.852, ups=0.45, bsz=8, num_updates=13800, lr=7.29893e-06, gnorm=88.347, clip=100, loss_scale=1, train_wall=110.28, gb_free=33.5, wall=0
+2026-06-30 05:50:16 | INFO | train_inner | epoch 005:    379 / 2931 loss=5.386, train_loss=5.386, cross_distance_loss=0.791, distance_loss=0.364, coord_loss=3.942, RMSD=3.941, prmsd_loss=2.896, ups=0.4, bsz=8, num_updates=13850, lr=7.28683e-06, gnorm=47.803, clip=100, loss_scale=1, train_wall=123.53, gb_free=31.8, wall=0
+2026-06-30 05:52:23 | INFO | train_inner | epoch 005:    429 / 2931 loss=5.496, train_loss=5.496, cross_distance_loss=0.792, distance_loss=0.34, coord_loss=4.072, RMSD=4.071, prmsd_loss=2.919, ups=0.4, bsz=8, num_updates=13900, lr=7.27473e-06, gnorm=109.108, clip=100, loss_scale=1, train_wall=126.22, gb_free=32.6, wall=0
+2026-06-30 05:54:27 | INFO | train_inner | epoch 005:    479 / 2931 loss=5.526, train_loss=5.526, cross_distance_loss=0.786, distance_loss=0.371, coord_loss=4.083, RMSD=4.082, prmsd_loss=2.858, ups=0.4, bsz=8, num_updates=13950, lr=7.26263e-06, gnorm=66.078, clip=100, loss_scale=1, train_wall=124.1, gb_free=31, wall=0
+2026-06-30 05:56:13 | INFO | train_inner | epoch 005:    529 / 2931 loss=5.18, train_loss=5.18, cross_distance_loss=0.784, distance_loss=0.34, coord_loss=3.767, RMSD=3.766, prmsd_loss=2.899, ups=0.47, bsz=8, num_updates=14000, lr=7.25053e-06, gnorm=165.427, clip=100, loss_scale=1, train_wall=105.86, gb_free=34.2, wall=0
+2026-06-30 05:56:13 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-30 05:56:13 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-30 07:16:37 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 5.411 | valid_loss 5.411 | cross_distance_loss 0.776 | distance_loss 0.254 | coord_loss 4.078 | RMSD 4.076 | prmsd_loss 3.032 | bsz 26010 | num_updates 14000 | best_loss 5.411
+2026-06-30 07:16:37 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 14000 updates
+2026-06-30 07:16:37 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_5_14000.pt
+2026-06-30 07:16:42 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_5_14000.pt
+2026-06-30 07:16:42 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_5_14000.pt (epoch 5 @ 14000 updates, score 5.411) (writing took 5.445577506907284 seconds)
+2026-06-30 07:16:42 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_14000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_5_14000.pt
+2026-06-30 07:16:47 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_14000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-30 07:16:50 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_14000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-30 07:16:52 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_5_14000.pt ...
+2026-06-30 07:16:53 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-30 07:18:36 | INFO | train_inner | epoch 005:    579 / 2931 loss=5.634, train_loss=5.634, cross_distance_loss=0.794, distance_loss=0.373, coord_loss=4.18, RMSD=4.179, prmsd_loss=2.877, ups=0.01, bsz=8, num_updates=14050, lr=7.23843e-06, gnorm=73.621, clip=100, loss_scale=1, train_wall=113.21, gb_free=30.3, wall=0
+2026-06-30 07:20:35 | INFO | train_inner | epoch 005:    629 / 2931 loss=5.326, train_loss=5.326, cross_distance_loss=0.784, distance_loss=0.34, coord_loss=3.908, RMSD=3.908, prmsd_loss=2.924, ups=0.42, bsz=8, num_updates=14100, lr=7.22634e-06, gnorm=57.58, clip=100, loss_scale=1, train_wall=118.8, gb_free=31.8, wall=0
+2026-06-30 07:22:32 | INFO | train_inner | epoch 005:    679 / 2931 loss=5.296, train_loss=5.296, cross_distance_loss=0.772, distance_loss=0.334, coord_loss=3.9, RMSD=3.899, prmsd_loss=2.89, ups=0.43, bsz=8, num_updates=14150, lr=7.21424e-06, gnorm=47.224, clip=100, loss_scale=1, train_wall=117.45, gb_free=29.8, wall=0
+2026-06-30 07:24:31 | INFO | train_inner | epoch 005:    729 / 2931 loss=5.497, train_loss=5.497, cross_distance_loss=0.795, distance_loss=0.356, coord_loss=4.054, RMSD=4.053, prmsd_loss=2.923, ups=0.42, bsz=8, num_updates=14200, lr=7.20214e-06, gnorm=66.366, clip=100, loss_scale=1, train_wall=119.23, gb_free=30.2, wall=0
+2026-06-30 07:26:30 | INFO | train_inner | epoch 005:    779 / 2931 loss=5.437, train_loss=5.437, cross_distance_loss=0.791, distance_loss=0.355, coord_loss=3.998, RMSD=3.997, prmsd_loss=2.925, ups=0.42, bsz=8, num_updates=14250, lr=7.19004e-06, gnorm=23.548, clip=100, loss_scale=1, train_wall=118.66, gb_free=31.1, wall=0
+2026-06-30 07:28:34 | INFO | train_inner | epoch 005:    829 / 2931 loss=5.271, train_loss=5.271, cross_distance_loss=0.781, distance_loss=0.36, coord_loss=3.838, RMSD=3.837, prmsd_loss=2.919, ups=0.4, bsz=8, num_updates=14300, lr=7.17794e-06, gnorm=35.309, clip=100, loss_scale=1, train_wall=123.38, gb_free=29.8, wall=0
+2026-06-30 07:30:26 | INFO | train_inner | epoch 005:    879 / 2931 loss=5.484, train_loss=5.484, cross_distance_loss=0.794, distance_loss=0.357, coord_loss=4.046, RMSD=4.045, prmsd_loss=2.865, ups=0.44, bsz=8, num_updates=14350, lr=7.16584e-06, gnorm=34.113, clip=100, loss_scale=1, train_wall=112.58, gb_free=30.3, wall=0
+2026-06-30 07:32:28 | INFO | train_inner | epoch 005:    929 / 2931 loss=5.222, train_loss=5.222, cross_distance_loss=0.758, distance_loss=0.322, coord_loss=3.851, RMSD=3.851, prmsd_loss=2.897, ups=0.41, bsz=8, num_updates=14400, lr=7.15375e-06, gnorm=82.639, clip=100, loss_scale=1, train_wall=121.82, gb_free=32.2, wall=0
+2026-06-30 07:34:42 | INFO | train_inner | epoch 005:    979 / 2931 loss=5.595, train_loss=5.595, cross_distance_loss=0.79, distance_loss=0.366, coord_loss=4.15, RMSD=4.149, prmsd_loss=2.887, ups=0.37, bsz=8, num_updates=14450, lr=7.14165e-06, gnorm=88.005, clip=100, loss_scale=1, train_wall=134, gb_free=29.4, wall=0
+2026-06-30 07:36:48 | INFO | train_inner | epoch 005:   1029 / 2931 loss=5.371, train_loss=5.371, cross_distance_loss=0.791, distance_loss=0.356, coord_loss=3.928, RMSD=3.927, prmsd_loss=2.954, ups=0.4, bsz=8, num_updates=14500, lr=7.12955e-06, gnorm=72.23, clip=100, loss_scale=1, train_wall=125.28, gb_free=30.7, wall=0
+2026-06-30 07:36:48 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-30 07:36:48 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-30 09:05:20 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 5.375 | valid_loss 5.375 | cross_distance_loss 0.761 | distance_loss 0.252 | coord_loss 4.066 | RMSD 4.064 | prmsd_loss 2.965 | bsz 26010 | num_updates 14500 | best_loss 5.375
+2026-06-30 09:05:20 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 14500 updates
+2026-06-30 09:05:20 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_5_14500.pt
+2026-06-30 09:05:26 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_5_14500.pt
+2026-06-30 09:05:26 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_5_14500.pt (epoch 5 @ 14500 updates, score 5.375) (writing took 5.5204614121466875 seconds)
+2026-06-30 09:05:26 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_14500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_5_14500.pt
+2026-06-30 09:06:00 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_14500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-30 09:06:23 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_14500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-30 09:06:44 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_5_14500.pt ...
+2026-06-30 09:06:44 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-30 09:07:18 | INFO | train_inner | epoch 005:   1079 / 2931 loss=5.368, train_loss=5.368, cross_distance_loss=0.782, distance_loss=0.399, coord_loss=3.895, RMSD=3.894, prmsd_loss=2.93, ups=0.01, bsz=8, num_updates=14550, lr=7.11745e-06, gnorm=68.332, clip=100, loss_scale=1, train_wall=107.52, gb_free=33.2, wall=0
+2026-06-30 09:09:28 | INFO | train_inner | epoch 005:   1129 / 2931 loss=5.739, train_loss=5.739, cross_distance_loss=0.803, distance_loss=0.409, coord_loss=4.242, RMSD=4.242, prmsd_loss=2.844, ups=0.38, bsz=8, num_updates=14600, lr=7.10535e-06, gnorm=61.965, clip=100, loss_scale=1, train_wall=130.56, gb_free=28.4, wall=0
+2026-06-30 09:11:33 | INFO | train_inner | epoch 005:   1179 / 2931 loss=5.449, train_loss=5.449, cross_distance_loss=0.778, distance_loss=0.385, coord_loss=4.002, RMSD=4.001, prmsd_loss=2.844, ups=0.4, bsz=8, num_updates=14650, lr=7.09325e-06, gnorm=88.934, clip=100, loss_scale=1, train_wall=124.84, gb_free=32.2, wall=0
+2026-06-30 09:13:34 | INFO | train_inner | epoch 005:   1229 / 2931 loss=5.468, train_loss=5.468, cross_distance_loss=0.78, distance_loss=0.367, coord_loss=4.035, RMSD=4.034, prmsd_loss=2.851, ups=0.41, bsz=8, num_updates=14700, lr=7.08116e-06, gnorm=112.619, clip=100, loss_scale=1, train_wall=120.73, gb_free=29.8, wall=0
+2026-06-30 09:15:29 | INFO | train_inner | epoch 005:   1279 / 2931 loss=5.405, train_loss=5.405, cross_distance_loss=0.789, distance_loss=0.348, coord_loss=3.979, RMSD=3.979, prmsd_loss=2.886, ups=0.44, bsz=8, num_updates=14750, lr=7.06906e-06, gnorm=101.65, clip=100, loss_scale=1, train_wall=114.71, gb_free=33.5, wall=0
+2026-06-30 09:17:18 | INFO | train_inner | epoch 005:   1329 / 2931 loss=5.576, train_loss=5.576, cross_distance_loss=0.79, distance_loss=0.331, coord_loss=4.16, RMSD=4.16, prmsd_loss=2.939, ups=0.46, bsz=8, num_updates=14800, lr=7.05696e-06, gnorm=174.91, clip=100, loss_scale=1, train_wall=108.6, gb_free=31.1, wall=0
+2026-06-30 09:19:15 | INFO | train_inner | epoch 005:   1379 / 2931 loss=5.329, train_loss=5.329, cross_distance_loss=0.772, distance_loss=0.372, coord_loss=3.897, RMSD=3.896, prmsd_loss=2.873, ups=0.43, bsz=8, num_updates=14850, lr=7.04486e-06, gnorm=39.63, clip=100, loss_scale=1, train_wall=116.35, gb_free=28.4, wall=0
+2026-06-30 09:21:10 | INFO | train_inner | epoch 005:   1429 / 2931 loss=5.285, train_loss=5.285, cross_distance_loss=0.771, distance_loss=0.336, coord_loss=3.886, RMSD=3.885, prmsd_loss=2.92, ups=0.43, bsz=8, num_updates=14900, lr=7.03276e-06, gnorm=46.478, clip=100, loss_scale=1, train_wall=115.41, gb_free=28.3, wall=0
+2026-06-30 09:23:07 | INFO | train_inner | epoch 005:   1479 / 2931 loss=5.487, train_loss=5.487, cross_distance_loss=0.79, distance_loss=0.388, coord_loss=4.021, RMSD=4.02, prmsd_loss=2.882, ups=0.43, bsz=8, num_updates=14950, lr=7.02066e-06, gnorm=27.845, clip=100, loss_scale=1, train_wall=116.14, gb_free=27.5, wall=0
+2026-06-30 09:24:50 | INFO | train_inner | epoch 005:   1529 / 2931 loss=5.252, train_loss=5.252, cross_distance_loss=0.763, distance_loss=0.374, coord_loss=3.825, RMSD=3.824, prmsd_loss=2.904, ups=0.49, bsz=8, num_updates=15000, lr=7.00857e-06, gnorm=38.287, clip=100, loss_scale=1, train_wall=102.72, gb_free=29.8, wall=0
+2026-06-30 09:24:50 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-30 09:24:50 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-30 10:55:21 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 5.324 | valid_loss 5.324 | cross_distance_loss 0.763 | distance_loss 0.255 | coord_loss 4.005 | RMSD 4.004 | prmsd_loss 3.007 | bsz 26010 | num_updates 15000 | best_loss 5.324
+2026-06-30 10:55:21 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 15000 updates
+2026-06-30 10:55:21 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_5_15000.pt
+2026-06-30 10:55:28 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_5_15000.pt
+2026-06-30 10:55:28 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_5_15000.pt (epoch 5 @ 15000 updates, score 5.324) (writing took 6.984646095894277 seconds)
+2026-06-30 10:55:28 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_15000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_5_15000.pt
+2026-06-30 10:55:35 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_15000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_best.pt
+2026-06-30 10:55:38 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_15000.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-30 10:55:40 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_5_15000.pt ...
+2026-06-30 10:55:41 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-30 10:57:25 | INFO | train_inner | epoch 005:   1579 / 2931 loss=5.498, train_loss=5.498, cross_distance_loss=0.781, distance_loss=0.357, coord_loss=4.074, RMSD=4.073, prmsd_loss=2.854, ups=0.01, bsz=8, num_updates=15050, lr=6.99647e-06, gnorm=29.106, clip=100, loss_scale=1, train_wall=116.81, gb_free=32.2, wall=0
+2026-06-30 10:59:13 | INFO | train_inner | epoch 005:   1629 / 2931 loss=5.397, train_loss=5.397, cross_distance_loss=0.773, distance_loss=0.373, coord_loss=3.963, RMSD=3.962, prmsd_loss=2.888, ups=0.46, bsz=8, num_updates=15100, lr=6.98437e-06, gnorm=40.213, clip=100, loss_scale=1, train_wall=107.42, gb_free=31.5, wall=0
+2026-06-30 11:01:16 | INFO | train_inner | epoch 005:   1679 / 2931 loss=5.378, train_loss=5.378, cross_distance_loss=0.779, distance_loss=0.366, coord_loss=3.944, RMSD=3.943, prmsd_loss=2.889, ups=0.41, bsz=8, num_updates=15150, lr=6.97227e-06, gnorm=59.345, clip=100, loss_scale=1, train_wall=122.67, gb_free=32.6, wall=0
+2026-06-30 11:03:11 | INFO | train_inner | epoch 005:   1729 / 2931 loss=5.418, train_loss=5.418, cross_distance_loss=0.788, distance_loss=0.329, coord_loss=4.011, RMSD=4.01, prmsd_loss=2.903, ups=0.43, bsz=8, num_updates=15200, lr=6.96017e-06, gnorm=229.499, clip=100, loss_scale=1, train_wall=115.22, gb_free=31.8, wall=0
+2026-06-30 11:05:29 | INFO | train_inner | epoch 005:   1779 / 2931 loss=5.444, train_loss=5.444, cross_distance_loss=0.794, distance_loss=0.377, coord_loss=3.98, RMSD=3.979, prmsd_loss=2.93, ups=0.36, bsz=8, num_updates=15250, lr=6.94807e-06, gnorm=93.432, clip=100, loss_scale=1, train_wall=137.53, gb_free=32.2, wall=0
+2026-06-30 11:07:27 | INFO | train_inner | epoch 005:   1829 / 2931 loss=5.394, train_loss=5.394, cross_distance_loss=0.763, distance_loss=0.342, coord_loss=4.001, RMSD=4, prmsd_loss=2.891, ups=0.42, bsz=8, num_updates=15300, lr=6.93598e-06, gnorm=96.477, clip=100, loss_scale=1, train_wall=117.78, gb_free=32.6, wall=0
+2026-06-30 11:09:14 | INFO | train_inner | epoch 005:   1879 / 2931 loss=5.372, train_loss=5.372, cross_distance_loss=0.773, distance_loss=0.337, coord_loss=3.973, RMSD=3.973, prmsd_loss=2.888, ups=0.46, bsz=8, num_updates=15350, lr=6.92388e-06, gnorm=82.366, clip=100, loss_scale=1, train_wall=107.8, gb_free=30.2, wall=0
+2026-06-30 11:11:04 | INFO | train_inner | epoch 005:   1929 / 2931 loss=5.405, train_loss=5.405, cross_distance_loss=0.784, distance_loss=0.384, coord_loss=3.948, RMSD=3.948, prmsd_loss=2.876, ups=0.46, bsz=8, num_updates=15400, lr=6.91178e-06, gnorm=54.78, clip=100, loss_scale=1, train_wall=109.71, gb_free=29.4, wall=0
+2026-06-30 11:13:03 | INFO | train_inner | epoch 005:   1979 / 2931 loss=5.128, train_loss=5.128, cross_distance_loss=0.77, distance_loss=0.363, coord_loss=3.705, RMSD=3.705, prmsd_loss=2.899, ups=0.42, bsz=8, num_updates=15450, lr=6.89968e-06, gnorm=98.107, clip=100, loss_scale=1, train_wall=118.9, gb_free=24.1, wall=0
+2026-06-30 11:15:03 | INFO | train_inner | epoch 005:   2029 / 2931 loss=5.33, train_loss=5.33, cross_distance_loss=0.773, distance_loss=0.359, coord_loss=3.91, RMSD=3.909, prmsd_loss=2.877, ups=0.42, bsz=8, num_updates=15500, lr=6.88758e-06, gnorm=107.033, clip=100, loss_scale=1, train_wall=119.56, gb_free=30.3, wall=0
+2026-06-30 11:15:03 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-30 11:15:03 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
+2026-06-30 12:31:11 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 5.339 | valid_loss 5.339 | cross_distance_loss 0.754 | distance_loss 0.253 | coord_loss 4.023 | RMSD 4.02 | prmsd_loss 3.085 | bsz 26010 | num_updates 15500 | best_loss 5.324
+2026-06-30 12:31:11 | INFO | unicore.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 15500 updates
+2026-06-30 12:31:11 | INFO | unicore.trainer | Saving checkpoint to ./checkpoint_5_15500.pt
+2026-06-30 12:31:16 | INFO | unicore.trainer | Finished saving checkpoint to ./checkpoint_5_15500.pt
+2026-06-30 12:31:16 | INFO | unicore.checkpoint_utils | Saved checkpoint ./checkpoint_5_15500.pt (epoch 5 @ 15500 updates, score 5.339) (writing took 5.2300218949094415 seconds)
+2026-06-30 12:31:16 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_15500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_5_15500.pt
+2026-06-30 12:31:21 | INFO | unicore.checkpoint_utils | copy ./checkpoint_5_15500.pt to /home/bdldt_team007/DLDockingBenchSeminar/second_run/checkpoints/checkpoint_last.pt
+2026-06-30 12:31:24 | INFO | unicore.checkpoint_utils | removing temp file ./checkpoint_5_15500.pt ...
+2026-06-30 12:31:24 | INFO | unicore.checkpoint_utils | finished async ckp saving.
+2026-06-30 12:33:11 | INFO | train_inner | epoch 005:   2079 / 2931 loss=5.531, train_loss=5.531, cross_distance_loss=0.777, distance_loss=0.363, coord_loss=4.109, RMSD=4.108, prmsd_loss=2.822, ups=0.01, bsz=8, num_updates=15550, lr=6.87548e-06, gnorm=59.555, clip=100, loss_scale=1, train_wall=115.17, gb_free=30.2, wall=0
+2026-06-30 12:35:02 | INFO | train_inner | epoch 005:   2129 / 2931 loss=5.059, train_loss=5.059, cross_distance_loss=0.761, distance_loss=0.303, coord_loss=3.699, RMSD=3.698, prmsd_loss=2.946, ups=0.45, bsz=8, num_updates=15600, lr=6.86339e-06, gnorm=77.858, clip=100, loss_scale=1, train_wall=110.61, gb_free=31.8, wall=0
+2026-06-30 12:37:00 | INFO | train_inner | epoch 005:   2179 / 2931 loss=5.457, train_loss=5.457, cross_distance_loss=0.781, distance_loss=0.384, coord_loss=4.006, RMSD=4.005, prmsd_loss=2.871, ups=0.42, bsz=8, num_updates=15650, lr=6.85129e-06, gnorm=86.799, clip=100, loss_scale=1, train_wall=117.61, gb_free=31.4, wall=0
+2026-06-30 12:38:51 | INFO | train_inner | epoch 005:   2229 / 2931 loss=5.259, train_loss=5.259, cross_distance_loss=0.753, distance_loss=0.34, coord_loss=3.878, RMSD=3.877, prmsd_loss=2.881, ups=0.45, bsz=8, num_updates=15700, lr=6.83919e-06, gnorm=51.697, clip=100, loss_scale=1, train_wall=111.09, gb_free=25.9, wall=0
+2026-06-30 12:40:49 | INFO | train_inner | epoch 005:   2279 / 2931 loss=5.136, train_loss=5.136, cross_distance_loss=0.76, distance_loss=0.346, coord_loss=3.743, RMSD=3.743, prmsd_loss=2.867, ups=0.42, bsz=8, num_updates=15750, lr=6.82709e-06, gnorm=41.395, clip=100, loss_scale=1, train_wall=117.96, gb_free=32.2, wall=0
+2026-06-30 12:43:08 | INFO | train_inner | epoch 005:   2329 / 2931 loss=5.467, train_loss=5.467, cross_distance_loss=0.78, distance_loss=0.403, coord_loss=3.997, RMSD=3.996, prmsd_loss=2.872, ups=0.36, bsz=8, num_updates=15800, lr=6.81499e-06, gnorm=37.787, clip=100, loss_scale=1, train_wall=138.32, gb_free=29.4, wall=0
+2026-06-30 12:45:01 | INFO | train_inner | epoch 005:   2379 / 2931 loss=5.396, train_loss=5.396, cross_distance_loss=0.78, distance_loss=0.367, coord_loss=3.961, RMSD=3.96, prmsd_loss=2.891, ups=0.44, bsz=8, num_updates=15850, lr=6.80289e-06, gnorm=74.873, clip=100, loss_scale=1, train_wall=113.63, gb_free=31.8, wall=0
+2026-06-30 12:47:05 | INFO | train_inner | epoch 005:   2429 / 2931 loss=5.443, train_loss=5.443, cross_distance_loss=0.794, distance_loss=0.393, coord_loss=3.967, RMSD=3.966, prmsd_loss=2.888, ups=0.4, bsz=8, num_updates=15900, lr=6.7908e-06, gnorm=21.458, clip=100, loss_scale=1, train_wall=123.74, gb_free=30.7, wall=0
+2026-06-30 12:49:07 | INFO | train_inner | epoch 005:   2479 / 2931 loss=5.304, train_loss=5.304, cross_distance_loss=0.768, distance_loss=0.338, coord_loss=3.905, RMSD=3.905, prmsd_loss=2.927, ups=0.41, bsz=8, num_updates=15950, lr=6.7787e-06, gnorm=49.464, clip=100, loss_scale=1, train_wall=121.21, gb_free=27.5, wall=0
+2026-06-30 12:51:14 | INFO | train_inner | epoch 005:   2529 / 2931 loss=5.345, train_loss=5.345, cross_distance_loss=0.764, distance_loss=0.339, coord_loss=3.958, RMSD=3.958, prmsd_loss=2.837, ups=0.39, bsz=8, num_updates=16000, lr=6.7666e-06, gnorm=49.832, clip=100, loss_scale=1, train_wall=127.65, gb_free=32.2, wall=0
+2026-06-30 12:51:14 | INFO | unicore_cli.train | begin validation on "valid" subset
+2026-06-30 12:51:14 | INFO | unicore.tasks.unicore_task | get EpochBatchIterator for epoch 1
