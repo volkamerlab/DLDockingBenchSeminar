@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 #Irem_Dogruoglu_7061348_Lizzie_Schmitz_7056551
 #References:
-#1. [https://stackoverflow.com/questions/60303997/activating-conda-environment-from-bash-script]
-#2. [https://github.com/gnina/scripts]
-#3. [https://stackoverflow.com/questions/47932165/tar-gz-unpacking-file-data]
-#4. [https://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files]
+#1.https://stackoverflow.com/questions/60303997/activating-conda-environment-from-bash-script
+#2.https://github.com/gnina/scripts
+#3.https://stackoverflow.com/questions/47932165/tar-gz-unpacking-file-data
+#4.https://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files
 #
-# redocking.sh file runs the GNINA redocking pipeline inside a container by following the workflow below:
-# 1) activating conda environment.
-# 2) unpacking test data while doing checks on gninatorch / gnina.
-# 3) activating Python redocking pipeline, and generating results.
+# redocking.sh file runs the GNINA redocking pipeline by following the workflow below:
+# 1)Activating conda environment.
+# 2)Unpacking test data while doing checks on gninatorch and gnina.
+# 3)Activating redocking pipeline, and generating results.
 # It takes gninatorch_env, full_sealed_test.tar.gz, retrained checkpoint outputs that are in retrained_checkpoints.tar.gz, and redocking.py script.
 # Then it produces full_sealed_test_retrained files.
 
@@ -41,7 +41,7 @@ gnina --help >/dev/null 2>&1 || exit 1
 echo "Unpacking full_sealed_test.tar.gz..."
 tar -xzf full_sealed_test.tar.gz
 
-# Unpack results of retraining data, in retrained_checkpoints.tar.gz
+# Unpacking results of retraining data, in retrained_checkpoints.tar.gz
 echo "Unpacking retrained checkpoints..."
 mkdir -p results/gninatorch_training
 tar -xzf retrained_checkpoints.tar.gz -C results/gninatorch_training
@@ -51,11 +51,11 @@ mkdir -p results/full_sealed_test_retrained \
          results/gninatorch_training
 
 # Running the redocking workflow:
-# 1) redocking full_sealed_test with retrained checkpoint
-# 2) generating full_sealed_test_retrained outputs
+# 1)Redocking full_sealed_test with retrained checkpoint.
+# 2)Generating full_sealed_test_retrained outputs.
 
 
-# Call the redocking.py TWICE for both retrained models
+# Calling the redocking.py TWICE for both retrained models
 python3 redocking.py \
   --csv data/full_sealed_test.csv \
   --input-dir data/full_sealed_test \
