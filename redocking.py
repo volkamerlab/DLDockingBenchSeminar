@@ -1,3 +1,24 @@
+#Irem_Dogruoglu_7061348_Lizzie_Schmitz_7056551
+#References:
+#1.https://docs.python.org/3/library/argparse.html
+#2.https://docs.python.org/3/library/pathlib.html
+#3.https://python-adv-web-apps.readthedocs.io/en/latest/csv.html
+#4.https://github.com/gnina/gnina
+#5.https://link.springer.com/article/10.1186/s13321-025-00973-x
+#6.https://docs.python.org/3/library/subprocess.html
+#7.https://matplotlib.org/stable/tutorials/introductory/pyplot.html
+#8.https://github.com/RMeli/gnina-torch
+#9.https://stackoverflow.com/questions/74641071/how-do-i-extract-specific-rows-from-a-csv-file
+
+"""
+This script does GNINA redocking using the following workflow:
+1. Setting the command-line arguments for the test dataset, output and retrained checkpoint directory.
+2. Extracting the test dataset CSV and matching each complex to its native ligand and receptor structure files.
+4. Running GNINA redocking for each complex using the retrained CNN model.
+5. Saving the predicted docked poses as SDF files.
+
+"""
+
 import argparse
 import subprocess
 from pathlib import Path
@@ -5,10 +26,9 @@ import csv
 import time
 
 
-
 def get_args():
     """
-    Parse command-line arguments function for setting parameters for docking, .types file generation, GNINA-Torch training, redocking with checkpoint.
+    Parse command-line arguments function for setting parameters for redocking with checkpoint.
     This function returns argparse.Namespace with including file paths, runtime flags, and configuration settings.
     """
     arg_parser = argparse.ArgumentParser()
@@ -18,41 +38,34 @@ def get_args():
     arg_parser.add_argument("--input-dir", type=Path, default=Path("data/full_sealed_test"))
     arg_parser.add_argument("--run", action="store_true", help="Runs GNINA docking")
 
-    arg_parser.add_argument(
-        "--training-out-dir",
-        type=Path,
-        default=Path("results/gninatorch_training/default2018_seed1"),
-        help="Directory where checkpoints and logs are stored",
-    )
-
-    arg_parser.add_argument(
-        "--retrained-test-out-dir",
-        type=Path,
-        default=Path("results/full_sealed_test_retrained/default2018_seed1"),
-        help="Creates output directory",
-    )
+    arg_parser.add_argument("--training-out-dir", type=Path, default=Path("results/gninatorch_training/default2018_seed1"),help="Directory where checkpoints and logs are stored")
+    arg_parser.add_argument("--retrained-test-out-dir", type=Path, default=Path("results/full_sealed_test_retrained/default2018_seed1"), help="Creates output directory")
 
     return arg_parser.parse_args()
 
 
-
-def get_files_from_csv_row(csv_row, input_dir: Path): # parse through "3ix2_AC2_A_302_ligand_refined.sdf" format
+def get_files_from_csv_row(csv_row, input_dir: Path): #parsing through "3ix2_AC2_A_302_ligand_refined.sdf" format.
+    """
+    This function gets the native ligand and receptor files for dataset CSV row and uses them
+    to build the expected file name prefix for a protein-ligand complex. The input arguments are csv_row (dict) that comes from the dataset CSV file including keys like `PDBID`, 
+    `Ligand Name`,and input_dir which is the path of the directory contains receptor and ligand structure files. The function returns a tuple containing, complex_id, ligand_path, and eceptor_path.
+    """
     pdbid = csv_row["PDBID"].strip() 
     ligand_name = csv_row["Ligand Name"].strip()
     chain = csv_row["Ligand Chain"].strip()
     residue = str(csv_row["Ligand Residue Number"]).strip()
 
-    prefix = f"{pdbid}_{ligand_name}_{chain}_{residue}" # name prefix of file
+    prefix = f"{pdbid}_{ligand_name}_{chain}_{residue}" #wanted name prefix of file.
 
-    # glob finds all files in the dir that match the prefix name
+    #glob gets all files in the dir that match the prefix name.
     ligand_matches = list(input_dir.glob(f"{prefix}_ligand_refined.sdf"))
     protein_matches = list(input_dir.glob(f"{prefix}_protein_refined.pdb"))
 
-    if not ligand_matches or not protein_matches: # error handling case, if no files with prefix are found in the dir 
+    if not ligand_matches or not protein_matches: #error handling case, if no files with prefix are found in the dir. 
         ligand_matches = list(input_dir.glob(f"{pdbid}_*_{chain}_*_ligand_refined.sdf"))
         protein_matches = list(input_dir.glob(f"{pdbid}_*_{chain}_*_protein_refined.pdb"))
 
-    if len(ligand_matches) != 1 or len(protein_matches) != 1: # error handling: 0 or >1 files with name found
+    if len(ligand_matches) != 1 or len(protein_matches) != 1: #another error handling case, 0 or >1 files with name found.
         raise RuntimeError(
             f"Could not find one file for PDBID={pdbid}, "
             f"chain={chain}, ligand={ligand_name}, residue={residue}. "
@@ -72,10 +85,8 @@ def find_latest_checkpoint(training_out_dir: Path):
     if full_model.exists():
         return full_model
 
-
     print(f"Expected exported model not found: {full_model}")
     return None
-
 
 
 def gnina_args_with_checkpoint(
@@ -101,7 +112,6 @@ def gnina_args_with_checkpoint(
     ]
 
 
-
 def redock_test_with_retrained_model(
     csv_file: Path,
     input_dir: Path,
@@ -120,35 +130,29 @@ def redock_test_with_retrained_model(
         print("Cannot redock proto_test with retrained model.")
         return
 
-
     print(f"\nRedocking proto_test with retrained checkpoint: {checkpoint_file}")
 
-
     out_dir.mkdir(parents=True, exist_ok=True)
-
 
     with csv_file.open(newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         print(f"Detected headers in {csv_file}: {reader.fieldnames}")
 
-
-        for csv_row in reader: # parse through the CSV
+        for csv_row in reader: #parsing through the CSV.
             complex_id, ligand_path, receptor_path = get_files_from_csv_row(csv_row, input_dir)
             if complex_id is None:
                 continue
             out_file = out_dir / f"{complex_id}_pred.sdf"
 
-            # error handling case:
+            #Error handling case when there is a missing file.
             if not ligand_path.exists() or not receptor_path.exists():
                 print(f"Skipping {complex_id}: missing ligand or receptor")
                 continue
 
-
-            #Skipping docking if an output file already exists
+            #Skipping docking if an output file already exists.
             if out_file.exists():
                 print(f"Skipping docking for {complex_id}: found existing output {out_file}")
                 continue
-
 
             cmd = gnina_args_with_checkpoint(
                 receptor_path,
@@ -157,16 +161,14 @@ def redock_test_with_retrained_model(
                 checkpoint_file,
             )
 
-
             print("\nRetrained-model docking command:")
             print(" ".join(cmd))
-            # error handling: 
+            #error handling when the run flag will not work.
             if not run:
                 print("--run flag not set, skipping redocking.")
                 continue
 
-
-            try: # error handling: in case redocking fails with model, kill system early to save time
+            try: #error handling in case redocking fails with model, kill system early to save time.
                 subprocess.run(cmd, check=True)
             except subprocess.CalledProcessError as e:
                 raise RuntimeError(
@@ -175,26 +177,20 @@ def redock_test_with_retrained_model(
                 ) from e
 
 
-
-
 def main():
     """
     Runs the redocking workflow by using the exported retrained model checkpoint.
     """
     total_start = time.time()
-
-
     cli_args = get_args()
 
-
-    redock_test_with_retrained_model(
+    redock_test_with_retrained_model( #redocking over all retrained models.
         cli_args.csv,
         cli_args.input_dir,
         cli_args.retrained_test_out_dir,
         cli_args.run,
         cli_args.training_out_dir,
     )
-
 
     print(f"Total runtime: {time.time() - total_start:.1f} seconds")
 
