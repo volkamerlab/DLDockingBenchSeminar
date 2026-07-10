@@ -44,8 +44,7 @@ three_to_one = {'ALA':	'A',
 
 
 def get_sequence_simple(file_path):
-    # Get the approximate amino acid sequence from a PDB file
-    # Don't parse the full structure, just get the sequence
+    # Get approximate amino acid sequence from a PDB file
     seq = []
     last_chain = None
     lines = open(file_path, 'r').readlines()
@@ -61,7 +60,7 @@ def get_sequence_simple(file_path):
             # cur_aa_pos = words[5]
 
             if a_marker == "CA":
-                # Look at C-alpha atoms only
+                # C-alpha atoms only
                 if last_chain is not None and cur_chain != last_chain:
                     seq.append(':')
                 last_chain = cur_chain
