@@ -1,0 +1,150 @@
+000 (168940.000.000) 2026-06-27 13:31:08 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_3439953_36a5>
+...
+001 (168940.000.000) 2026-06-27 13:31:20 Job executing on host: <10.143.248.13:9618?PrivAddr=%3c10.143.250.13:9618%3fsock%3dstartd_5111_4ca2%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.13-9618&alias=surt.hpc.uni-saarland.de&noUDP&sock=startd_5111_4ca2>
+	SlotName: slot1_7@surt.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_7632b7f1 }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_93207"
+	Cpus = 4
+	Disk = 12069
+	GPUs = 1
+	GPUs_GPU_7632b7f1 = [ Id = "GPU-7632b7f1"; Capability = 8.0; DeviceName = "NVIDIA A100-PCIE-40GB"; DeviceUuid = "7632b7f1-dda3-92ee-16b8-7922a3905fa0"; ECCEnabled = true; NvidiaDriver = "570.211.01"; DriverVersion = 12.8; DevicePciBusId = "0000:25:00.0"; GlobalMemoryMb = 40442; MaxSupportedVersion = 12080 ]
+	Memory = 16384
+...
+006 (168940.000.000) 2026-06-27 13:31:29 Image size of job updated: 471
+	471  -  MemoryUsage of job (MB)
+	483028  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 13:36:29 Image size of job updated: 2385
+	2385  -  MemoryUsage of job (MB)
+	2443088  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 13:41:29 Image size of job updated: 2388
+	2388  -  MemoryUsage of job (MB)
+	2445464  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 13:46:30 Image size of job updated: 2523
+	2523  -  MemoryUsage of job (MB)
+	2583752  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 13:51:31 Image size of job updated: 2623
+	2623  -  MemoryUsage of job (MB)
+	2686060  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 13:56:32 Image size of job updated: 2624
+	2624  -  MemoryUsage of job (MB)
+	2686980  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 14:01:32 Image size of job updated: 2625
+	2625  -  MemoryUsage of job (MB)
+	2688004  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 14:06:33 Image size of job updated: 2712
+	2712  -  MemoryUsage of job (MB)
+	2777568  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 14:26:35 Image size of job updated: 2750
+	2750  -  MemoryUsage of job (MB)
+	2816284  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 14:36:36 Image size of job updated: 3962
+	3962  -  MemoryUsage of job (MB)
+	4058032  -  ResidentSetSize of job (KB)
+...
+006 (168940.000.000) 2026-06-27 16:01:42 Image size of job updated: 4432
+	4432  -  MemoryUsage of job (MB)
+	4538860  -  ResidentSetSize of job (KB)
+...
+004 (168940.000.000) 2026-06-28 10:39:25 Job was evicted. Code 1009 Subcode 0
+	(0) CPU times
+		Usr 0 22:18:48, Sys 0 00:12:38  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	Reason: Claim deactivated
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.00        4         4 
+	   Disk (KB)            :     1           1     12069 
+	   GPUs                 :     0.37        1         1 "GPU-7632b7f1"
+	   GpusMemory (MB)      : 16435                       
+	   Memory (MB)          :  4432       16384     16384 
+	   TimeExecute (s)      : 76084                       
+	   TimeSlotBusy (s)     : 76085                       
+...
+009 (168940.000.000) 2026-06-28 10:39:25 Job was aborted.
+	via condor_rm (by user bdldt_team007)
+...
+000 (169006.000.000) 2026-06-28 10:39:50 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_3439953_36a5>
+...
+001 (169006.000.000) 2026-06-28 10:39:59 Job executing on host: <10.143.248.26:9618?PrivAddr=%3c10.143.250.26:9618%3fsock%3dstartd_7902_b176%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.26-9618&alias=gefjon.hpc.uni-saarland.de&noUDP&sock=startd_7902_b176>
+	SlotName: slot1_8@gefjon.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_c62fee8e }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_4015638"
+	Cpus = 4
+	Disk = 12147
+	GPUs = 1
+	GPUs_GPU_c62fee8e = [ Id = "GPU-c62fee8e"; Capability = 8.0; DeviceName = "NVIDIA A100-PCIE-40GB"; DeviceUuid = "c62fee8e-b343-dd3c-458e-aaf86e889b78"; ECCEnabled = true; NvidiaDriver = "570.211.01"; DriverVersion = 12.8; DevicePciBusId = "0000:61:00.0"; GlobalMemoryMb = 40442; MaxSupportedVersion = 12080 ]
+	Memory = 16384
+...
+006 (169006.000.000) 2026-06-28 10:40:08 Image size of job updated: 108
+	108  -  MemoryUsage of job (MB)
+	110864  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-28 10:45:08 Image size of job updated: 3038
+	3038  -  MemoryUsage of job (MB)
+	3111280  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-28 12:30:20 Image size of job updated: 3175
+	3175  -  MemoryUsage of job (MB)
+	3252176  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-28 14:30:32 Image size of job updated: 3319
+	3319  -  MemoryUsage of job (MB)
+	3399136  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-28 19:16:00 Image size of job updated: 4450
+	4450  -  MemoryUsage of job (MB)
+	4557140  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-29 01:26:48 Image size of job updated: 4479
+	4479  -  MemoryUsage of job (MB)
+	4586568  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-29 03:22:00 Image size of job updated: 4578
+	4578  -  MemoryUsage of job (MB)
+	4687964  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-29 06:57:17 Image size of job updated: 4578
+	4578  -  MemoryUsage of job (MB)
+	4688648  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-29 14:33:05 Image size of job updated: 4581
+	4581  -  MemoryUsage of job (MB)
+	4691824  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-29 18:13:27 Image size of job updated: 4584
+	4584  -  MemoryUsage of job (MB)
+	4694716  -  ResidentSetSize of job (KB)
+...
+006 (169006.000.000) 2026-06-30 13:00:19 Image size of job updated: 4642
+	4642  -  MemoryUsage of job (MB)
+	4753548  -  ResidentSetSize of job (KB)
+...
+004 (169006.000.000) 2026-06-30 15:51:46 Job was evicted. Code 1009 Subcode 0
+	(0) CPU times
+		Usr 2 07:49:34, Sys 0 01:20:38  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	Reason: Claim deactivated
+	Partitionable Resources :     Usage  Request Allocated Assigned
+	   Cpus                 :      0.01        4         4 
+	   Disk (KB)            :      1           1     12147 
+	   GPUs                 :      0.35        1         1 "GPU-c62fee8e"
+	   GpusMemory (MB)      :  34839                       
+	   Memory (MB)          :   4642       16384     16384 
+	   TimeExecute (s)      : 191507                       
+	   TimeSlotBusy (s)     : 191508                       
+...
+009 (169006.000.000) 2026-06-30 15:51:46 Job was aborted.
+	via condor_rm (by user bdldt_team007)
+...
