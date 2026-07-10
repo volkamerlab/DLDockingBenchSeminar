@@ -1,32 +1,25 @@
 #!/usr/bin/env python3
-"""
-Convert full_sealed_test.csv into DiffDock-Pocket inference input CSV.
-File naming: {PDBID}_{LigandName}_{Chain}_{ResNum}_ligand_refined.sdf
-             {PDBID}_{LigandName}_{Chain}_{ResNum}_protein_refined.pdb
-"""
 
 import csv
 import os
 
-# ── Paths ──────────────────────────────────────────────────────────────────────
-BASE_DIR      = "/home/bdldt_team005/DLDockingBenchSeminar"
+BASE_DIR = "/home/bdldt_team005/DLDockingBenchSeminar"
 TEST_DATA_DIR = os.path.join(BASE_DIR, "full_test", "full_sealed_test")
-TEST_CSV      = os.path.join(BASE_DIR, "full_test", "full_sealed_test.csv")
-OUTPUT_CSV    = os.path.join(BASE_DIR, "inference", "inference_input_full.csv")
-# ───────────────────────────────────────────────────────────────────────────────
+TEST_CSV = os.path.join(BASE_DIR, "full_test", "full_sealed_test.csv")
+OUTPUT_CSV  = os.path.join(BASE_DIR, "inference", "inference_input_full.csv")
 
 def build_name(row):
-    pdb     = row["PDBID"].strip()
+    pdb = row["PDBID"].strip()
     ligname = row["Ligand Name"].strip()
-    chain   = row["Ligand Chain"].strip()
-    resraw  = row["Ligand Residue Number"].strip()
+    chain = row["Ligand Chain"].strip()
+    resraw = row["Ligand Residue Number"].strip()
     try:
         resnum = str(int(float(resraw)))
     except ValueError:
         resnum = resraw
     return f"{pdb}_{ligname}_{chain}_{resnum}"
 
-print("=== Preparing DiffDock inference input ===")
+print(" Preparing DiffDock inference input")
 print(f"Test data dir : {TEST_DATA_DIR}")
 print(f"Test CSV      : {TEST_CSV}")
 print()
