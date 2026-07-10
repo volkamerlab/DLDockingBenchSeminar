@@ -17,12 +17,15 @@
 | File / Directory | Description |
 |------------------|-------------|
 | `run_proto_gnina.py` | Main Python pipeline implementing docking, preprocessing, model training, redocking, evaluation, and plotting. |
-| `run_gnina_train.py` | Redocking Python script that implements native GNINA docking, preprocessing, and model retraining, for the *full dataset*. |
+| `run_gnina_train.py` | Retraining Python script that implements native GNINA docking, preprocessing, and model retraining, for the *full train/val dataset*. |
+| `redocking.py` | Redocking Python script that uses the retrained dense and default2018 models to redock both the *full test set* and *PoseBusters dataset*. |
 | `run_gnina.sh` | Shell script that executes the pipeline inside the Docker container. |
 | `run_gnina_train.sh` | Shell script that executes the *full dataset* GNINA retraining inside the Docker container. |
+| `redocking.sh` | Shell script that redocks the *full test set* and the *PoseBusters dataset* using the models inside the Docker container. |
 | `Dockerfile` | Builds the complete GNINA-Torch environment that supports GNINA-Torch retraining. |
 | `gnina_sub.sub` | HTCondor submission script used for running the pipeline on the HPC cluster. |
-| `gnina_train.sub` | HTCondor submission script used for running retraining for the *full dataset* on the HPC cluster. |
+| `gnina_train.sub` | HTCondor submission script used for running retraining for the *full train/val dataset* on the HPC cluster. |
+| `gnina_redock.sub` | HTCondor submission script used for running redocking for the *full test dataset* and *PoseBusters dataset* on the HPC cluster. |
 | `plot_inspection.ipynb` | Jupyter notebook for visualization of training metrics and docking results across epochs. |
 | `data/proto_train.types` | GNINA-Torch training input dataset generated from docked training poses. |
 | `results/gninatorch_training/` | Training outputs for each retrained CNN model, including checkpoints, GNINA training logs, and compiled CSV files of the training metrics. |
