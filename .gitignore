@@ -5,3 +5,10 @@ __pycache__/
 # data/ symlinks into local ../full_data/ (not portable); the *.csv here stay tracked
 data/full_test
 data/posebusters_filtered
+.DS_Store
+.venv/
+venv/
+.idea/
+*.bak
+*.orig
+*~
