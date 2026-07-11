@@ -1,0 +1,38 @@
+# full_stage2_mgpu.sub — ISOLATED multi-GPU (DDP) Stage-2 TEST on the full dataset.
+# Separate from the prototype submission and from the running full job (167960):
+#   - reads ~/repro_test/work_full graphs (read-only) + a Stage-1 snapshot,
+#   - writes only to ~/stage2_mgpu_test/work (its own dir).
+#
+# PREREQUISITES (once):
+#   1) wandb creds on the cluster (~/.netrc) — already set up.
+#   2) Freeze a Stage-1 checkpoint to init from, e.g.:
+#        cp ~/repro_test/work_full/ckpt/p_stage1/karmadock_team002.pkl \
+#           ~/stage2_mgpu_test/stage1_snapshot.pkl
+#   3) Put this dir on the cluster at ~/stage2_mgpu_test/ (rsync from the laptop).
+# Then:  cd ~/stage2_mgpu_test && condor_submit full_stage2_mgpu.sub
+#
+# SMOKE-TEST FIRST: the DDP path is untested on real GPUs. Do a 2-GPU / 1-epoch run before
+# committing to the multi-day job (set request_gpus=2 and --epochs 1 via S2 envs).
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = run_full_stage2_ddp.sh
+# Per-GPU batch 8 x accum 2 x 4 GPUs = effective batch 64. Override here if relocating data:
+#   environment = "S2_BATCH=8 S2_ACCUM=2 STAGE1_CKPT=/path/to/stage1.pkl"
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = train_ddp.py, seminar_csv.py, run_full_stage2_ddp.sh
+# data, graphs, checkpoints all live on the mounted home -- nothing large is transferred
+
+output = logs/s2mgpu.$(ClusterId).$(ProcId).out
+error  = logs/s2mgpu.$(ClusterId).$(ProcId).err
+log    = logs/s2mgpu.$(ClusterId).log
+
+request_gpus   = 4
+request_cpus   = 16
+request_memory = 64GB
+
+queue 1

@@ -1,0 +1,24 @@
+# smoke_2gpu.sub — SMOKE TEST of the DDP Stage-2 path: 2 GPUs, 3 epochs.
+# Validates torchrun + NCCL + id-shard + all-reduce + rank-0 ckpt on real GPUs, and measures
+# per-epoch wall time so the full run can be estimated. Isolated (writes ~/stage2_mgpu_test/work).
+universe      = docker
+docker_image  = ahlamloum/karmadock-seminar:v6
++WantGPUHomeMounted = true
+requirements  = UidDomain == "cs.uni-saarland.de" && (Machine =!= "idun.hpc.uni-saarland.de")
+
+executable    = run_full_stage2_ddp.sh
+environment   = "S2_EPOCHS=3"
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = train_ddp.py, seminar_csv.py, run_full_stage2_ddp.sh
+
+output = logs/smoke.$(ClusterId).$(ProcId).out
+error  = logs/smoke.$(ClusterId).$(ProcId).err
+log    = logs/smoke.$(ClusterId).log
+
+request_gpus   = 2
+request_cpus   = 8
+request_memory = 48GB
+
+queue 1

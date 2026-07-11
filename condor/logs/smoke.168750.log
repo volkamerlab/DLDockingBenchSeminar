@@ -1,0 +1,9 @@
+000 (168750.000.000) 2026-06-26 06:36:46 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_3439953_36a5>
+...
+012 (168750.000.000) 2026-06-29 15:49:00 Job was held.
+	via condor_hold (by user bdldt_team002)
+	Code 1 Subcode 0
+...
+009 (168750.000.000) 2026-06-29 19:52:47 Job was aborted.
+	via condor_rm (by user bdldt_team002)
+...
