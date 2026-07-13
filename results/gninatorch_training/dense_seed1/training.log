@@ -1,6 +1,6 @@
 --- GNINA TRAINING ---
-trainfile = 'data/proto_train.types'
-testfile = None
+trainfile = 'full_sealed_train.types'
+testfile = 'full_sealed_val.types'
 data_root = ''
 balanced = False
 shuffle = True
@@ -53,291 +53,1695 @@ pytorch = '2.5.1'
 ignite = '0.5.2'
 cuda = '12.1'
 >>> Train Results - Epoch[1] <<<
-    Accuracy: 0.31742
-    Balanced Accuracy: 0.49797
-    Pose Loss: 1.03000
-    ROC AUC: 0.52839
-    MAE: 2.11980
-    RMSE: 2.61220
-    Affinity Loss: 6.82358
-    Loss: 7.85358
-    Epoch Time: 62.87297
-    Elapsed Time: 62.87304
+    Accuracy: 0.67165
+    Balanced Accuracy: 0.55527
+    Pose Loss: 0.62066
+    ROC AUC: 0.61758
+    MAE: 1.38553
+    RMSE: 1.72335
+    Affinity Loss: 2.97487
+    Loss: 3.59554
+    Epoch Time: 2821.27291
+    Elapsed Time: 2821.27302
+>>> Test Results - Epoch[1] <<<
+    Accuracy: 0.67811
+    Balanced Accuracy: 0.57821
+    Pose Loss: 0.62160
+    ROC AUC: 0.60945
+    MAE: 1.55202
+    RMSE: 1.91323
+    Affinity Loss: 3.66044
+    Loss: 4.28203
 >>> Train Results - Epoch[2] <<<
-    Accuracy: 0.71067
-    Balanced Accuracy: 0.54137
-    Pose Loss: 0.66275
-    ROC AUC: 0.56048
-    MAE: 2.66187
-    RMSE: 3.20867
-    Affinity Loss: 10.29558
-    Loss: 10.95833
-    Epoch Time: 3.94055
-    Elapsed Time: 66.81362
+    Accuracy: 0.57672
+    Balanced Accuracy: 0.49696
+    Pose Loss: 0.67756
+    ROC AUC: 0.50885
+    MAE: 1.82878
+    RMSE: 2.23882
+    Affinity Loss: 5.01648
+    Loss: 5.69403
+    Epoch Time: 30.52349
+    Elapsed Time: 2851.79673
+>>> Test Results - Epoch[2] <<<
+    Accuracy: 0.58369
+    Balanced Accuracy: 0.47696
+    Pose Loss: 0.65844
+    ROC AUC: 0.53619
+    MAE: 1.95607
+    RMSE: 2.38511
+    Affinity Loss: 5.68874
+    Loss: 6.34718
 >>> Train Results - Epoch[3] <<<
-    Accuracy: 0.71910
-    Balanced Accuracy: 0.50000
-    Pose Loss: 0.89832
-    ROC AUC: 0.49098
-    MAE: 3.20149
-    RMSE: 3.63342
-    Affinity Loss: 13.20176
-    Loss: 14.10009
-    Epoch Time: 3.61300
-    Elapsed Time: 70.42664
+    Accuracy: 0.66261
+    Balanced Accuracy: 0.49574
+    Pose Loss: 0.83759
+    ROC AUC: 0.54786
+    MAE: 2.93997
+    RMSE: 3.89162
+    Affinity Loss: 15.14873
+    Loss: 15.98632
+    Epoch Time: 28.88582
+    Elapsed Time: 2880.68256
+>>> Test Results - Epoch[3] <<<
+    Accuracy: 0.68240
+    Balanced Accuracy: 0.49046
+    Pose Loss: 0.72270
+    ROC AUC: 0.56346
+    MAE: 3.01153
+    RMSE: 3.65579
+    Affinity Loss: 13.36483
+    Loss: 14.08753
 >>> Train Results - Epoch[4] <<<
-    Accuracy: 0.28230
-    Balanced Accuracy: 0.50098
-    Pose Loss: 2.20722
-    ROC AUC: 0.60070
-    MAE: 5.41017
-    RMSE: 5.79364
-    Affinity Loss: 33.56630
-    Loss: 35.77353
-    Epoch Time: 3.60958
-    Elapsed Time: 74.03622
+    Accuracy: 0.68285
+    Balanced Accuracy: 0.50009
+    Pose Loss: 0.62476
+    ROC AUC: 0.50061
+    MAE: 6.14163
+    RMSE: 609.58053
+    Affinity Loss: 371588.42403
+    Loss: 371589.04879
+    Epoch Time: 29.39746
+    Elapsed Time: 2910.08006
+>>> Test Results - Epoch[4] <<<
+    Accuracy: 0.70815
+    Balanced Accuracy: 0.50000
+    Pose Loss: 0.60470
+    ROC AUC: 0.49612
+    MAE: 1.65618
+    RMSE: 2.00435
+    Affinity Loss: 4.01742
+    Loss: 4.62212
 >>> Train Results - Epoch[5] <<<
-    Accuracy: 0.46770
-    Balanced Accuracy: 0.47906
-    Pose Loss: 0.77495
-    ROC AUC: 0.47547
-    MAE: 2.16730
-    RMSE: 2.68648
-    Affinity Loss: 7.21720
-    Loss: 7.99214
-    Epoch Time: 3.61791
-    Elapsed Time: 77.65414
-4_0Q4_E_100_protein_refined.pdb)
+    Accuracy: 0.68279
+    Balanced Accuracy: 0.50000
+    Pose Loss: 0.62594
+    ROC AUC: 0.50000
+    MAE: 1.49013
+    RMSE: 1.85079
+    Affinity Loss: 3.43304
+    Loss: 4.05898
+    Epoch Time: 29.01359
+    Elapsed Time: 2939.09368
+>>> Test Results - Epoch[5] <<<
+    Accuracy: 0.70815
+    Balanced Accuracy: 0.50000
+    Pose Loss: 0.60382
+    ROC AUC: 0.50000
+    MAE: 1.64211
+    RMSE: 1.99565
+    Affinity Loss: 3.98260
+    Loss: 4.58642
+======================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4rfd_3O5_A_303_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a08_ACE-DIP_D_100-103_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o78_SAV_A_201_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1e3v_DXC_A_801_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o5b_ESI_B_251_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1e_ACE-DIY_C_100-103_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5l8p_6MG_E_406_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1b42_M1A_A_600_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3nwb_659_A_226_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bn1_AL5_A_555_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5abg_V0N_A_1717_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1c_ACE-DIX_D_100-103_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o37_653_A_246_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1b_ACE-DIP_C_100-103_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6mtu_PRO-LEU_D_822-829_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bky_1MC_A_600_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5m5f_7GR_E_408_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ett_4QQ_H_301_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jt9_7AF_E_412_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a94_0Q4_A_100_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/456c_CBP_A_1_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bn3_AL6_A_555_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/2dri_RIP_A_272_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1f40_GPI_A_108_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5mqv_D5Q_D_301_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1fax_DX9_A_265_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3n4b_WWZ_A_263_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1e3v_DXC_B_801_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6zvl_QR2_A_509_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1cmp_DMI_A_295_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5tbp_7A4_D_502_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1e_ACE-DIY_D_100-103_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5bvb_DOG_B_201_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1aj7_NPE_H_217_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/456c_CBP_B_1_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1b_ACE-DIP_D_100-103_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3n9r_TD3_e_311_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1drj_RIP_A_272_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6g2s_EJN_H_301_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bai_0Q4_A_125_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o3i_907_A_246_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a08_ACE-DIP_C_100-103_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1nsg_RAD_A_108_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1drk_RIP_A_272_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1bn1_AL5_A_555_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ado_13P_B_1053_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4m5r_MSR_A_306_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ah0_SBI_A_320_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4ijh_1EJ_A_205_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ets_MID_H_1_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o3k_334_A_246_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a1c_ACE-DIX_C_100-103_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4fgk_0TX_A_302_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ah3_TOL_A_320_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6i76_H5N_A_301_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bnn_AL1_A_555_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5lsc_752_B_404_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1am6_HAE_A_555_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4mss_2CZ_A_401_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bnm_AL8_A_555_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gj8_133_B_251_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5x_ESI_B_251_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1bn3_AL6_A_555_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5r_ESI_A_246_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4ijh_1EJ_A_204_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1awi_PRO-PRO_P_1-10_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1a1b_ACE-DIP_D_100-103_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1ado_13P_A_1104_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o3j_334_A_246_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bnv_AL7_A_555_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4isk_1JY_B_303_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5w_ESI_B_251_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o33_801_A_246_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bzj_PIC_A_301_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5g3u_ITW_B_420_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5y_ESP_B_251_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4r4c_3HS_A_201_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1c5u_ESP_A_246_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2i_655_A_246_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1fap_RAP_A_108_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1t4v_14A_H_1411_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bnw_TPD_A_555_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1a7x_FKA_B_201_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1a7x_FKA_B_201_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ma7_7K0_E_412_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1bn4_AL9_A_555_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6wq7_U6V_A_303_protein_refined.pdb)
 
 ==============================
 *** Open Babel Warning  in PerceiveBondOrders
-  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/proto_train/1cgl_0ED_B_1_protein_refined.pdb)
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/7k4q_6NT_B_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5o6o_9MB_A_304_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gaf_NPE_H_218_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5lvd_79F_E_410_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ha1_RNE_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3zxh_E41_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6e6m_8CB_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6v1b_H1B_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6g2s_EJN_F_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1lyb_IVA-STA_J_1-6_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1frp_AMP_B_338_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5bvb_DOG_D_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5u61_7WG_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4a22_TD4_A_1344_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4zvl_AO_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/7k4x_6NT_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fpf_AMP_A_339_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ah3_TOL_A_320_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5mft_7MF_A_1002_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4luv_1XS_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ah0_SBI_A_320_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4m2r_BZ1_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1lyb_IVA-STA_I_1-6_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4fbp_AMP_B_338_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4mss_2CZ_B_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5bvb_DOG_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ci7_51W_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5vd1_P48_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2y_847_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6g2s_EJN_I_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5js3_6MG_E_411_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6qlq_J4E_B_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4wyz_U3P_B_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4dz7_D02_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1a1c_ACE-DIX_C_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ets_MID_H_1_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4b5w_PYR_D_1256_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o3b_780_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1drj_RIP_A_272_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4b5w_PYR_C_1255_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4b3b_ACE-NH2_C_0-5_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3n0n_P9B_A_263_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4isk_1JY_E_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4muv_PCG_B_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5lvl_537_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1xuk_BAB_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6wgx_U0D_A_202_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o34_801_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6g2s_EJN_D_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2s_CR4_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2w_847_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1c5x_ESI_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5u5u_NTN_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6h0f_Y70_H_502_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6wq8_U77_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gj6_132_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5boj_4TX_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5bvb_DOG_C_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4kil_1R5_A_305_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gj4_132_H_410_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/7axm_93J_A_502_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fpd_AMP_A_339_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4luv_1DZ_A_202_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o5a_696_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5mn1_2AP_A_306_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4owk_NGA_D_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4wyp_AMP_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1u6q_745_A_245_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/7ap6_RQN_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3l66_COU_A_802_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jes_EVF_B_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4bqy_FNT_A_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/2kgk_N22_A_174_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5u5z_7VP_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1bnw_TPD_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6fnt_AVO_B_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1am6_HAE_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/830c_RS1_B_1_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4tzt_468_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2x_847_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fta_AMP_C_338_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5abf_XRJ_A_1717_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3n9r_TD3_A_311_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4isk_1JY_H_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5tbp_7A4_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1drk_RIP_A_272_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5je7_EVF_B_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o76_1M3_B_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5lif_6XO_E_411_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6c2i_EJ7_A_407_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ett_4QQ_H_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o76_1M3_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6qlu_J62_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4z93_4LD_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6ms1_GLY-VAL_C_192-199_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3v2m_AZM_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4fuh_1U2_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2g_696_H_410_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fax_DX9_A_265_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4u7h_K25_B_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5kir_RCX_B_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4u7f_K25_B_304_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4owk_NGA_B_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4u7g_K17_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1hvj_A78_A_800_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5vje_GOS_A_403_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3qyk_IE2_A_263_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5l3u_6NG_E_409_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3uuo_0CV_B_1_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1vwf_ACE-NH2_P_0-9_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3p3e_3P3_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5u46_7T1_B_502_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3n3j_WWV_A_263_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ljt_A6N_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4a22_TD4_B_1344_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fki_SB1_B_108_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5mfr_7MK_A_1002_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6gw0_TUD_A_600_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6e6m_8CB_C_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1a1e_ACE-DIY_C_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6mtu_PRO-LEU_C_822-829_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1f40_GPI_A_108_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ikq_JMS_B_602_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jeh_EVF_B_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3mzc_S6I_A_263_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4u7h_K25_B_304_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4fbp_AMP_A_338_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4isk_1JY_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5mqv_D5Q_F_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fkh_SBX_A_108_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5u5w_7W1_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1a08_ACE-DIP_D_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6pet_ODY_A_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o0a_2P9_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gi6_124_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6b1k_C9G_C_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6h0f_Y70_E_502_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6wq4_U7A_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/2jt6_JT6_A_1_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1tnk_PRA_A_900_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o3d_780_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6pyb_P5G_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ikq_JMS_A_602_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2u_847_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jg5_EVF_B_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gj7_132_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6ms1_GLY-VAL_D_145-152_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jg3_EVF_B_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ghw_BMZ_H_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4owk_NGA_F_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4isk_1JY_C_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6f9r_D0W_A_710_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5fcz_TNX_A_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5l7w_6QU_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1a08_ACE-DIP_C_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1bnv_AL7_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o7a_2RF_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3jdw_ORN_A_500_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5kir_RCX_A_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o30_693_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5lje_RTL_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4x5r_3XO_B_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3p3c_3P3_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5lsc_752_A_404_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4pio_AVI_B_402_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4rfd_3O5_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4zvn_AO_B_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1cmp_DMI_A_295_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1pf8_SU9_A_500_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4xo8_KGM_B_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o71_CPB_B_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2q_991_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4fgk_0TX_A_304_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o70_1QK_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4r4o_3HW_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3mmf_D9H_A_263_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6oqb_N0J_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3zxh_E41_B_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5fwr_3X8_B_182_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1bn4_AL9_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1utj_ABN_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jgs_EVF_B_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ikv_FLF_B_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4fbp_AMP_D_338_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4kwp_EXX_A_408_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ldm_2AM_B_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4b5w_PYR_F_1257_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3n2p_AYX_A_263_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ogx_EQU_B_1328_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6h0f_Y70_B_502_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o36_607_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4pin_AVI_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5l7y_6QO_A_304_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4muv_PCG_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1tnl_TPA_A_900_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ug2_86J_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4ijh_1EJ_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3u8o_DPN-NH2_I_1-5_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o3e_696_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o5e_132_H_256_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4zur_7XA_A_404_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4trj_665_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jep_EVF_B_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4zvm_DM2_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6g2s_EJN_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4pio_AVI_A_402_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o70_1QK_B_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fpd_AMP_B_339_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6e5l_HVD_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5vd0_8X7_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5vd3_H8H_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6qln_J5Q_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jwm_6ON_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4owk_NGA_G_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6h0f_Y70_K_502_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6qlr_J4N_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1e3v_DXC_A_801_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fkg_SB3_A_108_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fpe_AMP_B_339_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gi2_122_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1tng_AMC_A_900_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5fum_SOF_B_1544_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6i77_H5Q_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gjb_130_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3m09_RAR_A_200_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1hxw_RIT_B_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1aj7_NPE_H_217_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5o72_9MH_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/7jo0_VFG_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6g2s_EJN_B_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3l66_COU_A_801_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1p57_CR4_B_346_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6wq5_U7G_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5tbp_7A4_B_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6pet_ODY_B_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4lgg_VGG_A_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3m8u_GDS_A_1_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/7jnw_VFM_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/7a54_DAN_B_801_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1hvs_A77_A_800_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5sz5_72E_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6i8l_H7Q_B_304_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jxn_6NN_E_411_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6g2s_EJN_G_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4zur_7XA_B_404_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ogh_C3P_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4xo8_KGM_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5abf_XRJ_B_1717_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6wq9_U7J_A_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5qac_U4J_C_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1c5w_ESI_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4u7g_K17_B_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ikv_FLF_A_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fta_AMP_D_338_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ldm_2AM_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1hvl_A76_B_800_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1frp_AMP_A_338_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3v2j_AZM_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6b1k_C9G_B_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5tet_7A3_A_901_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4c49_HCY_A_1384_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o72_2R4_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1y93_HAE_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4u7f_K25_B_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fta_AMP_A_338_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o38_653_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5cr1_STL_B_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3m08_RAR_A_200_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fpg_AMP_B_339_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o7c_2RK_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1bnm_AL8_A_555_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gi7_120_B_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4zvm_DM2_B_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1rst_ALA-GLY_P_1-9_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/7joc_ARZ_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o5c_CR9_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2j_656_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1gja_135_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4isk_1JY_G_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1c5u_ESP_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3nwe_662_A_227_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4luo_1DZ_A_202_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fki_SB1_A_109_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3tem_6A1_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6qeb_AZM_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ogx_EQU_A_1128_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jeg_EVF_B_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/2l84_J28_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4kqp_GLN_A_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4b5w_PYR_A_1259_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4fu9_675_A_313_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4owk_NGA_E_501_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6f9r_D0W_B_711_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ado_13P_A_1104_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4o76_1M3_C_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1a1b_ACE-DIP_C_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5cr1_T44_A_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5ljq_ANV_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5tbp_7A4_A_503_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5m9w_7GR_A_412_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1a1c_ACE-DIX_D_100-103_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1tni_PBN_A_900_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1fta_AMP_B_338_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5boj_4TX_B_201_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2n_762_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4m2w_ETS_A_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5fd0_NAG_A_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5lwd_79E_E_411_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o3g_696_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ghz_120_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o3p_655_B_251_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4lgg_VGG_B_601_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/3uuo_0CV_A_1_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/6i8y_2OD_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2o_950_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4n16_CHD_A_301_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5o6z_9ME_A_304_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1o2z_312_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1nnb_DAN_A_500_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/4b5w_PYR_E_1258_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/1ghv_120_H_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5jdv_EVF_B_302_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5utr_8MP_B_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_train/5k4l_6QN_A_904_protein_refined.pdb)
 
 >>> Train Results - Epoch[1] <<<
-    Accuracy: 0.31742
-    Balanced Accuracy: 0.49797
-    Pose Loss: 1.03000
-    ROC AUC: 0.52839
-    MAE: 2.11980
-    RMSE: 2.61220
-    Affinity Loss: 6.82358
-    Loss: 7.85358
-    Epoch Time: 62.87297
-    Elapsed Time: 62.87304
+    Accuracy: 0.67165
+    Balanced Accuracy: 0.55527
+    Pose Loss: 0.62066
+    ROC AUC: 0.61758
+    MAE: 1.38553
+    RMSE: 1.72335
+    Affinity Loss: 2.97487
+    Loss: 3.59554
+    Epoch Time: 2821.27291
+    Elapsed Time: 2821.27302
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_val/1o2k_656_A_246_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_val/4d9w_X32_A_401_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_val/4isk_1JY_D_303_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_val/6f9u_D0W_A_711_protein_refined.pdb)
+
+==============================
+*** Open Babel Warning  in PerceiveBondOrders
+  Failed to kekulize aromatic bonds in OBMol::PerceiveBondOrders (title is data/full_val/6g2s_EJN_C_301_protein_refined.pdb)
+
+>>> Test Results - Epoch[1] <<<
+    Accuracy: 0.67811
+    Balanced Accuracy: 0.57821
+    Pose Loss: 0.62160
+    ROC AUC: 0.60945
+    MAE: 1.55202
+    RMSE: 1.91323
+    Affinity Loss: 3.66044
+    Loss: 4.28203
 >>> Train Results - Epoch[2] <<<
-    Accuracy: 0.71067
-    Balanced Accuracy: 0.54137
-    Pose Loss: 0.66275
-    ROC AUC: 0.56048
-    MAE: 2.66187
-    RMSE: 3.20867
-    Affinity Loss: 10.29558
-    Loss: 10.95833
-    Epoch Time: 3.94055
-    Elapsed Time: 66.81362
+    Accuracy: 0.57672
+    Balanced Accuracy: 0.49696
+    Pose Loss: 0.67756
+    ROC AUC: 0.50885
+    MAE: 1.82878
+    RMSE: 2.23882
+    Affinity Loss: 5.01648
+    Loss: 5.69403
+    Epoch Time: 30.52349
+    Elapsed Time: 2851.79673
+>>> Test Results - Epoch[2] <<<
+    Accuracy: 0.58369
+    Balanced Accuracy: 0.47696
+    Pose Loss: 0.65844
+    ROC AUC: 0.53619
+    MAE: 1.95607
+    RMSE: 2.38511
+    Affinity Loss: 5.68874
+    Loss: 6.34718
 >>> Train Results - Epoch[3] <<<
-    Accuracy: 0.71910
-    Balanced Accuracy: 0.50000
-    Pose Loss: 0.89832
-    ROC AUC: 0.49098
-    MAE: 3.20149
-    RMSE: 3.63342
-    Affinity Loss: 13.20176
-    Loss: 14.10009
-    Epoch Time: 3.61300
-    Elapsed Time: 70.42664
+    Accuracy: 0.66261
+    Balanced Accuracy: 0.49574
+    Pose Loss: 0.83759
+    ROC AUC: 0.54786
+    MAE: 2.93997
+    RMSE: 3.89162
+    Affinity Loss: 15.14873
+    Loss: 15.98632
+    Epoch Time: 28.88582
+    Elapsed Time: 2880.68256
+>>> Test Results - Epoch[3] <<<
+    Accuracy: 0.68240
+    Balanced Accuracy: 0.49046
+    Pose Loss: 0.72270
+    ROC AUC: 0.56346
+    MAE: 3.01153
+    RMSE: 3.65579
+    Affinity Loss: 13.36483
+    Loss: 14.08753
 >>> Train Results - Epoch[4] <<<
-    Accuracy: 0.28230
-    Balanced Accuracy: 0.50098
-    Pose Loss: 2.20722
-    ROC AUC: 0.60070
-    MAE: 5.41017
-    RMSE: 5.79364
-    Affinity Loss: 33.56630
-    Loss: 35.77353
-    Epoch Time: 3.60958
-    Elapsed Time: 74.03622
+    Accuracy: 0.68285
+    Balanced Accuracy: 0.50009
+    Pose Loss: 0.62476
+    ROC AUC: 0.50061
+    MAE: 6.14163
+    RMSE: 609.58053
+    Affinity Loss: 371588.42403
+    Loss: 371589.04879
+    Epoch Time: 29.39746
+    Elapsed Time: 2910.08006
+>>> Test Results - Epoch[4] <<<
+    Accuracy: 0.70815
+    Balanced Accuracy: 0.50000
+    Pose Loss: 0.60470
+    ROC AUC: 0.49612
+    MAE: 1.65618
+    RMSE: 2.00435
+    Affinity Loss: 4.01742
+    Loss: 4.62212
 >>> Train Results - Epoch[5] <<<
-    Accuracy: 0.46770
-    Balanced Accuracy: 0.47906
-    Pose Loss: 0.77495
-    ROC AUC: 0.47547
-    MAE: 2.16730
-    RMSE: 2.68648
-    Affinity Loss: 7.21720
-    Loss: 7.99214
-    Epoch Time: 3.61791
-    Elapsed Time: 77.65414
+    Accuracy: 0.68279
+    Balanced Accuracy: 0.50000
+    Pose Loss: 0.62594
+    ROC AUC: 0.50000
+    MAE: 1.49013
+    RMSE: 1.85079
+    Affinity Loss: 3.43304
+    Loss: 4.05898
+    Epoch Time: 29.01359
+    Elapsed Time: 2939.09368
+>>> Test Results - Epoch[5] <<<
+    Accuracy: 0.70815
+    Balanced Accuracy: 0.50000
+    Pose Loss: 0.60382
+    ROC AUC: 0.50000
+    MAE: 1.64211
+    RMSE: 1.99565
+    Affinity Loss: 3.98260
+    Loss: 4.58642
 Saved GNINA-readable TorchScript model to: results/gninatorch_training/dense_seed1/gnina_retrained_full_model.pt
