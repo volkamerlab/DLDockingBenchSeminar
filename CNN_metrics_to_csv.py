@@ -1,9 +1,17 @@
+#Irem_Dogruoglu_7061348_Lizzie_Schmitz_7056551
+#References:
+#1.https://docs.python.org/3/library/pathlib.html
+#2.https://python-adv-web-apps.readthedocs.io/en/latest/csv.html
+#3.https://github.com/gnina/gnina
+#4.https://link.springer.com/article/10.1186/s13321-025-00973-x
+#5.https://stackoverflow.com/questions/34304189/how-to-pass-string-as-variable-name-assignment
+
 import csv
 import re
 from pathlib import Path
 
 """
-This script parses the CNNaffinity and CNNpose_score values from each complex and compiles it into a single CSV. 
+This script parses the CNNaffinity and CNNpose_score values from each complex and compiles it into a single CSV to use in NB applications.
 """
 
 def parse_gnina_sdf_scores(sdf_file: Path):
