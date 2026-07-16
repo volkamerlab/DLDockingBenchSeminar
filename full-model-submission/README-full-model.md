@@ -90,7 +90,7 @@ We ran 7 training experiments to find the best hyperparameters:
 
 ### 
 
-### 1\. Conformer count mismatch crashes inference (`IndexError`)s
+### 1\. Conformer count mismatch crashes inference (`IndexError`)
 
 `TTADockingPoseDataset` crashes with `IndexError: list index out of range` if any LMDB entry has fewer conformers than `--conf-size`. This happens because RDKit occasionally fails to generate the full requested number of conformers for certain molecules.
 
