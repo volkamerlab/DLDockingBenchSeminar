@@ -32,6 +32,9 @@ submit files (`condor/full_stage2_2gpu.sub` = the 2×A100 Stage-2 run;
 `condor/{full_test,posebusters}_infer.sub` = inference) and their job logs (`condor/logs/`). The
 full report and results notebook are being finalized.
 
+**Predicted poses** (all 3 variants, both datasets, both models — too large for git) are on Zenodo:
+[zenodo.org/records/21197043](https://zenodo.org/records/21197043).
+
 ---
 
 **Contents:**
