@@ -90,22 +90,7 @@ We ran 7 training experiments to find the best hyperparameters:
 
 ### 
 
-### 1\. `--reset-optimizer` flags prevented proper checkpoint resumption
-
-The original training script had these flags:
-
-```
---reset-optimizer
---reset-dataloader
---reset-meters
---reset-lr-scheduler
-```
-
-On HTCondor, training jobs are regularly preempted (evicted) and must resume from checkpoints. These flags caused training to restart the optimizer state from scratch every time, effectively restarting training. Removing them enabled proper checkpoint resumption — the optimizer momentum, learning rate schedule, and data position are all restored correctly.
-
-### 
-
-### 2\. Conformer count mismatch crashes inference (`IndexError`)
+### 1\. Conformer count mismatch crashes inference (`IndexError`)s
 
 `TTADockingPoseDataset` crashes with `IndexError: list index out of range` if any LMDB entry has fewer conformers than `--conf-size`. This happens because RDKit occasionally fails to generate the full requested number of conformers for certain molecules.
 
@@ -120,7 +105,7 @@ python3 check\\\_conf\\\_distribution.py data/processed\\\_test/test.lmdb 10 \\\
 
 ### 
 
-### 3\. `--warmup-ratio` crashes on checkpoint resume (unicore bug)
+### 2\. `--warmup-ratio` crashes on checkpoint resume (unicore bug)
 
 The original script used `--warmup-ratio 0.06` which requires computing `total\\\_train\\\_steps = n\\\_samples / batch\\\_size × epochs` at startup. This computation fails when resuming from a checkpoint because the dataloader state isn't fully initialized yet — a bug in the unicore framework.
 
@@ -133,7 +118,7 @@ The original script used `--warmup-ratio 0.06` which requires computing `total\\
 
 ### 
 
-### 4\. `--max-update 10000` stopped training too early
+### 3\. `--max-update 10000` stopped training too early
 
 An early training script included `--max-update 10000` as a safety cap. With batch=32 and 23,447 training examples, one epoch = \~733 steps. The cap of 10,000 updates would stop training at \~epoch 14, far short of the intended 30 epochs.
 
