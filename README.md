@@ -20,7 +20,7 @@
 | `run_gnina_train.py` | Retraining Python script that implements native GNINA docking, preprocessing, and model retraining, for the *full train/val dataset*. |
 | `redocking.py` | Redocking Python script that uses the retrained dense and default2018 models to redock the *full test set*. |
 | `posebusters_redocking.py` | Redocking Python script that uses the retrained dense and default2018 models to redock the *PoseBusters set*. |
-| `evaluation_full_test.py` | Python evaluation script for analyzing docking and redocking outputs, and preparing result summaries. |
+| `evaluation_full_test.py` | Python evaluation script edited for full test dataset to analyze docking and redocking outputs, and preparing result summaries. |
 | `evaluation.py` | Python evaluation script for analyzing docking and redocking outputs, and preparing result summaries. |
 | `run_gnina.sh` | Shell script that executes the pipeline inside the Docker container. |
 | `run_gnina_train.sh` | Shell script that executes the *full dataset* GNINA retraining inside the Docker container. |
