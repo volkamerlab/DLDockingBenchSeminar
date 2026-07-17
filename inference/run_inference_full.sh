@@ -16,9 +16,10 @@ cd /home/bdldt_team005/DLDockingBenchSeminar/inference
   --model_dir /home/bdldt_team005/DLDockingBenchSeminar/training/workdir/full_training \
   --ckpt best_ema_model.pt \
   --filtering_model_dir /home/bdldt_team005/DLDockingBenchSeminar/DiffDock-Pocket/confidence_model \
-  --out_dir /home/bdldt_team005/DLDockingBenchSeminar/results/full_test_predictions \
+  --out_dir /home/bdldt_team005/DLDockingBenchSeminar/results/full_test_predictions_3poses \
   --inference_steps 20 \
-  --samples_per_complex 1 \
-  --batch_size 10 \
+  --samples_per_complex 3 \
+  --batch_size 4 \
   --actual_steps 18 \
-  --no_final_step_noise
+  --no_final_step_noise \
+  --skip_existing
