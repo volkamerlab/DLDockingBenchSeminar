@@ -1,0 +1,123 @@
+000 (174202.034.000) 2026-07-16 13:22:42 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174202.034.000) 2026-07-16 13:23:45 Job executing on host: <10.143.248.11:9618?PrivAddr=%3c10.143.250.11:9618%3fsock%3dstartd_2521_c658%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.11-9618&alias=lofn.hpc.uni-saarland.de&noUDP&sock=startd_2521_c658>
+	SlotName: teaching1@lofn.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_cca7fafe }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_68657"
+	Cpus = 7
+	Disk = 672115596
+	GPUs = 1
+	GPUs_GPU_cca7fafe = [ Id = "GPU-cca7fafe"; Capability = 6.0; DeviceName = "Tesla P100-SXM2-16GB"; DeviceUuid = "cca7fafe-45ba-2993-f24a-b5737b8e5036"; ECCEnabled = true; NvidiaDriver = "550.163.01"; DriverVersion = 12.4; DevicePciBusId = "0000:04:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	Memory = 64480
+...
+005 (174202.034.000) 2026-07-16 13:23:47 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :        0        1         7 
+	   Disk (KB)            :        1        1 672115596 
+	   GPUs                 :        0                  1 "GPU-cca7fafe"
+	   Memory (MB)          :              4096     64480 
+	   TimeExecute (s)      :        2                    
+	   TimeSlotBusy (s)     :        3                    
+...
+000 (174270.034.000) 2026-07-16 15:50:26 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174270.034.000) 2026-07-16 22:52:16 Job executing on host: <10.143.248.26:9618?PrivAddr=%3c10.143.250.26:9618%3fsock%3dstartd_7902_b176%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.26-9618&alias=gefjon.hpc.uni-saarland.de&noUDP&sock=startd_7902_b176>
+	SlotName: slot1_31@gefjon.hpc.uni-saarland.de
+	AvailableGPUs = {  }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_3137519"
+	Cpus = 4
+	Disk = 12147
+	GPUs = 0
+	Memory = 4096
+...
+006 (174270.034.000) 2026-07-16 22:52:25 Image size of job updated: 60
+	60  -  MemoryUsage of job (MB)
+	61452  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 22:57:26 Image size of job updated: 236
+	236  -  MemoryUsage of job (MB)
+	242300  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 23:02:26 Image size of job updated: 270
+	270  -  MemoryUsage of job (MB)
+	276776  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 23:07:26 Image size of job updated: 278
+	278  -  MemoryUsage of job (MB)
+	285040  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 23:12:27 Image size of job updated: 288
+	288  -  MemoryUsage of job (MB)
+	295704  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 23:17:28 Image size of job updated: 380
+	380  -  MemoryUsage of job (MB)
+	389460  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 23:32:28 Image size of job updated: 382
+	382  -  MemoryUsage of job (MB)
+	391996  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 23:37:29 Image size of job updated: 385
+	385  -  MemoryUsage of job (MB)
+	394520  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 23:42:30 Image size of job updated: 389
+	389  -  MemoryUsage of job (MB)
+	398728  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 23:47:30 Image size of job updated: 389
+	389  -  MemoryUsage of job (MB)
+	399064  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-16 23:52:30 Image size of job updated: 396
+	396  -  MemoryUsage of job (MB)
+	406208  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-17 00:07:33 Image size of job updated: 415
+	415  -  MemoryUsage of job (MB)
+	425944  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-17 00:22:34 Image size of job updated: 421
+	421  -  MemoryUsage of job (MB)
+	431776  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-17 00:32:35 Image size of job updated: 422
+	422  -  MemoryUsage of job (MB)
+	432700  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-17 00:47:35 Image size of job updated: 470
+	470  -  MemoryUsage of job (MB)
+	482276  -  ResidentSetSize of job (KB)
+...
+006 (174270.034.000) 2026-07-17 01:58:28 Image size of job updated: 471
+	471  -  MemoryUsage of job (MB)
+	482676  -  ResidentSetSize of job (KB)
+...
+005 (174270.034.000) 2026-07-17 01:58:29 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 1 16:30:43, Sys 0 00:02:47  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 1 16:30:43, Sys 0 00:02:47  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :     0.00        1         4 
+	   Disk (KB)            :     1           1     12147 
+	   GPUs                 :                           0 
+	   Memory (MB)          :   471        4096      4096 
+	   TimeExecute (s)      : 11172                       
+	   TimeSlotBusy (s)     : 11175                       
+...

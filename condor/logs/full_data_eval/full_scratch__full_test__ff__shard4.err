@@ -1,0 +1,1621 @@
+15:43:26 [INFO] Loaded 6183 complexes from data/full_test.csv
+15:43:26 [INFO] Dataset: full_test | Top-N: 1 | PoseBusters: True
+15:43:26 [INFO] Shard 4/6: 1030 complexes
+15:43:27 [INFO] Using default configuration for mode dock.
+15:43:37 [INFO] Using default configuration for mode dock.
+15:43:40 [INFO] Using default configuration for mode dock.
+15:43:42 [INFO] Using default configuration for mode dock.
+15:43:45 [INFO] Using default configuration for mode dock.
+[15:43:45] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[15:43:46] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[15:43:49] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[15:43:50] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+15:43:50 [INFO] Using default configuration for mode dock.
+15:43:55 [INFO] Using default configuration for mode dock.
+15:44:00 [INFO] Using default configuration for mode dock.
+15:44:01 [INFO] Using default configuration for mode dock.
+15:44:06 [INFO] Using default configuration for mode dock.
+15:44:10 [INFO] Using default configuration for mode dock.
+15:44:18 [INFO] Using default configuration for mode dock.
+15:44:21 [INFO] Using default configuration for mode dock.
+15:44:30 [INFO] Using default configuration for mode dock.
+15:44:36 [INFO] Using default configuration for mode dock.
+15:44:37 [INFO] Using default configuration for mode dock.
+15:45:01 [INFO] Using default configuration for mode dock.
+15:45:27 [INFO] Using default configuration for mode dock.
+15:45:28 [INFO] Using default configuration for mode dock.
+15:45:32 [INFO] Using default configuration for mode dock.
+15:45:37 [INFO] Using default configuration for mode dock.
+15:45:42 [INFO] Using default configuration for mode dock.
+15:45:51 [INFO] Using default configuration for mode dock.
+15:45:53 [INFO] Using default configuration for mode dock.
+15:46:05 [INFO] Using default configuration for mode dock.
+15:46:16 [INFO] Using default configuration for mode dock.
+15:46:19 [INFO] Using default configuration for mode dock.
+15:46:27 [INFO] Using default configuration for mode dock.
+15:47:32 [INFO] Using default configuration for mode dock.
+15:47:43 [INFO] Using default configuration for mode dock.
+15:47:50 [INFO] Using default configuration for mode dock.
+15:47:53 [INFO] Using default configuration for mode dock.
+15:47:58 [INFO] Using default configuration for mode dock.
+15:48:01 [INFO] Using default configuration for mode dock.
+15:48:03 [INFO] Using default configuration for mode dock.
+15:48:06 [INFO] Using default configuration for mode dock.
+15:48:10 [INFO] Using default configuration for mode dock.
+15:48:16 [INFO] Using default configuration for mode dock.
+15:48:20 [INFO] Using default configuration for mode dock.
+15:48:21 [INFO] Using default configuration for mode dock.
+15:48:26 [INFO] Using default configuration for mode dock.
+15:48:28 [INFO] Using default configuration for mode dock.
+15:48:31 [INFO] Using default configuration for mode dock.
+15:48:32 [INFO] Using default configuration for mode dock.
+15:48:34 [INFO] Using default configuration for mode dock.
+[15:48:35] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:48:35] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+15:48:36 [INFO] Using default configuration for mode dock.
+15:48:39 [INFO] Using default configuration for mode dock.
+15:48:41 [INFO] Using default configuration for mode dock.
+[15:48:46] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:48:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+15:48:49 [INFO] Using default configuration for mode dock.
+15:48:52 [INFO]   Progress: 50/1030
+15:48:52 [INFO] Using default configuration for mode dock.
+15:48:54 [INFO] Using default configuration for mode dock.
+15:48:56 [INFO] Using default configuration for mode dock.
+[15:48:56] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:48:56] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+15:48:58 [INFO] Using default configuration for mode dock.
+15:49:01 [INFO] Using default configuration for mode dock.
+15:49:12 [INFO] Using default configuration for mode dock.
+[15:49:14] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:49:14] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+[15:49:14] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:49:14] UFFTYPER: Warning: hybridization set to SP3 for atom 8
+15:49:15 [INFO] Using default configuration for mode dock.
+15:49:19 [INFO] Using default configuration for mode dock.
+15:49:22 [INFO] Using default configuration for mode dock.
+15:49:30 [INFO] Using default configuration for mode dock.
+15:49:40 [INFO] Using default configuration for mode dock.
+15:49:47 [INFO] Using default configuration for mode dock.
+15:49:52 [INFO] Using default configuration for mode dock.
+15:49:54 [INFO] Using default configuration for mode dock.
+15:49:57 [INFO] Using default configuration for mode dock.
+15:50:00 [INFO] Using default configuration for mode dock.
+15:50:04 [INFO] Using default configuration for mode dock.
+15:50:08 [INFO] Using default configuration for mode dock.
+15:50:09 [INFO] Using default configuration for mode dock.
+15:50:11 [INFO] Using default configuration for mode dock.
+15:50:12 [INFO] Using default configuration for mode dock.
+15:50:14 [INFO] Using default configuration for mode dock.
+15:50:16 [INFO] Using default configuration for mode dock.
+15:50:20 [INFO] Using default configuration for mode dock.
+[15:50:20] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:50:20] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[15:50:21] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:50:21] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[15:50:22] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:50:22] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:50:24] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:50:24] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[15:50:24] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:50:24] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+15:50:25 [INFO] Using default configuration for mode dock.
+15:50:40 [INFO] Using default configuration for mode dock.
+15:50:43 [INFO] Using default configuration for mode dock.
+15:50:45 [INFO] Using default configuration for mode dock.
+15:50:47 [INFO] Using default configuration for mode dock.
+15:50:48 [INFO] Using default configuration for mode dock.
+15:50:49 [INFO] Using default configuration for mode dock.
+15:50:55 [INFO] Using default configuration for mode dock.
+[15:50:57] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[15:50:58] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[15:50:58] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[15:50:59] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+15:51:00 [INFO] Using default configuration for mode dock.
+15:51:05 [INFO] Using default configuration for mode dock.
+15:51:07 [INFO] Using default configuration for mode dock.
+15:51:13 [INFO] Using default configuration for mode dock.
+15:51:33 [INFO] Using default configuration for mode dock.
+15:51:37 [INFO] Using default configuration for mode dock.
+15:51:41 [INFO] Using default configuration for mode dock.
+15:51:45 [INFO] Using default configuration for mode dock.
+15:51:47 [INFO] Using default configuration for mode dock.
+15:51:48 [INFO] Using default configuration for mode dock.
+15:51:53 [INFO] Using default configuration for mode dock.
+15:52:25 [INFO] Using default configuration for mode dock.
+15:52:30 [INFO] Using default configuration for mode dock.
+[15:52:30] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:52:31] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+15:52:33 [INFO] Using default configuration for mode dock.
+15:52:35 [INFO] Using default configuration for mode dock.
+15:52:39 [INFO] Using default configuration for mode dock.
+15:52:42 [INFO] Using default configuration for mode dock.
+15:52:54 [INFO] Using default configuration for mode dock.
+15:53:06 [INFO]   Progress: 100/1030
+15:53:06 [INFO] Using default configuration for mode dock.
+15:53:07 [INFO] Using default configuration for mode dock.
+15:53:25 [INFO] Using default configuration for mode dock.
+15:53:31 [INFO] Using default configuration for mode dock.
+[15:53:35] UFFTYPER: Unrecognized atom type: S_5+6 (14)
+[15:53:35] UFFTYPER: Unrecognized atom type: S_5+6 (14)
+15:53:35 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+15:53:36 [INFO] Using default configuration for mode dock.
+15:53:41 [INFO] Using default configuration for mode dock.
+15:53:47 [INFO] Using default configuration for mode dock.
+[15:53:47] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+[15:53:47] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+[15:53:50] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+[15:53:51] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+15:53:52 [INFO] Using default configuration for mode dock.
+15:53:56 [INFO] Using default configuration for mode dock.
+[15:53:58] UFFTYPER: Unrecognized atom type: S_5+6 (7)
+[15:53:59] UFFTYPER: Unrecognized atom type: S_5+6 (7)
+15:53:59 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+15:53:59 [INFO] Using default configuration for mode dock.
+15:54:01 [INFO] Using default configuration for mode dock.
+15:54:02 [INFO] Using default configuration for mode dock.
+15:54:04 [INFO] Using default configuration for mode dock.
+15:54:07 [INFO] Using default configuration for mode dock.
+15:54:10 [INFO] Using default configuration for mode dock.
+15:54:18 [INFO] Using default configuration for mode dock.
+[15:54:18] UFFTYPER: Unrecognized charge state for atom: 7
+[15:54:18] UFFTYPER: Unrecognized charge state for atom: 7
+[15:54:19] UFFTYPER: Unrecognized charge state for atom: 7
+[15:54:19] UFFTYPER: Unrecognized charge state for atom: 7
+[15:54:20] UFFTYPER: Unrecognized charge state for atom: 7
+[15:54:21] UFFTYPER: Unrecognized charge state for atom: 7
+15:54:21 [INFO] Using default configuration for mode dock.
+15:54:26 [INFO] Using default configuration for mode dock.
+15:54:30 [INFO] Using default configuration for mode dock.
+15:54:33 [INFO] Using default configuration for mode dock.
+15:54:40 [INFO] Using default configuration for mode dock.
+15:54:42 [INFO] Using default configuration for mode dock.
+15:54:44 [INFO] Using default configuration for mode dock.
+15:54:46 [INFO] Using default configuration for mode dock.
+15:54:52 [INFO] Using default configuration for mode dock.
+15:54:58 [INFO] Using default configuration for mode dock.
+15:55:01 [INFO] Using default configuration for mode dock.
+15:55:16 [INFO] Using default configuration for mode dock.
+15:55:17 [INFO] Using default configuration for mode dock.
+15:55:19 [INFO] Using default configuration for mode dock.
+15:55:25 [INFO] Using default configuration for mode dock.
+15:55:31 [INFO] Using default configuration for mode dock.
+15:55:37 [INFO] Using default configuration for mode dock.
+15:55:48 [INFO] Using default configuration for mode dock.
+15:55:50 [INFO] Using default configuration for mode dock.
+15:55:52 [INFO] Using default configuration for mode dock.
+15:55:54 [INFO] Using default configuration for mode dock.
+15:55:59 [INFO] Using default configuration for mode dock.
+15:56:03 [INFO] Using default configuration for mode dock.
+15:56:07 [INFO] Using default configuration for mode dock.
+[15:56:07] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[15:56:08] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+15:56:44 [INFO] Using default configuration for mode dock.
+[15:56:57] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[15:56:58] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+15:57:23 [INFO] Using default configuration for mode dock.
+15:57:25 [INFO] Using default configuration for mode dock.
+15:57:36 [INFO] Using default configuration for mode dock.
+15:57:42 [INFO] Using default configuration for mode dock.
+15:57:49 [INFO] Using default configuration for mode dock.
+15:57:58 [INFO] Using default configuration for mode dock.
+15:58:06 [INFO] Using default configuration for mode dock.
+15:58:11 [INFO] Using default configuration for mode dock.
+15:58:14 [INFO] Using default configuration for mode dock.
+15:58:18 [INFO]   Progress: 150/1030
+15:58:18 [INFO] Using default configuration for mode dock.
+[15:58:19] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:58:19] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:58:20] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:58:20] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+15:58:22 [INFO] Using default configuration for mode dock.
+15:58:29 [INFO] Using default configuration for mode dock.
+[15:58:35] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:58:35] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+15:58:47 [INFO] Using default configuration for mode dock.
+15:58:55 [INFO] Using default configuration for mode dock.
+15:58:57 [INFO] Using default configuration for mode dock.
+15:59:13 [INFO] Using default configuration for mode dock.
+15:59:14 [INFO] Using default configuration for mode dock.
+15:59:32 [INFO] Using default configuration for mode dock.
+[15:59:33] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[15:59:33] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+15:59:33 [INFO] Using default configuration for mode dock.
+15:59:37 [INFO] Using default configuration for mode dock.
+15:59:42 [INFO] Using default configuration for mode dock.
+[15:59:42] UFFTYPER: Unrecognized atom type: S_5+6 (7)
+[15:59:43] UFFTYPER: Unrecognized atom type: S_5+6 (7)
+15:59:43 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+15:59:45 [INFO] Using default configuration for mode dock.
+15:59:49 [INFO] Using default configuration for mode dock.
+15:59:55 [INFO] Using default configuration for mode dock.
+15:59:58 [INFO] Using default configuration for mode dock.
+16:00:00 [INFO] Using default configuration for mode dock.
+16:00:04 [INFO] Using default configuration for mode dock.
+16:00:15 [INFO] Using default configuration for mode dock.
+16:00:18 [INFO] Using default configuration for mode dock.
+16:00:25 [INFO] Using default configuration for mode dock.
+16:00:38 [INFO] Using default configuration for mode dock.
+[16:00:41] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[16:00:41] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[16:00:42] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[16:00:42] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+16:00:43 [INFO] Using default configuration for mode dock.
+16:00:47 [INFO] Using default configuration for mode dock.
+16:00:52 [INFO] Using default configuration for mode dock.
+16:00:57 [INFO] Using default configuration for mode dock.
+16:01:00 [INFO] Using default configuration for mode dock.
+[16:01:02] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:01:03] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:01:04] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:01:05] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:01:07 [INFO] Using default configuration for mode dock.
+16:01:12 [INFO] Using default configuration for mode dock.
+16:01:16 [INFO] Using default configuration for mode dock.
+[16:01:16] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:01:16] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:01:18] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:01:18] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:01:19] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:01:19] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:01:21 [INFO] Using default configuration for mode dock.
+16:01:22 [INFO] Using default configuration for mode dock.
+16:01:24 [INFO] Using default configuration for mode dock.
+16:01:37 [INFO] Using default configuration for mode dock.
+16:01:43 [INFO] Using default configuration for mode dock.
+[16:01:43] UFFTYPER: Unrecognized charge state for atom: 7
+[16:01:43] UFFTYPER: Unrecognized charge state for atom: 7
+[16:01:44] UFFTYPER: Unrecognized charge state for atom: 7
+[16:01:44] UFFTYPER: Unrecognized charge state for atom: 7
+[16:01:46] UFFTYPER: Unrecognized charge state for atom: 7
+[16:01:46] UFFTYPER: Unrecognized charge state for atom: 7
+16:01:47 [INFO] Using default configuration for mode dock.
+16:01:49 [INFO] Using default configuration for mode dock.
+16:01:52 [INFO] Using default configuration for mode dock.
+16:01:55 [INFO] Using default configuration for mode dock.
+16:02:00 [INFO] Using default configuration for mode dock.
+16:02:04 [INFO] Using default configuration for mode dock.
+16:02:12 [INFO] Using default configuration for mode dock.
+16:02:20 [INFO] Using default configuration for mode dock.
+16:02:23 [INFO] Using default configuration for mode dock.
+16:02:26 [INFO] Using default configuration for mode dock.
+[16:02:50] UFFTYPER: Warning: hybridization set to SP3 for atom 32
+[16:02:50] UFFTYPER: Warning: hybridization set to SP3 for atom 32
+16:03:01 [INFO] Using default configuration for mode dock.
+16:03:04 [INFO] Using default configuration for mode dock.
+16:03:41 [INFO] Using default configuration for mode dock.
+16:03:44 [INFO] Using default configuration for mode dock.
+16:03:50 [INFO] Using default configuration for mode dock.
+16:03:55 [INFO]   Progress: 200/1030
+16:03:55 [INFO] Using default configuration for mode dock.
+16:03:56 [INFO] Using default configuration for mode dock.
+16:04:01 [INFO] Using default configuration for mode dock.
+16:04:09 [INFO] Using default configuration for mode dock.
+16:04:20 [INFO] Using default configuration for mode dock.
+[16:04:20] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:04:20] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:04:22 [INFO] Using default configuration for mode dock.
+[16:04:22] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[16:04:22] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+16:04:28 [INFO] Using default configuration for mode dock.
+[16:04:28] UFFTYPER: Unrecognized atom type: S_6+6 (1)
+[16:04:28] UFFTYPER: Unrecognized atom type: S_6+6 (1)
+16:04:28 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:04:30 [INFO] Using default configuration for mode dock.
+16:04:37 [INFO] Using default configuration for mode dock.
+16:04:40 [INFO] Using default configuration for mode dock.
+16:04:43 [INFO] Using default configuration for mode dock.
+16:04:44 [INFO] Using default configuration for mode dock.
+16:04:56 [INFO] Using default configuration for mode dock.
+16:04:59 [INFO] Using default configuration for mode dock.
+16:05:04 [INFO] Using default configuration for mode dock.
+16:05:09 [INFO] Using default configuration for mode dock.
+[16:05:10] UFFTYPER: Unrecognized charge state for atom: 7
+[16:05:10] UFFTYPER: Unrecognized charge state for atom: 7
+[16:05:10] UFFTYPER: Unrecognized charge state for atom: 7
+[16:05:11] UFFTYPER: Unrecognized charge state for atom: 7
+[16:05:11] UFFTYPER: Unrecognized charge state for atom: 7
+[16:05:11] UFFTYPER: Unrecognized charge state for atom: 7
+16:05:12 [INFO] Using default configuration for mode dock.
+16:05:14 [INFO] Using default configuration for mode dock.
+16:05:21 [INFO] Using default configuration for mode dock.
+16:05:25 [INFO] Using default configuration for mode dock.
+16:05:27 [INFO] Using default configuration for mode dock.
+16:05:29 [INFO] Using default configuration for mode dock.
+16:05:31 [INFO] Using default configuration for mode dock.
+16:05:36 [INFO] Using default configuration for mode dock.
+16:05:40 [INFO] Using default configuration for mode dock.
+16:05:43 [INFO] Using default configuration for mode dock.
+16:05:46 [INFO] Using default configuration for mode dock.
+[16:05:48] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:05:48] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:05:49 [INFO] Using default configuration for mode dock.
+16:05:53 [INFO] Using default configuration for mode dock.
+16:05:57 [INFO] Using default configuration for mode dock.
+16:06:01 [INFO] Using default configuration for mode dock.
+16:06:07 [INFO] Using default configuration for mode dock.
+16:06:12 [INFO] Using default configuration for mode dock.
+16:06:17 [INFO] Using default configuration for mode dock.
+[16:06:21] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[16:06:22] UFFTYPER: Warning: hybridization set to SP3 for atom 15
+[16:06:25] UFFTYPER: Warning: hybridization set to SP3 for atom 27
+[16:06:26] UFFTYPER: Warning: hybridization set to SP3 for atom 27
+16:06:30 [INFO] Using default configuration for mode dock.
+16:06:35 [INFO] Using default configuration for mode dock.
+16:06:39 [INFO] Using default configuration for mode dock.
+16:06:45 [INFO] Using default configuration for mode dock.
+[16:06:46] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:06:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:06:47 [INFO] Using default configuration for mode dock.
+[16:06:48] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:06:48] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:06:49 [INFO] Using default configuration for mode dock.
+[16:06:50] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:06:50] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:06:51 [INFO] Using default configuration for mode dock.
+16:06:56 [INFO] Using default configuration for mode dock.
+16:07:15 [INFO] Using default configuration for mode dock.
+[16:07:17] UFFTYPER: Warning: hybridization set to SP3 for atom 22
+[16:07:18] UFFTYPER: Warning: hybridization set to SP3 for atom 22
+16:07:20 [INFO] Using default configuration for mode dock.
+16:07:22 [INFO] Using default configuration for mode dock.
+16:07:25 [INFO] Using default configuration for mode dock.
+16:07:27 [INFO] Using default configuration for mode dock.
+16:07:48 [INFO] Using default configuration for mode dock.
+16:07:51 [INFO] Using default configuration for mode dock.
+[16:07:55] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:07:56] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:07:58 [INFO] Using default configuration for mode dock.
+16:08:07 [INFO]   Progress: 250/1030
+16:08:07 [INFO] Using default configuration for mode dock.
+16:08:14 [INFO] Using default configuration for mode dock.
+16:08:16 [INFO] Using default configuration for mode dock.
+16:08:17 [INFO] Using default configuration for mode dock.
+16:08:19 [INFO] Using default configuration for mode dock.
+16:08:21 [INFO] Using default configuration for mode dock.
+[16:08:21] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+[16:08:22] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+16:08:27 [INFO] Using default configuration for mode dock.
+16:08:31 [INFO] Using default configuration for mode dock.
+[16:08:33] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:08:33] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:08:36 [INFO] Using default configuration for mode dock.
+16:08:39 [INFO] Using default configuration for mode dock.
+16:08:48 [INFO] Using default configuration for mode dock.
+16:08:51 [INFO] Using default configuration for mode dock.
+16:09:06 [INFO] Using default configuration for mode dock.
+16:09:11 [INFO] Using default configuration for mode dock.
+16:09:13 [INFO] Using default configuration for mode dock.
+16:09:16 [INFO] Using default configuration for mode dock.
+16:09:18 [INFO] Using default configuration for mode dock.
+16:09:20 [INFO] Using default configuration for mode dock.
+[16:09:20] UFFTYPER: Unrecognized atom type: S_5+6 (9)
+[16:09:20] UFFTYPER: Unrecognized atom type: S_5+6 (9)
+16:09:20 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:09:23 [INFO] Using default configuration for mode dock.
+16:09:26 [INFO] Using default configuration for mode dock.
+16:09:33 [INFO] Using default configuration for mode dock.
+16:09:39 [INFO] Using default configuration for mode dock.
+16:09:42 [INFO] Using default configuration for mode dock.
+16:09:44 [INFO] Using default configuration for mode dock.
+16:09:48 [INFO] Using default configuration for mode dock.
+16:09:52 [INFO] Using default configuration for mode dock.
+16:09:53 [INFO] Using default configuration for mode dock.
+[16:09:54] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:09:54] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:09:56 [INFO] Using default configuration for mode dock.
+16:10:00 [INFO] Using default configuration for mode dock.
+[16:10:00] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:10:00] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:10:03 [INFO] Using default configuration for mode dock.
+16:10:06 [INFO] Using default configuration for mode dock.
+16:10:08 [INFO] Using default configuration for mode dock.
+16:10:12 [INFO] Using default configuration for mode dock.
+16:10:13 [INFO] Using default configuration for mode dock.
+16:10:16 [INFO] Using default configuration for mode dock.
+16:10:21 [INFO] Using default configuration for mode dock.
+16:10:23 [INFO] Using default configuration for mode dock.
+[16:10:24] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+[16:10:24] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+16:10:24 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[16:10:25] UFFTYPER: Unrecognized atom type: S_6+6 (13)
+[16:10:25] UFFTYPER: Unrecognized atom type: S_6+6 (13)
+16:10:25 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:10:26 [INFO] Using default configuration for mode dock.
+16:10:28 [INFO] Using default configuration for mode dock.
+[16:10:28] UFFTYPER: Unrecognized atom type: S_5+6 (7)
+[16:10:29] UFFTYPER: Unrecognized atom type: S_5+6 (7)
+16:10:29 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:10:31 [INFO] Using default configuration for mode dock.
+[16:10:32] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+[16:10:32] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+16:10:32 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:10:34 [INFO] Using default configuration for mode dock.
+16:10:37 [INFO] Using default configuration for mode dock.
+16:10:42 [INFO] Using default configuration for mode dock.
+16:10:44 [INFO] Using default configuration for mode dock.
+16:10:54 [INFO] Using default configuration for mode dock.
+16:10:58 [INFO] Using default configuration for mode dock.
+16:11:02 [INFO] Using default configuration for mode dock.
+16:11:06 [INFO] Using default configuration for mode dock.
+16:11:11 [INFO] Using default configuration for mode dock.
+16:11:17 [INFO] Using default configuration for mode dock.
+16:11:21 [INFO]   Progress: 300/1030
+16:11:21 [INFO] Using default configuration for mode dock.
+16:11:24 [INFO] Using default configuration for mode dock.
+16:11:26 [INFO] Using default configuration for mode dock.
+16:11:31 [INFO] Using default configuration for mode dock.
+16:11:43 [INFO] Using default configuration for mode dock.
+16:11:51 [INFO] Using default configuration for mode dock.
+16:11:56 [INFO] Using default configuration for mode dock.
+16:12:02 [INFO] Using default configuration for mode dock.
+16:12:04 [INFO] Using default configuration for mode dock.
+16:12:08 [INFO] Using default configuration for mode dock.
+16:12:13 [INFO] Using default configuration for mode dock.
+16:12:20 [INFO] Using default configuration for mode dock.
+16:12:23 [INFO] Using default configuration for mode dock.
+16:12:27 [INFO] Using default configuration for mode dock.
+[16:12:27] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:12:28] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:12:33] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[16:12:34] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+16:12:45 [INFO] Using default configuration for mode dock.
+16:12:50 [INFO] Using default configuration for mode dock.
+16:12:54 [INFO] Using default configuration for mode dock.
+16:12:57 [INFO] Using default configuration for mode dock.
+16:13:06 [INFO] Using default configuration for mode dock.
+16:13:21 [INFO] Using default configuration for mode dock.
+16:13:24 [INFO] Using default configuration for mode dock.
+16:13:33 [INFO] Using default configuration for mode dock.
+16:13:36 [INFO] Using default configuration for mode dock.
+16:13:39 [INFO] Using default configuration for mode dock.
+[16:13:39] UFFTYPER: Unrecognized charge state for atom: 7
+[16:13:39] UFFTYPER: Unrecognized charge state for atom: 7
+[16:13:40] UFFTYPER: Unrecognized charge state for atom: 7
+[16:13:40] UFFTYPER: Unrecognized charge state for atom: 7
+[16:13:41] UFFTYPER: Unrecognized charge state for atom: 7
+[16:13:41] UFFTYPER: Unrecognized charge state for atom: 7
+16:13:42 [INFO] Using default configuration for mode dock.
+16:13:46 [INFO] Using default configuration for mode dock.
+16:13:49 [INFO] Using default configuration for mode dock.
+16:13:51 [INFO] Using default configuration for mode dock.
+16:13:54 [INFO] Using default configuration for mode dock.
+16:14:04 [INFO] Using default configuration for mode dock.
+16:14:06 [INFO] Using default configuration for mode dock.
+16:14:12 [INFO] Using default configuration for mode dock.
+16:14:23 [INFO] Using default configuration for mode dock.
+16:14:34 [INFO] Using default configuration for mode dock.
+16:14:37 [INFO] Using default configuration for mode dock.
+[16:14:38] UFFTYPER: Unrecognized atom type: S_6+6 (13)
+[16:14:38] UFFTYPER: Unrecognized atom type: S_6+6 (13)
+16:14:38 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:14:39 [INFO] Using default configuration for mode dock.
+16:14:44 [INFO] Using default configuration for mode dock.
+16:14:47 [INFO] Using default configuration for mode dock.
+[16:14:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:14:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:14:53 [INFO] Using default configuration for mode dock.
+16:15:00 [INFO] Using default configuration for mode dock.
+16:15:06 [INFO] Using default configuration for mode dock.
+16:15:08 [INFO] Using default configuration for mode dock.
+16:15:09 [INFO] Using default configuration for mode dock.
+16:15:17 [INFO] Using default configuration for mode dock.
+16:15:22 [INFO] Using default configuration for mode dock.
+16:15:25 [INFO] Using default configuration for mode dock.
+16:15:34 [INFO] Using default configuration for mode dock.
+16:15:39 [INFO] Using default configuration for mode dock.
+16:15:40 [INFO] Using default configuration for mode dock.
+[16:15:40] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+[16:15:40] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+[16:15:41] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+[16:15:41] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+16:15:43 [INFO] Using default configuration for mode dock.
+16:15:44 [INFO]   Progress: 350/1030
+16:15:44 [INFO] Using default configuration for mode dock.
+16:15:45 [INFO] Using default configuration for mode dock.
+16:15:47 [INFO] Using default configuration for mode dock.
+16:15:49 [INFO] Using default configuration for mode dock.
+16:16:08 [INFO] Using default configuration for mode dock.
+16:16:22 [INFO] Using default configuration for mode dock.
+16:16:27 [INFO] Using default configuration for mode dock.
+[16:16:27] UFFTYPER: Unrecognized charge state for atom: 7
+[16:16:28] UFFTYPER: Unrecognized charge state for atom: 7
+[16:16:29] UFFTYPER: Unrecognized charge state for atom: 7
+[16:16:29] UFFTYPER: Unrecognized charge state for atom: 7
+[16:16:30] UFFTYPER: Unrecognized charge state for atom: 7
+[16:16:30] UFFTYPER: Unrecognized charge state for atom: 7
+16:16:31 [INFO] Using default configuration for mode dock.
+16:16:36 [INFO] Using default configuration for mode dock.
+[16:16:36] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:16:37] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:16:38] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:16:38] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:16:40 [INFO] Using default configuration for mode dock.
+16:16:43 [INFO] Using default configuration for mode dock.
+16:16:45 [INFO] Using default configuration for mode dock.
+16:16:52 [INFO] Using default configuration for mode dock.
+[16:16:53] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+[16:16:54] UFFTYPER: Warning: hybridization set to SP3 for atom 23
+16:16:55 [INFO] Using default configuration for mode dock.
+16:16:59 [INFO] Using default configuration for mode dock.
+16:17:03 [INFO] Using default configuration for mode dock.
+16:17:08 [INFO] Using default configuration for mode dock.
+16:17:13 [INFO] Using default configuration for mode dock.
+16:17:15 [INFO] Using default configuration for mode dock.
+16:17:18 [INFO] Using default configuration for mode dock.
+[16:17:18] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:17:18] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:17:23] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:17:23] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:17:28] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:17:28] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:17:33 [INFO] Using default configuration for mode dock.
+16:17:34 [INFO] Using default configuration for mode dock.
+[16:17:35] UFFTYPER: Unrecognized atom type: S_5+6 (14)
+[16:17:35] UFFTYPER: Unrecognized atom type: S_5+6 (14)
+16:17:35 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:17:36 [INFO] Using default configuration for mode dock.
+16:17:39 [INFO] Using default configuration for mode dock.
+[16:17:39] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+[16:17:39] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+[16:17:40] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[16:17:40] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+[16:17:41] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[16:17:41] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+16:17:41 [INFO] Using default configuration for mode dock.
+16:17:49 [INFO] Using default configuration for mode dock.
+16:17:56 [INFO] Using default configuration for mode dock.
+16:17:58 [INFO] Using default configuration for mode dock.
+16:18:03 [INFO] Using default configuration for mode dock.
+16:18:06 [INFO] Using default configuration for mode dock.
+16:18:09 [INFO] Using default configuration for mode dock.
+16:18:12 [INFO] Using default configuration for mode dock.
+16:18:15 [INFO] Using default configuration for mode dock.
+16:18:19 [INFO] Using default configuration for mode dock.
+[16:18:19] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:19] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:21] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:22] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:24] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:24] UFFTYPER: Unrecognized charge state for atom: 7
+16:18:26 [INFO] Using default configuration for mode dock.
+[16:18:26] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:26] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:30] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:30] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:34] UFFTYPER: Unrecognized charge state for atom: 7
+[16:18:34] UFFTYPER: Unrecognized charge state for atom: 7
+16:18:37 [INFO] Using default configuration for mode dock.
+16:18:43 [INFO] Using default configuration for mode dock.
+16:18:47 [INFO] Using default configuration for mode dock.
+[16:18:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:18:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:18:49] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:18:49] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:18:51 [INFO] Using default configuration for mode dock.
+16:18:55 [INFO] Using default configuration for mode dock.
+16:18:57 [INFO] Using default configuration for mode dock.
+16:19:00 [INFO] Using default configuration for mode dock.
+16:19:02 [INFO] Using default configuration for mode dock.
+16:19:08 [INFO] Using default configuration for mode dock.
+16:19:13 [INFO] Using default configuration for mode dock.
+16:19:16 [INFO] Using default configuration for mode dock.
+16:19:22 [INFO] Using default configuration for mode dock.
+16:19:26 [INFO] Using default configuration for mode dock.
+16:19:29 [INFO] Using default configuration for mode dock.
+16:19:33 [INFO] Using default configuration for mode dock.
+16:19:36 [INFO]   Progress: 400/1030
+16:19:36 [INFO] Using default configuration for mode dock.
+16:19:39 [INFO] Using default configuration for mode dock.
+16:19:42 [INFO] Using default configuration for mode dock.
+16:19:46 [INFO] Using default configuration for mode dock.
+16:19:49 [INFO] Using default configuration for mode dock.
+16:19:52 [INFO] Using default configuration for mode dock.
+16:19:56 [INFO] Using default configuration for mode dock.
+16:19:59 [INFO] Using default configuration for mode dock.
+16:20:02 [INFO] Using default configuration for mode dock.
+16:20:05 [INFO] Using default configuration for mode dock.
+16:20:08 [INFO] Using default configuration for mode dock.
+16:20:12 [INFO] Using default configuration for mode dock.
+16:20:15 [INFO] Using default configuration for mode dock.
+16:20:18 [INFO] Using default configuration for mode dock.
+16:20:22 [INFO] Using default configuration for mode dock.
+16:20:25 [INFO] Using default configuration for mode dock.
+16:20:29 [INFO] Using default configuration for mode dock.
+16:20:32 [INFO] Using default configuration for mode dock.
+16:20:35 [INFO] Using default configuration for mode dock.
+16:20:39 [INFO] Using default configuration for mode dock.
+16:20:42 [INFO] Using default configuration for mode dock.
+16:20:45 [INFO] Using default configuration for mode dock.
+16:20:49 [INFO] Using default configuration for mode dock.
+16:20:52 [INFO] Using default configuration for mode dock.
+16:20:56 [INFO] Using default configuration for mode dock.
+16:20:59 [INFO] Using default configuration for mode dock.
+16:21:02 [INFO] Using default configuration for mode dock.
+16:21:06 [INFO] Using default configuration for mode dock.
+16:21:09 [INFO] Using default configuration for mode dock.
+[16:21:09] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:21:09] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:21:11] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:21:11] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:21:12 [INFO] Using default configuration for mode dock.
+16:21:15 [INFO] Using default configuration for mode dock.
+[16:21:15] UFFTYPER: Unrecognized charge state for atom: 7
+[16:21:15] UFFTYPER: Unrecognized charge state for atom: 7
+[16:21:17] UFFTYPER: Unrecognized charge state for atom: 7
+[16:21:17] UFFTYPER: Unrecognized charge state for atom: 7
+[16:21:20] UFFTYPER: Unrecognized charge state for atom: 7
+[16:21:20] UFFTYPER: Unrecognized charge state for atom: 7
+16:21:22 [INFO] Using default configuration for mode dock.
+16:21:31 [INFO] Using default configuration for mode dock.
+16:21:50 [INFO] Using default configuration for mode dock.
+16:22:09 [INFO] Using default configuration for mode dock.
+16:22:12 [INFO] Using default configuration for mode dock.
+16:23:34 [INFO] Using default configuration for mode dock.
+16:23:39 [INFO] Using default configuration for mode dock.
+16:23:42 [INFO] Using default configuration for mode dock.
+[16:23:47] UFFTYPER: Unrecognized atom type: S_6+6 (25)
+[16:23:47] UFFTYPER: Unrecognized atom type: S_6+6 (25)
+16:23:47 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:23:49 [INFO] Using default configuration for mode dock.
+16:23:52 [INFO] Using default configuration for mode dock.
+16:24:07 [INFO] Using default configuration for mode dock.
+[16:24:08] UFFTYPER: Unrecognized atom type: S_6+6 (3)
+[16:24:08] UFFTYPER: Unrecognized atom type: S_6+6 (3)
+16:24:08 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[16:24:09] UFFTYPER: Unrecognized atom type: S_5+6 (3)
+[16:24:09] UFFTYPER: Unrecognized atom type: S_5+6 (3)
+16:24:09 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:24:09 [INFO] Using default configuration for mode dock.
+16:24:12 [INFO] Using default configuration for mode dock.
+16:24:28 [INFO] Using default configuration for mode dock.
+16:24:35 [INFO] Using default configuration for mode dock.
+16:24:39 [INFO] Using default configuration for mode dock.
+16:24:50 [INFO] Using default configuration for mode dock.
+16:24:54 [INFO] Using default configuration for mode dock.
+16:25:13 [INFO] Using default configuration for mode dock.
+16:25:17 [INFO]   Progress: 450/1030
+16:25:17 [INFO] Using default configuration for mode dock.
+16:25:21 [INFO] Using default configuration for mode dock.
+[16:25:24] UFFTYPER: Unrecognized atom type: S_5+6 (21)
+[16:25:24] UFFTYPER: Unrecognized atom type: S_5+6 (21)
+16:25:24 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:25:28 [INFO] Using default configuration for mode dock.
+16:25:30 [INFO] Using default configuration for mode dock.
+16:25:43 [INFO] Using default configuration for mode dock.
+16:25:49 [INFO] Using default configuration for mode dock.
+16:25:55 [INFO] Using default configuration for mode dock.
+16:26:03 [INFO] Using default configuration for mode dock.
+16:26:07 [INFO] Using default configuration for mode dock.
+[16:26:09] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:26:09] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:26:11 [INFO] Using default configuration for mode dock.
+[16:26:12] UFFTYPER: Unrecognized atom type: S_5+6 (6)
+[16:26:12] UFFTYPER: Unrecognized atom type: S_5+6 (6)
+16:26:12 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:26:14 [INFO] Using default configuration for mode dock.
+16:26:19 [INFO] Using default configuration for mode dock.
+16:26:30 [INFO] Using default configuration for mode dock.
+16:26:34 [INFO] Using default configuration for mode dock.
+16:26:49 [INFO] Using default configuration for mode dock.
+16:26:52 [INFO] Using default configuration for mode dock.
+16:26:58 [INFO] Using default configuration for mode dock.
+16:27:02 [INFO] Using default configuration for mode dock.
+16:28:56 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C27H26ClN5O/c1-15-24-31-32-25(20-4-2-3-5-21(20)28)33(24)23-11-19(6-7-22(23)29-15)26(34)30-27-12-16-8-17(13-27)10-18(9-16)14-27/h2-7,11,16-18H,8-10,12-14H2,1H3,(H,30,34)/t16-,17-,18-,27-: Failed to generate conformations.
+16:30:07 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C27H26ClN5O/c1-15-24-31-32-25(20-4-2-3-5-21(20)28)33(24)23-11-19(6-7-22(23)29-15)26(34)30-27-12-16-8-17(13-27)10-18(9-16)14-27/h2-7,11,16-18H,8-10,12-14H2,1H3,(H,30,34)/t16-,17-,18-,27+: Failed to generate conformations.
+16:31:17 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C27H26ClN5O/c1-15-24-31-32-25(20-4-2-3-5-21(20)28)33(24)23-11-19(6-7-22(23)29-15)26(34)30-27-12-16-8-17(13-27)10-18(9-16)14-27/h2-7,11,16-18H,8-10,12-14H2,1H3,(H,30,34)/t16-,17-,18-,27+: Failed to generate conformations.
+16:31:18 [INFO] Using default configuration for mode dock.
+16:31:22 [INFO] Using default configuration for mode dock.
+16:31:27 [INFO] Using default configuration for mode dock.
+16:31:29 [INFO] Using default configuration for mode dock.
+16:31:31 [INFO] Using default configuration for mode dock.
+16:31:34 [INFO] Using default configuration for mode dock.
+16:31:37 [INFO] Using default configuration for mode dock.
+16:31:44 [INFO] Using default configuration for mode dock.
+16:31:51 [INFO] Using default configuration for mode dock.
+16:31:56 [INFO] Using default configuration for mode dock.
+16:31:59 [INFO] Using default configuration for mode dock.
+16:32:03 [INFO] Using default configuration for mode dock.
+16:32:06 [INFO] Using default configuration for mode dock.
+16:32:08 [INFO] Using default configuration for mode dock.
+16:32:11 [INFO] Using default configuration for mode dock.
+16:32:17 [INFO] Using default configuration for mode dock.
+16:32:21 [INFO] Using default configuration for mode dock.
+16:32:24 [INFO] Using default configuration for mode dock.
+[16:32:26] UFFTYPER: Warning: hybridization set to SP3 for atom 14
+[16:32:26] UFFTYPER: Warning: hybridization set to SP3 for atom 14
+[16:32:27] UFFTYPER: Warning: hybridization set to SP3 for atom 14
+[16:32:27] UFFTYPER: Warning: hybridization set to SP3 for atom 14
+16:32:29 [INFO] Using default configuration for mode dock.
+16:32:32 [INFO] Using default configuration for mode dock.
+16:32:36 [INFO] Using default configuration for mode dock.
+[16:32:36] UFFTYPER: Unrecognized atom type: S_5+6 (7)
+[16:32:36] UFFTYPER: Unrecognized atom type: S_5+6 (7)
+16:32:36 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[16:32:39] UFFTYPER: Unrecognized atom type: S_4+6 (7)
+[16:32:40] UFFTYPER: Unrecognized atom type: S_4+6 (7)
+16:32:40 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:32:40 [INFO] Using default configuration for mode dock.
+[16:32:44] UFFTYPER: Unrecognized atom type: S_4+6 (29)
+[16:32:44] UFFTYPER: Unrecognized atom type: S_4+6 (29)
+16:32:44 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:32:45 [INFO] Using default configuration for mode dock.
+[16:32:47] UFFTYPER: Unrecognized atom type: S_4+6 (7)
+[16:32:48] UFFTYPER: Unrecognized atom type: S_4+6 (7)
+16:32:48 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[16:32:48] UFFTYPER: Unrecognized atom type: S_4+6 (7)
+[16:32:49] UFFTYPER: Unrecognized atom type: S_4+6 (7)
+16:32:49 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:32:49 [INFO] Using default configuration for mode dock.
+16:32:55 [INFO] Using default configuration for mode dock.
+16:32:59 [INFO] Using default configuration for mode dock.
+16:33:08 [INFO] Using default configuration for mode dock.
+16:33:15 [INFO] Using default configuration for mode dock.
+16:33:22 [INFO] Using default configuration for mode dock.
+16:33:25 [INFO] Using default configuration for mode dock.
+16:33:30 [INFO] Using default configuration for mode dock.
+16:33:37 [INFO] Using default configuration for mode dock.
+16:33:45 [INFO]   Progress: 500/1030
+16:33:45 [INFO] Using default configuration for mode dock.
+16:33:46 [INFO] Using default configuration for mode dock.
+16:33:48 [INFO] Using default configuration for mode dock.
+16:33:55 [INFO] Using default configuration for mode dock.
+16:34:00 [INFO] Using default configuration for mode dock.
+16:34:10 [INFO] Using default configuration for mode dock.
+16:34:15 [INFO] Using default configuration for mode dock.
+16:34:18 [INFO] Using default configuration for mode dock.
+16:34:37 [INFO] Using default configuration for mode dock.
+16:34:56 [INFO] Using default configuration for mode dock.
+16:35:12 [INFO] Using default configuration for mode dock.
+16:35:49 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C25H25F3N2O3/c26-19-10-16(11-20(27)22(19)28)14-1-3-15(4-2-14)23(25(32)30-33)29-24(31)21-17-6-12-5-13(8-17)9-18(21)7-12/h1-4,10-13,17-18,21,23,33H,5-9H2,(H,29,31)(H,30,32)/t12-,13+,17+,18-,21-,23-/m1/s1: Failed to generate conformations.
+16:36:32 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C25H25F3N2O3/c26-19-10-16(11-20(27)22(19)28)14-1-3-15(4-2-14)23(25(32)30-33)29-24(31)21-17-6-12-5-13(8-17)9-18(21)7-12/h1-4,10-13,17-18,21,23,33H,5-9H2,(H,29,31)(H,30,32)/t12-,13-,17-,18-,21+,23-/m1/s1: Failed to generate conformations.
+16:37:31 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C25H25F3N2O3/c26-19-10-16(11-20(27)22(19)28)14-1-3-15(4-2-14)23(25(32)30-33)29-24(31)21-17-6-12-5-13(8-17)9-18(21)7-12/h1-4,10-13,17-18,21,23,33H,5-9H2,(H,29,31)(H,30,32)/t12-,13-,17-,18+,21+,23-/m1/s1: Failed to generate conformations.
+16:37:37 [INFO] Using default configuration for mode dock.
+16:38:58 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C25H25F3N2O3/c26-19-10-16(11-20(27)22(19)28)14-1-3-15(4-2-14)23(25(32)30-33)29-24(31)21-17-6-12-5-13(8-17)9-18(21)7-12/h1-4,10-13,17-18,21,23,33H,5-9H2,(H,29,31)(H,30,32)/t12-,13+,17-,18-,21-,23+/m0/s1: Failed to generate conformations.
+16:39:59 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C25H25F3N2O3/c26-19-10-16(11-20(27)22(19)28)14-1-3-15(4-2-14)23(25(32)30-33)29-24(31)21-17-6-12-5-13(8-17)9-18(21)7-12/h1-4,10-13,17-18,21,23,33H,5-9H2,(H,29,31)(H,30,32)/t12-,13-,17-,18-,21+,23-/m1/s1: Failed to generate conformations.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:40:31 [INFO] Using default configuration for mode dock.
+16:40:33 [INFO] Using default configuration for mode dock.
+16:40:39 [INFO] Using default configuration for mode dock.
+16:40:43 [INFO] Using default configuration for mode dock.
+16:40:48 [INFO] Using default configuration for mode dock.
+16:40:52 [INFO] Using default configuration for mode dock.
+16:40:56 [INFO] Using default configuration for mode dock.
+16:41:01 [INFO] Using default configuration for mode dock.
+16:41:10 [INFO] Using default configuration for mode dock.
+16:41:19 [INFO] Using default configuration for mode dock.
+16:41:24 [INFO] Using default configuration for mode dock.
+[16:41:24] UFFTYPER: Unrecognized atom type: S_4+6 (24)
+[16:41:25] UFFTYPER: Unrecognized atom type: S_4+6 (24)
+16:41:25 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[16:41:25] UFFTYPER: Unrecognized atom type: S_5+6 (24)
+[16:41:26] UFFTYPER: Unrecognized atom type: S_5+6 (24)
+16:41:26 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[16:41:26] UFFTYPER: Unrecognized atom type: S_6+6 (24)
+[16:41:26] UFFTYPER: Unrecognized atom type: S_6+6 (24)
+16:41:26 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+16:41:27 [INFO] Using default configuration for mode dock.
+16:41:30 [INFO] Using default configuration for mode dock.
+16:41:40 [INFO] Using default configuration for mode dock.
+16:41:50 [INFO] Using default configuration for mode dock.
+16:42:03 [INFO] Using default configuration for mode dock.
+16:42:05 [INFO] Using default configuration for mode dock.
+16:42:20 [INFO] Using default configuration for mode dock.
+16:42:35 [INFO] Using default configuration for mode dock.
+16:42:40 [INFO] Using default configuration for mode dock.
+16:42:47 [INFO] Using default configuration for mode dock.
+16:42:49 [INFO] Using default configuration for mode dock.
+16:42:54 [INFO] Using default configuration for mode dock.
+16:42:56 [INFO] Using default configuration for mode dock.
+[16:42:56] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:42:57] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:43:02] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:43:02] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:43:05 [INFO] Using default configuration for mode dock.
+16:43:09 [INFO] Using default configuration for mode dock.
+16:43:16 [INFO] Using default configuration for mode dock.
+16:43:18 [INFO] Using default configuration for mode dock.
+[16:43:18] UFFTYPER: Unrecognized atom type: S_6+6 (37)
+[16:43:19] UFFTYPER: Unrecognized atom type: S_6+6 (37)
+16:43:19 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[16:43:20] UFFTYPER: Unrecognized atom type: S_5+6 (37)
+[16:43:21] UFFTYPER: Unrecognized atom type: S_5+6 (37)
+16:43:21 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:43:25 [INFO] Using default configuration for mode dock.
+16:43:28 [INFO] Using default configuration for mode dock.
+16:43:30 [INFO] Using default configuration for mode dock.
+16:43:33 [INFO] Using default configuration for mode dock.
+16:43:35 [INFO] Using default configuration for mode dock.
+16:43:39 [INFO] Using default configuration for mode dock.
+16:43:42 [INFO] Using default configuration for mode dock.
+16:43:46 [INFO] Using default configuration for mode dock.
+[16:43:46] UFFTYPER: Unrecognized atom type: S_5+6 (28)
+[16:43:47] UFFTYPER: Unrecognized atom type: S_5+6 (28)
+16:43:47 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:43:53 [INFO] Using default configuration for mode dock.
+[16:43:53] UFFTYPER: Warning: hybridization set to SP3 for atom 32
+[16:43:53] UFFTYPER: Warning: hybridization set to SP3 for atom 32
+[16:43:56] UFFTYPER: Warning: hybridization set to SP3 for atom 32
+[16:43:56] UFFTYPER: Warning: hybridization set to SP3 for atom 32
+16:44:01 [INFO] Using default configuration for mode dock.
+16:44:04 [INFO]   Progress: 550/1030
+16:44:04 [INFO] Using default configuration for mode dock.
+[16:44:04] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+[16:44:05] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+16:44:05 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[16:44:06] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+[16:44:07] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+16:44:07 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:44:07 [INFO] Using default configuration for mode dock.
+[16:44:07] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:44:07] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:44:08] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[16:44:08] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+16:44:11 [INFO] Using default configuration for mode dock.
+16:44:18 [INFO] Using default configuration for mode dock.
+[16:44:18] UFFTYPER: Unrecognized atom type: S_6+6 (18)
+[16:44:18] UFFTYPER: Unrecognized atom type: S_6+6 (18)
+16:44:18 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:44:24 [INFO] Using default configuration for mode dock.
+16:44:36 [INFO] Using default configuration for mode dock.
+[16:44:36] UFFTYPER: Unrecognized atom type: S_5+6 (14)
+[16:44:36] UFFTYPER: Unrecognized atom type: S_5+6 (14)
+16:44:36 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:44:39 [INFO] Using default configuration for mode dock.
+16:44:40 [INFO] Using default configuration for mode dock.
+16:44:43 [INFO] Using default configuration for mode dock.
+16:44:54 [INFO] Using default configuration for mode dock.
+16:45:12 [INFO] Using default configuration for mode dock.
+16:45:17 [INFO] Using default configuration for mode dock.
+16:45:32 [INFO] Using default configuration for mode dock.
+16:45:36 [INFO] Using default configuration for mode dock.
+16:45:50 [INFO] Using default configuration for mode dock.
+[16:45:50] UFFTYPER: Unrecognized atom type: S_5+6 (3)
+[16:45:50] UFFTYPER: Unrecognized atom type: S_5+6 (3)
+16:45:50 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:45:53 [INFO] Using default configuration for mode dock.
+16:45:56 [INFO] Using default configuration for mode dock.
+16:46:10 [INFO] Using default configuration for mode dock.
+16:46:14 [INFO] Using default configuration for mode dock.
+16:46:19 [INFO] Using default configuration for mode dock.
+16:46:38 [INFO] Using default configuration for mode dock.
+[16:46:38] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[16:46:38] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+16:46:43 [INFO] Using default configuration for mode dock.
+[16:46:44] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:46:45] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:46:45 [INFO] Using default configuration for mode dock.
+[16:46:46] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[16:46:46] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+16:46:48 [INFO] Using default configuration for mode dock.
+16:47:00 [INFO] Using default configuration for mode dock.
+16:47:06 [INFO] Using default configuration for mode dock.
+16:47:11 [INFO] Using default configuration for mode dock.
+16:47:22 [INFO] Using default configuration for mode dock.
+16:47:28 [INFO] Using default configuration for mode dock.
+16:47:41 [INFO] Using default configuration for mode dock.
+16:47:46 [INFO] Using default configuration for mode dock.
+16:47:59 [INFO] Using default configuration for mode dock.
+16:48:15 [INFO] Using default configuration for mode dock.
+16:48:28 [INFO] Using default configuration for mode dock.
+16:48:33 [INFO] Using default configuration for mode dock.
+16:48:46 [INFO] Using default configuration for mode dock.
+16:48:52 [INFO] Using default configuration for mode dock.
+16:49:09 [INFO] Using default configuration for mode dock.
+16:49:14 [INFO] Using default configuration for mode dock.
+16:49:28 [INFO] Using default configuration for mode dock.
+16:49:33 [INFO] Using default configuration for mode dock.
+16:49:42 [INFO] Using default configuration for mode dock.
+16:49:48 [INFO] Using default configuration for mode dock.
+16:49:54 [INFO] Using default configuration for mode dock.
+16:50:04 [INFO] Using default configuration for mode dock.
+16:50:07 [INFO] Using default configuration for mode dock.
+16:50:10 [INFO] Using default configuration for mode dock.
+16:50:14 [INFO] Using default configuration for mode dock.
+16:50:17 [INFO] Using default configuration for mode dock.
+[16:50:17] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[16:50:18] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+16:50:21 [INFO] Using default configuration for mode dock.
+16:50:25 [INFO]   Progress: 600/1030
+16:50:25 [INFO] Using default configuration for mode dock.
+16:50:28 [INFO] Using default configuration for mode dock.
+16:50:30 [INFO] Using default configuration for mode dock.
+16:50:33 [INFO] Using default configuration for mode dock.
+16:50:38 [INFO] Using default configuration for mode dock.
+16:50:42 [INFO] Using default configuration for mode dock.
+16:50:44 [INFO] Using default configuration for mode dock.
+[16:50:46] UFFTYPER: Unrecognized atom type: S_5+6 (0)
+[16:50:46] UFFTYPER: Unrecognized atom type: S_5+6 (0)
+16:50:46 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:50:47 [INFO] Using default configuration for mode dock.
+16:51:06 [INFO] Using default configuration for mode dock.
+16:51:09 [INFO] Using default configuration for mode dock.
+16:51:16 [INFO] Using default configuration for mode dock.
+16:51:21 [INFO] Using default configuration for mode dock.
+16:51:26 [INFO] Using default configuration for mode dock.
+16:51:29 [INFO] Using default configuration for mode dock.
+16:51:37 [INFO] Using default configuration for mode dock.
+16:51:56 [INFO] Using default configuration for mode dock.
+16:51:59 [INFO] Using default configuration for mode dock.
+16:52:02 [INFO] Using default configuration for mode dock.
+16:52:22 [INFO] Using default configuration for mode dock.
+16:52:28 [INFO] Using default configuration for mode dock.
+16:52:38 [INFO] Using default configuration for mode dock.
+16:52:41 [INFO] Using default configuration for mode dock.
+16:52:46 [INFO] Using default configuration for mode dock.
+16:52:57 [INFO] Using default configuration for mode dock.
+16:53:37 [INFO] Using default configuration for mode dock.
+16:53:39 [INFO] Using default configuration for mode dock.
+16:53:41 [INFO] Using default configuration for mode dock.
+16:53:46 [INFO] Using default configuration for mode dock.
+[16:53:48] UFFTYPER: Unrecognized atom type: S_5+6 (25)
+[16:53:48] UFFTYPER: Unrecognized atom type: S_5+6 (25)
+16:53:48 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[16:53:49] UFFTYPER: Unrecognized atom type: S_6+6 (25)
+[16:53:50] UFFTYPER: Unrecognized atom type: S_6+6 (25)
+16:53:50 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:53:51 [INFO] Using default configuration for mode dock.
+16:53:54 [INFO] Using default configuration for mode dock.
+16:54:18 [INFO] Using default configuration for mode dock.
+16:54:22 [INFO] Using default configuration for mode dock.
+16:54:23 [INFO] Using default configuration for mode dock.
+16:54:25 [INFO] Using default configuration for mode dock.
+16:54:35 [INFO] Using default configuration for mode dock.
+[16:54:38] UFFTYPER: Unrecognized atom type: S_4+6 (29)
+[16:54:38] UFFTYPER: Unrecognized atom type: S_4+6 (29)
+16:54:38 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:54:39 [INFO] Using default configuration for mode dock.
+16:54:43 [INFO] Using default configuration for mode dock.
+16:54:48 [INFO] Using default configuration for mode dock.
+16:54:53 [INFO] Using default configuration for mode dock.
+16:54:55 [INFO] Using default configuration for mode dock.
+16:54:56 [INFO] Using default configuration for mode dock.
+[16:54:57] UFFTYPER: Unrecognized atom type: S_5+6 (52)
+[16:54:57] UFFTYPER: Unrecognized atom type: S_5+6 (52)
+16:54:57 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+16:55:04 [INFO] Using default configuration for mode dock.
+16:55:06 [INFO] Using default configuration for mode dock.
+16:55:22 [INFO] Using default configuration for mode dock.
+16:55:27 [INFO] Using default configuration for mode dock.
+16:55:35 [INFO] Using default configuration for mode dock.
+16:56:02 [INFO] Using default configuration for mode dock.
+16:56:04 [INFO] Using default configuration for mode dock.
+16:56:07 [INFO] Using default configuration for mode dock.
+16:56:10 [INFO] Using default configuration for mode dock.
+16:56:28 [INFO]   Progress: 650/1030
+16:56:28 [INFO] Using default configuration for mode dock.
+16:56:48 [INFO] Using default configuration for mode dock.
+16:56:51 [INFO] Using default configuration for mode dock.
+16:56:53 [INFO] Using default configuration for mode dock.
+16:57:00 [INFO] Using default configuration for mode dock.
+16:57:02 [INFO] Using default configuration for mode dock.
+16:57:13 [INFO] Using default configuration for mode dock.
+16:57:15 [INFO] Using default configuration for mode dock.
+16:57:18 [INFO] Using default configuration for mode dock.
+[16:57:18] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[16:57:18] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[16:57:21] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[16:57:21] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+16:57:22 [INFO] Using default configuration for mode dock.
+16:57:26 [INFO] Using default configuration for mode dock.
+16:57:29 [INFO] Using default configuration for mode dock.
+16:57:32 [INFO] Using default configuration for mode dock.
+16:57:34 [INFO] Using default configuration for mode dock.
+16:57:37 [INFO] Using default configuration for mode dock.
+16:57:42 [INFO] Using default configuration for mode dock.
+16:57:44 [INFO] Using default configuration for mode dock.
+16:57:49 [INFO] Using default configuration for mode dock.
+16:57:53 [INFO] Using default configuration for mode dock.
+[16:57:53] UFFTYPER: Warning: hybridization set to SP3 for atom 19
+[16:57:54] UFFTYPER: Warning: hybridization set to SP3 for atom 19
+16:57:58 [INFO] Using default configuration for mode dock.
+[16:58:02] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[16:58:03] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+16:58:09 [INFO] Using default configuration for mode dock.
+[16:58:09] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[16:58:10] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[16:58:17] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[16:58:18] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+16:58:20 [INFO] Using default configuration for mode dock.
+16:58:24 [INFO] Using default configuration for mode dock.
+16:58:28 [INFO] Using default configuration for mode dock.
+16:58:32 [INFO] Using default configuration for mode dock.
+16:58:35 [INFO] Using default configuration for mode dock.
+16:58:39 [INFO] Using default configuration for mode dock.
+16:58:42 [INFO] Using default configuration for mode dock.
+16:58:51 [INFO] Using default configuration for mode dock.
+16:58:56 [INFO] Using default configuration for mode dock.
+16:58:58 [INFO] Using default configuration for mode dock.
+16:59:01 [INFO] Using default configuration for mode dock.
+16:59:08 [INFO] Using default configuration for mode dock.
+16:59:27 [INFO] Using default configuration for mode dock.
+16:59:33 [INFO] Using default configuration for mode dock.
+16:59:36 [INFO] Using default configuration for mode dock.
+16:59:39 [INFO] Using default configuration for mode dock.
+16:59:46 [INFO] Using default configuration for mode dock.
+17:00:07 [INFO] Using default configuration for mode dock.
+17:00:15 [INFO] Using default configuration for mode dock.
+17:00:38 [INFO] Using default configuration for mode dock.
+17:00:41 [INFO] Using default configuration for mode dock.
+[17:00:43] UFFTYPER: Warning: hybridization set to SP3 for atom 19
+[17:00:43] UFFTYPER: Warning: hybridization set to SP3 for atom 19
+17:00:45 [INFO] Using default configuration for mode dock.
+17:00:53 [INFO] Using default configuration for mode dock.
+17:00:56 [INFO] Using default configuration for mode dock.
+17:01:00 [INFO] Using default configuration for mode dock.
+17:01:02 [INFO] Using default configuration for mode dock.
+17:01:03 [INFO] Using default configuration for mode dock.
+17:01:05 [INFO] Using default configuration for mode dock.
+17:01:09 [INFO] Using default configuration for mode dock.
+17:01:15 [INFO]   Progress: 700/1030
+17:01:15 [INFO] Using default configuration for mode dock.
+17:01:19 [INFO] Using default configuration for mode dock.
+17:01:22 [INFO] Using default configuration for mode dock.
+17:01:25 [INFO] Using default configuration for mode dock.
+17:01:33 [INFO] Using default configuration for mode dock.
+17:01:36 [INFO] Using default configuration for mode dock.
+17:01:39 [INFO] Using default configuration for mode dock.
+17:01:44 [INFO] Using default configuration for mode dock.
+17:01:51 [INFO] Using default configuration for mode dock.
+17:02:09 [INFO] Using default configuration for mode dock.
+17:02:12 [INFO] Using default configuration for mode dock.
+[17:02:12] UFFTYPER: Unrecognized atom type: S_5+6 (12)
+[17:02:12] UFFTYPER: Unrecognized atom type: S_5+6 (12)
+17:02:12 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+17:02:17 [INFO] Using default configuration for mode dock.
+17:02:35 [INFO] Using default configuration for mode dock.
+17:02:39 [INFO] Using default configuration for mode dock.
+17:02:42 [INFO] Using default configuration for mode dock.
+17:02:51 [INFO] Using default configuration for mode dock.
+17:02:53 [INFO] Using default configuration for mode dock.
+17:03:02 [INFO] Using default configuration for mode dock.
+17:03:06 [INFO] Using default configuration for mode dock.
+17:03:14 [INFO] Using default configuration for mode dock.
+17:17:50 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C39H50N6O9S/c1-22-34(41-31-18-26(52-3)11-12-29(31)40-22)53-28-19-32-33(46)43-39(36(48)44-55(50,51)38(2)13-14-38)20-25(39)9-7-5-4-6-8-10-30(35(47)45(32)21-28)42-37(49)54-27-16-23-15-24(23)17-27/h7,9,11-12,18,23-25,27-28,30,32H,4-6,8,10,13-17,19-21H2,1-3H3,(H,42,49)(H,43,46)(H,44,48)/b9-7-/t23-,24-,25+,28+,30-,32-,39+/m0/s1: Failed to generate conformations.
+17:57:41 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C39H50N6O9S/c1-22-34(41-31-18-26(52-3)11-12-29(31)40-22)53-28-19-32-33(46)43-39(36(48)44-55(50,51)38(2)13-14-38)20-25(39)9-7-5-4-6-8-10-30(35(47)45(32)21-28)42-37(49)54-27-16-23-15-24(23)17-27/h7,9,11-12,18,23-25,27-28,30,32H,4-6,8,10,13-17,19-21H2,1-3H3,(H,42,49)(H,43,46)(H,44,48)/b9-7-/t23-,24-,25+,28+,30-,32-,39+/m0/s1: Failed to generate conformations.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+17:57:42 [INFO] Using default configuration for mode dock.
+17:57:52 [INFO] Using default configuration for mode dock.
+17:57:58 [INFO] Using default configuration for mode dock.
+17:58:02 [INFO] Using default configuration for mode dock.
+17:58:07 [INFO] Using default configuration for mode dock.
+17:58:25 [INFO] Using default configuration for mode dock.
+17:58:30 [INFO] Using default configuration for mode dock.
+17:58:46 [INFO] Using default configuration for mode dock.
+17:59:01 [INFO] Using default configuration for mode dock.
+17:59:17 [INFO] Using default configuration for mode dock.
+17:59:33 [INFO] Using default configuration for mode dock.
+17:59:48 [INFO] Using default configuration for mode dock.
+18:00:03 [INFO] Using default configuration for mode dock.
+18:00:18 [INFO] Using default configuration for mode dock.
+18:00:31 [INFO] Using default configuration for mode dock.
+18:00:45 [INFO] Using default configuration for mode dock.
+18:01:00 [INFO] Using default configuration for mode dock.
+18:01:13 [INFO] Using default configuration for mode dock.
+18:01:26 [INFO] Using default configuration for mode dock.
+18:01:42 [INFO] Using default configuration for mode dock.
+18:01:56 [INFO] Using default configuration for mode dock.
+18:02:13 [INFO] Using default configuration for mode dock.
+18:02:31 [INFO] Using default configuration for mode dock.
+18:02:44 [INFO] Using default configuration for mode dock.
+18:02:57 [INFO] Using default configuration for mode dock.
+18:03:10 [INFO] Using default configuration for mode dock.
+18:03:24 [INFO] Using default configuration for mode dock.
+18:03:28 [INFO] Using default configuration for mode dock.
+18:03:41 [INFO] Using default configuration for mode dock.
+18:03:46 [INFO] Using default configuration for mode dock.
+18:03:50 [INFO]   Progress: 750/1030
+18:03:50 [INFO] Using default configuration for mode dock.
+18:04:11 [INFO] Using default configuration for mode dock.
+[18:04:19] UFFTYPER: Unrecognized atom type: S_6+6 (10)
+[18:04:20] UFFTYPER: Unrecognized atom type: S_6+6 (10)
+18:04:20 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:04:23 [INFO] Using default configuration for mode dock.
+18:04:25 [INFO] Using default configuration for mode dock.
+18:04:29 [INFO] Using default configuration for mode dock.
+18:04:37 [INFO] Using default configuration for mode dock.
+18:04:44 [INFO] Using default configuration for mode dock.
+18:04:53 [INFO] Using default configuration for mode dock.
+18:04:58 [INFO] Using default configuration for mode dock.
+18:05:03 [INFO] Using default configuration for mode dock.
+18:05:39 [INFO] Using default configuration for mode dock.
+18:05:44 [INFO] Using default configuration for mode dock.
+18:05:51 [INFO] Using default configuration for mode dock.
+18:05:54 [INFO] Using default configuration for mode dock.
+18:05:57 [INFO] Using default configuration for mode dock.
+18:05:59 [INFO] Using default configuration for mode dock.
+[18:06:00] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+[18:06:00] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+18:06:00 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[18:06:02] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+[18:06:02] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+18:06:02 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[18:06:04] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+[18:06:04] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+18:06:04 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+18:06:06 [INFO] Using default configuration for mode dock.
+[18:06:06] UFFTYPER: Unrecognized atom type: S_5+6 (18)
+[18:06:06] UFFTYPER: Unrecognized atom type: S_5+6 (18)
+18:06:06 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:06:13 [INFO] Using default configuration for mode dock.
+18:06:18 [INFO] Using default configuration for mode dock.
+[18:06:18] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+[18:06:18] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+18:06:18 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[18:06:20] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+[18:06:21] UFFTYPER: Unrecognized atom type: S_5+6 (13)
+18:06:21 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:06:21 [INFO] Using default configuration for mode dock.
+18:06:27 [INFO] Using default configuration for mode dock.
+18:06:33 [INFO] Using default configuration for mode dock.
+18:06:37 [INFO] Using default configuration for mode dock.
+18:06:44 [INFO] Using default configuration for mode dock.
+18:06:51 [INFO] Using default configuration for mode dock.
+18:06:57 [INFO] Using default configuration for mode dock.
+18:07:05 [INFO] Using default configuration for mode dock.
+18:07:09 [INFO] Using default configuration for mode dock.
+18:07:14 [INFO] Using default configuration for mode dock.
+18:07:18 [INFO] Using default configuration for mode dock.
+18:07:24 [INFO] Using default configuration for mode dock.
+[18:07:24] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[18:07:24] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[18:07:25] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[18:07:25] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[18:07:26] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[18:07:26] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+18:07:27 [INFO] Using default configuration for mode dock.
+18:07:32 [INFO] Using default configuration for mode dock.
+18:07:55 [INFO] Using default configuration for mode dock.
+18:07:58 [INFO] Using default configuration for mode dock.
+18:08:03 [INFO] Using default configuration for mode dock.
+18:08:06 [INFO] Using default configuration for mode dock.
+[18:08:06] UFFTYPER: Unrecognized atom type: S_5+6 (17)
+[18:08:06] UFFTYPER: Unrecognized atom type: S_5+6 (17)
+18:08:06 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:08:10 [INFO] Using default configuration for mode dock.
+18:08:12 [INFO] Using default configuration for mode dock.
+18:08:39 [INFO] Using default configuration for mode dock.
+18:08:45 [INFO] Using default configuration for mode dock.
+18:08:51 [INFO] Using default configuration for mode dock.
+18:08:56 [INFO] Using default configuration for mode dock.
+18:08:59 [INFO] Using default configuration for mode dock.
+18:09:03 [INFO] Using default configuration for mode dock.
+18:09:06 [INFO] Using default configuration for mode dock.
+[18:09:08] UFFTYPER: Unrecognized atom type: S_5+6 (0)
+[18:09:08] UFFTYPER: Unrecognized atom type: S_5+6 (0)
+18:09:08 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:09:08 [INFO] Using default configuration for mode dock.
+18:09:11 [INFO] Using default configuration for mode dock.
+18:09:15 [INFO] Using default configuration for mode dock.
+18:09:17 [INFO] Using default configuration for mode dock.
+18:09:26 [INFO]   Progress: 800/1030
+18:09:26 [INFO] Using default configuration for mode dock.
+18:09:30 [INFO] Using default configuration for mode dock.
+18:09:34 [INFO] Using default configuration for mode dock.
+18:09:39 [INFO] Using default configuration for mode dock.
+18:09:41 [INFO] Using default configuration for mode dock.
+18:09:44 [INFO] Using default configuration for mode dock.
+18:09:48 [INFO] Using default configuration for mode dock.
+18:09:50 [INFO] Using default configuration for mode dock.
+18:10:05 [INFO] Using default configuration for mode dock.
+18:10:19 [INFO] Using default configuration for mode dock.
+18:10:21 [INFO] Using default configuration for mode dock.
+18:10:32 [INFO] Using default configuration for mode dock.
+18:10:42 [INFO] Using default configuration for mode dock.
+18:10:54 [INFO] Using default configuration for mode dock.
+18:11:04 [INFO] Using default configuration for mode dock.
+[18:11:04] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+[18:11:04] UFFTYPER: Warning: hybridization set to SP3 for atom 11
+18:11:11 [INFO] Using default configuration for mode dock.
+[18:11:16] UFFTYPER: Unrecognized atom type: S_5+6 (17)
+[18:11:17] UFFTYPER: Unrecognized atom type: S_5+6 (17)
+18:11:17 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:11:26 [INFO] Using default configuration for mode dock.
+[18:11:26] UFFTYPER: Unrecognized atom type: S_5+6 (31)
+[18:11:26] UFFTYPER: Unrecognized atom type: S_5+6 (31)
+18:11:26 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[18:11:27] UFFTYPER: Unrecognized atom type: S_5+6 (31)
+[18:11:27] UFFTYPER: Unrecognized atom type: S_5+6 (31)
+18:11:27 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:11:28 [INFO] Using default configuration for mode dock.
+[18:11:28] UFFTYPER: Unrecognized atom type: S_5+6 (29)
+[18:11:28] UFFTYPER: Unrecognized atom type: S_5+6 (29)
+18:11:28 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[18:11:30] UFFTYPER: Unrecognized atom type: S_5+6 (29)
+[18:11:30] UFFTYPER: Unrecognized atom type: S_5+6 (29)
+18:11:30 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:11:30 [INFO] Using default configuration for mode dock.
+18:11:35 [INFO] Using default configuration for mode dock.
+18:11:41 [INFO] Using default configuration for mode dock.
+18:11:43 [INFO] Using default configuration for mode dock.
+[18:11:43] UFFTYPER: Unrecognized atom type: S_5+6 (9)
+[18:11:43] UFFTYPER: Unrecognized atom type: S_5+6 (9)
+18:11:43 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:11:47 [INFO] Using default configuration for mode dock.
+18:12:21 [INFO] Using default configuration for mode dock.
+18:12:53 [INFO] Using default configuration for mode dock.
+18:13:00 [INFO] Using default configuration for mode dock.
+18:13:06 [INFO] Using default configuration for mode dock.
+18:13:09 [INFO] Using default configuration for mode dock.
+18:13:20 [INFO] Using default configuration for mode dock.
+18:13:23 [INFO] Using default configuration for mode dock.
+18:13:26 [INFO] Using default configuration for mode dock.
+18:13:27 [INFO] Using default configuration for mode dock.
+18:13:30 [INFO] Using default configuration for mode dock.
+18:13:33 [INFO] Using default configuration for mode dock.
+18:13:36 [INFO] Using default configuration for mode dock.
+18:13:39 [INFO] Using default configuration for mode dock.
+18:13:40 [INFO] Using default configuration for mode dock.
+18:13:44 [INFO] Using default configuration for mode dock.
+18:13:46 [INFO] Using default configuration for mode dock.
+18:13:50 [INFO] Using default configuration for mode dock.
+[18:13:51] UFFTYPER: Unrecognized atom type: S_6+6 (1)
+[18:13:51] UFFTYPER: Unrecognized atom type: S_6+6 (1)
+18:13:51 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:13:52 [INFO] Using default configuration for mode dock.
+18:13:55 [INFO] Using default configuration for mode dock.
+18:13:57 [INFO] Using default configuration for mode dock.
+18:14:00 [INFO] Using default configuration for mode dock.
+18:14:25 [INFO] Using default configuration for mode dock.
+18:14:36 [INFO] Using default configuration for mode dock.
+18:14:37 [INFO] Using default configuration for mode dock.
+18:14:54 [INFO] Using default configuration for mode dock.
+[18:14:54] UFFTYPER: Unrecognized atom type: S_5+6 (20)
+[18:14:55] UFFTYPER: Unrecognized atom type: S_5+6 (20)
+18:14:55 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[18:14:57] UFFTYPER: Unrecognized atom type: S_6+6 (20)
+[18:14:58] UFFTYPER: Unrecognized atom type: S_6+6 (20)
+18:14:58 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:15:04 [INFO] Using default configuration for mode dock.
+18:15:10 [INFO] Using default configuration for mode dock.
+18:15:13 [INFO]   Progress: 850/1030
+18:15:13 [INFO] Using default configuration for mode dock.
+18:15:18 [INFO] Using default configuration for mode dock.
+18:15:26 [INFO] Using default configuration for mode dock.
+18:15:42 [INFO] Using default configuration for mode dock.
+18:15:47 [INFO] Using default configuration for mode dock.
+18:15:50 [INFO] Using default configuration for mode dock.
+18:16:03 [INFO] Using default configuration for mode dock.
+18:16:04 [INFO] Using default configuration for mode dock.
+18:16:08 [INFO] Using default configuration for mode dock.
+18:16:12 [INFO] Using default configuration for mode dock.
+18:16:16 [INFO] Using default configuration for mode dock.
+18:16:19 [INFO] Using default configuration for mode dock.
+18:16:35 [INFO] Using default configuration for mode dock.
+18:16:38 [INFO] Using default configuration for mode dock.
+18:16:40 [INFO] Using default configuration for mode dock.
+18:16:41 [INFO] Using default configuration for mode dock.
+18:16:43 [INFO] Using default configuration for mode dock.
+18:16:46 [INFO] Using default configuration for mode dock.
+18:16:52 [INFO] Using default configuration for mode dock.
+18:16:58 [INFO] Using default configuration for mode dock.
+18:17:03 [INFO] Using default configuration for mode dock.
+[18:17:03] UFFTYPER: Unrecognized atom type: S_6+6 (14)
+[18:17:03] UFFTYPER: Unrecognized atom type: S_6+6 (14)
+18:17:03 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:17:05 [INFO] Using default configuration for mode dock.
+18:17:07 [INFO] Using default configuration for mode dock.
+18:17:11 [INFO] Using default configuration for mode dock.
+18:17:15 [INFO] Using default configuration for mode dock.
+18:17:19 [INFO] Using default configuration for mode dock.
+18:17:21 [INFO] Using default configuration for mode dock.
+18:17:30 [INFO] Using default configuration for mode dock.
+18:17:38 [INFO] Using default configuration for mode dock.
+18:17:41 [INFO] Using default configuration for mode dock.
+18:17:46 [INFO] Using default configuration for mode dock.
+[18:17:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[18:17:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[18:17:48] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[18:17:48] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+[18:17:49] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[18:17:49] UFFTYPER: Warning: hybridization set to SP3 for atom 4
+18:17:49 [INFO] Using default configuration for mode dock.
+18:17:51 [INFO] Using default configuration for mode dock.
+18:17:53 [INFO] Using default configuration for mode dock.
+18:17:54 [INFO] Using default configuration for mode dock.
+18:18:04 [INFO] Using default configuration for mode dock.
+18:18:15 [INFO] Using default configuration for mode dock.
+18:18:18 [INFO] Using default configuration for mode dock.
+18:18:21 [INFO] Using default configuration for mode dock.
+18:18:25 [INFO] Using default configuration for mode dock.
+18:18:28 [INFO] Using default configuration for mode dock.
+18:18:42 [INFO] Using default configuration for mode dock.
+18:19:13 [INFO] Using default configuration for mode dock.
+18:19:15 [INFO] Using default configuration for mode dock.
+18:19:18 [INFO] Using default configuration for mode dock.
+18:19:21 [INFO] Using default configuration for mode dock.
+18:19:29 [INFO] Using default configuration for mode dock.
+18:19:35 [INFO] Using default configuration for mode dock.
+18:19:39 [INFO] Using default configuration for mode dock.
+18:19:53 [INFO] Using default configuration for mode dock.
+18:20:01 [INFO]   Progress: 900/1030
+18:20:01 [INFO] Using default configuration for mode dock.
+[18:20:01] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[18:20:01] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[18:20:26] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[18:20:27] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+18:20:39 [INFO] Using default configuration for mode dock.
+[18:20:39] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[18:20:39] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[18:20:53] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[18:20:54] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+18:21:28 [INFO] Using default configuration for mode dock.
+[18:21:44] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[18:21:44] UFFTYPER: Warning: hybridization set to SP3 for atom 12
+[18:21:59] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[18:22:00] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+18:22:18 [INFO] Using default configuration for mode dock.
+[18:22:20] UFFTYPER: Unrecognized atom type: S_6+6 (15)
+[18:22:20] UFFTYPER: Unrecognized atom type: S_6+6 (15)
+18:22:20 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:22:23 [INFO] Using default configuration for mode dock.
+18:22:31 [INFO] Using default configuration for mode dock.
+[18:22:47] UFFTYPER: Unrecognized atom type: S_5+6 (15)
+[18:22:47] UFFTYPER: Unrecognized atom type: S_4+6 (21)
+[18:22:47] UFFTYPER: Unrecognized atom type: S_5+6 (15)
+[18:22:47] UFFTYPER: Unrecognized atom type: S_4+6 (21)
+18:22:47 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:22:54 [INFO] Using default configuration for mode dock.
+18:22:57 [INFO] Using default configuration for mode dock.
+18:23:08 [INFO] Using default configuration for mode dock.
+18:23:15 [INFO] Using default configuration for mode dock.
+18:23:18 [INFO] Using default configuration for mode dock.
+18:23:23 [INFO] Using default configuration for mode dock.
+[18:23:23] UFFTYPER: Unrecognized atom type: S_6+6 (34)
+[18:23:24] UFFTYPER: Unrecognized atom type: S_6+6 (34)
+18:23:24 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:23:40 [INFO] Using default configuration for mode dock.
+[18:23:40] UFFTYPER: Unrecognized atom type: S_6+6 (17)
+[18:23:40] UFFTYPER: Unrecognized atom type: S_6+6 (17)
+18:23:40 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:23:43 [INFO] Using default configuration for mode dock.
+18:23:45 [INFO] Using default configuration for mode dock.
+[18:23:45] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[18:23:45] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[18:23:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[18:23:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+18:23:49 [INFO] Using default configuration for mode dock.
+18:23:57 [INFO] Using default configuration for mode dock.
+18:24:05 [INFO] Using default configuration for mode dock.
+[18:24:07] UFFTYPER: Warning: hybridization set to SP3 for atom 29
+[18:24:07] UFFTYPER: Warning: hybridization set to SP3 for atom 29
+[18:24:10] UFFTYPER: Warning: hybridization set to SP3 for atom 30
+[18:24:10] UFFTYPER: Warning: hybridization set to SP3 for atom 30
+18:24:12 [INFO] Using default configuration for mode dock.
+18:24:51 [INFO] Using default configuration for mode dock.
+18:24:54 [INFO] Using default configuration for mode dock.
+[18:24:54] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[18:24:54] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+18:25:04 [INFO] Using default configuration for mode dock.
+18:25:12 [INFO] Using default configuration for mode dock.
+18:26:05 [INFO] Using default configuration for mode dock.
+18:26:22 [INFO] Using default configuration for mode dock.
+18:27:04 [INFO] Using default configuration for mode dock.
+18:27:31 [INFO] Using default configuration for mode dock.
+18:27:57 [INFO] Using default configuration for mode dock.
+18:28:24 [INFO] Using default configuration for mode dock.
+18:28:44 [INFO] Using default configuration for mode dock.
+18:28:46 [INFO] Using default configuration for mode dock.
+18:28:52 [INFO] Using default configuration for mode dock.
+18:28:56 [INFO] Using default configuration for mode dock.
+18:29:17 [INFO] Using default configuration for mode dock.
+18:29:23 [INFO] Using default configuration for mode dock.
+18:29:27 [INFO] Using default configuration for mode dock.
+18:29:29 [INFO] Using default configuration for mode dock.
+18:29:32 [INFO] Using default configuration for mode dock.
+[18:29:39] UFFTYPER: Unrecognized atom type: S_5+6 (40)
+[18:29:40] UFFTYPER: Unrecognized atom type: S_5+6 (40)
+18:29:40 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:29:52 [INFO] Using default configuration for mode dock.
+18:29:56 [INFO] Using default configuration for mode dock.
+18:29:59 [INFO] Using default configuration for mode dock.
+18:30:41 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C20H27NO3/c21-10-17-14-1-2-16(22)19(23)15(14)6-18(24-17)20-7-11-3-12(8-20)5-13(4-11)9-20/h1-2,11-13,17-18,22-23H,3-10,21H2/p+1/t11-,12-,13-,17-,18-,20-/m0/s1: Failed to generate conformations.
+18:31:10 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C20H27NO3/c21-10-17-14-1-2-16(22)19(23)15(14)6-18(24-17)20-7-11-3-12(8-20)5-13(4-11)9-20/h1-2,11-13,17-18,22-23H,3-10,21H2/p+1/t11-,12-,13-,17-,18-,20+/m0/s1: Failed to generate conformations.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:31:10 [INFO] Using default configuration for mode dock.
+18:31:42 [INFO] Using default configuration for mode dock.
+18:31:51 [INFO] Using default configuration for mode dock.
+18:31:53 [INFO] Using default configuration for mode dock.
+18:32:02 [INFO] Using default configuration for mode dock.
+18:32:41 [INFO] Using default configuration for mode dock.
+18:33:04 [INFO] Using default configuration for mode dock.
+18:33:16 [INFO] Using default configuration for mode dock.
+18:33:21 [INFO] Using default configuration for mode dock.
+18:33:57 [INFO]   Progress: 950/1030
+18:33:57 [INFO] Using default configuration for mode dock.
+18:34:03 [INFO] Using default configuration for mode dock.
+18:34:26 [INFO] Using default configuration for mode dock.
+18:34:30 [INFO] Using default configuration for mode dock.
+18:34:35 [INFO] Using default configuration for mode dock.
+[18:34:37] UFFTYPER: Unrecognized atom type: S_4+6 (32)
+[18:34:37] UFFTYPER: Unrecognized atom type: S_4+6 (32)
+18:34:37 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:34:41 [INFO] Using default configuration for mode dock.
+18:34:44 [INFO] Using default configuration for mode dock.
+18:34:53 [INFO] Using default configuration for mode dock.
+18:34:56 [INFO] Using default configuration for mode dock.
+18:35:13 [INFO] Using default configuration for mode dock.
+18:35:15 [INFO] Using default configuration for mode dock.
+18:35:28 [INFO] Using default configuration for mode dock.
+18:35:43 [INFO] Using default configuration for mode dock.
+18:35:51 [INFO] Using default configuration for mode dock.
+18:35:54 [INFO] Using default configuration for mode dock.
+18:36:05 [INFO] Using default configuration for mode dock.
+18:36:14 [INFO] Using default configuration for mode dock.
+18:36:33 [INFO] Using default configuration for mode dock.
+18:37:00 [INFO] Using default configuration for mode dock.
+18:37:35 [INFO] Using default configuration for mode dock.
+18:38:00 [INFO] Using default configuration for mode dock.
+18:47:31 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C37H40O9/c1-21(2)35-17-23(4)37-27(33(35)44-36(45-35,46-37)19-24-9-7-6-8-10-24)14-26(18-34(41)30(37)13-22(3)32(34)40)20-43-31(39)16-25-11-12-28(38)29(15-25)42-5/h6-15,23,27,30,33,38,41H,1,16-20H2,2-5H3/t23-,27+,30-,33-,34-,35-,36+,37-/m1/s1: Failed to generate conformations.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:47:57 [INFO] Using default configuration for mode dock.
+18:48:10 [INFO] Using default configuration for mode dock.
+18:48:15 [INFO] Using default configuration for mode dock.
+18:48:20 [INFO] Using default configuration for mode dock.
+18:48:28 [INFO] Using default configuration for mode dock.
+[18:48:53] UFFTYPER: Unrecognized atom type: S_6+6 (34)
+[18:48:54] UFFTYPER: Unrecognized atom type: S_6+6 (34)
+18:48:54 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+18:49:06 [INFO] Using default configuration for mode dock.
+18:49:32 [INFO] Using default configuration for mode dock.
+18:49:52 [INFO] Using default configuration for mode dock.
+18:50:10 [INFO] Using default configuration for mode dock.
+18:50:12 [INFO] Using default configuration for mode dock.
+18:50:20 [INFO] Using default configuration for mode dock.
+18:51:04 [INFO] Using default configuration for mode dock.
+18:51:13 [INFO] Using default configuration for mode dock.
+18:51:15 [INFO] Using default configuration for mode dock.
+18:51:23 [INFO] Using default configuration for mode dock.
+18:51:28 [INFO] Using default configuration for mode dock.
+18:51:52 [INFO] Using default configuration for mode dock.
+18:52:17 [INFO] Using default configuration for mode dock.
+18:52:43 [INFO] Using default configuration for mode dock.
+18:53:08 [INFO] Using default configuration for mode dock.
+18:53:12 [INFO] Using default configuration for mode dock.
+18:53:15 [INFO] Using default configuration for mode dock.
+18:53:17 [INFO] Using default configuration for mode dock.
+18:53:53 [INFO] Using default configuration for mode dock.
+18:53:58 [INFO] Using default configuration for mode dock.
+18:55:38 [INFO] Using default configuration for mode dock.
+18:57:18 [INFO] Using default configuration for mode dock.
+18:57:56 [INFO] Using default configuration for mode dock.
+18:58:36 [INFO] Using default configuration for mode dock.
+18:59:10 [INFO]   Progress: 1000/1030
+18:59:10 [INFO] Using default configuration for mode dock.
+18:59:45 [INFO] Using default configuration for mode dock.
+18:59:50 [INFO] Using default configuration for mode dock.
+18:59:53 [INFO] Using default configuration for mode dock.
+19:00:13 [INFO] Using default configuration for mode dock.
+19:00:23 [INFO] Using default configuration for mode dock.
+19:00:25 [INFO] Using default configuration for mode dock.
+19:00:30 [INFO] Using default configuration for mode dock.
+19:00:33 [INFO] Using default configuration for mode dock.
+19:00:37 [INFO] Using default configuration for mode dock.
+19:00:39 [INFO] Using default configuration for mode dock.
+19:00:45 [INFO] Using default configuration for mode dock.
+19:00:47 [INFO] Using default configuration for mode dock.
+19:00:52 [INFO] Using default configuration for mode dock.
+19:00:53 [INFO] Using default configuration for mode dock.
+19:00:55 [INFO] Using default configuration for mode dock.
+19:00:57 [INFO] Using default configuration for mode dock.
+19:01:00 [INFO] Using default configuration for mode dock.
+19:01:05 [INFO] Using default configuration for mode dock.
+19:01:09 [INFO] Using default configuration for mode dock.
+19:01:11 [INFO] Using default configuration for mode dock.
+19:01:16 [INFO] Using default configuration for mode dock.
+19:01:23 [INFO] Using default configuration for mode dock.
+19:01:26 [INFO] Using default configuration for mode dock.
+19:01:27 [INFO] Using default configuration for mode dock.
+19:01:30 [INFO] Using default configuration for mode dock.
+19:01:35 [INFO] Using default configuration for mode dock.
+19:01:54 [INFO] Using default configuration for mode dock.
+19:02:11 [INFO] Using default configuration for mode dock.
+19:02:29 [INFO] Using default configuration for mode dock.
+19:02:34 [INFO]   Progress: 1030/1030
+19:02:34 [INFO] Using default configuration for mode dock.
+19:02:46 [INFO] Evaluated 1030 complexes (0 skipped)
+19:02:46 [INFO] Top-1 Results:
+19:02:46 [INFO]   RMSD < 2.0 Å: 79.3%
+19:02:46 [INFO]   RMSD < 1.0 Å: 45.9%
+19:02:46 [INFO]   Median RMSD: 1.09 Å
+19:02:46 [INFO]   PB-Valid: 17.2%
+19:02:46 [INFO] Results saved to /home/bdldt_team002/eval_full_data/out/full_scratch__full_test__ff__shard4.csv
+19:02:46 [INFO] Evaluation complete.

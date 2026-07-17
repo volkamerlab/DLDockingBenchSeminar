@@ -1,0 +1,102 @@
+000 (174202.008.000) 2026-07-16 13:22:42 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174202.008.000) 2026-07-16 13:23:16 Job executing on host: <10.143.248.26:9618?PrivAddr=%3c10.143.250.26:9618%3fsock%3dstartd_7902_b176%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.26-9618&alias=gefjon.hpc.uni-saarland.de&noUDP&sock=startd_7902_b176>
+	SlotName: slot1_24@gefjon.hpc.uni-saarland.de
+	AvailableGPUs = {  }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_2014204"
+	Cpus = 4
+	Disk = 12147
+	GPUs = 0
+	Memory = 4096
+...
+005 (174202.008.000) 2026-07-16 13:23:20 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        1         4 
+	   Disk (KB)            :        1        1     12147 
+	   GPUs                 :                           0 
+	   Memory (MB)          :              4096      4096 
+	   TimeExecute (s)      :        3                    
+	   TimeSlotBusy (s)     :        3                    
+...
+000 (174270.008.000) 2026-07-16 15:50:27 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174270.008.000) 2026-07-16 17:43:04 Job executing on host: <10.143.248.26:9618?PrivAddr=%3c10.143.250.26:9618%3fsock%3dstartd_7902_b176%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.26-9618&alias=gefjon.hpc.uni-saarland.de&noUDP&sock=startd_7902_b176>
+	SlotName: slot1_24@gefjon.hpc.uni-saarland.de
+	AvailableGPUs = {  }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_4152119"
+	Cpus = 4
+	Disk = 12147
+	GPUs = 0
+	Memory = 4096
+...
+006 (174270.008.000) 2026-07-16 17:43:13 Image size of job updated: 92
+	92  -  MemoryUsage of job (MB)
+	94256  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 17:48:14 Image size of job updated: 353
+	353  -  MemoryUsage of job (MB)
+	362008  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 18:03:16 Image size of job updated: 362
+	362  -  MemoryUsage of job (MB)
+	371184  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 18:08:17 Image size of job updated: 362
+	362  -  MemoryUsage of job (MB)
+	371528  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 18:28:18 Image size of job updated: 373
+	373  -  MemoryUsage of job (MB)
+	382752  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 18:33:18 Image size of job updated: 386
+	386  -  MemoryUsage of job (MB)
+	396064  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 18:38:19 Image size of job updated: 386
+	386  -  MemoryUsage of job (MB)
+	396136  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 18:43:19 Image size of job updated: 387
+	387  -  MemoryUsage of job (MB)
+	397224  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 18:48:20 Image size of job updated: 388
+	388  -  MemoryUsage of job (MB)
+	397364  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 18:53:20 Image size of job updated: 413
+	413  -  MemoryUsage of job (MB)
+	423772  -  ResidentSetSize of job (KB)
+...
+006 (174270.008.000) 2026-07-16 19:07:09 Image size of job updated: 414
+	414  -  MemoryUsage of job (MB)
+	424376  -  ResidentSetSize of job (KB)
+...
+005 (174270.008.000) 2026-07-16 19:07:10 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 12:54:53, Sys 0 00:01:40  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 12:54:53, Sys 0 00:01:40  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :     0.00        1         4 
+	   Disk (KB)            :     1           1     12147 
+	   GPUs                 :                           0 
+	   Memory (MB)          :   414        4096      4096 
+	   TimeExecute (s)      :  5045                       
+	   TimeSlotBusy (s)     :  5046                       
+...

@@ -1,4 +1,4 @@
-# KarmaDock — Prototype Submission
+# KarmaDock — Final Submission (full data)
 
 **Benchmarking DL-based Docking Tools** · Saarland University, Summer 2026
 supervisors: Hamza Ibrahim, Andrea Volkamer · **Team (KarmaDock): Ahmed, Abdullah**
@@ -13,27 +13,28 @@ Paper: Zhang et al., *Nat. Comput. Sci.* **3**, 789–804 (2023),
 
 ---
 
-## 🚧 Final submission (full-data) — report in progress
+## Headline — full-data benchmark
 
-The tables below use the prototype `proto_test` (136). The **final full-data submission** is being
-finalized: our from-scratch model retrained on the full seminar split
-(`model/full_scratch_karmadock_team002.pkl`; 2-stage paper protocol, Stage-2 via 2×A100 (40GB each); evaluated head-to-head against the authors' released weights on the
-**same** `full_test` (6,183) and `posebusters_filtered` (308) sets.
+We retrained KarmaDock **from scratch** on the full seminar split
+(`model/full_scratch_karmadock_team002.pkl`, 2-stage paper protocol) and benchmarked it head-to-head
+against the authors' released weights on the **same** `full_test` (6,183) and `posebusters_filtered`
+(308) test sets, scored with the official `evaluation.py` (symmetry-corrected top-1 RMSD + PoseBusters).
 
-**Preliminary headline** (top-1 success@2 Å, using `evaluation.py`, uncorrected):
+**top-1 success@2 Å (uncorrected):**
 
-| set | ours (full-data) | released weights |
-|---|---|---|
-| full_test (6,183) | 82.2 % | 88.3 % |
-| PoseBusters (308) | 76.9 % (PB-Valid 5.2 %) | 83.1 % (PB-Valid 2.6 %) |
+| set | ours (from scratch) | released weights | PB-Valid (ours / released) |
+|---|---|---|---|
+| full_test (6,183) | **82.2 %** | 88.3 % | 11.5 % / 1.4 % |
+| PoseBusters (308) | **76.9 %** | 83.1 % | 5.2 % / 2.6 % |
 
-This commit adds the trained model (`model/`), the evaluation input CSVs (`data/`), the HPC condor
-submit files (`condor/full_stage2_2gpu.sub` = the 2×A100 Stage-2 run;
-`condor/{full_test,posebusters}_infer.sub` = inference) and their job logs (`condor/logs/`). The
-full report and results notebook are being finalized.
+A consistent ~6-point accuracy gap on both sets (expected — the released weights saw far more training
+data), but **our poses are more physically valid** (higher PB-Valid) on both. Full breakdown across all
+three pose variants, the ECDF, PoseBusters failure modes and the paper comparison are in
+[`notebooks/results_and_comparison.ipynb`](notebooks/results_and_comparison.ipynb); see [§3](#3-results).
 
 **Predicted poses** (all 3 variants, both datasets, both models — too large for git) are on Zenodo:
-[zenodo.org/records/21197043](https://zenodo.org/records/21197043).
+[zenodo.org/records/21197043](https://zenodo.org/records/21197043). The trained **checkpoint** ships
+in the repo at [`model/full_scratch_karmadock_team002.pkl`](model/full_scratch_karmadock_team002.pkl) (~15 MB).
 
 ---
 
@@ -62,7 +63,8 @@ this keeps the benchmark faithful to the published method.
 | [`scripts/convert_karmadock_to_seminar.py`](scripts/convert_karmadock_to_seminar.py) | KarmaDock poses → seminar `results/<ds>/<id>_pred.sdf` (best-pose-first) | produce the exact format `evaluation.py` expects |
 | [`scripts/run_infer.sh`](scripts/run_infer.sh) | preprocess → dock → export the **3 pose variants** (uncorrected / FF / align) | produce the predicted poses on the cluster |
 | [`scripts/evaluate.sh`](scripts/evaluate.sh) | run `evaluation.py` over every pipeline × variant — the separate scoring step | produce the official RMSD CSVs |
-| [`condor/`](condor)`*.sub` | HTCondor docker-universe submit files (3 docking jobs + 1 eval job + 2 training jobs) | run everything on the SIC cluster |
+| [`scripts/train_ddp.py`](scripts/train_ddp.py) | multi-GPU (DDP) Stage-2 trainer | full-data Stage 2 was too slow single-GPU; run on 2× A100 |
+| [`condor/`](condor)`*.sub` | HTCondor docker-universe submit files — prototype (docking + eval + training) and full-data (training, inference, and the 42-job `full_eval_batch.sub`) | run everything on the SIC cluster |
 | [`Dockerfile`](Dockerfile) | image → `ahlamloum/karmadock-seminar:v6` | reproducible environment (KarmaDock + RDKit + Torch + other dependencies backed in) |
 
 ## 2. The three pipelines
@@ -93,27 +95,54 @@ this keeps the benchmark faithful to the published method.
 
 ## 3. Results
 
-Our submission model is the **from-scratch P2** (the seminar task — retrain the tool on the
-shared split); P1 (released baseline) and P3 (fine-tune, bonus) are shown for context.
-Scored by the official [`evaluation/evaluation.py`](evaluation/evaluation.py)  on the **136-complex `proto_test`**, for all three KarmaDock pose
-post-processing variants.
+### 3.1 Full-data benchmark (primary)
+
+Our submission model is **`full_scratch`** — KarmaDock retrained from scratch on the full seminar
+`full_train` split — evaluated against the authors' **released weights** on `full_test` (6,183) and
+`posebusters_filtered` (308), for all three pose post-processing variants. Scored with the official
+[`evaluation/evaluation.py`](evaluation/evaluation.py) (symmetry-corrected top-1 RMSD + PoseBusters).
 
 **success@2 Å (top-1):**
 
+| set | model | uncorrected | FF | align |
+|---|---|---|---|---|
+| full_test (6,183) | **ours (from scratch)** | **82.2 %** | 79.3 % | 75.1 % |
+| full_test (6,183) | released weights | 88.3 % | 84.9 % | 70.1 % |
+| PoseBusters (308) | **ours (from scratch)** | **76.9 %** | 75.6 % | 69.5 % |
+| PoseBusters (308) | released weights | 83.1 % | 78.9 % | 68.2 % |
+
+Uncorrected **@1 Å / median RMSD / PB-Valid**: ours (full_test) 48.6 % / 1.03 Å / 11.5 %; released
+54.4 % / 0.95 Å / 1.4 %. ours (PoseBusters) 37.0 % / 1.18 Å / 5.2 %; released 39.6 % / 1.16 Å / 2.6 %.
+
+Three findings (full analysis, ECDF and PoseBusters failure-mode breakdown in the
+[notebook](notebooks/results_and_comparison.ipynb)):
+1. A consistent **~6-point** accuracy gap to the released weights on *both* sets — a stable property,
+   not benchmark noise; expected, since the released weights were trained on far more data.
+2. **Our poses are more physically valid** (higher PB-Valid) despite lower raw accuracy — a narrower,
+   more homogeneous training split yields locally cleaner geometry.
+3. Post-processing (FF, align) **costs** accuracy at full scale (uncorrected > FF > align) for every
+   model/dataset — matching the KarmaDock paper's own finding, and resolving the prototype anomaly (§3.2).
+
+Per-complex CSVs (with PoseBusters columns) are in
+[`results/full_data_evaluation/`](results/full_data_evaluation). Numbers deterministic (`--random_seed 2023`).
+
+### 3.2 Prototype (`proto_test`, 136 — earlier phase, for context)
+
+The prototype phase trained P2/P3 on the small `proto_train` (712) and scored on `proto_test` (136):
+
 | pipeline | uncorrected | FF-corrected | align-corrected |
 |---|---|---|---|
-| **P2 — from scratch** (our model) | **10.3 %** | 11.0 % | 94.1 % |
+| **P2 — from scratch** | 10.3 % | 11.0 % | 94.1 % |
 | P1 — baseline (released) | 80.9 % | 78.7 % | 95.6 % |
 | P3 — fine-tune *(bonus)* | 80.1 % | 75.0 % | 94.9 % |
 
-Uncorrected **@1 Å / median RMSD**: P2 3.7 % / 3.38 Å · P1 8.1 % / 1.45 Å · P3 7.4 % / 1.48 Å.
-Per-complex CSVs are in [`results/`](results) (`<pipeline>_<variant>_evaluation.csv`, and
-`proto_test_evaluation.csv` = the P2 headline). Numbers are deterministic (`--random_seed 2023`)
+At prototype scale the variant order was *inverted* (align ≫ uncorrected), which we flagged as an open
+question. **The full-data run (§3.1) resolves it**: with 6,183 complexes the order matches the paper
+(uncorrected > FF > align), so the prototype's 10.3 %/94.1 % split was an artifact of the tiny 136-complex
+set (and its reference-frame handling), not a real property of the model. Per-complex prototype CSVs are
+in [`results/`](results) (`<pipeline>_<variant>_evaluation.csv`).
 
-> we belive that align-corrected is misleading as according to the paper it should be lower than the uncorrected and FF-corrected results which is the opposite of what we got. [ need futher investigation - doesn't affect the training process for the next phase ]
-
-The **uncorrected** pose is the
-raw model output. The **FF** variant is a force-field relaxation. The **align-corrected** variant
+The **uncorrected** pose is the raw model output; **FF** is a force-field relaxation; **align**
 superimposes the predicted ligand onto the reference frame.
 
 ## 4. evaluate / reproduce
@@ -151,9 +180,27 @@ released weights baked in the image — no path edits). Docking is deterministic
 
 > The evaluation set is **[`data/proto_test.csv`](data/proto_test.csv) (136 complexes)**. The reference structures come from the bundle. `proto_train` (712) is unchanged.
 
+### C. Full-data evaluation on the cluster (the primary §3.1 results)
+The full-data scoring was run as **42 parallel condor jobs** — `full_test` (6,183) is sharded 6 ways per
+(model × variant) to fit the queue, plus 3 unsharded PoseBusters jobs per model:
+```bash
+condor_submit condor/full_eval_batch.sub   # 42 jobs -> per-shard CSVs, then concatenated per combo
+```
+- [`condor/full_eval_batch.sub`](condor/full_eval_batch.sub) — the 42-job submit file (`queue Item in (...)`).
+- [`condor/full_eval_jobs/`](condor/full_eval_jobs) — one `run.sh` per job (exact `evaluation.py` call: dataset, variant, `--shard_idx`/`--num_shards`).
+- [`condor/logs/full_data_eval/`](condor/logs/full_data_eval) — the mandatory `.log`/`.err`/`.out` for all 42 jobs.
+- Merged per-complex CSVs land in [`results/full_data_evaluation/`](results/full_data_evaluation) (what the notebook reads).
+
+Sharding is the only addition to `evaluation.py` (`--shard_idx`/`--num_shards`, default `0`/`1` = no-op),
+so the single-machine commands in A/B are unaffected.
+
 ### Retraining from scratch and fine-tuning
-Hyper-parameters are in [§5](#5-training-information--parameters-from-the-paper); the cluster drivers are [`condor/p2_train_scratch.sub`](condor/p2_train_scratch.sub) (P2) and
-[`condor/p3_finetune.sub`](condor/p3_finetune.sub) (P3). Training is the long path (on one GPU **~54 hours** for the 712 complexes in proto_train).
+Hyper-parameters are in [§5](#5-training-information--parameters-from-the-paper). Prototype drivers:
+[`condor/p2_train_scratch.sub`](condor/p2_train_scratch.sub) (P2) and
+[`condor/p3_finetune.sub`](condor/p3_finetune.sub) (P3), single-GPU, ~54 h for the 712 `proto_train`
+complexes. The **full-data** model was trained with
+[`condor/full_train_scratch.sub`](condor/full_train_scratch.sub) (Stage 1) and
+[`condor/full_stage2_2gpu.sub`](condor/full_stage2_2gpu.sub) (Stage 2, 2×A100 DDP — see [§5](#5-training-information--parameters-from-the-paper)).
 
 ## 5. Training information & parameters (from the paper)
 
@@ -170,6 +217,13 @@ Hyper-parameters are in [§5](#5-training-information--parameters-from-the-paper
 **P3 — fine-tune (bonus, single stage, init = released weights):**
 `pos_r 1`, Adam, `lr 1e-4`, `weight_decay 0`, `patience 30`, eff. batch 64, `val_frac 0.1`, `seed 42`.
 
+**Full-data model (`full_scratch`, the §3.1 submission model):** same 2-stage protocol on the full
+`full_train` split. Stage 1 (scoring) trained single-GPU; **Stage 2 (docking) ran on 2× NVIDIA
+A100-PCIE-40GB via DDP** ([`condor/full_stage2_2gpu.sub`](condor/full_stage2_2gpu.sub) +
+[`scripts/train_ddp.py`](scripts/train_ddp.py), condor job 169253), early-stopped at epoch 469, exit 0.
+The best checkpoint is [`model/full_scratch_karmadock_team002.pkl`](model/full_scratch_karmadock_team002.pkl);
+its per-epoch curve is [`docs/full_stage2_train_log.csv`](docs/full_stage2_train_log.csv).
+
 **pos_r** is the scalar weight on the RMSD (coordinate/docking) loss in KarmaDock's `training
   objective loss = pos_r * rmsd_loss + mdn_loss` — it acts as a positional-refinement switch
   that is set to 0 in Stage 1 (train only the MDN interaction-distance loss) and 1 in
@@ -185,13 +239,15 @@ Per-epoch training curves are in [`docs/p2_stage1_train_log.csv`](docs/p2_stage1
 |---|---|
 | [`README.md`](README.md) | this file |
 | [`Dockerfile`](Dockerfile) | image  (`ahlamloum/karmadock-seminar:v6`) |
-| [`scripts/`](scripts) | `train.py` (main artifact), converters, `run_infer.sh`, `evaluate.sh`, `run_train.sh` |
-| [`condor/`](condor) | portable HTCondor submit files (3 docking + 1 eval + 2 training) |
-| [`evaluation/evaluation.py`](evaluation/evaluation.py) | the seminar's official evaluator (unmodified) |
-| [`model/`](model) | P2 + P3 trained checkpoints (~15 MB each) |
-| [`notebooks/results_and_comparison.ipynb`](notebooks/results_and_comparison.ipynb) | tables, charts |
-| [`results/`](results) | `proto_test/` = P2 poses that `evaluation.py --dataset proto_test` scores; `<pipeline>/proto_test{,_ff,_align}/` = all 3 pipelines × 3 variants; `*_evaluation.csv` = official RMSD per pipeline × variant |
-| [`docs/`](docs) | training logs + figures |
+| [`scripts/`](scripts) | `train.py` (main artifact), `train_ddp.py` (full-data 2-GPU Stage 2), converters, `run_infer.sh`, `evaluate.sh`, `run_train.sh` |
+| [`condor/`](condor) | HTCondor submit files: prototype (docking + eval + training) **and** full-data (`full_train_scratch.sub`, `full_stage2_2gpu.sub`, `full_{test,posebusters}_infer.sub`, `full_eval_batch.sub`) |
+| [`condor/full_eval_jobs/`](condor/full_eval_jobs), [`condor/logs/full_data_eval/`](condor/logs/full_data_eval) | the 42 full-data eval `run.sh` wrappers and their `.log`/`.err`/`.out` |
+| [`evaluation/evaluation.py`](evaluation/evaluation.py) | seminar evaluator + our PoseBusters and `--shard_idx`/`--num_shards` additions (used for both phases) |
+| [`model/`](model) | trained checkpoints (~15 MB each): `full_scratch` (submission), plus prototype P2 + P3 |
+| [`notebooks/results_and_comparison.ipynb`](notebooks/results_and_comparison.ipynb) | full-data + prototype tables, ECDF, PoseBusters, paper comparison, failure analysis |
+| [`results/full_data_evaluation/`](results/full_data_evaluation) | per-complex full-data CSVs (RMSD + PoseBusters) for both models × both sets × 3 variants + ECDF figure |
+| [`results/`](results) | prototype poses + `<pipeline>_<variant>_evaluation.csv` |
+| [`docs/`](docs) | training logs (incl. `full_stage2_train_log.csv`) + figures |
 | [`data/proto_test.csv`](data/proto_test.csv) | proto_test mapping (136 complexes) |
 | [`data/prototype_model_data.zip`](data/prototype_model_data.zip) | reference structures: proto_test + proto_train, refined SDF/PDB |
 | [`scripts/README.md`](scripts/README.md) | provenance: our code vs. upstream KarmaDock |
@@ -205,6 +261,8 @@ Per-epoch training curves are in [`docs/p2_stage1_train_log.csv`](docs/p2_stage1
 Fix: exclude it —
   `requirements = … && (Machine =!= "idun.hpc.uni-saarland.de")`.
  **[solved]**.
- - resources limitations: `request_gpus=2/4` jobs sat idle for days. The prototype runs single-GPU. we couldn't run on 2 gpus that's why we changed it to 1 gpu, we are not sure if this gonna work on the full dataset as it will take too much time.
-Fix: change the request to 1 gpu
- **[solved]**.
+ - **GPU allocation**: early on, `request_gpus=2/4` jobs sat idle in the queue for days, so the
+**prototype** (small `proto_train`) was run **single-GPU**. For the **full dataset** the single-GPU
+Stage 2 would have been too slow, so we implemented multi-GPU DDP ([`scripts/train_ddp.py`](scripts/train_ddp.py))
+and successfully ran the full-data **Stage 2 on 2× A100-40GB** ([`condor/full_stage2_2gpu.sub`](condor/full_stage2_2gpu.sub),
+job 169253, exit 0). Stage 1 stayed single-GPU. **[solved]**

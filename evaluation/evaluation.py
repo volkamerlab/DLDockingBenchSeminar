@@ -294,7 +294,9 @@ def evaluate_dataset(
     results_dir: Path,
     top_n: int,
     run_pb: bool,
-    output_csv: Optional[Path] = None
+    output_csv: Optional[Path] = None,
+    shard_idx: int = 0,
+    num_shards: int = 1,
 ) -> pd.DataFrame:
     """Run evaluation on a complete dataset."""
 
@@ -304,6 +306,9 @@ def evaluate_dataset(
 
     logger.info(f"Loaded {len(df)} complexes from {csv_path}")
     logger.info(f"Dataset: {dataset_name} | Top-N: {top_n} | PoseBusters: {run_pb}")
+    if num_shards > 1:
+        df = df.iloc[shard_idx::num_shards].reset_index(drop=True)
+        logger.info(f"Shard {shard_idx}/{num_shards}: {len(df)} complexes")
 
     all_results = []
     n_skipped = 0
@@ -413,6 +418,12 @@ Expected file structure (from repository root):
         help="Skip PoseBusters physical validity checks (PB validation is enabled by default)"
     )
     parser.add_argument(
+        "--shard_idx", type=int, default=0, help="0-based shard index"
+    )
+    parser.add_argument(
+        "--num_shards", type=int, default=1, help="total number of shards"
+    )
+    parser.add_argument(
         "--output_csv",
         type=Path,
         default=None,
@@ -461,7 +472,9 @@ def main():
         results_dir=results_dir,
         top_n=args.top_n,
         run_pb=not args.no_pb_valid,  # PB validation enabled by default, disable with --no_pb_valid
-        output_csv=output_csv
+        output_csv=output_csv,
+        shard_idx=args.shard_idx,
+        num_shards=args.num_shards,
     )
 
     logger.info("Evaluation complete.")

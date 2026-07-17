@@ -1,0 +1,88 @@
+000 (174202.014.000) 2026-07-16 13:22:42 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174202.014.000) 2026-07-16 13:23:27 Job executing on host: <10.143.248.26:9618?PrivAddr=%3c10.143.250.26:9618%3fsock%3dstartd_7902_b176%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.26-9618&alias=gefjon.hpc.uni-saarland.de&noUDP&sock=startd_7902_b176>
+	SlotName: slot1_24@gefjon.hpc.uni-saarland.de
+	AvailableGPUs = {  }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_2018479"
+	Cpus = 4
+	Disk = 12147
+	GPUs = 0
+	Memory = 4096
+...
+005 (174202.014.000) 2026-07-16 13:23:30 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :     0.06        1         4 
+	   Disk (KB)            :     1           1     12147 
+	   GPUs                 :                           0 
+	   Memory (MB)          :              4096      4096 
+	   TimeExecute (s)      :     3                       
+	   TimeSlotBusy (s)     :     4                       
+...
+000 (174270.014.000) 2026-07-16 15:50:26 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174270.014.000) 2026-07-16 19:23:41 Job executing on host: <10.143.248.11:9618?PrivAddr=%3c10.143.250.11:9618%3fsock%3dstartd_2521_c658%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.11-9618&alias=lofn.hpc.uni-saarland.de&noUDP&sock=startd_2521_c658>
+	SlotName: teaching4@lofn.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_850254af }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_998181"
+	Cpus = 7
+	Disk = 672115596
+	GPUs = 1
+	GPUs_GPU_850254af = [ Id = "GPU-850254af"; Capability = 6.0; DeviceName = "Tesla P100-SXM2-16GB"; DeviceUuid = "850254af-1026-fc6b-f162-c969e74a2330"; ECCEnabled = true; NvidiaDriver = "550.163.01"; DriverVersion = 12.4; DevicePciBusId = "0000:0A:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	Memory = 64480
+...
+006 (174270.014.000) 2026-07-16 19:23:50 Image size of job updated: 55
+	55  -  MemoryUsage of job (MB)
+	56400  -  ResidentSetSize of job (KB)
+...
+006 (174270.014.000) 2026-07-16 19:28:50 Image size of job updated: 330
+	330  -  MemoryUsage of job (MB)
+	338124  -  ResidentSetSize of job (KB)
+...
+006 (174270.014.000) 2026-07-16 19:33:50 Image size of job updated: 330
+	330  -  MemoryUsage of job (MB)
+	338880  -  ResidentSetSize of job (KB)
+...
+006 (174270.014.000) 2026-07-16 19:38:51 Image size of job updated: 464
+	464  -  MemoryUsage of job (MB)
+	475212  -  ResidentSetSize of job (KB)
+...
+006 (174270.014.000) 2026-07-16 21:29:03 Image size of job updated: 464
+	464  -  MemoryUsage of job (MB)
+	475904  -  ResidentSetSize of job (KB)
+...
+006 (174270.014.000) 2026-07-16 21:34:04 Image size of job updated: 465
+	465  -  MemoryUsage of job (MB)
+	476192  -  ResidentSetSize of job (KB)
+...
+006 (174270.014.000) 2026-07-16 21:39:05 Image size of job updated: 485
+	485  -  MemoryUsage of job (MB)
+	497640  -  ResidentSetSize of job (KB)
+...
+005 (174270.014.000) 2026-07-16 22:07:13 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 19:13:47, Sys 0 00:00:47  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 19:13:47, Sys 0 00:00:47  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.00        1         7 
+	   Disk (KB)            :     1           1 672115596 
+	   GPUs                 :     0                     1 "GPU-850254af"
+	   GpusMemory (MB)      :   117                       
+	   Memory (MB)          :   485        4096     64480 
+	   TimeExecute (s)      :  9812                       
+	   TimeSlotBusy (s)     :  9813                       
+...

@@ -1,0 +1,99 @@
+000 (174202.035.000) 2026-07-16 13:22:42 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174202.035.000) 2026-07-16 13:23:45 Job executing on host: <10.143.248.11:9618?PrivAddr=%3c10.143.250.11:9618%3fsock%3dstartd_2521_c658%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.11-9618&alias=lofn.hpc.uni-saarland.de&noUDP&sock=startd_2521_c658>
+	SlotName: teaching2@lofn.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_f968d76a }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_68682"
+	Cpus = 7
+	Disk = 672115596
+	GPUs = 1
+	GPUs_GPU_f968d76a = [ Id = "GPU-f968d76a"; Capability = 6.0; DeviceName = "Tesla P100-SXM2-16GB"; DeviceUuid = "f968d76a-7475-2218-7b77-16ed4b0507fe"; ECCEnabled = true; NvidiaDriver = "550.163.01"; DriverVersion = 12.4; DevicePciBusId = "0000:05:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	Memory = 64480
+...
+005 (174202.035.000) 2026-07-16 13:23:47 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :        0        1         7 
+	   Disk (KB)            :        1        1 672115596 
+	   GPUs                 :        0                  1 "GPU-f968d76a"
+	   Memory (MB)          :              4096     64480 
+	   TimeExecute (s)      :        2                    
+	   TimeSlotBusy (s)     :        3                    
+...
+000 (174270.035.000) 2026-07-16 15:50:26 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174270.035.000) 2026-07-16 22:52:16 Job executing on host: <10.143.248.26:9618?PrivAddr=%3c10.143.250.26:9618%3fsock%3dstartd_7902_b176%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.26-9618&alias=gefjon.hpc.uni-saarland.de&noUDP&sock=startd_7902_b176>
+	SlotName: slot1_32@gefjon.hpc.uni-saarland.de
+	AvailableGPUs = {  }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_3138081"
+	Cpus = 4
+	Disk = 12147
+	GPUs = 0
+	Memory = 4096
+...
+006 (174270.035.000) 2026-07-16 22:52:25 Image size of job updated: 90
+	90  -  MemoryUsage of job (MB)
+	92676  -  ResidentSetSize of job (KB)
+...
+006 (174270.035.000) 2026-07-16 22:57:26 Image size of job updated: 348
+	348  -  MemoryUsage of job (MB)
+	357240  -  ResidentSetSize of job (KB)
+...
+006 (174270.035.000) 2026-07-16 23:02:26 Image size of job updated: 368
+	368  -  MemoryUsage of job (MB)
+	376980  -  ResidentSetSize of job (KB)
+...
+006 (174270.035.000) 2026-07-16 23:12:27 Image size of job updated: 376
+	376  -  MemoryUsage of job (MB)
+	385356  -  ResidentSetSize of job (KB)
+...
+006 (174270.035.000) 2026-07-16 23:17:28 Image size of job updated: 407
+	407  -  MemoryUsage of job (MB)
+	417292  -  ResidentSetSize of job (KB)
+...
+006 (174270.035.000) 2026-07-16 23:22:28 Image size of job updated: 417
+	417  -  MemoryUsage of job (MB)
+	427052  -  ResidentSetSize of job (KB)
+...
+006 (174270.035.000) 2026-07-16 23:42:30 Image size of job updated: 418
+	418  -  MemoryUsage of job (MB)
+	428196  -  ResidentSetSize of job (KB)
+...
+006 (174270.035.000) 2026-07-16 23:47:30 Image size of job updated: 450
+	450  -  MemoryUsage of job (MB)
+	461272  -  ResidentSetSize of job (KB)
+...
+006 (174270.035.000) 2026-07-17 00:22:34 Image size of job updated: 473
+	473  -  MemoryUsage of job (MB)
+	484792  -  ResidentSetSize of job (KB)
+...
+006 (174270.035.000) 2026-07-17 01:17:38 Image size of job updated: 487
+	487  -  MemoryUsage of job (MB)
+	499380  -  ResidentSetSize of job (KB)
+...
+005 (174270.035.000) 2026-07-17 02:17:15 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 2 06:08:36, Sys 0 00:02:46  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 2 06:08:36, Sys 0 00:02:46  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :     0.00        1         4 
+	   Disk (KB)            :     1           1     12147 
+	   GPUs                 :                           0 
+	   Memory (MB)          :   487        4096      4096 
+	   TimeExecute (s)      : 12299                       
+	   TimeSlotBusy (s)     : 12300                       
+...

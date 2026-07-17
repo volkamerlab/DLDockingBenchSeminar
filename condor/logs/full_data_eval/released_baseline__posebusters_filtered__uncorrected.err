@@ -1,0 +1,420 @@
+21:33:19 [INFO] Loaded 308 complexes from data/posebusters_filtered.csv
+21:33:19 [INFO] Dataset: posebusters_filtered | Top-N: 1 | PoseBusters: True
+21:33:19 [INFO] Using default configuration for mode dock.
+21:33:21 [INFO] Using default configuration for mode dock.
+21:33:23 [INFO] Using default configuration for mode dock.
+21:33:24 [INFO] Using default configuration for mode dock.
+21:33:26 [INFO] Using default configuration for mode dock.
+21:33:27 [INFO] Using default configuration for mode dock.
+21:33:29 [INFO] Using default configuration for mode dock.
+21:33:33 [INFO] Using default configuration for mode dock.
+21:33:38 [INFO] Using default configuration for mode dock.
+21:33:40 [INFO] Using default configuration for mode dock.
+21:33:45 [INFO] Using default configuration for mode dock.
+21:33:46 [INFO] Using default configuration for mode dock.
+21:33:48 [INFO] Using default configuration for mode dock.
+[21:33:50] UFFTYPER: Unrecognized atom type: S_6+6 (34)
+[21:33:51] UFFTYPER: Unrecognized atom type: S_6+6 (34)
+21:33:51 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+21:33:51 [INFO] Using default configuration for mode dock.
+21:33:52 [INFO] Using default configuration for mode dock.
+[21:33:52] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+[21:33:52] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+[21:33:57] UFFTYPER: Warning: hybridization set to SP3 for atom 32
+[21:33:57] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+[21:33:57] UFFTYPER: Warning: hybridization set to SP3 for atom 32
+[21:33:57] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+21:33:59 [INFO] Using default configuration for mode dock.
+21:34:02 [INFO] Using default configuration for mode dock.
+[21:34:03] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[21:34:04] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+21:34:05 [INFO] Using default configuration for mode dock.
+21:34:09 [INFO] Using default configuration for mode dock.
+21:34:10 [INFO] Using default configuration for mode dock.
+21:34:11 [INFO] Using default configuration for mode dock.
+21:34:14 [INFO] Using default configuration for mode dock.
+21:34:16 [INFO] Using default configuration for mode dock.
+21:34:25 [INFO] Using default configuration for mode dock.
+21:34:28 [INFO] Using default configuration for mode dock.
+21:34:29 [INFO] Using default configuration for mode dock.
+21:34:30 [INFO] Using default configuration for mode dock.
+21:34:33 [INFO] Using default configuration for mode dock.
+21:34:34 [INFO] Using default configuration for mode dock.
+21:34:36 [INFO] Using default configuration for mode dock.
+21:34:38 [INFO] Using default configuration for mode dock.
+21:34:41 [INFO] Using default configuration for mode dock.
+21:34:41 [INFO] Using default configuration for mode dock.
+21:34:43 [INFO] Using default configuration for mode dock.
+21:34:45 [INFO] Using default configuration for mode dock.
+21:34:46 [INFO] Using default configuration for mode dock.
+21:34:48 [INFO] Using default configuration for mode dock.
+21:34:49 [INFO] Using default configuration for mode dock.
+21:35:02 [INFO] Using default configuration for mode dock.
+21:35:05 [INFO] Using default configuration for mode dock.
+21:35:06 [INFO] Using default configuration for mode dock.
+21:35:08 [INFO] Using default configuration for mode dock.
+21:35:26 [INFO] Using default configuration for mode dock.
+21:35:28 [INFO] Using default configuration for mode dock.
+21:35:30 [INFO] Using default configuration for mode dock.
+21:35:31 [INFO] Using default configuration for mode dock.
+21:35:34 [INFO] Using default configuration for mode dock.
+21:35:37 [INFO] Using default configuration for mode dock.
+21:35:38 [INFO] Using default configuration for mode dock.
+21:35:40 [INFO]   Progress: 50/308
+21:35:40 [INFO] Using default configuration for mode dock.
+21:35:44 [INFO] Using default configuration for mode dock.
+21:35:45 [INFO] Using default configuration for mode dock.
+21:35:50 [INFO] Using default configuration for mode dock.
+21:35:54 [INFO] Using default configuration for mode dock.
+21:35:58 [INFO] Using default configuration for mode dock.
+21:36:00 [INFO] Using default configuration for mode dock.
+21:36:11 [INFO] Using default configuration for mode dock.
+[21:36:11] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[21:36:11] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[21:36:12] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[21:36:12] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[21:36:12] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+[21:36:12] UFFTYPER: Warning: hybridization set to SP3 for atom 1
+21:36:13 [INFO] Using default configuration for mode dock.
+21:36:16 [INFO] Using default configuration for mode dock.
+21:36:18 [INFO] Using default configuration for mode dock.
+21:36:22 [INFO] Using default configuration for mode dock.
+21:36:39 [INFO] Using default configuration for mode dock.
+21:36:42 [INFO] Using default configuration for mode dock.
+21:36:43 [INFO] Using default configuration for mode dock.
+21:36:45 [INFO] Using default configuration for mode dock.
+[21:36:46] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[21:36:46] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+21:36:46 [INFO] Using default configuration for mode dock.
+21:36:49 [INFO] Using default configuration for mode dock.
+21:36:55 [INFO] Using default configuration for mode dock.
+21:36:56 [INFO] Using default configuration for mode dock.
+21:36:58 [INFO] Using default configuration for mode dock.
+21:37:01 [INFO] Using default configuration for mode dock.
+21:37:03 [INFO] Using default configuration for mode dock.
+21:37:06 [INFO] Using default configuration for mode dock.
+21:37:06 [INFO] Using default configuration for mode dock.
+[21:37:06] UFFTYPER: Warning: hybridization set to SP3 for atom 49
+[21:37:07] UFFTYPER: Warning: hybridization set to SP3 for atom 49
+[21:37:08] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[21:37:09] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+21:37:11 [INFO] Using default configuration for mode dock.
+21:37:12 [INFO] Using default configuration for mode dock.
+21:37:15 [INFO] Using default configuration for mode dock.
+21:37:43 [INFO] Using default configuration for mode dock.
+21:37:45 [INFO] Using default configuration for mode dock.
+21:37:46 [INFO] Using default configuration for mode dock.
+21:37:50 [INFO] Using default configuration for mode dock.
+21:37:52 [INFO] Using default configuration for mode dock.
+21:37:53 [INFO] Using default configuration for mode dock.
+21:37:55 [INFO] Using default configuration for mode dock.
+21:38:00 [INFO] Using default configuration for mode dock.
+[21:38:06] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[21:38:06] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+21:38:09 [INFO] Using default configuration for mode dock.
+21:38:12 [INFO] Using default configuration for mode dock.
+21:38:13 [INFO] Using default configuration for mode dock.
+21:38:16 [INFO] Using default configuration for mode dock.
+21:38:28 [INFO] Using default configuration for mode dock.
+21:38:32 [INFO] Using default configuration for mode dock.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+21:38:37 [INFO] Using default configuration for mode dock.
+21:38:40 [INFO] Using default configuration for mode dock.
+21:38:41 [INFO] Using default configuration for mode dock.
+21:38:42 [INFO] Using default configuration for mode dock.
+21:38:45 [INFO] Using default configuration for mode dock.
+21:38:47 [INFO] Using default configuration for mode dock.
+[21:38:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[21:38:47] UFFTYPER: Warning: hybridization set to SP3 for atom 0
+[21:38:49] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[21:38:49] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[21:38:51] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+[21:38:51] UFFTYPER: Warning: hybridization set to SP3 for atom 5
+21:38:53 [INFO] Using default configuration for mode dock.
+21:38:56 [INFO] Using default configuration for mode dock.
+21:38:57 [INFO]   Progress: 100/308
+21:38:57 [INFO] Using default configuration for mode dock.
+21:39:01 [INFO] Using default configuration for mode dock.
+21:39:02 [INFO] Using default configuration for mode dock.
+21:39:04 [INFO] Using default configuration for mode dock.
+21:39:41 [INFO] Using default configuration for mode dock.
+[21:39:41] UFFTYPER: Unrecognized atom type: S_5+6 (23)
+[21:39:41] UFFTYPER: Unrecognized atom type: S_5+6 (23)
+21:39:41 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[21:39:43] UFFTYPER: Unrecognized atom type: S_5+6 (23)
+[21:39:44] UFFTYPER: Unrecognized atom type: S_5+6 (23)
+21:39:44 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+[21:39:46] UFFTYPER: Unrecognized atom type: S_5+6 (23)
+[21:39:46] UFFTYPER: Unrecognized atom type: S_5+6 (23)
+21:39:46 [WARNING] Energy ratio module failed because UFF parameters missing for molecule.
+21:39:49 [INFO] Using default configuration for mode dock.
+21:39:55 [INFO] Using default configuration for mode dock.
+[21:39:55] UFFTYPER: Warning: hybridization set to SP3 for atom 46
+[21:39:55] UFFTYPER: Warning: hybridization set to SP3 for atom 46
+[21:40:00] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[21:40:00] UFFTYPER: Warning: hybridization set to SP3 for atom 46
+[21:40:01] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[21:40:01] UFFTYPER: Warning: hybridization set to SP3 for atom 46
+21:40:03 [INFO] Using default configuration for mode dock.
+[21:40:04] UFFTYPER: Warning: hybridization set to SP3 for atom 26
+[21:40:04] UFFTYPER: Warning: hybridization set to SP3 for atom 26
+21:40:05 [INFO] Using default configuration for mode dock.
+21:40:11 [INFO] Using default configuration for mode dock.
+21:40:15 [INFO] Using default configuration for mode dock.
+21:40:16 [INFO] Using default configuration for mode dock.
+[21:40:16] UFFTYPER: Warning: hybridization set to SP3 for atom 27
+[21:40:17] UFFTYPER: Warning: hybridization set to SP3 for atom 27
+21:40:25 [INFO] Using default configuration for mode dock.
+21:40:28 [INFO] Using default configuration for mode dock.
+21:40:29 [INFO] Using default configuration for mode dock.
+21:40:30 [INFO] Using default configuration for mode dock.
+21:40:34 [INFO] Using default configuration for mode dock.
+21:40:35 [INFO] Using default configuration for mode dock.
+21:40:39 [INFO] Using default configuration for mode dock.
+21:40:40 [INFO] Using default configuration for mode dock.
+21:40:42 [INFO] Using default configuration for mode dock.
+21:40:45 [INFO] Using default configuration for mode dock.
+[21:40:46] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[21:40:46] UFFTYPER: Warning: hybridization set to SP3 for atom 25
+[21:40:46] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[21:40:46] UFFTYPER: Warning: hybridization set to SP3 for atom 25
+21:40:46 [INFO] Using default configuration for mode dock.
+21:40:51 [INFO] Using default configuration for mode dock.
+21:40:53 [INFO] Using default configuration for mode dock.
+21:40:58 [INFO] Using default configuration for mode dock.
+21:40:59 [INFO] Using default configuration for mode dock.
+21:41:00 [INFO] Using default configuration for mode dock.
+21:41:02 [INFO] Using default configuration for mode dock.
+21:41:03 [INFO] Using default configuration for mode dock.
+21:41:06 [INFO] Using default configuration for mode dock.
+21:41:09 [INFO] Using default configuration for mode dock.
+21:41:11 [INFO] Using default configuration for mode dock.
+21:41:18 [INFO] Using default configuration for mode dock.
+21:41:22 [INFO] Using default configuration for mode dock.
+21:41:23 [INFO] Using default configuration for mode dock.
+21:41:25 [INFO] Using default configuration for mode dock.
+21:41:27 [INFO] Using default configuration for mode dock.
+21:41:29 [INFO] Using default configuration for mode dock.
+21:41:31 [INFO] Using default configuration for mode dock.
+21:41:33 [INFO] Using default configuration for mode dock.
+21:41:34 [INFO] Using default configuration for mode dock.
+21:41:37 [INFO] Using default configuration for mode dock.
+21:41:55 [INFO] Using default configuration for mode dock.
+21:41:59 [INFO] Using default configuration for mode dock.
+21:42:00 [INFO] Using default configuration for mode dock.
+21:42:04 [INFO] Using default configuration for mode dock.
+21:42:06 [INFO] Using default configuration for mode dock.
+21:42:08 [INFO] Using default configuration for mode dock.
+21:42:10 [INFO] Using default configuration for mode dock.
+21:42:10 [INFO]   Progress: 150/308
+21:42:10 [INFO] Using default configuration for mode dock.
+21:42:18 [INFO] Using default configuration for mode dock.
+21:42:20 [INFO] Using default configuration for mode dock.
+21:42:21 [INFO] Using default configuration for mode dock.
+21:42:24 [INFO] Using default configuration for mode dock.
+21:42:25 [INFO] Using default configuration for mode dock.
+21:42:30 [INFO] Using default configuration for mode dock.
+21:42:32 [INFO] Using default configuration for mode dock.
+21:42:36 [INFO] Using default configuration for mode dock.
+21:42:38 [INFO] Using default configuration for mode dock.
+21:42:39 [INFO] Using default configuration for mode dock.
+[21:42:40] UFFTYPER: Warning: hybridization set to SP3 for atom 28
+[21:42:40] UFFTYPER: Warning: hybridization set to SP3 for atom 28
+[21:42:45] UFFTYPER: Warning: hybridization set to SP3 for atom 28
+[21:42:46] UFFTYPER: Warning: hybridization set to SP3 for atom 28
+21:42:55 [INFO] Using default configuration for mode dock.
+21:42:59 [INFO] Using default configuration for mode dock.
+21:43:17 [INFO] Using default configuration for mode dock.
+21:43:23 [INFO] Using default configuration for mode dock.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+21:43:24 [INFO] Using default configuration for mode dock.
+21:43:32 [INFO] Using default configuration for mode dock.
+21:43:37 [INFO] Using default configuration for mode dock.
+21:43:38 [INFO] Using default configuration for mode dock.
+21:43:39 [INFO] Using default configuration for mode dock.
+21:43:41 [INFO] Using default configuration for mode dock.
+21:43:44 [INFO] Using default configuration for mode dock.
+21:43:49 [INFO] Using default configuration for mode dock.
+21:43:52 [INFO] Using default configuration for mode dock.
+21:43:54 [INFO] Using default configuration for mode dock.
+21:44:01 [INFO] Using default configuration for mode dock.
+21:44:02 [INFO] Using default configuration for mode dock.
+21:44:11 [INFO] Using default configuration for mode dock.
+21:44:13 [INFO] Using default configuration for mode dock.
+21:44:15 [INFO] Using default configuration for mode dock.
+21:44:16 [INFO] Using default configuration for mode dock.
+21:44:18 [INFO] Using default configuration for mode dock.
+21:44:20 [INFO] Using default configuration for mode dock.
+21:44:27 [INFO] Using default configuration for mode dock.
+21:44:30 [INFO] Using default configuration for mode dock.
+21:44:33 [INFO] Using default configuration for mode dock.
+21:44:37 [INFO] Using default configuration for mode dock.
+21:44:40 [INFO] Using default configuration for mode dock.
+21:44:41 [INFO] Using default configuration for mode dock.
+21:44:43 [INFO] Using default configuration for mode dock.
+[21:44:43] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[21:44:43] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[21:44:44] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[21:44:44] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+[21:44:44] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+[21:44:44] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[21:44:44] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+[21:44:44] UFFTYPER: Warning: hybridization set to SP3 for atom 24
+[21:44:45] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[21:44:45] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+[21:44:45] UFFTYPER: Warning: hybridization set to SP3 for atom 16
+[21:44:45] UFFTYPER: Warning: hybridization set to SP3 for atom 20
+21:44:46 [INFO] Using default configuration for mode dock.
+21:44:47 [INFO] Using default configuration for mode dock.
+21:44:50 [INFO] Using default configuration for mode dock.
+21:45:41 [INFO] Using default configuration for mode dock.
+21:45:44 [INFO] Using default configuration for mode dock.
+21:45:48 [INFO] Using default configuration for mode dock.
+21:45:51 [INFO] Using default configuration for mode dock.
+21:45:56 [INFO] Using default configuration for mode dock.
+21:46:05 [INFO] Using default configuration for mode dock.
+21:46:08 [INFO] Using default configuration for mode dock.
+21:46:10 [INFO]   Progress: 200/308
+21:46:10 [INFO] Using default configuration for mode dock.
+21:46:16 [INFO] Using default configuration for mode dock.
+21:46:20 [INFO] Using default configuration for mode dock.
+21:46:23 [INFO] Using default configuration for mode dock.
+21:46:25 [INFO] Using default configuration for mode dock.
+21:46:34 [INFO] Using default configuration for mode dock.
+21:46:37 [INFO] Using default configuration for mode dock.
+21:46:39 [INFO] Using default configuration for mode dock.
+21:46:43 [INFO] Using default configuration for mode dock.
+21:46:46 [INFO] Using default configuration for mode dock.
+21:46:57 [INFO] Using default configuration for mode dock.
+21:46:59 [INFO] Using default configuration for mode dock.
+21:47:02 [INFO] Using default configuration for mode dock.
+[21:47:02] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+[21:47:03] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+[21:47:03] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+[21:47:03] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+[21:47:04] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+[21:47:04] UFFTYPER: Warning: hybridization set to SP3 for atom 33
+21:47:04 [INFO] Using default configuration for mode dock.
+21:47:10 [INFO] Using default configuration for mode dock.
+21:47:21 [INFO] Using default configuration for mode dock.
+21:47:25 [INFO] Using default configuration for mode dock.
+21:47:28 [INFO] Using default configuration for mode dock.
+21:47:31 [INFO] Using default configuration for mode dock.
+21:47:33 [INFO] Using default configuration for mode dock.
+21:47:34 [INFO] Using default configuration for mode dock.
+21:47:37 [INFO] Using default configuration for mode dock.
+[21:47:37] UFFTYPER: Warning: hybridization set to SP3 for atom 34
+[21:47:38] UFFTYPER: Warning: hybridization set to SP3 for atom 34
+[21:47:40] UFFTYPER: Warning: hybridization set to SP3 for atom 34
+[21:47:41] UFFTYPER: Warning: hybridization set to SP3 for atom 34
+21:47:42 [INFO] Using default configuration for mode dock.
+21:47:44 [INFO] Using default configuration for mode dock.
+21:47:45 [INFO] Using default configuration for mode dock.
+21:47:47 [INFO] Using default configuration for mode dock.
+21:47:48 [INFO] Using default configuration for mode dock.
+21:47:50 [INFO] Using default configuration for mode dock.
+21:47:51 [INFO] Using default configuration for mode dock.
+21:47:54 [INFO] Using default configuration for mode dock.
+21:47:55 [INFO] Using default configuration for mode dock.
+21:47:57 [INFO] Using default configuration for mode dock.
+21:48:03 [INFO] Using default configuration for mode dock.
+21:48:04 [INFO] Using default configuration for mode dock.
+21:48:07 [INFO] Using default configuration for mode dock.
+[21:48:11] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+[21:48:11] UFFTYPER: Warning: hybridization set to SP3 for atom 10
+21:48:13 [INFO] Using default configuration for mode dock.
+21:48:14 [INFO] Using default configuration for mode dock.
+21:48:15 [INFO] Using default configuration for mode dock.
+21:48:16 [INFO] Using default configuration for mode dock.
+21:48:19 [INFO] Using default configuration for mode dock.
+21:48:22 [INFO] Using default configuration for mode dock.
+21:48:28 [INFO] Using default configuration for mode dock.
+21:48:30 [INFO] Using default configuration for mode dock.
+21:48:31 [INFO] Using default configuration for mode dock.
+21:48:33 [INFO] Using default configuration for mode dock.
+21:48:44 [INFO] Using default configuration for mode dock.
+21:49:49 [WARNING] Energy ratio module failed to calculate ensemble conformation energy for InChI=1S/C23H29NO6/c1-11-6-7-12-4-2-3-5-13(12)16(11)19(27)17-18(26)14(10-24-22(17)28)23(29)9-8-15(25)20-21(23)30-20/h6-7,10-13,15-16,20-21,25,29H,2-5,8-9H2,1H3,(H2,24,26,28)/t11-,12+,13+,15-,16-,20+,21-,23+/m0/s1: Failed to generate conformations.
+/home/bdldt_team002/.local/lib/python3.9/site-packages/posebusters/posebusters.py:316: FutureWarning: Behavior when concatenating bool-dtype and numeric-dtype arrays is deprecated; in a future version these will cast to object dtype (instead of coercing bools to numeric values). To retain the old behavior, explicitly cast bool-dtype arrays to numeric dtype.
+  df = pd.concat([self._make_table({k: v}, self.config, full_report=full_report) for k, v in results_gen])
+21:49:50 [INFO] Using default configuration for mode dock.
+21:49:54 [INFO] Using default configuration for mode dock.
+21:49:58 [INFO] Using default configuration for mode dock.
+21:49:59 [INFO] Using default configuration for mode dock.
+21:50:00 [INFO]   Progress: 250/308
+21:50:00 [INFO] Using default configuration for mode dock.
+21:50:02 [INFO] Using default configuration for mode dock.
+21:50:04 [INFO] Using default configuration for mode dock.
+21:50:05 [INFO] Using default configuration for mode dock.
+21:50:11 [INFO] Using default configuration for mode dock.
+21:50:14 [INFO] Using default configuration for mode dock.
+[21:50:14] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+[21:50:14] UFFTYPER: Warning: hybridization set to SP3 for atom 21
+21:50:16 [INFO] Using default configuration for mode dock.
+21:50:25 [INFO] Using default configuration for mode dock.
+21:50:28 [INFO] Using default configuration for mode dock.
+21:50:29 [INFO] Using default configuration for mode dock.
+21:50:30 [INFO] Using default configuration for mode dock.
+21:50:31 [INFO] Using default configuration for mode dock.
+21:50:48 [INFO] Using default configuration for mode dock.
+21:50:55 [INFO] Using default configuration for mode dock.
+21:50:58 [INFO] Using default configuration for mode dock.
+21:51:00 [INFO] Using default configuration for mode dock.
+21:51:01 [INFO] Using default configuration for mode dock.
+21:51:03 [INFO] Using default configuration for mode dock.
+21:51:03 [INFO] Using default configuration for mode dock.
+21:51:05 [INFO] Using default configuration for mode dock.
+21:51:19 [INFO] Using default configuration for mode dock.
+21:51:24 [INFO] Using default configuration for mode dock.
+21:51:29 [INFO] Using default configuration for mode dock.
+21:51:33 [INFO] Using default configuration for mode dock.
+21:51:34 [INFO] Using default configuration for mode dock.
+21:51:36 [INFO] Using default configuration for mode dock.
+21:51:38 [INFO] Using default configuration for mode dock.
+21:51:39 [INFO] Using default configuration for mode dock.
+21:51:49 [INFO] Using default configuration for mode dock.
+21:51:52 [INFO] Using default configuration for mode dock.
+21:51:54 [INFO] Using default configuration for mode dock.
+21:52:00 [INFO] Using default configuration for mode dock.
+21:52:03 [INFO] Using default configuration for mode dock.
+21:52:04 [INFO] Using default configuration for mode dock.
+21:52:05 [INFO] Using default configuration for mode dock.
+21:52:07 [INFO] Using default configuration for mode dock.
+21:52:10 [INFO] Using default configuration for mode dock.
+21:52:18 [INFO] Using default configuration for mode dock.
+21:52:21 [INFO] Using default configuration for mode dock.
+21:52:22 [INFO] Using default configuration for mode dock.
+21:52:32 [INFO] Using default configuration for mode dock.
+21:52:34 [INFO] Using default configuration for mode dock.
+21:52:37 [INFO] Using default configuration for mode dock.
+[21:52:40] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+[21:52:41] UFFTYPER: Warning: hybridization set to SP3 for atom 17
+21:52:42 [INFO] Using default configuration for mode dock.
+21:52:45 [INFO] Using default configuration for mode dock.
+21:52:48 [INFO] Using default configuration for mode dock.
+21:52:50 [INFO] Using default configuration for mode dock.
+21:52:54 [INFO] Using default configuration for mode dock.
+21:52:58 [INFO] Using default configuration for mode dock.
+21:55:24 [INFO] Using default configuration for mode dock.
+21:55:26 [INFO]   Progress: 300/308
+21:55:26 [INFO] Using default configuration for mode dock.
+21:55:28 [INFO] Using default configuration for mode dock.
+21:55:29 [INFO] Using default configuration for mode dock.
+21:55:32 [INFO] Using default configuration for mode dock.
+21:55:42 [INFO] Using default configuration for mode dock.
+21:55:44 [INFO] Using default configuration for mode dock.
+21:55:46 [INFO] Using default configuration for mode dock.
+21:55:47 [INFO] Using default configuration for mode dock.
+21:55:49 [INFO]   Progress: 308/308
+21:55:49 [INFO] Using default configuration for mode dock.
+21:55:52 [INFO] Evaluated 308 complexes (0 skipped)
+21:55:52 [INFO] Top-1 Results:
+21:55:52 [INFO]   RMSD < 2.0 Å: 83.1%
+21:55:52 [INFO]   RMSD < 1.0 Å: 39.6%
+21:55:52 [INFO]   Median RMSD: 1.16 Å
+21:55:52 [INFO]   PB-Valid: 2.6%
+21:55:52 [INFO] Results saved to /home/bdldt_team002/eval_full_data/out/released_baseline__posebusters_filtered__uncorrected.csv
+21:55:52 [INFO] Evaluation complete.

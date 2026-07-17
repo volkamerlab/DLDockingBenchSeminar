@@ -1,0 +1,92 @@
+000 (174202.003.000) 2026-07-16 13:22:42 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174202.003.000) 2026-07-16 13:23:05 Job executing on host: <10.143.248.26:9618?PrivAddr=%3c10.143.250.26:9618%3fsock%3dstartd_7902_b176%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.26-9618&alias=gefjon.hpc.uni-saarland.de&noUDP&sock=startd_7902_b176>
+	SlotName: slot1_24@gefjon.hpc.uni-saarland.de
+	AvailableGPUs = {  }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_2007514"
+	Cpus = 4
+	Disk = 12147
+	GPUs = 0
+	Memory = 4096
+...
+005 (174202.003.000) 2026-07-16 13:23:08 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        1         4 
+	   Disk (KB)            :        1        1     12147 
+	   GPUs                 :                           0 
+	   Memory (MB)          :              4096      4096 
+	   TimeExecute (s)      :        3                    
+	   TimeSlotBusy (s)     :        4                    
+...
+000 (174270.003.000) 2026-07-16 15:50:26 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_340529_2603>
+...
+001 (174270.003.000) 2026-07-16 15:50:47 Job executing on host: <10.143.248.11:9618?PrivAddr=%3c10.143.250.11:9618%3fsock%3dstartd_2521_c658%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.11-9618&alias=lofn.hpc.uni-saarland.de&noUDP&sock=startd_2521_c658>
+	SlotName: teaching1@lofn.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_cca7fafe }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_157902"
+	Cpus = 7
+	Disk = 672115596
+	GPUs = 1
+	GPUs_GPU_cca7fafe = [ Id = "GPU-cca7fafe"; Capability = 6.0; DeviceName = "Tesla P100-SXM2-16GB"; DeviceUuid = "cca7fafe-45ba-2993-f24a-b5737b8e5036"; ECCEnabled = true; NvidiaDriver = "550.163.01"; DriverVersion = 12.4; DevicePciBusId = "0000:04:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	Memory = 64480
+...
+006 (174270.003.000) 2026-07-16 15:50:56 Image size of job updated: 55
+	55  -  MemoryUsage of job (MB)
+	56372  -  ResidentSetSize of job (KB)
+...
+006 (174270.003.000) 2026-07-16 15:55:56 Image size of job updated: 311
+	311  -  MemoryUsage of job (MB)
+	318600  -  ResidentSetSize of job (KB)
+...
+006 (174270.003.000) 2026-07-16 16:00:56 Image size of job updated: 383
+	383  -  MemoryUsage of job (MB)
+	393016  -  ResidentSetSize of job (KB)
+...
+006 (174270.003.000) 2026-07-16 16:05:56 Image size of job updated: 422
+	422  -  MemoryUsage of job (MB)
+	432184  -  ResidentSetSize of job (KB)
+...
+006 (174270.003.000) 2026-07-16 16:15:56 Image size of job updated: 435
+	435  -  MemoryUsage of job (MB)
+	446088  -  ResidentSetSize of job (KB)
+...
+006 (174270.003.000) 2026-07-16 16:56:04 Image size of job updated: 439
+	439  -  MemoryUsage of job (MB)
+	449728  -  ResidentSetSize of job (KB)
+...
+006 (174270.003.000) 2026-07-16 17:06:05 Image size of job updated: 457
+	457  -  MemoryUsage of job (MB)
+	468424  -  ResidentSetSize of job (KB)
+...
+006 (174270.003.000) 2026-07-16 17:26:07 Image size of job updated: 465
+	465  -  MemoryUsage of job (MB)
+	476188  -  ResidentSetSize of job (KB)
+...
+005 (174270.003.000) 2026-07-16 17:42:40 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 03:40:04, Sys 0 00:00:39  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 03:40:04, Sys 0 00:00:39  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.00        1         7 
+	   Disk (KB)            :     1           1 672115596 
+	   GPUs                 :     0                     1 "GPU-cca7fafe"
+	   GpusMemory (MB)      :   117                       
+	   Memory (MB)          :   465        4096     64480 
+	   TimeExecute (s)      :  6713                       
+	   TimeSlotBusy (s)     :  6713                       
+...
