@@ -1,9 +1,13 @@
+data-proto/*
+data_fullset/*
+dock_results_subset/*
+dock_results/*
+dock_results_test/*
 condor-workflow/zip_doc_results/*
-docking_result-final-model2/*
-docking_result-final-model/*
-lightning_logs/*
+lightning_logs/
 Interformer/**/*.ckpt
-
+posebuster_filtered/
+dock_results_pb/
 
 condor-workflow/transfer
 dock_results_prototype/*
@@ -226,3 +230,4 @@ pyrightconfig.json
 dock_results_prototype/energy_test/ligand_reconstructing/5s7c_LU8_A_507_docked.sdf_stat.csv
 docking_result-final-model2/1a4g_ZMR_A_466_docked.sdf_stat.csv
 condor-workflow/step4/interformer_affinity_pose_docking.sh
+dock_results/energy_train/ligand_reconstructing/1a0q_HEP_H_214_docked.sdf_stat.csv

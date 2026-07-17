@@ -1,4 +1,4 @@
-# For new data_path for full data set, combining the proto_train and proto_val into one csv
+# For new data_path for full data set, combining the trainset(proto_train) and validation set(proto_val) into one csv
 import pandas as pd
 
 train_df = pd.read_csv('data/proto_train_final.csv')

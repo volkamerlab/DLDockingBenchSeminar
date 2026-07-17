@@ -13,10 +13,10 @@ PYTHONPATH=interformer/
 python interformer/inference.py -test_csv data/proto_test_final.round0.csv \
 -work_path data/proto_test \
 -ligand_folder /ligand \
--ensemble checkpoints/xxx_model \
+-ensemble checkpoints/affinity_pose_model \
 -gpus 1 \
 -batch_size 20 \
--posfix *xxx* \
+-posfix *affinity_pose* \
 --pose_sel True
 
 

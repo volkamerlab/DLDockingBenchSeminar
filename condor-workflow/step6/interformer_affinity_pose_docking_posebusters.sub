@@ -1,0 +1,23 @@
+universe = docker
+docker_image = blakshana/interformer:v6
+# input the checkpoints and relevant files
+# for .csv file for affinity and pose model training
+transfer_input_files = docking, dock_results_pb, condor-workflow/step6/interformer_affinity_pose_docking_posebusters.sh, data/posebusters_filtered.csv
+executable = condor-workflow/step6/interformer_affinity_pose_docking_posebusters.sh
+
+output = logs/josh-interformer.$(ClusterId).$(ProcId).out
+error = logs/josh-interformer.$(ClusterId).$(ProcId).err
+log = logs/josh-interformer.$(ClusterId).log
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_output_files   = dock_results_pb/, posebusters_filtered.round0.csv
+# data/proto_test_final.round0.csv(next step)
+
+request_GPUs = 1
+request_CPUs = 8
+request_memory = 32G
+requirements = (Target.CUDADeviceName == "NVIDIA A100-SXM4-40GB") || (Target.CUDADeviceName == "NVIDIA A100-PCIE-40GB") || (Target.CUDADeviceName == "NVIDIA A100-SXM4-80GB") || (Target.CUDADeviceName == "NVIDIA A100-PCIE-80GB")
+requirements = UidDomain == "cs.uni-saarland.de"
++WantGPUHomeMounted = true
+queue

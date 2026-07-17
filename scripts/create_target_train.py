@@ -1,5 +1,10 @@
 import pandas as pd
 
+'''
+This script is responsible for renaming conventions so that it fits our workflow nicer.
+Depending on which dataset we want to produce, we comment out/in the respective target files.
+'''
+
 # 1. Define file paths
 # input_file = (
 #     "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train_processed.csv"

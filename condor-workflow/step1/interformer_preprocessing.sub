@@ -1,8 +1,7 @@
 universe = docker
 docker_image = blakshana/interformer:latest
-
 # Change train/test accordingly
-executable = condor-workflow/step1/interformer_preprocessing_testset.sh
+executable = condor-workflow/step1/interformer_preprocessing_trainset.sh
 output = logs/josh-interformer.$(ClusterId).$(ProcId).out
 error = logs/josh-interformer.$(ClusterId).$(ProcId).err
 log = logs/josh-interformer.$(ClusterId).log

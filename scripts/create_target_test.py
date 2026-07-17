@@ -1,4 +1,7 @@
 import pandas as pd
+'''
+This script is responsible for renaming conventions so that it fits our workflow nicer.
+'''
 
 # 1. Define file paths
 input_file = (

@@ -1,6 +1,9 @@
 #!/bin/bash
-# "." (current directory) is the project root.
-set -e  # <-- Exit immediately if any command fails
+
+# Notes for Reproducing;
+# Tarball will be uploaded zenodo so you don't need to run the entire script
+
+set -e  # Exit immediately if any command fails
 
 PROJECT_ROOT="$(pwd)"
 
@@ -8,7 +11,8 @@ echo "Running in: $PROJECT_ROOT"
 ls -F # Debug: List files to verify they were transferred
 
 TRAIN_FOLDER=~/DLDockingBenchSeminar/data
-DOCK_FOLDER=dock_results/energy_train
+# DOCK_FOLDER=dock_results/energy_train (normal path)
+DOCK_FOLDER=~/DLDockingBenchSeminar/dock_results/energy_train
 
 # mkdir -p "$DOCK_FOLDER"
 # mkdir -p "$DOCK_FOLDER"/ligand_reconstructing
@@ -38,22 +42,16 @@ mkdir -p logs
 
 # If you planning to use uff ligand conformation to dock, you can use argument `--uff_folder uff`
 export OMP_NUM_THREADS="32,32"
+
+# Finds all ligand poses in the DOCK_FOLDER and builds a 
 python docking/reconstruct_ligands.py -y --cwd $DOCK_FOLDER --find_all find
 
-# Next run - comment out line 20-23 and run line 27.
 # Make a docking summary csv 
 python docking/reconstruct_ligands.py --cwd $DOCK_FOLDER --find_all stat
 
 # Merging original csv with the docking summary, gather information of rmsd, enery, num_torsions and poserank(cid, id of the conformation in a sdf)
 # python docking/merge_summary_input.py $DOCK_FOLDER/ligand_reconstructing/stat_concated.csv proto_train_val_final.csv
+python docking/merge_summary_input.py stat_concated.csv proto_train_val_final.csv
 
-# python label_negatives.py proto_train_val_final.round0.csv proto_train_val_final_w_neg_labels.round0.csv --guarantee-positive
+python label_negatives.py proto_train_val_final.round0.csv proto_train_val_final_w_neg_labels.round0.csv --guarantee-positive
 
-echo "=== Docking step complete ==="
-# Validate if the file path exists before running find to avoid ugly errors
-if [ -d "${DOCK_FOLDER}/ligand_reconstructing" ]; then
-    find "${DOCK_FOLDER}/ligand_reconstructing" -name "*.sdf" | wc -l
-else
-    echo "ERROR: ${DOCK_FOLDER}/ligand_reconstructing still does not exist!"
-    exit 1
-fi

@@ -1,7 +1,6 @@
 # Step5 - Final docking pose prediction (Test-set)
 
 1. ```Testing model```
-Yet to produce these results - 10/07/2026
 - Repeat step3 and 4 for test dataset using the .sh and .sub files for test.
 
    The files were manually moved to their respective folders. 
@@ -14,5 +13,5 @@ Yet to produce these results - 10/07/2026
 - Output:
    - Final csv with predIC50 and pred_pose_score `proto_test_final.round0_ensemble.csv`
 
-2. ```Evaluation```
+1. ```Evaluation```
 With the top 1 pose proceed with evaluation.py

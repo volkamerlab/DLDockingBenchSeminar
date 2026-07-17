@@ -27,6 +27,6 @@ python docking/reconstruct_ligands.py -y --cwd $DOCK_FOLDER -y --find_all find
 python docking/reconstruct_ligands.py --cwd $DOCK_FOLDER --find_all stat
 
 # Merging original csv with the docking summary, gather information of rmsd, enery, num_torsions and poserank(cid, id of the conformation in a sdf)
-# python docking/merge_summary_input.py $DOCK_FOLDER/ligand_reconstructing/stat_concated.csv proto_test_final.csv
+python docking/merge_summary_input.py $DOCK_FOLDER/ligand_reconstructing/stat_concated.csv proto_test_final.csv
 
 

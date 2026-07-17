@@ -11,7 +11,9 @@ bindingdata.py
 import os
 
 # Define the directory containing your SDF files
-directory_path = "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/ligand/rcsb"
+# directory_path = "/home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/ligand/rcsb"
+# posebuster
+directory_path = "/home/bdldt_team001/DLDockingBenchSeminar/posebusters_filtered/ligand/rcsb"
 
 print(f"Renaming files in: {directory_path}")
 count = 0

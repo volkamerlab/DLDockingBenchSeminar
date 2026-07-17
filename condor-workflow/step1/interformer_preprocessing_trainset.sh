@@ -10,45 +10,46 @@ conda activate base
 
 cd /home/bdldt_team001/DLDockingBenchSeminar
 
-# mkdir -p data/proto_train/ligand
-# mkdir -p data/proto_train/ligand/rcsb
-# mkdir -p data/proto_train/uff
-# mkdir -p data/proto_train/pocket
+mkdir -p data/proto_train/ligand
+mkdir -p data/proto_train/ligand/rcsb
+mkdir -p data/proto_train/uff
+mkdir -p data/proto_train/pocket
 
 # # # Preprocess
 # # # Add H atoms to ligand molecules.
-# for f in data/proto_train/train_sdf/*.sdf; do 
-#     obabel "$f" -p 7.4 -O "data/proto_train/ligand/rcsb/$(basename "$f")" 
-# done
+for f in data/proto_train/train_sdf/*.sdf; do 
+    obabel "$f" -p 7.4 -O "data/proto_train/ligand/rcsb/$(basename "$f")" 
+done
 
 
-# # # Generate inital ligand conformation using UFF (or any other ligand prepare program of your choice).  
-# # # ligand/rcsb/ is the reference ligand
-# # # uff is the optimized conformation that we can experiment on 
-# python tools/rdkit_ETKDG_3d_gen.py data/proto_train/ligand/rcsb/ data/proto_train/uff/ 
+# # Generate inital ligand conformation using UFF (or any other ligand prepare program of your choice).  
+# # ligand/rcsb/ is the reference ligand
+# # uff is the optimized conformation that we can experiment on 
+python tools/rdkit_ETKDG_3d_gen.py data/proto_train/ligand/rcsb/ data/proto_train/uff/ 
 
 
-# # ####
-# # # Protein
-# # # Use the Reduce program to preprocess the entire protein.
-# # # Adjust the protein structure to prevent steric clashes.
-# for pdb in data/proto_train/train_pdb/*.pdb; do 
-#     reduce -r "$pdb" > "data/proto_train/pocket/$(basename "$pdb")" 
-# done
+# ####
+# # Protein
+# # Use the Reduce program to preprocess the entire protein.
+# # Adjust the protein structure to prevent steric clashes.
+for pdb in data/proto_train/train_pdb/*.pdb; do 
+    reduce -r "$pdb" > "data/proto_train/pocket/$(basename "$pdb")" 
+done
 
 
 # Extract the pocket within 10 Å around the reference ligand. The third argument 1 indicates removal of the CCD ligand from the PDB, use 0 if you do not wish to remove it.
-# python tools/extract_pocket_by_ligand.py data/proto_train/pocket/ data/proto_train/ligand/rcsb/ 0 && mv data/proto_train/pocket/output/*.pdb data/proto_train/pocket
-## End of Interformer preprocessing code
+python tools/extract_pocket_by_ligand.py data/proto_train/pocket/ data/proto_train/ligand/rcsb/ 0 && mv data/proto_train/pocket/output/*.pdb data/proto_train/pocket
+# End of Interformer preprocessing code
 
 ### Lak&Ben Trainset Preprocessing ###
 # first manipulation to get uniprot and pIC50 values - (Skip - Hamza's response about how we handle the -ve pIC50 values - 25.6)
 python3 -u scripts/get_IC50_uniprot_train.py
 
-# split the ligand_file_name into target separately (Changes made to train.py file according to naming conventions provided in the full dataset)
+# # split the ligand_file_name into target separately (Changes made to train.py file according to naming conventions provided in the full dataset)
 python3 -u scripts/create_target_train.py 
 
 # # Naming convention to match the OG data
-# python3 -u scripts/rename_docked_sdf_train.py 
+python3 -u scripts/rename_docked_sdf_train.py 
+
 
 

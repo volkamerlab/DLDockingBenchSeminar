@@ -23,4 +23,4 @@
 - Input:
    - train.py via updated `data/proto_train_val_final.round0.csv`. Prior to that copy the .sdf files from `dock_results/energy_train/ligand_reconstructing` to `data/proto_train/ligand`(instructed by authors).
 - Output:
-   - checkpoints (yet to be produced - 10/07/2026)
+   - checkpoints (see checkpoints/affinity_pose_model)

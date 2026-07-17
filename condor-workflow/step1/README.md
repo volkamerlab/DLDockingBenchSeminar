@@ -27,3 +27,5 @@
    - energy minimized ligand (uff)
 
 The proto_train and proto_val was combined into a single csv file using the script/combine_csv.py for easy input for training.
+
+All the steps for followed for posebusters_filtered set.
