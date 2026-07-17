@@ -30,7 +30,7 @@ against the authors' released weights on the **same** `full_test` (6,183) and `p
 A consistent ~6-point accuracy gap on both sets (expected — the released weights saw far more training
 data), but **our poses are more physically valid** (higher PB-Valid) on both. Full breakdown across all
 three pose variants, the ECDF, PoseBusters failure modes and the paper comparison are in
-[`notebooks/results_and_comparison.ipynb`](notebooks/results_and_comparison.ipynb); see [§3](#3-results).
+[`notebooks/full_data_results_and_comparison.ipynb`](notebooks/full_data_results_and_comparison.ipynb); see [§3](#3-results).
 
 **Predicted poses** (all 3 variants, both datasets, both models — too large for git) are on Zenodo:
 [zenodo.org/records/21197043](https://zenodo.org/records/21197043). The trained **checkpoint** ships
@@ -115,7 +115,7 @@ Uncorrected **@1 Å / median RMSD / PB-Valid**: ours (full_test) 48.6 % / 1.03 �
 54.4 % / 0.95 Å / 1.4 %. ours (PoseBusters) 37.0 % / 1.18 Å / 5.2 %; released 39.6 % / 1.16 Å / 2.6 %.
 
 Three findings (full analysis, ECDF and PoseBusters failure-mode breakdown in the
-[notebook](notebooks/results_and_comparison.ipynb)):
+[notebook](notebooks/full_data_results_and_comparison.ipynb)):
 1. A consistent **~6-point** accuracy gap to the released weights on *both* sets — a stable property,
    not benchmark noise; expected, since the released weights were trained on far more data.
 2. **Our poses are more physically valid** (higher PB-Valid) despite lower raw accuracy — a narrower,
@@ -212,7 +212,7 @@ complexes. The **full-data** model was trained with
 | stage | objective | `pos_r` | optimizer | lr | weight_decay | patience |
 |---|---|---|---|---|---|---|
 | 1 | scoring / MDN only (EGNN docking skipped) | 0 | Adam | 1e-3 | 1e-5 | 70 |
-| 2 | docking + scoring (init from Stage-1 best) | 1 | Adam | 1e-4 | 1e-4 | 20 |
+| 2 | docking + scoring (init from Stage-1 best) | 1 | Adam | 1e-4 | 0 | 70 |
 
 **P3 — fine-tune (bonus, single stage, init = released weights):**
 `pos_r 1`, Adam, `lr 1e-4`, `weight_decay 0`, `patience 30`, eff. batch 64, `val_frac 0.1`, `seed 42`.
@@ -244,7 +244,8 @@ Per-epoch training curves are in [`docs/p2_stage1_train_log.csv`](docs/p2_stage1
 | [`condor/full_eval_jobs/`](condor/full_eval_jobs), [`condor/logs/full_data_eval/`](condor/logs/full_data_eval) | the 42 full-data eval `run.sh` wrappers and their `.log`/`.err`/`.out` |
 | [`evaluation/evaluation.py`](evaluation/evaluation.py) | seminar evaluator + our PoseBusters and `--shard_idx`/`--num_shards` additions (used for both phases) |
 | [`model/`](model) | trained checkpoints (~15 MB each): `full_scratch` (submission), plus prototype P2 + P3 |
-| [`notebooks/results_and_comparison.ipynb`](notebooks/results_and_comparison.ipynb) | full-data + prototype tables, ECDF, PoseBusters, paper comparison, failure analysis |
+| [`notebooks/full_data_results_and_comparison.ipynb`](notebooks/full_data_results_and_comparison.ipynb) | **final submission** notebook: full-data tables, ECDF, PoseBusters, paper comparison, failure analysis |
+| [`notebooks/prototype_results_and_comparison.ipynb`](notebooks/prototype_results_and_comparison.ipynb) | prototype-phase notebook (`proto_test`, 136): P1/P2/P3 tables + charts |
 | [`results/full_data_evaluation/`](results/full_data_evaluation) | per-complex full-data CSVs (RMSD + PoseBusters) for both models × both sets × 3 variants + ECDF figure |
 | [`results/`](results) | prototype poses + `<pipeline>_<variant>_evaluation.csv` |
 | [`docs/`](docs) | training logs (incl. `full_stage2_train_log.csv`) + figures |
