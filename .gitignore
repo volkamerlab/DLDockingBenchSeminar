@@ -8,6 +8,10 @@ lightning_logs/
 Interformer/**/*.ckpt
 posebuster_filtered/
 dock_results_pb/
+notebook/*
+zenodo-upload.sh
+energy_test_subset/
+
 
 condor-workflow/transfer
 dock_results_prototype/*
@@ -15,9 +19,10 @@ data-old/*
 full_data/*
 *.pdb
 *.sdf
+!results/
+!data/
 *wandb
 evaluation/*
-data/*
 *.DS_Store
 poses/*
 *.zip

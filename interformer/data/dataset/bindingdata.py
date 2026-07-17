@@ -120,8 +120,9 @@ class BindingData(Dataset):
 
         #-----------For full data set-------------#
         # Provided with individual training and validation dataset - leaving test empty as it comes under inference.
-        train_pdbs = pd.read_csv('data/proto_train_final.csv')['Target'].tolist()
-        valid_pdbs = pd.read_csv('data/proto_val_final.csv')['Target'].tolist()
+        train_pdbs = pd.read_csv('data_fullset/proto_train_final.csv')['Target'].tolist()
+        valid_pdbs = pd.read_csv('data_fullset/proto_val_final.csv')['Target'].tolist()
+        
 
         train_indices = df[df['Target'].isin(train_pdbs)].index.tolist()
         valid_indices = df[df['Target'].isin(valid_pdbs)].index.tolist()
