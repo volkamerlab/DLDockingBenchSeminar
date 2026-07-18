@@ -29,7 +29,7 @@ python train.py -data_path data_fullset/proto_train_val_final_w_neg_labels.round
 -filter_type full \
 -native_sampler 0 \
 -Code affinity \
--batch_size 2 \
+-batch_size 4 \
 -gpus 1 \
 -method Gnina2 \
 -patience 30 \

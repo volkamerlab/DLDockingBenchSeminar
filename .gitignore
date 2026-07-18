@@ -10,7 +10,6 @@ lightning_logs/*
 Interformer/**/*.ckpt
 posebuster_filtered/
 dock_results_pb/
-notebook/*
 zenodo-upload.sh
 energy_test_subset/
 energy_train_subset/
