@@ -129,7 +129,7 @@ def get_args():
     #changing epochs to 2 to make sure prototype file handling is working correctly
     #parser.add_argument('-num_epochs', type=int, default=1, required=False)
     #changing epochs to 5 for pose_affinity model
-    parser.add_argument('-num_epochs', type=int, default=5, required=False)
+    parser.add_argument('-num_epochs', type=int, default=50, required=False)
     parser.add_argument('-main_loop', type=int, default=1, required=False)
     parser.add_argument('-precision', type=int, default=16, required=False)
     # sampler

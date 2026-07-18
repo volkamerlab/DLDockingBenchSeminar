@@ -2,7 +2,7 @@ universe = docker
 docker_image = blakshana/interformer:v7
 # input the checkpoints and relevant files
 # for complex and gaussian prediction result
-transfer_input_files = data, results, evaluation, data_fullset/proto_test_final.csv
+transfer_input_files = data, results, evaluation
 executable = condor-workflow/step7/evaluation.sh
 
 output = logs/josh-interformer.$(ClusterId).$(ProcId).out
