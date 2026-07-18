@@ -22,8 +22,7 @@ data-old/*
 full_data/*
 uff/*
 posebusters_filtered/*
-data/full_test/*
-data/posebusters_filtered/*
+
 
 *wandb
 evaluation/*
@@ -55,7 +54,10 @@ results/
 results/*
 !results/full_test
 !results/posebusters_filtered
+!results/my_eval_pb.csv
 
+data/full_test/*
+data/posebusters_filtered/*
 
 
 
