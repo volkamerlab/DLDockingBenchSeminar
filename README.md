@@ -99,5 +99,4 @@ CNNs are highly accurate, while sacrificing speed. Even at 1 training epoch, our
 ## Next Steps
 1) Implement Kullback-Leibler (KL) divergence loss-based knowledge-distillation to create student models
 2) Create GNINA version 1.3 ensembles, using varying seeds 
-3) Implement the provided evaluation.py to determine RMSD 
-4) Incorporate PoseBusters validation set into training, as well as full training set
+3) Troubleshoot training collapse in fully trained default2018 and dense models. 
