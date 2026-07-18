@@ -6,7 +6,7 @@ dock_results_subset/*
 dock_results/*
 dock_results_test/*
 condor-workflow/zip_doc_results/*
-lightning_logs/
+lightning_logs/*
 Interformer/**/*.ckpt
 posebuster_filtered/
 dock_results_pb/
