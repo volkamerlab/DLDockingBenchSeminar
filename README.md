@@ -7,7 +7,7 @@ Team Members: Lakshana & Ben
 Supervisors: Hamza Ibrahim & Andrea Volkamer
 
 -----------
-Final Submission Notice: We have the final poses being uploaded to zenodo currently, as well as the checkpoints being run right now, we will upload them ASAP, thank you for your patience! :)
+Final Submission Notice: We have the final poses being uploaded to zenodo currently, as well as the checkpoints being run right now (intermediate checkpoint with 5 epochs uploaded), we will upload them ASAP, thank you for your patience! :)
 -----------
 
 
@@ -18,6 +18,7 @@ Final Submission Notice: We have the final poses being uploaded to zenodo curren
    - /home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/train_pdb
    - /home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/train_sdf
 3. Check README.md files under each steps in condor_workflow/ to understand the workflow of the training
+4. Poses predicted by the model - results/
 
 --------------------
 
