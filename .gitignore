@@ -1,3 +1,5 @@
+
+
 data-proto/*
 data_fullset/*
 dock_results_subset/*
@@ -11,16 +13,18 @@ dock_results_pb/
 notebook/*
 zenodo-upload.sh
 energy_test_subset/
+energy_train_subset/
 
 
 condor-workflow/transfer
 dock_results_prototype/*
 data-old/*
 full_data/*
-*.pdb
-*.sdf
-!results/
-!data/
+uff/*
+posebusters_filtered/*
+data/full_test/*
+data/posebusters_filtered/*
+
 *wandb
 evaluation/*
 *.DS_Store
@@ -36,6 +40,24 @@ energy_train/*
 energy_train_copy/*
 #ignore all .pdb's in root dir until we get it fixed.
 /*.pdb
+
+
+
+#allow git to look inside particular folders containing sdf files
+data/
+!data/
+data/*
+!data/full_test/
+!data/posebusters_filtered/
+
+results/
+!results/
+results/*
+!results/full_test
+!results/posebusters_filtered
+
+
+
 
 # Below was created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,python

@@ -1,0 +1,71 @@
+{
+  "os": "Linux-5.15.0-177-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.12.5",
+  "startedAt": "2026-07-17T21:21:50.373132Z",
+  "args": [
+    "-data_path",
+    "data_fullset/proto_train_val_final_w_neg_labels.round1.csv",
+    "-work_path",
+    "data_fullset/proto_train",
+    "-seed",
+    "1111",
+    "-filter_type",
+    "full",
+    "-native_sampler",
+    "0",
+    "-Code",
+    "affinity",
+    "-batch_size",
+    "2",
+    "-gpus",
+    "1",
+    "-method",
+    "Gnina2",
+    "-patience",
+    "30",
+    "-early_stop_metric",
+    "val_loss",
+    "-early_stop_mode",
+    "min",
+    "-affinity_pre",
+    "-run_name",
+    "Affinity_pose_model",
+    "--warmup_updates",
+    "100"
+  ],
+  "program": "/home/bdldt_team001/DLDockingBenchSeminar/train.py",
+  "codePath": "train.py",
+  "codePathLocal": "train.py",
+  "git": {
+    "remote": "git@github.com:volkamerlab/DLDockingBenchSeminar.git",
+    "commit": "f77187ea95d1bfcc19c1866d4bd1c004688ae033"
+  },
+  "email": "beho00003@uni-saarland.de",
+  "root": ".",
+  "host": "bdldt_team001-175796.0-tenos.hpc.uni-saarland.de",
+  "executable": "/main/home/mambaforge/bin/python",
+  "cpu_count": 28,
+  "cpu_count_logical": 56,
+  "gpu": "Tesla P100-SXM2-16GB",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "3936820903936",
+      "used": "192407138304"
+    }
+  },
+  "memory": {
+    "total": "811495567360"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "Tesla P100-SXM2-16GB",
+      "memoryTotal": "17179869184",
+      "cudaCores": 3584,
+      "architecture": "Pascal",
+      "uuid": "GPU-a452c067-0d65-e291-c4ee-82d9aa851f4c"
+    }
+  ],
+  "cudaVersion": "12.6",
+  "writerId": "6qhnnpnloo6ztk74b5qgsrb6p99iu3sx"
+}

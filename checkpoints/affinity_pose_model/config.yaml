@@ -1,0 +1,189 @@
+_wandb:
+    value:
+        cli_version: 0.27.2
+        e:
+            6qhnnpnloo6ztk74b5qgsrb6p99iu3sx:
+                args:
+                    - -data_path
+                    - data_fullset/proto_train_val_final_w_neg_labels.round1.csv
+                    - -work_path
+                    - data_fullset/proto_train
+                    - -seed
+                    - "1111"
+                    - -filter_type
+                    - full
+                    - -native_sampler
+                    - "0"
+                    - -Code
+                    - affinity
+                    - -batch_size
+                    - "2"
+                    - -gpus
+                    - "1"
+                    - -method
+                    - Gnina2
+                    - -patience
+                    - "30"
+                    - -early_stop_metric
+                    - val_loss
+                    - -early_stop_mode
+                    - min
+                    - -affinity_pre
+                    - -run_name
+                    - Affinity_pose_model
+                    - --warmup_updates
+                    - "100"
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 28
+                cpu_count_logical: 56
+                cudaVersion: "12.6"
+                disk:
+                    /:
+                        total: "3936820903936"
+                        used: "192407138304"
+                email: beho00003@uni-saarland.de
+                executable: /main/home/mambaforge/bin/python
+                git:
+                    commit: f77187ea95d1bfcc19c1866d4bd1c004688ae033
+                    remote: git@github.com:volkamerlab/DLDockingBenchSeminar.git
+                gpu: Tesla P100-SXM2-16GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Pascal
+                      cudaCores: 3584
+                      memoryTotal: "17179869184"
+                      name: Tesla P100-SXM2-16GB
+                      uuid: GPU-a452c067-0d65-e291-c4ee-82d9aa851f4c
+                host: bdldt_team001-175796.0-tenos.hpc.uni-saarland.de
+                memory:
+                    total: "811495567360"
+                os: Linux-5.15.0-177-generic-x86_64-with-glibc2.35
+                program: /home/bdldt_team001/DLDockingBenchSeminar/train.py
+                python: CPython 3.12.5
+                root: .
+                startedAt: "2026-07-17T21:21:50.373132Z"
+                writerId: 6qhnnpnloo6ztk74b5qgsrb6p99iu3sx
+        m:
+            - "1": trainer/global_step
+              "6":
+                - 3
+              "7": []
+            - "2": '*'
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.12.5
+        t:
+            "1":
+                - 1
+                - 5
+                - 9
+                - 53
+                - 103
+            "2":
+                - 1
+                - 5
+                - 9
+                - 53
+                - 103
+            "3":
+                - 7
+                - 13
+                - 15
+                - 16
+                - 66
+            "4": 3.12.5
+            "5": 0.27.2
+            "12": 0.27.2
+            "13": linux-x86_64
+args:
+    value:
+        Code: affinity
+        affinity_pre: true
+        angle_feat_size: 0
+        attention_dropout_rate: 0.2
+        attention_kd: 0
+        attention_mask: true
+        batch_size: 2
+        checkpoint: ./
+        clip: 5
+        complex_to_data: feats.gnina_types.gnina_featurizer.obabel_mol_parser
+        data_path: data_fullset/proto_train_val_final_w_neg_labels.round1.csv
+        dataset: sbdd
+        debug: false
+        dropout_rate: 0.2
+        early_stop_metric: val_loss
+        early_stop_mode: min
+        edge_feat_size: 1
+        edge_featurizer: <feats.gnina_types.gnina_featurizer.PLIPEdgeFeaturizer object at 0x7f2e0ae09d30>
+        edge_output_layer: true
+        end_lr: 1e-09
+        energy_mode: false
+        energy_output_folder: ""
+        ensemble:
+            - checkpoint
+        exp: Interformer_Gnina2
+        ffn_scale: 4
+        filter_type: full
+        gpus: 1
+        hidden_dim: 128
+        inference: false
+        inter_encoder: true
+        intput_dropout_rate: 0
+        intra_encoder: true
+        jizhi: false
+        ligand_folder: ligand
+        main_loop: 1
+        method: Gnina2
+        metric_name:
+            - r
+        model: Interformer
+        n_jobs: 70
+        n_layers: 6
+        native_sampler: 0
+        neg_weight: 1
+        node_feat_size: 1
+        node_featurizer: <feats.gnina_types.gnina_featurizer.PLIPAtomFeaturizer object at 0x7f2e0ae09e20>
+        num_epochs: 5
+        num_gpus: 8
+        num_heads: 8
+        num_nodes: 1
+        patience: 30
+        peak_lr: 0.0004
+        per_target: false
+        per_target_sampler: 0
+        pocket_path: pocket
+        pose_sel_mode: false
+        posfix: '*val_loss*'
+        precision: 16
+        rbf_K: 128
+        rbf_cutoff: 10
+        reload: true
+        run_name: Affinity_pose_model
+        seed: 1111
+        split_folder: diffdock_splits
+        target_wise_sampler: 0
+        test_csv:
+            - ./test.csv
+        uff_as_ligand: false
+        use_ff_ligands: uff
+        use_mid: false
+        vs: false
+        warmup_updates: 100
+        weight_decay: 0.0001
+        work_path: data_fullset/proto_train
+        worker: 8
+batch_size:
+    value: 2
+data_path:
+    value: data_fullset/proto_train_val_final_w_neg_labels.round1.csv
+learning_rate:
+    value: N/A
+model:
+    value: Interformer
+num_epochs:
+    value: 5
+precision:
+    value: 16
