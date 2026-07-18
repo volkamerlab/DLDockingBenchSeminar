@@ -19,6 +19,7 @@ Final Submission Notice: We have the final poses being uploaded to zenodo curren
    - /home/bdldt_team001/DLDockingBenchSeminar/data/proto_train/train_sdf
 3. Check README.md files under each steps in condor_workflow/ to understand the workflow of the training
 4. Poses predicted by the model - results/
+5. Loss curve of energy and affinity normal model - loss_curve/ (Affinity pose not included as trained only for 5 epochs)
 
 --------------------
 
