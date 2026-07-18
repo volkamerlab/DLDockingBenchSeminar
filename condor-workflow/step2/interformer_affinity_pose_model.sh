@@ -23,7 +23,7 @@ echo "Running from: $CURRENT_DIR"
 export PYTHONPATH="/home/bdldt_team001/DLDockingBenchSeminar/interformer:$PYTHONPATH"
 # Affinity and pose model
 # Proper path to be mentioned
-python train.py -data_path data_fullset/proto_train_val_final_w_neg_labels.round0.csv \
+python train.py -data_path data_fullset/proto_train_val_final_w_neg_labels.round1.csv \
 -work_path data_fullset/proto_train \
 -seed 1111 \
 -filter_type full \
@@ -36,10 +36,10 @@ python train.py -data_path data_fullset/proto_train_val_final_w_neg_labels.round
 -early_stop_metric val_loss \
 -early_stop_mode min \
 -affinity_pre \
+-precision 32 \
 -run_name Affinity_pose_model \
---warmup_updates 100 \
-# --warmup_updates 10000 \
---peak_lr 0.0008 \
+--warmup_updates 2000 \
+--peak_lr 0.0003 \
 --n_layers 6 \
 --hidden_dim 128 \
 --num_heads 8 \

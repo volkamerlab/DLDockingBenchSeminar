@@ -22,7 +22,7 @@ requirements = UidDomain == "cs.uni-saarland.de"
 
 request_GPUs = 1
 request_CPUs =  4
-request_memory = 64G
+request_memory = 128G
 +WantGPUHomeMounted = true
 
 priority = 10
