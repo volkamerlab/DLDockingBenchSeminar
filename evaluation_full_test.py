@@ -189,7 +189,7 @@ def load_dataset_csv(csv_path: Path) -> pd.DataFrame:
         })
 
     elif "ligand_name" in df.columns:
-        # posebusters_filtered format - already has correct column names
+        #Adjusting posebusters_filtered format that already has correct column names.
         pass
 
     elif (
@@ -197,8 +197,7 @@ def load_dataset_csv(csv_path: Path) -> pd.DataFrame:
         and "Ligand Chain" in df.columns
         and "Ligand Residue Number" in df.columns
     ):
-        # full_sealed_test format
-        # Adjust these filename templates to match your actual files in data/full_sealed_test/
+        #Adjusting to our full_sealed_test format.
 
         df["ligand_file"] = df.apply(
             lambda row: f"{str(row['PDBID']).lower()}_{str(row['Ligand Name']).strip()}_{str(row['Ligand Chain']).strip()}_{str(row['Ligand Residue Number']).strip()}_ligand_refined.sdf",
